@@ -3,29 +3,36 @@
 \begin{document}
     \subsection{Nama Program}
     \subsubsection{Algoritma}
-    \paragraph{Program tersebut akan menanyakan suhu awal dalam Celsius kepada pengguna.}
-    \paragraph{Kemudian program tersebut akan menunjukan suhu awal yang telah dimasukan tersebut dalam tiga unit yakni Celsius, Farenheit, dan Kelvin.}
-    \paragraph{Setelah menunjukan bahwa 15 menit telah berlalu, program tersebut akan menunjukan suhu yang telah menurun sebanyak 25\% dalam Farenheit dan selisih dengan suhu awal dalam Kelvin kepada pengguna.}
-    \paragraph{Setelah menunjukan bahwa 45 menit telah berlalu, program tersebut akan menunjukan suhu yang telah menurun sebanyak 65\% dalam Kelvin dan selisih dengan suhu awal dalam Celsius kepada pengguna.}
-    \paragraph{Program kemudian akan menunjukan bahwa pendingin telah dimatikan kepada pengguna.}
-    \paragraph{Setelah menunjukan bahwa 25 menit telah berlalu, program tersebut akan menunjukan suhu yang telah naik sebanyak 35\% dalam Celsius}
-    \paragraph{Dan akhirnya program akan menunjukan perbandingan suhu awal dengan suhu akhir, perbandingan suhu awal dengan suhu terdingin, dan suhu awal dengan suhu setelah 15 menit setelah pendinginan.}
+    \paragraph{Mengambil masukan berupa suhu awal.}
+    \paragraph{Menampilakan suhu awal dalam Celsius, Farenheit, dan Kelvin}
+    \paragraph{Menampilkan 15 menit berlalu, menurunkan suhu sebanyak 25\%. dari suhu awal.}
+    \paragraph{Menampilkan suhu saat ini dalam Farenheit dan selisih suhu saat ini dengan suhu awal dalam Kelvin.}
+    \paragraph{Menampilkan 45 menit berlalu, menurunkan suhu sebanyak 65\% dari suhu awal}
+    \paragraph{Menampilkan suhu saat ini dalam Kelvin dan selisih suhu saat ini dengan suhu awal dalam Celsius.}
+    \paragraph{Mematikan pendingin.}
+    \paragraph{Menunjukan 25 menit berlalu, menaikan suhu sebanyak 65\% dari suhu terakhir dan menampilkan suhu saat ini.}
+    \paragraph{Menanpilkan perbandingan suhu awal dengan saat ini, perbandingan suhu awal dengan suhu terdingin, dan perbandingan suhu awal dan suhu setelah 15 menit.}
 
     \subsubsection{{\Flowchart}}
-    \begin{figure}[H]
-        \centering
-        \setstretch{1.0}
-        \includegraphics[
-            scale=0.16,
-            center,
-            frame=0.5pt
-        ]{res/m1f1.png}
-        \caption{{\Flowchart}}
-    \end{figure}
+    \inputfigure{res/m1f1.png}{0.15}{{\Flowchart}}{fig:m1:f1}
 
+    Berdasarkan \reffigure{fig:m1:f1} di atas, didapatkan sebuah {\flowchart} yang menunjukan alur kerja program ... . Ketika dijalankan program tersebut akan meminta masukan berupa suhu awal dalam Celcius. Suhu awal tersebut kemudian akan dikonversikan menjadi Farenheit dan Kelvin sebelum ditampilkan.
+
+    Setelah 15 menit, 25\% akan dikurangi dari suhu awal dan kemudian akan ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Kelvin. Suhu setelah 15 menit tersebut kemudian akan disimpan pada sebuah variabel.
+
+    Setelah 45 menit, 65\% akan dikurangi dari suhu awal, sebelum ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Celcius. Suhu setelah 45 menit tersebut kemudian akan disimpan pada sebuah variabel.
+
+    Pendingin kemudian akan dimatikan dan setelah 25 menit suhu akan naik sebanyak 35\% yang akan disimpan dalam sebuah variabel. Suhu tersebut akan ditampilkan bersamaan dengan suhu awal dengan suhu awal ditampilkan terlebih dahulu.
+
+    Pada akhirnya akan ditampilkan perbandingan suhu awal dengan suhu akhir, perbandingan suhu awal dengan suhu terdingin, dan perbandingan suhu awal dengan suhu setelah 15 menit. Program pun akan selesai.
+
+    \subsubsection{{\Psuedocode}}
+    \lstinputlisting{res/m1p1.txt}
     \newpage
+
     \subsubsection{{\SourceCode}}
     \lstinputlisting[language=C++]{res/m1c1.cpp}
+    \newpage
 
     \subsubsection{Hasil Program}
     \begin{figure}[H]

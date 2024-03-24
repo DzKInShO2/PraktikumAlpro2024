@@ -1,14 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     float temp;
 
     cout << "Suhu awal: ";
     cin >> temp;
     cout << endl;
-
     cout << "Suhu awal kamar Holil: " << endl;
     cout << "1. " << temp << " C" << endl;
     cout << "2. " << ((temp * 1.8f) + 32) << " F" << endl;
@@ -28,14 +26,12 @@ int main()
 
     cout << "Suhu awal kamar Holil: " << temp << " C" << endl;
     cout << "Suhu kamar Holil saat ini: " << temp1 << " C" <<endl<<endl;
-
     cout << "Holil mematikan pendingin..." << endl << endl;
 
     float temp2 = (temp1 + (temp1 * 0.35f));
     cout << "Setelah 25 menit" << endl;
     cout << "Suhu kamar Holil naik menjadi " << temp2 <<" C"<<endl<<endl;
-
-    cout << "Hasil perbandingan :" << endl;
+    cout << "Hasil perbandingan:" << endl;
     cout << "1:" << (temp/temp2) << " untuk suhu saat ini" << endl;
     cout << "1:" << (temp/temp1) << " untuk suhu terdingin" << endl;
     cout << "1:" << (temp/temp0)

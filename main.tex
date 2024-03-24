@@ -10,10 +10,13 @@
 
 % Change margin
 \usepackage[
+    a4paper,
     lmargin = 3.0cm,
     rmargin = 2.5cm,
     tmargin = 2.5cm,
-    bmargin = 3.0cm,
+    bmargin = 2.6cm,
+    headheight = 3.0cm,
+    footskip = 4ex,
 ]{geometry}
 
 % Spacing
@@ -157,6 +160,8 @@
 \newcommand*{\size}{\textit{size}}
 \newcommand*{\flowchart}{\textit{flowchart}}
 \newcommand*{\Flowchart}{\textit{Flowchart}}
+\newcommand*{\psuedocode}{\textit{psuedocode}}
+\newcommand*{\Psuedocode}{\textit{Psuedocode}}
 \newcommand*{\sourcecode}{\textit{source code}}
 \newcommand*{\Sourcecode}{\textit{Source code}}
 \newcommand*{\SourceCode}{\textit{Source Code}}
@@ -191,6 +196,27 @@
     \addcontentsline{toc}{chapter}{MODUL {\thechapter} #1}
 }
 
+% import figure
+\newcommand*{\inputfigure}[4]{
+    \begin{figure}[H]
+        \centering
+        \setstretch{1.0}
+        \renewcommand*{\thechapter}{\arabic{chapter}}
+        \includegraphics[
+            scale=#2,
+            center,
+            frame=0.5pt
+        ]{#1}
+        \caption{#3}
+        \label{#4}
+        \vspace*{-4.5ex}
+    \end{figure}
+}
+
+% references
+\newcommand*{\reftable}[1]{\textbf{Tabel \ref{#1}}}
+\newcommand*{\reffigure}[1]{\textbf{Gambar \ref{#1}}}
+
 % Indent subsection
 \newenvironment{indentlevel0}
   {\adjustwidth{0.85cm}{0pt}}
@@ -215,6 +241,7 @@
 	\renewcommand{\headrule}{
         \vspace*{-6ex}
 		{\color[RGB]{68, 114, 196} \hrule width \hsize \kern 0.5mm \hrule width \hsize height 3pt}
+        \vspace*{2ex}
 	}
 	\renewcommand{\footrule}{
 		{\color[RGB]{68, 114, 196} \hrule width \hsize height 3pt \hrule width \hsize \kern 0.5mm \hrule width \hsize height 0.2pt}
@@ -227,6 +254,7 @@
     \renewcommand{\thepage}{\roman{page}}
     \tableofcontents
 
+    \sloppy
     \justifying
     \pagestyle{plain}
 
