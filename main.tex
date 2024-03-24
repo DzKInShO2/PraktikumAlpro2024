@@ -71,10 +71,40 @@
 \usepackage{fancyhdr}
 
 % Color
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 
 % Subfiles
 \usepackage{subfiles}
+
+% Graphicx
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
+% captions
+\usepackage{caption}
+
+\DeclareCaptionFont{cp}{\cpsize #1}
+
+\captionsetup[figure]{
+	name = Gambar,
+	justification = centering,
+	labelfont = bf,
+	labelsep = space,
+	font = cp,
+	skip = 3pt,
+	position = bottom
+}
+
+\captionsetup[table]{
+	name = Tabel,
+	justification = centering,
+	labelfont = bf,
+	labelsep = space,
+	font = cp,
+	skip = 2pt,
+	position = top
+}
 
 % Enumerate Configuration
 \usepackage{enumitem}
@@ -90,6 +120,25 @@
 \usepackage[titles]{tocloft}
 \setlength{\cftbeforechapskip}{0pt}
 
+% listings
+\usepackage{listings}
+
+\newfontfamily{\crnfamily}{Courier New}
+\lstdefinestyle{mystyle}{
+    keywordstyle=\color[RGB]{0,0,0},
+    basicstyle=\setstretch{1.0}\crnfamily\cpsize,
+    breakatwhitespace=false,         
+    breaklines=true,
+    captionpos=b,                    
+    keepspaces=true,                 
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=single
+}
+
+\lstset{style=mystyle}
 
 %
 % Custom Commands
@@ -101,6 +150,8 @@
 \newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
 
 % Keywords
+\newcommand*{\compiler}{\textit{compiler}}
+\newcommand*{\Compiler}{\textit{Compiler}}
 \newcommand*{\file}{\textit{file}}
 \newcommand*{\folder}{\textit{folder}}
 \newcommand*{\size}{\textit{size}}
@@ -109,6 +160,13 @@
 \newcommand*{\sourcecode}{\textit{source code}}
 \newcommand*{\Sourcecode}{\textit{Source code}}
 \newcommand*{\SourceCode}{\textit{Source Code}}
+\newcommand*{\scope}{\textit{scope}}
+\newcommand*{\Scope}{\textit{Scope}}
+\newcommand*{\Script}{\textit{Script}}
+\newcommand*{\statement }{\textit{statement }}
+\newcommand*{\Statement }{\textit{Statement }}
+\newcommand*{\namespace}{\textit{namespace}}
+\newcommand*{\Namespace}{\textit{Namespace}}
 
 % Chapter and Sections numbering
 \renewcommand*{\thechapter}{\Roman{chapter}}
@@ -183,7 +241,6 @@
     \newpage
     \section{PERMASALAHAN}
     \subfile{sections/m1p3.tex}
-    \newpage
     \section{HASIL PERCOBAAN}
     \subfile{sections/m1p4.tex}
     \newpage
