@@ -73,6 +73,9 @@
 % Color
 \usepackage{xcolor}
 
+% Subfiles
+\usepackage{subfiles}
+
 % Enumerate Configuration
 \usepackage{enumitem}
 \setlist[enumerate, 1]{
@@ -130,6 +133,14 @@
     \addcontentsline{toc}{chapter}{MODUL {\thechapter} #1}
 }
 
+% Indent subsection
+\newenvironment{indentlevel0}
+  {\adjustwidth{0.85cm}{0pt}}
+  {\endadjustwidth}
+
+\newenvironment{indentlevel1}
+  {\adjustwidth{1.61cm}{0pt}}
+  {\endadjustwidth}
 
 %
 % Secondary Packages Configuration
@@ -166,61 +177,19 @@
     \renewcommand{\thepage}{\arabic{page}}
 
     \section{TUJUAN PRAKTIKUM}
-    \noindent Tujuan Praktikum pada MODUL {\thechapter} \leftmark adalah:
-    \begin{enumerate}
-        \item Mahasiswa mengetahui dasar-dasar penulisan program komputer.
-        \item Mahasiswa memahami struktur dasar bahasa C++.
-    \end{enumerate}
-
+    \subfile{sections/m1p1.tex}
     \section{DASAR TEORI}
-    \subsection{Bahasa Pemrograman}
-    Bahasa pemrograman dijadikan sebuah alat yang dapat menjembatani antara keinginan si pemberi perintah (manusia) dengan yang diperintah (komputer) guna memberi intruksi atau perintah kepada komputer (nama penulis, tahun) (Nama Penulis, Tahun).
-
-    \subsection{Tipe Data}
-    Tipe data merupakan sesuatu yang digunakan untuk mempresentasikan jenis dari suatu nilai tertentu. Tipe data dibagi menjadi beberapa jenis, di antaranya
-
-    \subsubsection{Tipe Data Dasar}
-    \begin{adjustwidth}{0.85cm}{0cm}
-        Macam-macam tipe data dasar adalah sebagai berikut:
-    \end{adjustwidth}
-
-    \paragraph{Tipe bilangan bulat}
-    \begin{adjustwidth}{}{}
-        Tipe bilangan bulat adalah data-data angka yang tidak mengandung angka di belakang koma. Macam-macam tipe bilangan bulat sebagai berikut:
-    \end{adjustwidth}
-
+    \subfile{sections/m1p2.tex}
     \newpage
     \section{PERMASALAHAN}
-    \subsection{Nama Program}
-    Di sebuah perusahaan IT, seorang pengembang perangkat lunak bernama Shinji bekerja pada sistem manajemen {\file}. Shinji membuat antarmuka yang membantu pengguna untuk mengorganisir {\file} dan {\folder} dengan mudah. Antarmuka ini memungkinkan pengguna melihat struktur direktori, membuat {\folder} dan {\file} baru, serta melihat rincian tentang {\folder} atau {\file} tertentu.
-    \begin{enumerate}
-        \item Buat {\folder} [nama {\folder}]
-        \item Buat {\file} [nama {\file}(lengkap dengan tipe data contohnya: ( “vid.mp4” ))] [{\size} {\file}]
-        \item Buka {\folder} [nama {\folder}] 
-        \item Rincian {\folder} [nama {\folder}] 
-        \item Rincian {\file} [nama {\file}]
-        \item Kembali
-    \end{enumerate}
-
+    \subfile{sections/m1p3.tex}
     \newpage
     \section{HASIL PERCOBAAN}
-    \subsection{Nama Program}
-    \subsubsection{Algoritma}
-    \paragraph{Program tersebut akan menanyakan suhu awal kepada pengguna.}
-
-    \subsubsection{{\Flowchart}}
-    \subsubsection{{\SourceCode}}
-    \subsubsection{Hasil Program}
-
+    \subfile{sections/m1p4.tex}
     \newpage
     \section{ANALISIS DATA}
-
+    \subfile{sections/m1p5.tex}
     \newpage
     \section{KESIMPULAN}
-    Berdasarkan hasil praktikum pada Modul {\thechapter} tentang \leftmark, dapat diambil kesimpulan bahwa:
-    \begin{enumerate}
-        \item Kesimpulan 1
-        \item Kesimpulan 2
-        \item Dst.
-    \end{enumerate}
+    \subfile{sections/m1p6.tex}
 \end{document}
