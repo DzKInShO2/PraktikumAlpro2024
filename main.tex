@@ -61,7 +61,7 @@
 {\normalsize}
 {\theparagraph}{2.4ex}{}
 
-\titlespacing{\chapter}{0ex}{-6ex}{1.5ex}
+\titlespacing{\chapter}{0ex}{-1ex}{1.5ex}
 \titlespacing{\section}{0ex}{0ex}{0ex}
 \titlespacing{\subsection}{0ex}{0ex}{0ex}
 \titlespacing{\subsubsection}{0ex}{0ex}{0ex}
@@ -69,6 +69,9 @@
 
 % FancyHeader
 \usepackage{fancyhdr}
+
+% Color
+\usepackage{xcolor}
 
 % Enumerate Configuration
 \usepackage{enumitem}
@@ -129,11 +132,19 @@
 % Header and Footer
 \fancypagestyle{plain}{
     \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
 
     \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
     \fancyfoot[L]{Modul {\thechapter} – \leftmark}
-    \fancyfoot[R]{{\thechapter}-{\thepage}}
+    \fancyfoot[C]{{\thechapter}-{\thepage}}
+
+	\renewcommand{\headrule}{
+        \vspace*{-6ex}
+		{\color[RGB]{68, 114, 196} \hrule width \hsize \kern 0.5mm \hrule width \hsize height 3pt}
+	}
+	\renewcommand{\footrule}{
+		{\color[RGB]{68, 114, 196} \hrule width \hsize height 3pt \hrule width \hsize \kern 0.5mm \hrule width \hsize height 0.2pt}
+        \vspace*{-5ex}
+	}
 }
 
 
