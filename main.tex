@@ -55,7 +55,7 @@
 
 \titleformat{\subsubsection}[hang]
 {\normalsize}
-{\textbf{\thesubsubsection}}{2.8ex}{}
+{\thesubsubsection}{2.8ex}{}
 
 \titleformat{\paragraph}[hang]
 {\normalsize}
@@ -97,9 +97,15 @@
 \newcommand*{\hfsize}{\fontsize{11pt}{12pt} \selectfont}
 \newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
 
+% Keywords
 \newcommand*{\file}{\textit{file}}
 \newcommand*{\folder}{\textit{folder}}
 \newcommand*{\size}{\textit{size}}
+\newcommand*{\flowchart}{\textit{flowchart}}
+\newcommand*{\Flowchart}{\textit{Flowchart}}
+\newcommand*{\sourcecode}{\textit{source code}}
+\newcommand*{\Sourcecode}{\textit{Source code}}
+\newcommand*{\SourceCode}{\textit{Source Code}}
 
 % Chapter and Sections numbering
 \renewcommand*{\thechapter}{\Roman{chapter}}
@@ -160,7 +166,7 @@
     \renewcommand{\thepage}{\arabic{page}}
 
     \section{TUJUAN PRAKTIKUM}
-    \noindent Tujuan Praktikum pada MODUL I \leftmark adalah:
+    \noindent Tujuan Praktikum pada MODUL {\thechapter} \leftmark adalah:
     \begin{enumerate}
         \item Mahasiswa mengetahui dasar-dasar penulisan program komputer.
         \item Mahasiswa memahami struktur dasar bahasa C++.
@@ -198,13 +204,20 @@
 
     \newpage
     \section{HASIL PERCOBAAN}
+    \subsection{Nama Program}
+    \subsubsection{Algoritma}
+    \paragraph{Program tersebut akan menanyakan suhu awal kepada pengguna.}
+
+    \subsubsection{{\Flowchart}}
+    \subsubsection{{\SourceCode}}
+    \subsubsection{Hasil Program}
 
     \newpage
     \section{ANALISIS DATA}
 
     \newpage
     \section{KESIMPULAN}
-    Berdasarkan hasil praktikum pada Modul I tentang \leftmark, dapat diambil kesimpulan bahwa:
+    Berdasarkan hasil praktikum pada Modul {\thechapter} tentang \leftmark, dapat diambil kesimpulan bahwa:
     \begin{enumerate}
         \item Kesimpulan 1
         \item Kesimpulan 2
