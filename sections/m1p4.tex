@@ -9,25 +9,25 @@
     \paragraph{Menampilkan suhu saat ini dalam Farenheit dan selisih suhu saat ini dengan suhu awal dalam Kelvin.}
     \paragraph{Menampilkan 45 menit berlalu, menurunkan suhu sebanyak 65\% dari suhu awal}
     \paragraph{Menampilkan suhu saat ini dalam Kelvin dan selisih suhu saat ini dengan suhu awal dalam Celsius.}
-    \paragraph{Mematikan pendingin.}
-    \paragraph{Menunjukan 25 menit berlalu, menaikan suhu sebanyak 65\% dari suhu terakhir dan menampilkan suhu saat ini.}
+    \paragraph{Mematikan pendingin dan menunjukan 25 menit berlalu, menaikan suhu sebanyak 65\% dari suhu terakhir dan menampilkan suhu saat ini.}
     \paragraph{Menanpilkan perbandingan suhu awal dengan saat ini, perbandingan suhu awal dengan suhu terdingin, dan perbandingan suhu awal dan suhu setelah 15 menit.}
+
+    \subsubsection{{\Pseudocode}}
+    \lstinputlisting{res/m1p1.txt}
+    \newpage
 
     \subsubsection{{\Flowchart}}
     \inputfigure{res/m1f1.png}{0.15}{{\Flowchart}}{fig:m1:f1}
 
     Berdasarkan \reffigure{fig:m1:f1} di atas, didapatkan sebuah {\flowchart} yang menunjukan alur kerja program ... . Ketika dijalankan program tersebut akan meminta masukan berupa suhu awal dalam Celcius. Suhu awal tersebut kemudian akan dikonversikan menjadi Farenheit dan Kelvin sebelum ditampilkan.
 
-    Setelah 15 menit, 25\% akan dikurangi dari suhu awal dan kemudian akan ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Kelvin. Suhu setelah 15 menit tersebut kemudian akan disimpan pada sebuah variabel.
+    Setelah 15 menit, 25\% akan dikurangi dari suhu awal yang ditunjukan pada kotak yang berisi baris ``t0 = t - (t * 0.25)'' dan kemudian akan ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Kelvin. Suhu setelah 15 menit tersebut kemudian akan disimpan pada sebuah variabel.
 
-    Setelah 45 menit, 65\% akan dikurangi dari suhu awal, sebelum ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Celcius. Suhu setelah 45 menit tersebut kemudian akan disimpan pada sebuah variabel.
+    Setelah 45 menit, 65\% akan dikurangi dari suhu awal yang ditunjukan pada kotak yang berisi baris ``t1 = t - (t * 0.65)'', sebelum ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Celcius. Suhu setelah 45 menit tersebut kemudian akan disimpan pada sebuah variabel.
 
-    Pendingin kemudian akan dimatikan dan setelah 25 menit suhu akan naik sebanyak 35\% yang akan disimpan dalam sebuah variabel. Suhu tersebut akan ditampilkan bersamaan dengan suhu awal dengan suhu awal ditampilkan terlebih dahulu.
+    Pendingin kemudian akan dimatikan dan setelah 25 menit suhu akan naik sebanyak 35\% seperti yang ditunjukan pada kotak yang berisi baris ``t2 = t1 + (t1 * 0.35)'', yang kemudian akan disimpan dalam sebuah variabel. Suhu tersebut akan ditampilkan bersamaan dengan suhu awal dengan suhu awal ditampilkan terlebih dahulu.
 
     Pada akhirnya akan ditampilkan perbandingan suhu awal dengan suhu akhir, perbandingan suhu awal dengan suhu terdingin, dan perbandingan suhu awal dengan suhu setelah 15 menit. Program pun akan selesai.
-
-    \subsubsection{{\Psuedocode}}
-    \lstinputlisting{res/m1p1.txt}
     \newpage
 
     \subsubsection{{\SourceCode}}
