@@ -4,25 +4,25 @@
     \subsection{Algoritma, {\Pseudocode}, dan {\Flowchart}}
     \begin{enumerate}
         \item {
-            Algoritma adalah spesifikasi urutan langkah untuk melakukan pekerjaan tertentu. Dalam bahasa Indonesia, definisi algoritma adalah logika, metode, dan tahapan (urutan) sistematis yang digunakan untuk memecahkan suatu permasalahan
+            Algoritma adalah spesifikasi urutan langkah untuk melakukan pekerjaan tertentu. Dalam bahasa Indonesia, definisi algoritma adalah logika, metode, dan tahapan (urutan) sistematis yang digunakan untuk memecahkan suatu permasalahan \parencite{utami10}.
         }
         \item {
-            {\Pseudocode} adalah bentuk informal untuk mendeskripsikan algoritma yang mengikuti struktur bahasa pemrograman tertentu dengan tujuan untuk memudahkan dibaca oleh manusia, mudah untuk dipahami, dan mudah dalam menuangkan ide atau hasil pemikiran
+            {\Pseudocode} adalah bentuk informal untuk mendeskripsikan algoritma yang mengikuti struktur bahasa pemrograman tertentu dengan tujuan untuk memudahkan dibaca oleh manusia, mudah untuk dipahami, dan mudah dalam menuangkan ide atau hasil pemikiran \parencite{harumy2016belajar}.
         }
         \item {
-            {\Flowchart} didefinisikan sebagai skema penggambaran dari algoritma atau proses. (Harumy, T.H.F, Windarto, A.P, \& Sulistianingsih, I. 2016). Tabel berikut menampilkan simbol-simbol yang digunakan dalam menyusun {\flowchart} :
+            {\Flowchart} didefinisikan sebagai skema penggambaran dari algoritma atau proses \parencite{harumy2016belajar}. Tabel berikut menampilkan simbol-simbol yang digunakan dalam menyusun {\flowchart} \parencite{samala2021pemrograman}:
         }
     \end{enumerate}
 
     \subsection{Bahasa Pemrograman}
-    Program adalah kumpulan instruksi komputer, program ditulis dengan menggunakan bahasa pemrograman. Jadi bisa disebut bahwa program adalah implementasi dari bahasa pemrograman (Utami, dkk, 2005). Dimana bahasa pemrograman merupakan teknik komando atau instruksi standar untuk memerintah komputer
+    Program adalah kumpulan instruksi komputer, program ditulis dengan menggunakan bahasa pemrograman. Jadi bisa disebut bahwa program adalah implementasi dari bahasa pemrograman \parencite{utami10}. Dimana bahasa pemrograman merupakan teknik komando atau instruksi standar untuk memerintah komputer \parencite{dewi2010media}.
 
     \subsection{Struktur Bahasa C++}
-    Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari “fungsi”, minimal dalam suatu program harus terdapat satu fungsi “{\crnfamily main()}”. Penulisannya di mulai dengan pendeklarasian fungsi “{\crnfamily main()}”, “{\crnfamily int main()}” kemudian tanda buka kurung kurawal “\{” dan di akhiri dengan tutup kurawal “\}”. Kemudian statement dari program di tuliskan di dalam kurung kurawal dari fungsi “{\crnfamily main()}” diatas dan pada tiap statement harus di akhiri dengan tanda titik koma “;” (Friyadi, 2005).
+    Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari “fungsi”, minimal dalam suatu program harus terdapat satu fungsi “{\crnfamily main()}”. Penulisannya di mulai dengan pendeklarasian fungsi “{\crnfamily main()}”, “{\crnfamily int main()}” kemudian tanda buka kurung kurawal “\{” dan di akhiri dengan tutup kurawal “\}”. Kemudian statement dari program di tuliskan di dalam kurung kurawal dari fungsi “{\crnfamily main()}” diatas dan pada tiap statement harus di akhiri dengan tanda titik koma “;” \parencite{friyadi2005panduan}.
 
     \subsubsection{{\Header} {\file}}
     \begin{indentlevel0}
-        {\Header} {\file} atau berkas {\header} (berekstensi “{\crnfamily .h}”) adalah berkas yang berisi prototipe fungsi, definisi konstanta, dan definisi variabel. Prototipe fungsi berupa judul suatu fungsi yang dilengkapi dengan argumen dan tipe argumen serta tipe nilai balik untuk fungsi yang memberikan nilai balik.(Kadir,2005) {\Header} {\file} merupakan sebuah tempat memasukkan suatu fungsi sebagai perintah. {\Header} {\file} dipanggil menggunakan {\directive} “{\crnfamily \#include}”. Beberapa contoh {\header} {\file} antara lain (Friyadi,2005):
+        {\Header} {\file} atau berkas {\header} (berekstensi “{\crnfamily .h}”) adalah berkas yang berisi prototipe fungsi, definisi konstanta, dan definisi variabel. Prototipe fungsi berupa judul suatu fungsi yang dilengkapi dengan argumen dan tipe argumen serta tipe nilai balik untuk fungsi yang memberikan nilai balik \parencite{kadir2005heriyanto}. {\Header} {\file} merupakan sebuah tempat memasukkan suatu fungsi sebagai perintah. {\Header} {\file} dipanggil menggunakan {\directive} “{\crnfamily \#include}”. Beberapa contoh {\header} {\file} antara lain \parencite{friyadi2005panduan}:
     \end{indentlevel0}
     \vspace*{-1ex}
     \paragraph{“{\crnfamily math.h}”	: Menggunakan operasi matematika.}
@@ -31,6 +31,107 @@
 
     \subsubsection{{\Preprocessor} {\Directive}({\crnfamily \#include})}
     \begin{indentlevel0}
-        {\Preprocessor} {\directive} adalah suatu perintah yang digunakan untuk mengatur compiler agar membaca header file yang disertakan di belakang kata “include” saat pelaksanaan aplikasi. {\Preprocessor} {\directive} merupakan perintah yang didahului dengan tanda “{\crnfamily \#}”. Lalu penulisannya tanpa spasi dan disertakan dengan header file yaitu file yang berisi sebagai file deklarasi (Kadir, 2005). Contoh penulisannya :
-    \end{indentlevel0}    
+        {\Preprocessor} {\directive} adalah suatu perintah yang digunakan untuk mengatur {\compiler} agar membaca header {\file} yang disertakan di belakang kata “include” saat pelaksanaan aplikasi. {\Preprocessor} {\directive} merupakan perintah yang didahului dengan tanda “{\crnfamily \#}”. Lalu penulisannya tanpa spasi dan disertakan dengan header {\file} yaitu {\file} yang berisi sebagai {\file} deklarasi \parencite{kadir2005heriyanto}. Contoh penulisannya:
+        \begin{lstlisting}
+#include <header file>
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \subsubsection{Fungsi ``{\crnfamily main}''}
+    \begin{indentlevel0}
+        Fungsi “{\crnfamily main}” adalah fungsi yang akan dijalankan pertama kali ketika program dieksekusi, sedangkan tubuh fungsi dimulai dari tanda “\{” hingga tanda “\}”. Tanda “{\crnfamily ()}” digunakan untuk mengapit argumen fungsi, yaitu nilai yang akan dilewatkan ke fungsi. Contoh “{\crnfamily int main}”, kata “{\crnfamily int}” di depan “{\crnfamily main}” menyatakan bahwa program memberikan nilai balik yang bertipe “{\crnfamily int}”. Tipe “{\crnfamily int}” adalah tipe yang menyatakan bilangan bulat \parencite{kadir2005heriyanto}.
+    \end{indentlevel0}
+
+    \subsubsection{{\Statement}}
+    \begin{indentlevel0}
+        {\Statement} atau pernyataan adalah suatu perintah yang dapat berdiri sendiri dalam melaksanakan suatu aksi dan dijalankan ketika program dieksekusi. Setiap pernyataan ditulis dengan diakhiri tanda titik-koma atau {\semicolon} “;”. {\Statement} adalah suatu pernyataan yang menyebabkan suatu tindakan yang akan dilakukan oleh komputer. Tindakan tersebut misalnya adalah tindakan untuk menghitung, menampilkan hasil, menerima {\ioi} data, mengendalikan proses program dan lain sebagainya \parencite{friyadi2005panduan}.
+    \end{indentlevel0}
+
+    \subsubsection{{\Semicolon}}
+    \begin{indentlevel0}
+        Tanda {\semicolon} “;” digunakan untuk mengakhiri sebuah pernyataan. Setiap pernyataan harus diakhiri dengan sebuah tanda {\semicolon}. Apabila {\statement} atau pernyataan tidak diakhiri dengan tanda {\semicolon} maka dianggap error oleh {\compiler}, karena merupakan pernyataan yang tidak lengkap \parencite{kadir2005heriyanto}.
+    \end{indentlevel0}
+
+    \subsubsection{Komentar}
+    \begin{indentlevel0}
+        Komentar adalah bagian dari program yang diabaikan oleh {\compiler}. Tidak melaksanakan aksi apapun. Dalam C++ terdapat dua cara menuliskan komentar, yaitu \parencite{kadir2005heriyanto}:
+    \end{indentlevel0}
+    \paragraph{“{\crnfamily //komentar}”: Hanya digunakan per baris.}
+    \paragraph{“{\crnfamily /*komentar*/}”: Digunakan untuk mengapit lebih dari satu baris.}
+
+    \subsection{Tipe Data}
+    Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam program. Tipe data terbagi menjadi dua jenis sebagai berikut \parencite{friyadi2005panduan}:
+
+    \subsubsection{Tipe Data Dasar}
+    \begin{indentlevel0}
+        Tipe data ini tergolong tipe data yang sering digunakan. Macam-macam tipe data dasar adalah sebagai berikut:
+    \end{indentlevel0}
+
+    \paragraph{Tipe Bilangan Bulat}
+    \begin{indentlevel1}
+        Tipe bilangan bulat adalah data-data angka yang tidak mengandung angka di belakang koma. Macam-macam tipe bilangan bulat sebagai berikut:
+    \end{indentlevel1}
+
+    \paragraph{Tipe Bilangan Riil}
+    \begin{indentlevel1}
+        Tipe bilangan riil adalah data-data angka yang mengandung angka dibelakang koma. Macam-macam tipe bilangan riil sebagai berikut:
+    \end{indentlevel1}
+
+    \paragraph{Tipe Logika}
+    \begin{indentlevel1}
+        Tipe logika adalah tipe data yang hanya mengandung dua nilai yaitu BENAR atau SALAH.
+    \end{indentlevel1}
+
+    \paragraph{Tipe Karakter}
+    \begin{indentlevel1}
+        Tipe karakter adalah tipe yang digunakan mempresentasikan data bertipe karakter, seperti “A”, “a”, “9”, “\&”, dan sebagainya. Macam-macam tipe karakter sebagai berikut:
+    \end{indentlevel1}
+
+    \subsubsection{Tipe Data Bentukan}
+    \begin{indentlevel0}
+        Tipe data bentukan adalah tipe data yang dibuat sendiri sesuai kebutuhan dalam program yang akan dibuat. Tipe ini lebih dikenal dengan sebutan dalam bahasa asing, yaitu \textit{user defined types}. Adapun yang termasuk ke dalam tipe data bentukan, antara lain \parencite{friyadi2005panduan}:
+    \end{indentlevel0}
+
+    \paragraph{Tipe Data Bentukan}
+    \begin{indentlevel1}
+        Sesuai dengan namanya, tipe data struktur adalah tipe data bentukan yang menyimpan lebih dari satu variabel bertipe sama ataupun berbeda. Jika kita telah membuat tipe data bentukan baru yang berjenis struktur, tentu kita akan menggunakannya di dalam pendeklarasian sebuah variabel. Pada saat itu, kita harus melakukan pengaksesan terhadap isi dari struktur tersebut dengan operator titik (.).
+    \end{indentlevel1}
+
+    \paragraph{Tipe Data Enumerasi}
+    \begin{indentlevel1}
+        Tipe enumerasi adalah tipe data yang nilainya terbatas pada nilai-nilai yang telah didefinisikan saja. Tipe enumerasi digunakan untuk membentuk tipe data yang nilainya bersifat pasti.
+    \end{indentlevel1}
+
+    \paragraph{Tipe Data {\sArray}}
+    \begin{indentlevel1}
+        Tipe data {\sarray} merupakan tipe data yang terdiri dari tipe data yang lain, termasuk ke dalam salah satu tipe data terstruktur (\textit{structured data type}) yang terdiri dari sejumlah komponen-komponen yang mempunyai tipe data yang sama.
+    \end{indentlevel1}
+
+    \paragraph{Tipe Data {\sString}}
+    \begin{indentlevel1}
+        Tipe data {\sstring} adalah tipe data yang menampung kumpulan karakter, kata, atau kalimat.
+    \end{indentlevel1}
+
+    \subsection{Variabel}
+    Variabel (pengubah) adalah sebuah objek data yang dapat didefiniskan dan dinamai programmer secara eksplisit. Sebuah variabel menempat satu lokasi memori yang disisihkan untuk satu jenis data tertentu dan diberi nama untuk memudahkan pengacuannya. Ketentuan dalam pemberian nama variabel adalah sebagai berikut \parencite{friyadi2005panduan}:
+    \begin{enumerate}
+        \item {
+            Tidak boleh ada spasi dan bisa menggunakan tanda garis bawah ({\underscore})  sebagai penghubung.
+        }
+        \item {
+            Tidak boleh diawali dengan angka dan menggunakan operator aritmetika.
+        }
+        \item {
+            {\Casesensitive} artinya huruf capital dan huruf kecil dianggap berbeda. Contoh : nama, Nama, NAMA dianggap berbeda.
+        }
+        \item {
+            Tidak boleh mengandung simbol-simbol khusus, kecuali garis bawah ({\underscore}). Yang termasuk simbol-simbol khusus yang tidak boleh digunakan antara lain :“\$”, “?”, “\%”, “\#”, “\&”, “*”, “-“, “+” dan lain sebagainya.
+        }
+        \item {
+            Ukuran panjang bebas, tetapi hanya 32 karakter pertama yang terpakai.
+        }
+        \item {
+            Tidak boleh sama dengan nama \textit{keyword reserved}, \textit{function} yang dimiliki bahasa C++.
+        }
+    \end{enumerate}
 \end{document}

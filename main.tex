@@ -40,6 +40,16 @@
 % Auto toc linking
 \usepackage[hidelinks]{hyperref}
 
+% Bibliography
+\usepackage[
+    backend=biber,
+    style=apa,
+]{biblatex}
+\addbibresource{bibliography.bib}
+\DefineBibliographyStrings{english}{
+    andothers={dkk.,}
+}
+
 % Configure titles
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
@@ -50,7 +60,7 @@
 
 \titleformat{\section}[hang]
 {\normalsize\bfseries}
-{\thesection}{1.0ex}{}
+{\thesection}{1.0ex}{\MakeUppercase}
 
 \titleformat{\subsection}[hang]
 {\normalsize\bfseries}
@@ -122,6 +132,8 @@
 % ToC Configuration
 \usepackage[titles]{tocloft}
 \setlength{\cftbeforechapskip}{0pt}
+\renewcommand*{\cftchapfont}{\normalfont}
+\renewcommand*{\cftchappagefont}{\normalfont}
 
 % listings
 \usepackage{listings}
@@ -153,6 +165,9 @@
 \newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
 
 % Keywords
+\newcommand*{\sarray}{\textit{array}}
+\newcommand*{\sArray}{\textit{Array}}
+\newcommand*{\Casesensitive}{\textit{Case-sensitive}}
 \newcommand*{\compiler}{\textit{compiler}}
 \newcommand*{\Compiler}{\textit{Compiler}}
 \newcommand*{\directive}{\textit{directive}}
@@ -178,10 +193,16 @@
 \newcommand*{\scope}{\textit{scope}}
 \newcommand*{\Scope}{\textit{Scope}}
 \newcommand*{\Script}{\textit{Script}}
+\newcommand*{\semicolon}{\textit{semicolon}}
+\newcommand*{\Semicolon}{\textit{Semicolon}}
 \newcommand*{\statement }{\textit{statement }}
 \newcommand*{\Statement }{\textit{Statement }}
+\newcommand{\sstring}{\textit{string}}
+\newcommand{\sString}{\textit{String}}
 \newcommand*{\typecasting}{\textit{typecasting}}
 \newcommand*{\Typecasting}{\textit{Typecasting}}
+\newcommand*{\underscore}{\textit{underscore}}
+\newcommand*{\Underscore}{\textit{Underscore}}
 \newcommand*{\Header}{\textit{Header}}
 \newcommand*{\header}{\textit{header}}
 \newcommand*{\namespace}{\textit{namespace}}
@@ -276,20 +297,24 @@
     \setcounter{page}{1}
     \renewcommand{\thepage}{\arabic{page}}
 
-    \section{TUJUAN PRAKTIKUM}
+    \section{Tujuan Praktikum}
     \subfile{sections/m1p1.tex}
-    \section{DASAR TEORI}
+    \section{Dasar Teori}
     \subfile{sections/m1p2.tex}
     \newpage
-    \section{PERMASALAHAN}
+    \section{Permasalahan}
     \subfile{sections/m1p3.tex}
     \newpage
-    \section{HASIL PERCOBAAN}
+    \section{Hasil Percobaan}
     \subfile{sections/m1p4.tex}
     \newpage
-    \section{ANALISIS DATA}
+    \section{Analisis Data}
     \subfile{sections/m1p5.tex}
     \newpage
-    \section{KESIMPULAN}
+    \section{Kesimpulan}
     \subfile{sections/m1p6.tex}
+
+    \printbibliography[title={DAFTAR PUSTAKA}]
+    \phantomsection
+    \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
 \end{document}
