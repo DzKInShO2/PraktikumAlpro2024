@@ -15,7 +15,7 @@
     \end{enumerate}
 
     \inputtable[n]{|C|l|}{
-        Simbol & {\hspace{20ex}Keterangan} \\ \hline
+        Simbol & {\hspace{30ex}Keterangan} \\ \hline
         {\vspace{0.1ex}\includegraphics[scale=0.5]{res/m1i2.png}} & Simbol permulaan awal ({\sstart}) dan akhir program ({\sstop}). \\ \hline
         {\vspace{0.2ex}\includegraphics[scale=0.5]{res/m1i3.png}} & Simbol yang digunakan untuk menghubungkan antar simbol. \\ \hline
         {\vspace{0.2ex}\includegraphics[scale=0.5]{res/m1i4.png}} & Simbol yang menunjukkan proses dalam {\flowchart}. \\ \hline
@@ -89,20 +89,49 @@
         Tipe bilangan bulat adalah data-data angka yang tidak mengandung angka di belakang koma. Macam-macam tipe bilangan bulat sebagai berikut:
     \end{indentlevel1}
 
+    \inputtable[0.895]{|m{8em}|C|m{20em}|}{
+        \centering Tipe Data & Ukuran(dalam bit) & {\hspace{8em}Rentang} \\ \hline
+        {\crnfamily int} & 16 atau 32 & \tblspacing{} -32.768 sampai 32.768 atau -2.147.483.648 sampai 2.147.483.648 \\ \hline
+        {\crnfamily unsigned int} & 16 atau 32 & 0 sampai 65.535 atau 0 sampai 4.294.967.295 \\ \hline
+        {\crnfamily signed int} & 16 atau 32 & \tblspacing{} -32.768 sampai 32.768 atau -2.147.483.648 sampai 2.147.483.648 \\ \hline
+        {\crnfamily short int} & 16 & \tblspacing{} -32.768 sampai 32.768 \\ \hline
+        \tblspacing{} {\crnfamily unsigned short int} & 16 & 0 sampai 65.535 \\ \hline
+        \tblspacing{} {\crnfamily signed short int} & 16 & \tblspacing{} -32.768 sampai 32.768 \\ \hline
+        {\crnfamily long int} & 32 & \tblspacing{} -2.147.483.648 sampai 2.147.483.648 \\ \hline
+        \tblspacing{} {\crnfamily unsigned long int} & 32 & 0 sampai 4.294.967.295 \\ \hline
+        \tblspacing {\crnfamily signed long int} & 32 & \tblspacing{} -2.147.483.648 sampai 2.147.483.648 \\ \hline
+    }{Macam-macam tipe bilangan bulat.}{m1:tab:02}
+
     \paragraph{Tipe Bilangan Riil}
     \begin{indentlevel1}
         Tipe bilangan riil adalah data-data angka yang mengandung angka dibelakang koma. Macam-macam tipe bilangan riil sebagai berikut:
     \end{indentlevel1}
+    
+    \inputtable[0.895]{|m{8em}|C|m{12em}|m{12ex}|}{
+        \centering Tipe Data & Ukuran(dalam bit) & {\hspace{4em}Rentang} & {\hspace{3ex}Presisi} \\ \hline
+        {\crnfamily float} & 32 & 1.2E-38 sampai 3.4E+38 & 6 digit \\ \hline
+        {\crnfamily double} & 64 & 12.3E-308 sampai 1.7E+308 & 15 digit \\ \hline
+        {\crnfamily long double} & 80 & 3.4E-4932 sampai 1.1E+4932 & \\ \hline
+    }{Macam-macam tipe bilangan riil.}{m1:tab:03}
 
     \paragraph{Tipe Logika}
     \begin{indentlevel1}
         Tipe logika adalah tipe data yang hanya mengandung dua nilai yaitu BENAR atau SALAH.
     \end{indentlevel1}
+    \newpage
 
     \paragraph{Tipe Karakter}
     \begin{indentlevel1}
         Tipe karakter adalah tipe yang digunakan mempresentasikan data bertipe karakter, seperti “A”, “a”, “9”, “\&”, dan sebagainya. Macam-macam tipe karakter sebagai berikut:
     \end{indentlevel1}
+
+    \inputtable[0.895]{|m{8em}|C|m{20em}|}{
+        \centering Tipe Data & Ukuran(dalam bit) & {\hspace{4em}Rentang} \\ \hline
+        {\crnfamily char} & 8 & -128 sampai 127 atau 0 sampai 255 \\ \hline
+        {\crnfamily unsigned char} & 8 & 0 sampai 255 \\ \hline
+        {\crnfamily signed char} & 8 & -128 sampai 127 atau 0 sampai 255 \\ \hline
+        {\crnfamily wchar\_t} & 16 atau 32 & 0 sampai 65.535 \\ \hline
+    }{Macam-macam tipe karakter.}{m1:tab:04}
 
     \subsubsection{Tipe Data Bentukan}
     \begin{indentlevel0}
@@ -128,6 +157,7 @@
     \begin{indentlevel1}
         Tipe data {\sstring} adalah tipe data yang menampung kumpulan karakter, kata, atau kalimat.
     \end{indentlevel1}
+    \newpage
 
     \subsection{Variabel}
     Variabel (pengubah) adalah sebuah objek data yang dapat didefiniskan dan dinamai programmer secara eksplisit. Sebuah variabel menempat satu lokasi memori yang disisihkan untuk satu jenis data tertentu dan diberi nama untuk memudahkan pengacuannya. Ketentuan dalam pemberian nama variabel adalah sebagai berikut \parencite{friyadi2005panduan}:

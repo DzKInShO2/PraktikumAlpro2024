@@ -265,6 +265,7 @@
 
 % create table
 \newcommand*{\inputtable}[5][]{
+    \vspace{-1ex}
 	\cpsize
     \renewcommand*{\thechapter}{\arabic{chapter}}
 	\ifthenelse{\isempty{#1}}{
@@ -273,7 +274,7 @@
 		\ifthenelse{\equal{#1}{n}}{
 			\begin{xltabular}[r]{0.95\textwidth}{#2}
 		}{
-			\begin{xltabular}[r]{#1\textwidth}{#2}
+            \begin{xltabular}[r]{#1\textwidth}{#2}
 		}
 	}
         \caption{#4}
@@ -282,8 +283,9 @@
         #3
     \end{xltabular}
 	\normalsize
-	% \vspace*{-12pt}
+	\vspace*{-12pt}
 }
+\newcommand*{\tblspacing}{\setstretch{1.0}\cpsize}
 
 % references
 \newcommand*{\reftable}[1]{\textbf{Tabel \ref{#1}}}
