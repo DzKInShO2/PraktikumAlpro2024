@@ -176,6 +176,8 @@
 % Keywords
 \newcommand*{\sarray}{\textit{array}}
 \newcommand*{\sArray}{\textit{Array}}
+\newcommand*{\Casting}{\textit{Casting}}
+\newcommand*{\casting}{\textit{casting}}
 \newcommand*{\Casesensitive}{\textit{Case-sensitive}}
 \newcommand*{\compiler}{\textit{compiler}}
 \newcommand*{\Compiler}{\textit{Compiler}}
@@ -214,6 +216,8 @@
 \newcommand*{\Statement }{\textit{Statement }}
 \newcommand{\sstring}{\textit{string}}
 \newcommand{\sString}{\textit{String}}
+\newcommand*{\Type}{\textit{Type}}
+\newcommand*{\type}{\textit{type}}
 \newcommand*{\typecasting}{\textit{typecasting}}
 \newcommand*{\Typecasting}{\textit{Typecasting}}
 \newcommand*{\underscore}{\textit{underscore}}
@@ -247,18 +251,35 @@
 }
 
 % import figure
-\newcommand*{\inputfigure}[4]{
+\newcommand*{\inputfigure}[5][]{
+    \def\a{#1}
+    \def\n{n}
+    \def\p{p}
     \begin{figure}[H]
         \centering
         \setstretch{1.0}
         \renewcommand*{\thechapter}{\arabic{chapter}}
-        \includegraphics[
-            scale=#2,
-            center,
-            frame=0.5pt
-        ]{#1}
-        \caption{#3}
-        \label{#4}
+
+        \ifx\a\n
+            \includegraphics[
+                scale=#3,
+                center,
+                frame=0.5pt
+            ]{#2}
+        \else
+            \ifx\a\p
+                \begin{indentlevel0}
+                    \includegraphics[
+                        scale=#3,
+                        center,
+                        frame=0.5pt
+                    ]{#2}
+                \end{indentlevel0}
+            \fi
+        \fi
+
+        \caption{#4}
+        \label{#5}
         \vspace*{-4.5ex}
     \end{figure}
 }
@@ -299,6 +320,7 @@
 \newenvironment{indentlevel1}
   {\adjustwidth{1.61cm}{0pt}}
   {\endadjustwidth}
+\newcommand*{\ilz}{\noindent\hspace{0.75cm}}
 
 %
 % Secondary Packages Configuration

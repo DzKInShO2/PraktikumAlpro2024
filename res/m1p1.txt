@@ -19,4 +19,5 @@ DISPLAY "Suhu kamar Holil naik menjadi Suhu25Menit C"
 DISPLAY "Hasil perbandingan: "
 DISPLAY "1:(SuhuAwal/Suhu25Menit) untuk suhu saat ini"
 DISPLAY "1:(SuhuAwal/Suhu45Menit) untuk suhu terdingin"
-DISPLAY "1:(SuhuAwal/Suhu15Menit) untuk suhu 15 menit setelah pendinginan"
+DISPLAY "1:(SuhuAwal/Suhu15Menit) untuk suhu 15
+         menit setelah pendinginan"
