@@ -18,12 +18,11 @@ int main() {
          << " K" << endl;
     float temp1 = (temp - (temp * 0.65f));
     cout << "Setelah 45 menit" << endl;
-    cout << "Suhu kamar Holil berkurang menjadi " << (temp1 + 273.15f)
-         << " K dengan pengurangan sebesar " << (temp - temp1) << " C"
+    cout << "Suhu kamar Holil berkurang menjadi " <<(temp1 + 273.15f)
+         << " K dengan pengurangan sebesar " << (temp - temp1) <<" C"
          << endl << endl;
     cout << "Suhu awal kamar Holil: " << temp << " C" << endl;
-    cout << "Suhu kamar Holil saat ini: " << temp1 << " C"
-         <<endl<<endl;
+    cout << "Suhu kamar Holil saat ini: " <<temp1<<" C"<<endl<<endl;
     cout << "Holil mematikan pendingin..." << endl << endl;
     float temp2 = (temp1 + (temp1 * 0.35f));
     cout << "Setelah 25 menit" << endl;
