@@ -45,10 +45,10 @@
     {\Script} ``{\crnfamily cout << endl}'' akan memberi tahu kompiler bahwa program tersebut akan memasukan \textit{newline character} dalam {\ioo} {\stream}. {\Script} ``{\crnfamily endl}'' merupakan sebuah objeck yang berada pada {\header} {\file} ``{\crnfamily iostream}''. Objek ``{\crnfamily endl}'' merupakan objek yang jika dimasukan ke dalam {\ioo} {\stream} akan memasukan \textit{newline character} dalam {\stream} tersebut dan juga akan mengosongkan {\stream} tersebut jadi menggunakan ``{\crnfamily endl}'' akan memakan lebih banyak waktu dibandingkan dengan menggunakan ``{\crnfamily \textbackslash n}''. Hal tersebut dikarenakan ``{\crnfamily endl}'' akan mengosongkan {\ioo} {\stream} sementara ``{\crnfamily \textbackslash n}'' tidak akan mengosongkan {\ioo} {\stream}.
 
     \begin{lstlisting}
- float temp0 = (temp - (temp * 0.25f));
+ float temp0 = (temp - (temp - (temp * 0.25f)));
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily float temp0 = (temp - (temp - (temp * 0.25f)));}'' merupakan sebuah {\statement} inisialisasi sebuah variabel. {\Statement} inisialisasi variabel diawali oleh tipe data variabel tersebut diikuti oleh nama variabel dan operator \textit{assignment} kemudian nilai variabel tersebut. Dalam baris ini yang diinisialisasikan merupakan variabel yang bernama ``{\crnfamily temp0}'' dengan tipe ``{\crnfamily float}'' yang bernilai ``{\crnfamily (temp - (temp * 0.25f))}''. Variabel ``{\crnfamily temp0}'' dan variabel yang seterusnya dibuat agar tidak terjadi kalkulasi yang berulang untuk nilai yang sering dipakai.
+    {\Script} ``{\crnfamily float temp0 = (temp - (temp - (temp * 0.25f)));}'' merupakan sebuah {\statement} inisialisasi sebuah variabel. {\Statement} inisialisasi variabel diawali oleh tipe data variabel tersebut diikuti oleh nama variabel dan operator \textit{assignment} kemudian nilai variabel tersebut. Dalam baris ini yang diinisialisasikan merupakan variabel yang bernama ``{\crnfamily temp0}'' dengan tipe ``{\crnfamily float}''
 
     \begin{lstlisting}
  return 0;
