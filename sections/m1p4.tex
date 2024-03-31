@@ -15,34 +15,18 @@
     \subsubsection{{\Pseudocode}}
     \begin{indentlevel0}
         \lstinputlisting{res/m1p1.txt}
-
-        \ilz{}Berdasarkan {\pseudocode} di atas, dapat dipahami bahwa program ``Menghitung Suhu Ruangan'' merupakan sebuah program yang menerima masukan berupa suhu awal dan akan memeroses suhu tersebut menaikan atau menurunkannya berdasarkan kondisi pendingin. Suhu tersebut kemudian akan ditunjukan kepada pengguna.
     \end{indentlevel0}
 
     \newpage
 
     \subsubsection{{\Flowchart}}
-    \inputfigure[p]{res/m1f1.png}{0.15}{{\Flowchart}}{fig:m1:f1}
-    \begin{indentlevel0}    
-        \ilz{}Berdasarkan \reffigure{fig:m1:f1} di atas, didapatkan sebuah {\flowchart} yang menunjukan alur kerja program ``Menghitung Suhu Ruangan''. Ketika dijalankan program tersebut akan meminta masukan berupa suhu awal dalam Celcius. Suhu awal tersebut kemudian akan dikonversikan menjadi Farenheit dan Kelvin sebelum ditampilkan ke pengguna.
-
-        \ilz{}Setelah 15 menit, 25\% akan dikurangi dari suhu awal yang ditunjukan pada kotak yang berisi baris ``t0 = t - (t * 0.25)'' dan kemudian akan ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Kelvin. Suhu setelah 15 menit tersebut kemudian akan disimpan pada sebuah variabel.
-
-        \ilz{}Setelah 45 menit, 65\% akan dikurangi dari suhu awal yang ditunjukan pada kotak yang berisi baris ``t1 = t - (t * 0.65)'', sebelum ditampilkan dalam Farenheit bersamaan dengan selisih suhu saat ini dengan suhu awal dalam Celcius. Suhu setelah 45 menit tersebut kemudian akan disimpan pada sebuah variabel.
-
-        \ilz{}Pendingin kemudian akan dimatikan dan setelah 25 menit suhu akan naik sebanyak 35\% seperti yang ditunjukan pada kotak yang berisi baris ``t2 = t1 + (t1 * 0.35)'', yang kemudian akan disimpan dalam sebuah variabel. Suhu tersebut akan ditampilkan bersamaan dengan suhu awal dengan suhu awal ditampilkan terlebih dahulu.
-
-        \ilz{}Pada akhirnya akan ditampilkan perbandingan suhu awal dengan suhu akhir, perbandingan suhu awal dengan suhu terdingin, dan perbandingan suhu awal dengan suhu setelah 15 menit. Program pun akan selesai.
-    \end{indentlevel0}
-    \newpage
+    \inputfigure[p]{res/m1f1.png}{0.09}{{\Flowchart}}{fig:m1:f1}
 
     \subsubsection{{\SourceCode}}
     \begin{indentlevel0}
         \lstinputlisting[language=C++]{res/m1c1.cpp}
 
-        \ilz{}Berdasarkan {\sourcecode} di atas, didapatkan sebuah program untuk menghitung suhu ruangan yang bekerja dengan cara meminta suhu awal kepada pengguna dan kemudian memerosesnya berdasarkan waktu yang telah berlalu, suhu akan naik semakin lama pendingin ruangan dimatikan dan akan turun semakin lama pendingin ruangan dinyalakan.
-
-        \ilz{}Program tersebut menggukanan {\header} {\file} ``{\crnfamily iostream}'' untuk menunjukan dan meminta data kepada pengguna. Seperti yang dapat dilihat pada baris yang berisi ``{\crnfamily cin >> temp}'' bahwa program tersebut meminta masukan pada pengguna dan menyimpannya pada variabel ``{\crnfamily temp}''.
+        \ilz{}Berdasarkan {\sourcecode} di atas, didapatkan sebuah program untuk menghitung suhu ruangan dari suhu awal yang telah dimasukan lalu sesuai keadaan pendingin dan waktu-nya akan menghitung suhu ruangan tersebut.
     \end{indentlevel0}
     \newpage
 
