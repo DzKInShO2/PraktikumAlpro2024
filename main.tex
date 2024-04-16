@@ -15,7 +15,7 @@
     rmargin = 2.5cm,
     tmargin = 2.5cm,
     bmargin = 2.6cm,
-    headheight = 3.0cm,
+    headsep = 0.45cm,
     footskip = 4ex,
 ]{geometry}
 
@@ -335,16 +335,13 @@
 
     \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
     \fancyfoot[L]{Modul {\thechapter} – \leftmark}
-    \fancyfoot[C]{{\thechapter}-{\thepage}}
+    \fancyfoot[R]{{\thechapter}-{\thepage}}
 
 	\renewcommand{\headrule}{
-        \vspace*{-6ex}
 		{\color[RGB]{68, 114, 196} \hrule width \hsize \kern 0.5mm \hrule width \hsize height 3pt}
-        \vspace*{2ex}
 	}
 	\renewcommand{\footrule}{
 		{\color[RGB]{68, 114, 196} \hrule width \hsize height 3pt \hrule width \hsize \kern 0.5mm \hrule width \hsize height 0.2pt}
-        \vspace*{-5ex}
 	}
 }
 
@@ -355,13 +352,10 @@
     \fancyfoot[C]{{\thepage}}
 
 	\renewcommand{\headrule}{
-        \vspace*{-6ex}
 		{\color[RGB]{68, 114, 196} \hrule width \hsize \kern 0.5mm \hrule width \hsize height 3pt}
-        \vspace*{2ex}
 	}
 	\renewcommand{\footrule}{
 		{\color[RGB]{68, 114, 196} \hrule width \hsize height 3pt \hrule width \hsize \kern 0.5mm \hrule width \hsize height 0.2pt}
-        \vspace*{-5ex}
 	}
 }
 
