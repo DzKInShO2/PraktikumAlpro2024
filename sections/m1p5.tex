@@ -1,57 +1,70 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-    \subsection{Menghitung Suhu Ruangan}
+    \lstinputlisting[firstline=1,lastline=1]{res/m1c1.cpp}
+
+    {\Script} \inputscript{\#include <iostream>} adalah \textit{header file} yang digunakan sebagai standar masukan dan keluaran dalam bahasa C++ untuk mendeklarasikan dan mendefinisikan {\statement} \inputscript{cin} dan \inputscript{cout}.
+
+    \lstinputlisting[firstline=2,lastline=2]{res/m1c1.cpp}
+
+    {\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
+
     \begin{lstlisting}
- #include <iostream>
+int main()
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily \#include <iostram>}'' adalah \textit{header file} yang digunakan sebagai standar masukan dan keluaran dalam bahasa C++ untuk mendeklarasikan dan mendefinisikan {\statement} “{\crnfamily cin}” dan “{\crnfamily cout}”.
+    {\Script} \inputscript{int main()} merupakan \textit{entry point} dari setiap program yang ditulis dalam bahasa C++. \textit{Entry point} merupakan sebuah fungsi yang akan dijalankan setiap awal mula program dalam fungsi \inputscript{\_startup}.
 
     \begin{lstlisting}
- using namespace std;
+float temp;
 \end{lstlisting}
 
-    {\Script} “{\crnfamily using namespace std;}” adalah {\statement} yang digunakan untuk mendeklarasikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari “{\crnfamily namespace std}”.
+    {\Script} \inputscript{float temp} adalah sebuah {\statement} deklarasi sebuah variabel. Dalam bahasa C++ deklarasi variabel akan mengambil sebuah alamat memori dan membuat variabel yang menunjuk pada alamat tersebut. Oleh karena itu di bahasa C++ sebuah variabel yang dideklarasikan namun tidak diinisialisasi akan bernilai acak karena akan langsung menggunakan alamat memori tanpa mengaturnya ke 0.
 
     \begin{lstlisting}
- int main()
+cout << "Suhu awal: ";
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily int main()}'' merupakan \textit{entry point} dari setiap program yang ditulis dalam bahasa C++. \textit{Entry point} merupakan sebuah fungsi yang akan dijalankan setiap awal mula program dalam fungsi ``{\crnfamily \_startup}''.
+    {\Script} \inputscript{cout << "Suhu awal: "} akan memasukan teks ``Suhu Awal: '' kedalam {\ioo} {\stream} dengan perantara objek \inputscript{cout}. Semua teks yang berada di dalam {\ioo} {\stream} akan ditampilkan kepada pengguna dalam bentuk teks.
 
     \begin{lstlisting}
- float temp;
+cin >> temp;
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily float temp}'' adalah {\statement} deklarasi sebuah variabel. Dalam bahasa C++ deklarasi variabel akan mengambil sebuah alamat memori dan membuat variabel yang menunjuk pada alamat tersebut. Oleh karena itu di bahasa C++ sebuah variabel yang dideklarasikan namun tidak diinisialisasi akan bernilai acak karena akan langsung menggunakan alamat memori tanpa mengaturnya ke 0.
+    {\Script} \inputscript{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya kedalam variabel \inputscript{temp}. Hal ini juga yang mengakibatkan variabel \inputscript{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya karena variabel \inputscript{temp} akan langsung digunakan untuk menyimpan masukan.
 
     \begin{lstlisting}
- cout << "Suhu awal: ";
+cout << endl;
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily cout << "Suhu awal: "}'' akan memberi tahu kompiler bahwa program tersebut akan memasukan teks ``Suhu Awal: '' pada {\ioo} {\stream}. {\Script} ``{\crnfamily cout}'' merupakan sebuah objek yang berada pada {\header} {\file} ``{\crnfamily iostream}''. Objek ``{\crnfamily cout}'' merupakan \textit{instance} dari \textit{class} ``{\crnfamily ostream}'' yang berada pada {\header} {\file} ``{\crnfamily ostream}''. Operator ``{\crnfamily << }'' digunakan untuk memasukan data ke dalam {\ioo} {\stream}. Setiap data yang ada pada {\ioo} {\stream} akan ditampilkan ke konsol saat data tersebut mengandung \textit{newline escape sequence}({\crnfamily \textbackslash n}).
+    {\Script} \inputscript{cout << endl;} akan memasukan \textit{newline escape sequence} dan mem-\textit{flush} terhadap isi \textit{standard output stream}. Dalam bahasa C++ sebuah isi \textit{standard output stream} akan ditampilkan bila ditemukan \textit{newline escape sequence}, hal ini disebut dengan \textit{buffering}.
 
     \begin{lstlisting}
- cin >> temp;
+float temp0 = (temp - (temp * 0.25f));
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily cin >> temp}'' adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya kedalam variabel ``{\crnfamily temp}''. Hal ini juga yang mengakibatkan variabel ``{\crnfamily temp}'' tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya karena variabel ``{\crnfamily temp}'' akan langsung digunakan untuk menyimpan masukan.
+    {\Script} \inputscript{float temp0 = (temp - (temp * 0.25f));} adalah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 25\%. Nilai variabel \inputscript{temp0} bergantung pada nilai variabel \inputscript{temp}.
 
     \begin{lstlisting}
- cout << endl;
+cout << "Setelah 15 menit" << endl;
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily cout << endl}'' akan memberi tahu kompiler bahwa program tersebut akan memasukan \textit{newline character} dalam {\ioo} {\stream}. {\Script} ``{\crnfamily endl}'' merupakan sebuah objeck yang berada pada {\header} {\file} ``{\crnfamily iostream}''. Objek ``{\crnfamily endl}'' merupakan objek yang jika dimasukan ke dalam {\ioo} {\stream} akan memasukan \textit{newline character} dalam {\stream} tersebut dan juga akan mengosongkan {\stream} tersebut jadi menggunakan ``{\crnfamily endl}'' akan memakan lebih banyak waktu dibandingkan dengan menggunakan ``{\crnfamily \textbackslash n}''. Hal tersebut dikarenakan ``{\crnfamily endl}'' akan mengosongkan {\ioo} {\stream} sementara ``{\crnfamily \textbackslash n}'' tidak akan mengosongkan {\ioo} {\stream}.
+    {\Script} \inputscript{cout << "Setelah 15 menit" << endl;} akan memasukan teks ``Setelah 15 menit'' dan sebuah \textit{newline escape sequence} ke delam \textit{standard output stream} yang kemudian akan ditampilkan kepada pengguna melalui perantara konsol.
 
     \begin{lstlisting}
- float temp0 = (temp - (temp * 0.25f));
+float temp1 = (temp - (temp * 0.65f));
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily float temp0 = (temp - (temp - (temp * 0.25f)));}'' merupakan sebuah {\statement} inisialisasi sebuah variabel. {\Statement} inisialisasi variabel diawali oleh tipe data variabel tersebut diikuti oleh nama variabel dan operator \textit{assignment} kemudian nilai variabel tersebut. Dalam baris ini yang diinisialisasikan merupakan variabel yang bernama ``{\crnfamily temp0}'' dengan tipe ``{\crnfamily float}'' yang bernilai ``{\crnfamily (temp - (temp * 0.25f))}''. Variabel ``{\crnfamily temp0}'' dan variabel yang seterusnya dibuat agar tidak terjadi kalkulasi yang berulang untuk nilai yang sering dipakai.
+    {\Script} \inputscript{float temp1 = (temp - (temp * 0.65f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 65\%. Nilai variabel \inputscript{temp1} bergantung pada variabel \inputscript{temp}.
 
     \begin{lstlisting}
- return 0;
+float temp2 = (temp1 + (temp1 * 0.35f));
+\end{lstlisting}
+
+    {\Script} \inputscript{float temp2 = (temp1 - (temp1 * 0.35f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel \inputscript{temp2} akan bernilai sesuai nilai variabel \inputscript{temp1} ditambah 35\%. Nilai \inputscript{temp2} bergantung pada nilai \inputscript{temp1}.
+
+    \begin{lstlisting}
+return 0;
 \end{lstlisting}
 
     {\Script} ``{\crnfamily return 0;}'' adalah {\statement} keluaran sebuah fungsi yang akan menunjukan kembalian sebuah fungsi. {\Statement} ini juga menandakan akhir sebuah fungsi. Dalam kasus fungsi ``{\crnfamily int main}'' {\statement} ``{\crnfamily return 0;}'' digunakan untuk mengembalikan status eksekusi sebuah program pada akhir program. Bila kembaliannya ``0'' maka program tersebut berjalan tanpa masalah, namun apabila kembaliannya bukan ``0'' maka ada kendala atau kesalahan saat menjalankan program tersebut.

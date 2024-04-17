@@ -283,7 +283,7 @@
 
         \caption{#4}
         \label{#5}
-        \vspace*{-4.5ex}
+        \vspace*{-2.0ex}
     \end{figure}
 }
 
@@ -311,6 +311,11 @@
 }
 \newcommand*{\tblspacing}{\setstretch{1.0}\cpsize}
 
+% Create inline script
+\newcommand*{\inputscript}[1]{
+    \hspace{-0.5ex}{\cpsize\crnfamily{{\normalsize\textnormal{``}}#1}}''
+}
+
 % references
 \newcommand*{\reftable}[1]{\textbf{Tabel \ref{#1}}}
 \newcommand*{\reffigure}[1]{\textbf{Gambar \ref{#1}}}
@@ -324,6 +329,10 @@
   {\adjustwidth{1.61cm}{0pt}}
   {\endadjustwidth}
 \newcommand*{\ilz}{\noindent\hspace{0.75cm}}
+
+% Spacing between figure and text
+\setlength{\intextsep}{0.5ex}
+
 
 %
 % Secondary Packages Configuration
