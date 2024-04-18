@@ -3,29 +3,29 @@
 \begin{document}
     \lstinputlisting[firstline=1,lastline=1]{res/m1c1.cpp}
 
-    {\Script} \inputscript{\#include <iostream>} adalah \textit{header file} yang digunakan sebagai standar masukan dan keluaran dalam bahasa C++ untuk mendeklarasikan dan mendefinisikan {\statement} \inputscript{cin} dan \inputscript{cout}.
+    \ilz{}{\Script} \inputscript{\#include <iostream>} adalah \textit{header file} yang digunakan sebagai standar masukan dan keluaran dalam bahasa C++ untuk mendeklarasikan dan mendefinisikan {\statement} \inputscript{cin} dan \inputscript{cout}.
 
     \lstinputlisting[firstline=2,lastline=2]{res/m1c1.cpp}
 
-    {\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
+    \ilz{}{\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
 
 \begin{lstlisting}
 int main()
 \end{lstlisting}
 
-    {\Script} \inputscript{int main()} merupakan \textit{entry point} dari setiap program yang ditulis dalam bahasa C++. \textit{Entry point} merupakan sebuah fungsi yang akan dijalankan setiap awal mula program dalam fungsi \inputscript{\_startup}.
+    \ilz{}{\Script} \inputscript{int main()} merupakan \textit{entry point} dari setiap program yang ditulis dalam bahasa C++. \textit{Entry point} merupakan sebuah fungsi yang akan dijalankan setiap awal mula program dalam fungsi \inputscript{\_startup}.
 
     \begin{lstlisting}
 float temp;
 \end{lstlisting}
 
-    {\Script} \inputscript{float temp} adalah sebuah {\statement} deklarasi sebuah variabel. Dalam bahasa C++ deklarasi variabel akan mengambil sebuah alamat memori dan membuat variabel yang menunjuk pada alamat tersebut. Oleh karena itu di bahasa C++ sebuah variabel yang dideklarasikan namun tidak diinisialisasi akan bernilai acak karena akan langsung menggunakan alamat memori tanpa mengaturnya ke 0.
+    \ilz{}{\Script} \inputscript{float temp} adalah sebuah {\statement} deklarasi sebuah variabel. Dalam bahasa C++ deklarasi variabel akan mengambil sebuah alamat memori dan membuat variabel yang menunjuk pada alamat tersebut. Oleh karena itu di bahasa C++ sebuah variabel yang dideklarasikan namun tidak diinisialisasi akan bernilai acak karena akan langsung menggunakan alamat memori tanpa mengaturnya ke 0.
 
 \begin{lstlisting}
 cout << "Suhu awal: ";
 \end{lstlisting}
 
-    {\Script} \inputscript{cout << "Suhu awal: "} akan memasukan teks ``Suhu Awal: '' kedalam {\ioo} {\stream} dengan perantara objek \inputscript{cout}. Semua teks yang berada di dalam {\ioo} {\stream} akan ditampilkan kepada pengguna dalam bentuk teks.
+    \ilz{}{\Script} \inputscript{cout << "Suhu awal: "} akan memasukan teks ``Suhu Awal: '' kedalam {\ioo} {\stream} dengan perantara objek \inputscript{cout}. Semua teks yang berada di dalam {\ioo} {\stream} akan ditampilkan kepada pengguna dalam bentuk teks.
 
 \begin{lstlisting}
 cout << "1. " << temp << " C" << endl;
@@ -33,25 +33,25 @@ cout << "2. " << ((temp * 1.8f) + 32) << " F" << endl;
 cout << "3. " << (temp + 273.15f) << " K" << endl << endl;
 \end{lstlisting}
 
-    {\Script} diatas akan menampilkan nilai variabel \inputscript{temp} dalam tiga unit suhu yakni Celsius, Fahrenheit, dan Kelvin. Penampilan tiga unit suhu tersebut dilakukan dalam tiga baris yang berbeda dan setiap baris diawali angka urutan barisnya.
+    \ilz{}{\Script} diatas akan menampilkan nilai variabel \inputscript{temp} dalam tiga unit suhu yakni Celsius, Fahrenheit, dan Kelvin. Penampilan tiga unit suhu tersebut dilakukan dalam tiga baris yang berbeda dan setiap baris diawali angka urutan barisnya.
 
 \begin{lstlisting}
 cin >> temp;
 \end{lstlisting}
 
-    {\Script} \inputscript{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya kedalam variabel \inputscript{temp}. Hal ini juga yang mengakibatkan variabel \inputscript{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya.
+    \ilz{}{\Script} \inputscript{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya kedalam variabel \inputscript{temp}. Hal ini juga yang mengakibatkan variabel \inputscript{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya.
 
 \begin{lstlisting}
 cout << endl;
 \end{lstlisting}
 
-    {\Script} \inputscript{cout << endl;} akan memasukan \textit{newline escape sequence} dan mem-\textit{flush} terhadap isi \textit{standard output stream}. Dalam bahasa C++ sebuah isi \textit{standard output stream} akan ditampilkan bila ditemukan \textit{newline escape sequence}, hal ini disebut dengan \textit{buffering}.
+    \ilz{}{\Script} \inputscript{cout << endl;} akan memasukan \textit{newline escape sequence} dan mem-\textit{flush} terhadap isi \textit{standard output stream}. Dalam bahasa C++ sebuah isi \textit{standard output stream} akan ditampilkan bila ditemukan \textit{newline escape sequence}, hal ini disebut dengan \textit{buffering}.
 
 \begin{lstlisting}
 float temp0 = (temp - (temp * 0.25f));
 \end{lstlisting}
 
-    {\Script} \inputscript{float temp0 = (temp - (temp * 0.25f));} adalah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 25\%. Nilai variabel \inputscript{temp0} bergantung pada nilai variabel \inputscript{temp}.
+    \ilz{}{\Script} \inputscript{float temp0 = (temp - (temp * 0.25f));} adalah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 25\%. Nilai variabel \inputscript{temp0} bergantung pada nilai variabel \inputscript{temp}.
 
 \begin{lstlisting}
 cout << "Setelah 15 menit" << endl;
@@ -61,13 +61,13 @@ cout << "Suhu kamar Holil berkurang menjadi "
      << " K" << endl;
 \end{lstlisting}
 
-    {\Script} diatas akan menampilkan teks ``Setelah 15 menit'' yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \inputscript{temp0} dalam unit suhu Fahrenheit dan perbandingan nilai variabel tersebut dengan nilai variabel \inputscript{temp} dalam satuan Kelvin.
+    \ilz{}{\Script} diatas akan menampilkan teks ``Setelah 15 menit'' yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \inputscript{temp0} dalam unit suhu Fahrenheit dan perbandingan nilai variabel tersebut dengan nilai variabel \inputscript{temp} dalam satuan Kelvin.
 
 \begin{lstlisting}
 float temp1 = (temp - (temp * 0.65f));
 \end{lstlisting}
 
-    {\Script} \inputscript{float temp1 = (temp - (temp * 0.65f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 65\%. Nilai variabel \inputscript{temp1} bergantung pada variabel \inputscript{temp}.
+    \ilz{}{\Script} \inputscript{float temp1 = (temp - (temp * 0.65f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 65\%. Nilai variabel \inputscript{temp1} bergantung pada variabel \inputscript{temp}.
 
 \begin{lstlisting}
 cout << "Setelah 45 menit" << endl;
@@ -76,19 +76,19 @@ cout << "Suhu kamar Holil berkurang menjadi " <<(temp1 + 273.15f)
      << endl << endl;
 \end{lstlisting}
 
-    {\Script} diatas akan menampilkan teks ``Setelah 45 menit'' yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \inputscript{temp1} dalam unit suhu Kelvin dan perbandingan nilai variabel tersebut dengan nilai variabel \inputscript{temp} dalam satuan Celsius.
+    \ilz{}{\Script} diatas akan menampilkan teks ``Setelah 45 menit'' yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \inputscript{temp1} dalam unit suhu Kelvin dan perbandingan nilai variabel tersebut dengan nilai variabel \inputscript{temp} dalam satuan Celsius.
 
 \begin{lstlisting}
 float temp2 = (temp1 + (temp1 * 0.35f));
 \end{lstlisting}
 
-    {\Script} \inputscript{float temp2 = (temp1 + (temp1 * 0.35f));} adalah sebuah {\statement} inisialisasi variabel. Dalam hal ini variabel yang diinisialisasikan akan bernilai sesuai dengan nilai variabel \inputscript{temp1} ditambahkan dengan 35\%.
+    \ilz{}{\Script} \inputscript{float temp2 = (temp1 + (temp1 * 0.35f));} adalah sebuah {\statement} inisialisasi variabel. Dalam hal ini variabel yang diinisialisasikan akan bernilai sesuai dengan nilai variabel \inputscript{temp1} ditambahkan dengan 35\%.
 
 \begin{lstlisting}
 cout << "Setelah 25 menit" << endl;
 \end{lstlisting}
 
-    {\Script} \inputscript{cout << "Setelah 25 menit" << endl;} adalah sebuah {\statement} yang akan memasukan teks ``Setelah 25 menit'' dan \textit{newline escape sequence} kedalam {\ioo} {\stream}. Semua isi dari {\ioo} {\stream} kemudian akan ditampilkan kepada pengguna.
+    \ilz{}{\Script} \inputscript{cout << "Setelah 25 menit" << endl;} adalah sebuah {\statement} yang akan memasukan teks ``Setelah 25 menit'' dan \textit{newline escape sequence} kedalam {\ioo} {\stream}. Semua isi dari {\ioo} {\stream} kemudian akan ditampilkan kepada pengguna.
 
 \begin{lstlisting}
 cout << "Suhu kamar Holil naik menjadi " << temp2 << " C" << endl 
@@ -100,11 +100,11 @@ cout << "1:" << (temp/temp0)
      << " untuk suhu 15 menit setelah pendinginan" << endl;
 \end{lstlisting}
 
-    {\Script} diatas akan menampilkan teks-teks secara berurutan. Teks yang pertama kali akan ditampilkan ialah nilai dari variabel \inputscript{temp2} setelah itu akan diikuti dengan perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp2}, perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp1} serta perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp0}. Setiap perbandingan nilai dua variabel tersebut akan ditampilkan pada tiga baris yang berbeda dan juga diakhiri dengan deskripsi pada setiap barisnya seperti ``untuk suhu saat ini'' pada perbandingan pertama, ``untuk suhu terdingin'' pada perbandingan kedua serta ``untuk suhu 15 menit setelah pendinginan'' pada baris terakhir.
+    \ilz{}{\Script} diatas akan menampilkan teks-teks secara berurutan. Teks yang pertama kali akan ditampilkan ialah nilai dari variabel \inputscript{temp2} setelah itu akan diikuti dengan perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp2}, perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp1} serta perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp0}. Setiap perbandingan nilai dua variabel tersebut akan ditampilkan pada tiga baris yang berbeda dan juga diakhiri dengan deskripsi pada setiap barisnya seperti ``untuk suhu saat ini'' pada perbandingan pertama, ``untuk suhu terdingin'' pada perbandingan kedua serta ``untuk suhu 15 menit setelah pendinginan'' pada baris terakhir.
 
 \begin{lstlisting}
 return 0;
 \end{lstlisting}
 
-    {\Script} ``{\crnfamily return 0;}'' adalah {\statement} keluaran sebuah fungsi yang akan menunjukan kembalian sebuah fungsi. {\Statement} ini juga menandakan akhir sebuah fungsi. Dalam kasus fungsi ``{\crnfamily int main}'' {\statement} ``{\crnfamily return 0;}'' digunakan untuk mengembalikan status eksekusi sebuah program pada akhir program. Bila kembaliannya ``0'' maka program tersebut berjalan tanpa masalah, namun apabila kembaliannya bukan ``0'' maka ada kendala atau kesalahan saat menjalankan program tersebut.
+    \ilz{}{\Script} ``{\crnfamily return 0;}'' adalah {\statement} keluaran sebuah fungsi yang akan menunjukan kembalian sebuah fungsi. {\Statement} ini juga menandakan akhir sebuah fungsi. Dalam kasus fungsi \inputscript{int main} {\statement} \inputscript{return 0;} digunakan untuk mengembalikan status eksekusi sebuah program pada akhir program. Bila kembaliannya 0 maka program tersebut berjalan tanpa masalah, namun apabila kembaliannya bukan 0 maka ada kendala atau kesalahan saat menjalankan program tersebut.
 \end{document}
