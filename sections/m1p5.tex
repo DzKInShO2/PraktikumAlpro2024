@@ -9,7 +9,7 @@
 
     {\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
 
-    \begin{lstlisting}
+\begin{lstlisting}
 int main()
 \end{lstlisting}
 
@@ -21,49 +21,88 @@ float temp;
 
     {\Script} \inputscript{float temp} adalah sebuah {\statement} deklarasi sebuah variabel. Dalam bahasa C++ deklarasi variabel akan mengambil sebuah alamat memori dan membuat variabel yang menunjuk pada alamat tersebut. Oleh karena itu di bahasa C++ sebuah variabel yang dideklarasikan namun tidak diinisialisasi akan bernilai acak karena akan langsung menggunakan alamat memori tanpa mengaturnya ke 0.
 
-    \begin{lstlisting}
+\begin{lstlisting}
 cout << "Suhu awal: ";
 \end{lstlisting}
 
     {\Script} \inputscript{cout << "Suhu awal: "} akan memasukan teks ``Suhu Awal: '' kedalam {\ioo} {\stream} dengan perantara objek \inputscript{cout}. Semua teks yang berada di dalam {\ioo} {\stream} akan ditampilkan kepada pengguna dalam bentuk teks.
 
-    \begin{lstlisting}
+\begin{lstlisting}
+cout << "1. " << temp << " C" << endl;
+cout << "2. " << ((temp * 1.8f) + 32) << " F" << endl;
+cout << "3. " << (temp + 273.15f) << " K" << endl << endl;
+\end{lstlisting}
+
+    {\Script} diatas akan menampilkan nilai variabel \inputscript{temp} dalam tiga unit suhu yakni Celsius, Fahrenheit, dan Kelvin. Penampilan tiga unit suhu tersebut dilakukan dalam tiga baris yang berbeda dan setiap baris diawali angka urutan barisnya.
+
+\begin{lstlisting}
 cin >> temp;
 \end{lstlisting}
 
-    {\Script} \inputscript{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya kedalam variabel \inputscript{temp}. Hal ini juga yang mengakibatkan variabel \inputscript{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya karena variabel \inputscript{temp} akan langsung digunakan untuk menyimpan masukan.
+    {\Script} \inputscript{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya kedalam variabel \inputscript{temp}. Hal ini juga yang mengakibatkan variabel \inputscript{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya.
 
-    \begin{lstlisting}
+\begin{lstlisting}
 cout << endl;
 \end{lstlisting}
 
     {\Script} \inputscript{cout << endl;} akan memasukan \textit{newline escape sequence} dan mem-\textit{flush} terhadap isi \textit{standard output stream}. Dalam bahasa C++ sebuah isi \textit{standard output stream} akan ditampilkan bila ditemukan \textit{newline escape sequence}, hal ini disebut dengan \textit{buffering}.
 
-    \begin{lstlisting}
+\begin{lstlisting}
 float temp0 = (temp - (temp * 0.25f));
 \end{lstlisting}
 
     {\Script} \inputscript{float temp0 = (temp - (temp * 0.25f));} adalah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 25\%. Nilai variabel \inputscript{temp0} bergantung pada nilai variabel \inputscript{temp}.
 
-    \begin{lstlisting}
+\begin{lstlisting}
 cout << "Setelah 15 menit" << endl;
+cout << "Suhu kamar Holil berkurang menjadi "
+     << ((temp0 * 1.8f) + 32) << " F dengan pengurangan sebesar "
+     << ((temp - temp0) + 273.15f)
+     << " K" << endl;
 \end{lstlisting}
 
-    {\Script} \inputscript{cout << "Setelah 15 menit" << endl;} akan memasukan teks ``Setelah 15 menit'' dan sebuah \textit{newline escape sequence} ke delam \textit{standard output stream} yang kemudian akan ditampilkan kepada pengguna melalui perantara konsol.
+    {\Script} diatas akan menampilkan teks ``Setelah 15 menit'' yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \inputscript{temp0} dalam unit suhu Fahrenheit dan perbandingan nilai variabel tersebut dengan nilai variabel \inputscript{temp} dalam satuan Kelvin.
 
-    \begin{lstlisting}
+\begin{lstlisting}
 float temp1 = (temp - (temp * 0.65f));
 \end{lstlisting}
 
     {\Script} \inputscript{float temp1 = (temp - (temp * 0.65f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \inputscript{temp} dikurangi 65\%. Nilai variabel \inputscript{temp1} bergantung pada variabel \inputscript{temp}.
 
-    \begin{lstlisting}
+\begin{lstlisting}
+cout << "Setelah 45 menit" << endl;
+cout << "Suhu kamar Holil berkurang menjadi " <<(temp1 + 273.15f)
+     << " K dengan pengurangan sebesar " << (temp - temp1) <<" C"
+     << endl << endl;
+\end{lstlisting}
+
+    {\Script} diatas akan menampilkan teks ``Setelah 45 menit'' yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \inputscript{temp1} dalam unit suhu Kelvin dan perbandingan nilai variabel tersebut dengan nilai variabel \inputscript{temp} dalam satuan Celsius.
+
+\begin{lstlisting}
 float temp2 = (temp1 + (temp1 * 0.35f));
 \end{lstlisting}
 
-    {\Script} \inputscript{float temp2 = (temp1 - (temp1 * 0.35f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel \inputscript{temp2} akan bernilai sesuai nilai variabel \inputscript{temp1} ditambah 35\%. Nilai \inputscript{temp2} bergantung pada nilai \inputscript{temp1}.
+    {\Script} \inputscript{float temp2 = (temp1 + (temp1 * 0.35f));} adalah sebuah {\statement} inisialisasi variabel. Dalam hal ini variabel yang diinisialisasikan akan bernilai sesuai dengan nilai variabel \inputscript{temp1} ditambahkan dengan 35\%.
 
-    \begin{lstlisting}
+\begin{lstlisting}
+cout << "Setelah 25 menit" << endl;
+\end{lstlisting}
+
+    {\Script} \inputscript{cout << "Setelah 25 menit" << endl;} adalah sebuah {\statement} yang akan memasukan teks ``Setelah 25 menit'' dan \textit{newline escape sequence} kedalam {\ioo} {\stream}. Semua isi dari {\ioo} {\stream} kemudian akan ditampilkan kepada pengguna.
+
+\begin{lstlisting}
+cout << "Suhu kamar Holil naik menjadi " << temp2 << " C" << endl 
+     <<endl;
+cout << "Hasil perbandingan:" << endl;
+cout << "1:" << (temp/temp2) << " untuk suhu saat ini" << endl;
+cout << "1:" << (temp/temp1) << " untuk suhu terdingin" << endl;
+cout << "1:" << (temp/temp0)
+     << " untuk suhu 15 menit setelah pendinginan" << endl;
+\end{lstlisting}
+
+    {\Script} diatas akan menampilkan teks-teks secara berurutan. Teks yang pertama kali akan ditampilkan ialah nilai dari variabel \inputscript{temp2} setelah itu akan diikuti dengan perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp2}, perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp1} serta perbandingan nilai variabel \inputscript{temp} dengan nilai variabel \inputscript{temp0}. Setiap perbandingan nilai dua variabel tersebut akan ditampilkan pada tiga baris yang berbeda dan juga diakhiri dengan deskripsi pada setiap barisnya seperti ``untuk suhu saat ini'' pada perbandingan pertama, ``untuk suhu terdingin'' pada perbandingan kedua serta ``untuk suhu 15 menit setelah pendinginan'' pada baris terakhir.
+
+\begin{lstlisting}
 return 0;
 \end{lstlisting}
 
