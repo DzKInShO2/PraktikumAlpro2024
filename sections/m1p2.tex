@@ -60,20 +60,20 @@
 
     \subsubsection{{\Statement}}
     \begin{indentlevel0}
-        {\Statement} atau pernyataan adalah suatu perintah yang dapat berdiri sendiri dalam melaksanakan suatu aksi dan dijalankan ketika program dieksekusi. Setiap pernyataan ditulis dengan diakhiri tanda titik-koma atau {\semicolon} “;” \parencite{friyadi2005panduan}.
+        {\Statement} atau pernyataan adalah suatu perintah yang dapat berdiri sendiri dalam melaksanakan suatu aksi dan dijalankan ketika program dieksekusi. Setiap pernyataan ditulis dengan diakhiri tanda titik-koma atau {\semicolon} \inputscript{;} \parencite{friyadi2005panduan}.
     \end{indentlevel0}
 
     \subsubsection{{\Semicolon}}
     \begin{indentlevel0}
-        Tanda {\semicolon} “;” digunakan untuk mengakhiri sebuah pernyataan. Setiap pernyataan harus diakhiri dengan sebuah tanda {\semicolon}. Apabila {\statement} atau pernyataan tidak diakhiri dengan tanda {\semicolon} maka dianggap error oleh {\compiler}, karena merupakan pernyataan yang tidak lengkap \parencite{kadir2005heriyanto}.
+        Tanda {\semicolon} \inputscript{;} digunakan untuk mengakhiri sebuah pernyataan. Setiap pernyataan harus diakhiri dengan sebuah tanda {\semicolon}. Apabila {\statement} atau pernyataan tidak diakhiri dengan tanda {\semicolon} maka dianggap error oleh {\compiler}, karena merupakan pernyataan yang tidak lengkap \parencite{kadir2005heriyanto}.
     \end{indentlevel0}
 
     \subsubsection{Komentar}
     \begin{indentlevel0}
         Komentar adalah bagian dari program yang diabaikan oleh {\compiler}. Tidak melaksanakan aksi apapun. Dalam C++ terdapat dua cara menuliskan komentar, yaitu \parencite{kadir2005heriyanto}:
     \end{indentlevel0}
-    \paragraph{“{\crnfamily //komentar}”: Hanya digunakan per baris.}
-    \paragraph{“{\crnfamily /*komentar*/}”: Digunakan untuk mengapit lebih dari satu baris.}
+    \paragraph{\inputscript{//komentar}: Hanya digunakan per baris.}
+    \paragraph{\inputscript{/*komentar*/}: Digunakan untuk mengapit lebih dari satu baris.}
     \newpage
 
     \subsection{Tipe Data}
@@ -116,13 +116,13 @@
 
     \paragraph{Tipe Logika}
     \begin{indentlevel1}
-        Tipe logika adalah tipe data yang hanya mengandung dua nilai yaitu BENAR atau SALAH. Tipe data ini ditulis di C++ sebagai tipe data ``{\crnfamily bool}'' yang merupakan tipe data berukuran 8 bit.
+        Tipe logika adalah tipe data yang hanya mengandung dua nilai yaitu BENAR atau SALAH. Tipe data ini ditulis di C++ sebagai tipe data \inputscript{bool} yang merupakan tipe data berukuran 8 bit.
     \end{indentlevel1}
     \newpage
 
     \paragraph{Tipe Karakter}
     \begin{indentlevel1}
-        Tipe karakter adalah tipe yang digunakan mempresentasikan data bertipe karakter, seperti “A”, “a”, “9”, “\&”, dan sebagainya. Macam-macam tipe karakter sebagai berikut:
+        Tipe karakter adalah tipe yang digunakan mempresentasikan data bertipe karakter, seperti \inputscript{A}, \inputscript{a}, \inputscript{9}, \inputscript{\&}, dan sebagainya. Macam-macam tipe karakter sebagai berikut:
     \end{indentlevel1}
 
     \inputtable[0.895]{|m{8em}|C|m{20em}|}{
@@ -172,7 +172,7 @@
             {\Casesensitive} artinya huruf capital dan huruf kecil dianggap berbeda. Contoh : nama, Nama, NAMA dianggap berbeda.
         }
         \item {
-            Tidak boleh mengandung simbol-simbol khusus, kecuali garis bawah ({\underscore}). Yang termasuk simbol-simbol khusus yang tidak boleh digunakan antara lain :“\$”, “?”, “\%”, “\#”, “\&”, “*”, “-“, “+” dan lain sebagainya.
+            Tidak boleh mengandung simbol-simbol khusus, kecuali garis bawah ({\underscore}). Yang termasuk simbol-simbol khusus yang tidak boleh digunakan antara lain:\inputscript{\$}, \inputscript{?},\inputscript{\%},\inputscript{\#}, \inputscript{\&}, \inputscript{*}, \inputscript{-}, \inputscript{+} dan lain sebagainya.
         }
         \item {
             Ukuran panjang bebas, tetapi hanya 32 karakter pertama yang terpakai.
@@ -183,5 +183,5 @@
     \end{enumerate}
 
     \subsection{{\Type} {\Casting}}
-    Terkadang dalam program kita, kita perlu mengonversi dari satu tipe data ke tipe data lainnya, seperti dari double ke int. Ini dikenal sebagai {\type} {\casting}. Untuk mengkonversi satu tipe data numerik ke yang lain, kita hanya perlu menambahkan (\textit{new data} {\type}) di depan data yang ingin kita konversi, Saat kita memasukkan 20,9 ke dalam bilangan bulat, nilai yang dihasilkan adalah 20, bukan 21. Bagian desimal terpotong setelah konversi. Kita juga dapat melemparkan double ke dalam float atau decimal. Ingat bahwa kita sebutkan sebelumnya bahwa semua non integer diperlakukan sebagai double secara default di C++ Jika kita ingin menetapkan angka seperti 20,9 ke float atau decimal, kita perlu menambahkan sufiks ``f'' dan ``m'' masing-masing \parencite{raharjo2022bahasac}.
+    Terkadang dalam program kita, kita perlu mengonversi dari satu tipe data ke tipe data lainnya, seperti dari \inputscript{double} ke \inputscript{int}. Ini dikenal sebagai {\type} {\casting}. Untuk mengkonversi satu tipe data numerik ke yang lain, kita hanya perlu menambahkan (\textit{new data} {\type}) di depan data yang ingin kita konversi, Saat kita memasukkan 20,9 ke dalam bilangan bulat, nilai yang dihasilkan adalah 20, bukan 21. Bagian desimal terpotong setelah konversi. Kita juga dapat melemparkan \inputscript{double} ke dalam \inputscript{float} atau \textit{decimal}. Ingat bahwa kita sebutkan sebelumnya bahwa semua non integer diperlakukan sebagai \inputscript{double} secara \textit{default} di C++ Jika kita ingin menetapkan angka seperti 20,9 ke \inputscript{float} atau \textit{decimal}, kita perlu menambahkan sufiks ``f'' dan ``m'' masing-masing \parencite{raharjo2022bahasac}.
 \end{document}
