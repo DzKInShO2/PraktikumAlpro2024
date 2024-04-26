@@ -2,5 +2,90 @@
 
 \begin{document}
     \subsection{{\Statement} {\Control}}
+    {\Statement} {\control} adalah mekanisme yang digunakan untuk mengontrol alur eksekusi program berdasarkan suatu kondisi. Dengan {\statement} {\control}, komputer tidak lagi mengeksekusi instruksi secara sekuensial (berurutan), tetapi berdasarkan hasil penyeleksian kondisi (Munir, 2007). Dalam bahasa C++ terdapat beberapa jenis {\statement} {\control}, yaitu:
+
+    \subsubsection{\textit{If}}
+    \begin{indentlevel0}
+    \textit{If} digunakan jika perlu menyeleksi satu kasus. Jika kondisi bernilai benar, maka perintah di dalam \textit{if} akan dieksekusi. Jika kondisi bernilai salah, maka program tidak akan mengeksekusi perintah di dalam \textit{if} dan lanjut mengeksekusi perintah di bawah {\statement} {\control} \textit{if} (Firliana \& Kasih, 2018). Bentuk umum dari perintah \textit{if}:
+\begin{lstlisting}
+ if (kondisi) {
+    Pernyataan;}
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \subsubsection{\textit{If-else}}
+    \begin{indentlevel0}
+    \textit{If – else} digunakan jika perlu menyeleksi dua kasus. Jika kondisi bernilai benar, maka perintah di dalam \textit{if} akan dieksekusi. Jika kondisi bernilai salah, maka perintah di dalam else akan dieksekusi (Firliana \& Kasih, 2018). Bentuk umum dari perintah \textit{if – else}:
+\begin{lstlisting}
+ if (kondisi) {
+    pernyataan 1;}
+ else {
+    pernyataan 2;}
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \newpage
+    \subsubsection{\textit{If-else if-else}}
+    \begin{indentlevel0}
+    \textit{If – else if – else} digunakan jika perlu menyeleksi tiga kasus atau lebih. Prinsip kerjanya sama seperti \textit{if – else}, tetapi terdapat tambahan else \textit{if} yang memiliki fungsi sama seperti \textit{if} (Firliana \& Kasih, 2018). \textit{Else if} hanya akan digunakan ketika \textit{if} yang berada di atasnya bernilai salah. Urutan penyeleksiannya adalah \textit{if}, \textit{else if}, dan \textit{else}. Bentuk umum dari perintah \textit{if – else if – if}:
+\begin{lstlisting}
+ if(kondisi 1){
+   pernyataan 1;}
+ else if(kondisi 2){
+   pernyataan 2;}
+ else{
+   pernyataan 3;}
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \subsubsection{\textit{Switch case}}
+    \begin{indentlevel0}
+    \textit{Switch case} digunakan jika menyeleksi data bertipe character atau integer (Achmad, 2018). Prinsip kerjanya mirip dengan \textit{if – else if – else}, di mana \textit{case} yang pertama bertindak sebagai \textit{if}, \textit{case} yang kedua bertindak sebagai \textit{else if}, dan \textit{default} bertindak sebagai \textit{else}. Setiap \textit{case} harus diakhiri dengan \inputscript{break;} agar tidak berlanjut ke \textit{case} berikutnya saat kondisinya sudah terpenuhi. Bentuk umum dari perintah \textit{switch case}:
+\begin{lstlisting}
+ switch(variabel){
+   case nilai 1:
+     pernyataan 1;
+     break;
+   case nilai 2:
+     pernyataan 2;
+     break;
+   default:
+     pernyataan 3;
+     break;}
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \newpage
     \subsection{{\Statement} {\Looping}}
+    {\Statement} {\looping} adalah mekanisme yang memungkinkan perintah dijalankan berulang-ulang selama suatu kondisi masih terpenuhi. {\Statement} {\looping} dibagi menjadi dua jenis, yaitu perulangan yang sudah diketahui jumlah perulangannya (\textit{for}) dan perulangan yang belum diketahui jumlah perulangannya (\textit{while} dan \textit{do while}) (Suprapto, 2008). Dalam bahasa C++ terdapat beberapa jenis {\statement} {\looping}, yaitu:
+    \subsubsection{\textit{For}}
+    \begin{indentlevel0}
+    \textit{For} adalah perulangan yang telah diketahui jumlah perulangannya (Achmad, 2018). Nilai awal dan nilai batas perulangan harus berasal dari tipe data yang memiliki \textit{predecessor} dan \textit{successor}, yaitu integer dan \textit{character} (Firliana \& Kasih, 2018). Bentuk umum dari perintah for:
+\begin{lstlisting}
+ for(nilai awal; syarat perulangan; pengubah nilai pencacah){
+   pernyataan;} 
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \subsubsection{\textit{While}}
+    \begin{indentlevel0}
+    \textit{While} adalah perulangan yang tidak diketahui jumlah perulangannya. Perulangan akan terus terjadi selama kondisi syarat masih bernilai benar (Munir, 2007).
+\begin{lstlisting}
+ while(kondisi){
+   pernyataan;
+   pernyataan yang mempengaruhi kondisi while;
+ }
+\end{lstlisting}
+    \end{indentlevel0}
+
+    \subsubsection{\textit{Do while}}
+    \begin{indentlevel0}
+    \textit{Do while} memiliki kemiripan dengan while. Jenis perulangan ini juga tidak diketahui jumlah perulangannya. Hal yang membedakan \textit{do while} dengan \textit{while} adalah terjadi perulangan selama sekali terlebih dahulu sebelum dilakukan pengecekan kondisi pada jenis perulangan \textit{do while} (Achmad, 2018). Bentuk umum dari perintah \textit{do while}:
+\begin{lstlisting}
+ do{
+   pernyataan;
+   pernyataan yang mempengaruhi kondisi;}
+ while(kondisi);
+\end{lstlisting}
+    \end{indentlevel0}
 \end{document}
