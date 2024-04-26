@@ -248,13 +248,19 @@
 }
 
 % Numberless chapter command
-\newcommand*{\chapterf}[1]{
+\newcommand*{\chapterf}[2][]{
+    \def\a{#1}
+    \def\e{}
     \stepcounter{chapter}
     \chapter*{
-        MODUL {\thechapter}\\\vspace{1.5ex}\MakeUppercase{#1}
+        MODUL {\thechapter}\\\vspace{1.5ex}\MakeUppercase{#2}
     }
-    \markboth{#1}{}
-    \addcontentsline{toc}{chapter}{MODUL {\thechapter} #1}
+    \ifx\a\e
+        \markboth{#2}{}
+    \else
+        \markboth{#1}{}
+    \fi
+    \addcontentsline{toc}{chapter}{MODUL {\thechapter} #2}
 }
 
 % import figure
@@ -405,7 +411,7 @@
     \section{Kesimpulan}
     \subfile{sections/m1p6.tex}
 
-    \chapterf{Statement Control dan Looping}
+    \chapterf[{\Statement} {\Control} dan {\Looping}]{Statement Control dan Looping}
     \section{Tujuan Praktikum}
     \subfile{sections/m2p1.tex}
     \section{Dasar Teori}
