@@ -9,8 +9,15 @@
     \paragraph{Menanyakan apakah mahasiswa kuliah malam. Bila iya, tanyakan berapa lama dan tambah THR sesuai berapa lama 1-2 jam ditambah 200K, 2-3 jam ditambah 500K, dan lebih dari 3 jam maka THR akan menjadi 2 kali dari THR awal.}
     \paragraph{Tampilkan total THR mahasiswa dan total jam kuliah dalam format jam, menit dan detik.}
     \subsubsection{{\Flowchart}}
+    \inputfigure[p]{res/m2i10.png}{0.25}{{\Flowchart} Program Bagi THR}{fig:m2:i10}
     \subsubsection{{\SourceCode}}
+    \begin{indentlevel0}
+        \lstinputlisting[language=C++]{res/m2c1.cpp}
+        \lstinputlisting[language=C++]{res/m2c2.cpp}
+        \lstinputlisting[language=C++]{res/m2c3.cpp}
+    \end{indentlevel0}
     \subsubsection{Hasil Program}
+    \inputfigure[p]{res/m2i11.png}{0.28}{Hasil Program Bagi THR}{fig:m2:i11}
 
     \subsection{Motif Baju}
     \subsubsection{Algoritma}
@@ -18,7 +25,7 @@
     \paragraph{Mengganti pilihan terpilih berdasarkan pilihan sekarang ditambah atau dikurangi tergantung tombol panah atas dan bawah.}
     \paragraph{Bila dipilih motif bangun datar, minta jumlah baris dan gambar pola persegi, minta jumlah baris dan gambar pola segitiga, dan minta jumlah baris dan gambar pola persegi. Setelah selesai kembali ke awal.}
     \paragraph{Bila dipilih motif pohon cemara, minta tinggi dan lebar setelah itu gambar pohon cemara berdasarkan masukan sebelumnya. Setelah selesai kembali ke awal.}
-    \paragraph{Bila dipilih motif pola bilangan, minta nilai n. Bila masukan n ganjil maka tampilkan 11 pangkat 0 sampai n. Bila masukan genap dan lebih kecil atau sama dengan 50 maka tampilkan bilangan prima sampai n dan bila bilangan prima mengandung angka 3 maka tampilkan bilangan prima kali n. Bila masukan genap dan lebih besar dari 50 maka tampilkan bilangan prima sampai n. Setelah selesai kembali ke awal.}
+    \paragraph{Bila dipilih motif pola bilangan, minta nilai n. Bila masukan n ganjil maka tampilkan 11 pangkat 0 sampai n. Bila masukan genap maka tampilkan bilangan prima dan bila n lebih kecil atau sama dengan 50 kalikan setiap bilangan prima yang mengandung angka 3 dengan n. Setelah selesai kembali ke awal.}
     \paragraph{Bila dipilih keluar maka program akan keluar.}
     \subsubsection{{\Flowchart}}
     \subsubsection{{\SourceCode}}
