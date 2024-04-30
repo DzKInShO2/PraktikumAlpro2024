@@ -21,14 +21,8 @@
   		} break;
   		case 3: { // Keluar
   			return 0;
-  		} break;
-  
-  		}
+  		} break; }
   		cout << "Tekan tombol apapun untuk kembali!" << endl;
   		if (getch()) {
-  			state &= 0x0;
-  		}
-      } break;
-  	}
-  }
-}
+  			state &= 0x0; }
+      } break; } } return 0; }
