@@ -48,18 +48,22 @@ int main()
 
     cout << "------------------------------------------\n";
 
+    int money = 0;
     switch (type) {
     case 1:
         cout << "Selamat Datang " << name << " - Mahasiswa Kuliah-Pulang\n";
         cout << "Santai banget ya kamu :)\n";
+        money = 500000;
         break;
     case 2:
         cout << "Selamat Datang " << name << " - Mahasiswa Kuliah-Rapat\n";
         cout << "Kasian banget ya kamu :)\n";
+        money = 850000;
         break;
     case 3:
         cout << "Selamat Datang " << name << " - Mahasiswa Kuliah-Dagang\n";
         cout << "Semangat ya buat kamu :)\n";
+        money = 1000000;
         break;
     }
     cout << "------------------------------------------\n";
@@ -79,23 +83,6 @@ int main()
         break;
     }
     cout << "------------------------------------------\n";
-
-    int money = 0;
-
-    switch(type){
-    case 1:
-        money = 500000;
-        break;
-    case 2:
-        money = 850000;
-        break;
-    case 3:
-        money = 1000000;
-        break;
-    default:
-        break;
-    }
-
     cout << "THR buat kamu sebesar      : Rp." << money << "\n";
     cout << "Durasi Kuliah Minggu ini   : " << (duration *= 3600) << " Detik\n";
     cout << "------------------------------------------\n";
