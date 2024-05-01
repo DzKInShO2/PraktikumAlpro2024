@@ -213,5 +213,49 @@
     \ilz{}{\Script} diatas akan mengembalikan keadaan program ke menu apabila pengguna menekan tombol apapun. Fungsi \inputscript{getch()} digunakan untuk menunggu masukan pengguna, {\statement} \inputscript{if} hanya mendeteksi apakah kondisi bernilai 0 untuk salah atau bukan 0 untuk benar dan setiap kode karakter pada \textit{keyboard} bernilai lebih besar dari 0.
 
     \subsection{Hilal}
-\end{document}
+\begin{lstlisting}
+  #include <iostream>
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
 
+\begin{lstlisting}
+  int r = 0;
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan {\statement} inisialisasi sebuah variabel. Dimana dalam {\script} diatas diinisialisasikan sebuah variabel \inputscript{n} bertipe \inputscript{int} yang bernilai \inputscript{0}. Kemudian variabel \inputscript{n} tersebut dapat digunakan pada kode-kode setelah baris kode {\script} tersebut.
+
+\begin{lstlisting}
+ while (true) {
+   cout << "Masukan Radius Bulan: ";
+   cin >> r;
+   if (cin.fail() || r < 1) {
+     cin.clear();
+     cin.ignore();
+     cout << "Input tidak valid!" << endl;
+\end{lstlisting}
+\begin{lstlisting}
+     continue;
+   }
+   break;
+ }
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk meminta masukan dari pengguna. {\Statement} \inputscript{while (true)} digunakan untuk mengulangi permintaan masukan selama masukan tidak bertipe benar atau bernilai kurang dari 1 karena tidak diinginkan lingkaran dengan jari-jari 0.
+
+\begin{lstlisting}
+ while (true) {
+   cout<<"\e[H\e[2J";
+   for (int y = 0; y < (r * 2) + 1; ++y) {
+     for (int x = 0; x < (r * 2) + 1; ++x) {
+       if (((x-r)*(x-r))+(((y-r)*(y-r))*2)<r*r
+         &&(x+2)%2==0){
+         cout<<"\e["<<y<<";"<<x<<"H"<< "*"; }
+       if (((x-mask)*(x-mask))+(((y-r)*(y-r))*2)<(r-1)*(r-1)
+         &&(x+2)%2==0) {
+         cout<<"\e["<<y<<";"<<x<<"H"<<" "; }
+     } cout << endl;
+   } mask += operation;
+   if (mask < 0) operation = 1;
+   else if (mask > (r * 3)) operation = -1;
+ }
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menggambar dua buah lingkaran yang akan digunakan untuk membuat animasi bulan. Ada dua buah lingkaran yang dibuat salah satu dari dua lingkaran tersebut merupakan lingkaran bulan dan lingkaran lainnya adalah lingkaran yang akan digunakan untuk menutupi lingkaran sebelumnya untuk mensimulasikan efek fase bulan.
+\end{document}
