@@ -2,6 +2,58 @@
 
 \begin{document}
     \subsection{Bagi THR}
+\begin{lstlisting}
+  #include <iostream>
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
+
+\begin{lstlisting}
+  using namespace std;
+\end{lstlisting}
+    \ilz{}{\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
+
+\begin{lstlisting}
+ string name = " ";
+ cout << "Masukan Nama  : ";
+ getline(cin, name);
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk mendapatkan masukan dari pengguna yang nantinya akan dimasukan ke dalam variabel \inputscript{name} menggunakan fungsi \inputscript{getline}. Fungsi \inputscript{getline} digunakan untuk mendapatkan masukan yang bisa berisikan karakter spasi.
+
+\begin{lstlisting}
+ while (true) {
+   cout << "Masukan Pilihan Kamu: ";
+   cin >> type;
+   if (cin.fail() || (type < 1 || type > 3)) {
+     cin.clear(); cin.ignore();
+     cout << "Input tidak valid!" << endl;
+     continue;
+   } break;
+ }
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk mendapatkan masukan dari pengguna yang akan disimpan pada variabel \inputscript{type}. Masukan akan terus diminta apabila masukan tidak sesuai dengan masukan yang diminta yakni masukan berupa angka yang lebih dari 1 dan kurang dari 3.
+
+\begin{lstlisting}
+ switch (type) {
+ case 1:
+   cout<<"Selamat Datang "<<name<<" - Mahasiswa Kuliah-Pulang\n";
+   cout<<"Santai banget ya kamu :)\n"; money = 500000; break;
+ case 2:
+   cout<<"Selamat Datang "<<name<<" - Mahasiswa Kuliah-Rapat\n";
+   cout<<"Kasian banget ya kamu :)\n"; money = 850000; break;
+ case 3:
+   cout<<"Selamat Datang "<<name<<" - Mahasiswa Kuliah-Dagang\n";
+   cout<<"Semangat ya buat kamu :)\n"; money = 1000000; break; }
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menentukan nilai variabel \inputscript{money} sesuai nilai variabel \inputscript{type}. Keluaran berupa teks juga akan ditunjukan akan berbeda sesuai dengan nilai variabel \inputscript{type}. {\Statement} \inputscript{switch} digunakan karena terbatasnya variasi nilai variabel \inputscript{type}.
+
+\begin{lstlisting}
+ cout<<"Durasi Kuliah Ramadhan Ini: "<<(duration/3600)<<" Jam,"
+     <<(duration/60)-((duration/3600)*60)<<" Menit,"
+     <<(duration-((duration/3600)*3600))-
+     (((duration-((duration/3600)*3600))/60)*60)<<" Detik\n";
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menampilkan durasi kuliah dari nilai variabel \inputscript{duration} sesuai format jam, menit dan detik. Untuk mendapat menit dan detik dilakukan {\type} \textit{punning} dengan membagi \inputscript{duration} dengan 3600 dalam kurung dan mengalikannya kembali dengan 3600 untuk menghilangkan angka berlebihan.
+
     \subsection{Motif Baju}
     \subsection{Hilal}
 \end{document}
