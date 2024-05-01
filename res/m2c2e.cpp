@@ -19,7 +19,7 @@
   			}
   			cout << endl;
   		} break;
-  		case 3: { // Keluar
+  		case 3: {
   			return 0;
   		} break; }
   		cout << "Tekan tombol apapun untuk kembali!" << endl;
