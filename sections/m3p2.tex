@@ -1,5 +1,17 @@
 \documentclass{subfiles}
 
 \begin{document}
-    A
+    \subsection{\textit{Array}}
+    \textit{Array} adalah sebuah variabel yang menyimpan sekumpulan data yang memiliki tipe yang sama. Setiap data tersebut menempati lokasi atau alamat memori yang berbeda-beda dan selanjutnya disebut dengan elemen \textit{array}. Elemen \textit{array} itu kemudian dapat diakses melalui indeks yang terdapat di dalamnya. Namun, penting sekali untuk diperhatikan bahwa dalam C++ indeks \textit{array} selalu dimulai dari 0, bukan 1\parencite{raharjo2015pemrograman}.
+
+    \subsection{\textit{String}}
+    C++ memiliki dukungan terhadap dua jenis \inputscript{string}, yaitu \inputscript{string} gaya bahasa C dan gaya bahasa C++\parencite{raharjo2015pemrograman}.
+
+    \inputscript{string} gaya bahasa C sering disebut dengan \textit{null terminated string} atau \textit{C-style string}. \inputscript{string} jenis ini dapat diimplementasikan ke dalam dua bentuk. Bentuk pertama, \inputscript{string} diimplementasikan sebagai larik atau kumpulan dari tipe karakter (\textit{array of char}). Dalam cara ini, \inputscript{string} akan dianggap sebagai kumpulan karakter yang diakhiri oleh karakter \textit{null}(\inputscript{\textbackslash 0}). Setiap karakter di dalam \inputscript{string} dapat diakses melalui indeks \textit{array}. Bentuk kedua, \inputscript{string} diimplementasikan sebagai \textit{pointer} ke tipe karakter (\textit{pointer  of char}). Berikut ini contoh kode yang menunjukan penggunaan \inputscript{string} dalam bahasa C\parencite{raharjo2015pemrograman}:
+\begin{lstlisting}
+ char str1[100];    // C-string menggunakan array
+ char *str2;        // C-string menggunakan pointer
+\end{lstlisting}
+
+    C++ mengimplementasikan string sebagai kelas. Kelas yang digunakan untuk merepresentasikan \inputscript{string} adalah \inputscript{string}(huruf s ditulis dalam huruf kecil). Kelas tersebut berisi kumpulan data dan fungsi yang berguna untuk mengangani permasalahan-permasalahan program yang berkaitan dengan \inputscript{string}\parencite{raharjo2015pemrograman}.
 \end{document}
