@@ -4,14 +4,43 @@
     \subsection{\textit{Array}}
     \textit{Array} adalah sebuah variabel yang menyimpan sekumpulan data yang memiliki tipe yang sama. Setiap data tersebut menempati lokasi atau alamat memori yang berbeda-beda dan selanjutnya disebut dengan elemen \textit{array}. Elemen \textit{array} itu kemudian dapat diakses melalui indeks yang terdapat di dalamnya. Namun, penting sekali untuk diperhatikan bahwa dalam C++ indeks \textit{array} selalu dimulai dari 0, bukan 1\parencite{raharjo2015pemrograman}.
 
-    \subsection{\textit{String}}
-    C++ memiliki dukungan terhadap dua jenis \inputscript{string}, yaitu \inputscript{string} gaya bahasa C dan gaya bahasa C++\parencite{raharjo2015pemrograman}.
+    Dilihat dari dimensinya, \textit{array} dapat dibagi menjadi \textit{array} satu dimensi, \textit{array} dua dimensi dan \textit{array} multidimensi \parencite{faradiba2019penggunaan}:
+    \subsubsection{\textit{Array} satu dimensi}
+    \begin{indentlevel0}
+        Untuk mendeklarasikan variabel dengan tipe data \textit{array} satu dimensi pada notasi algoritma.
+    \end{indentlevel0}
+    \subsubsection{\textit{Array} dua dimensi}
+    \begin{indentlevel0}
+        \textit{Array} dua dimensi merupakan \textit{array} yang terdiri dari m buah baris (\textit{row}) dan n buah kolom (\textit{column}). Bentuk \textit{array} semacam ini menggunakan 2 (dua) buah kelompok indeks yang masing-masing direpresentasikan sebagai indeks baris dan kolom.
+    \end{indentlevel0}
+    \subsubsection{\textit{Array} multidimensi}
+    \begin{indentlevel0}
+        Dalam menggambarkan \textit{array} multidimensi, hanya terbatas hingga dimensi ke-3, yakni dengan menggunakan bangun ruang, namun dalam kenyataannya, tipe data \textit{array} ini dapat dibentuk menjadi lebih dari tiga dimensi atau menjadi n-dimensi.
+    \end{indentlevel0}
 
-    \inputscript{string} gaya bahasa C sering disebut dengan \textit{null terminated string} atau \textit{C-style string}. \inputscript{string} jenis ini dapat diimplementasikan ke dalam dua bentuk. Bentuk pertama, \inputscript{string} diimplementasikan sebagai larik atau kumpulan dari tipe karakter (\textit{array of char}). Dalam cara ini, \inputscript{string} akan dianggap sebagai kumpulan karakter yang diakhiri oleh karakter \textit{null}(\inputscript{\textbackslash 0}). Setiap karakter di dalam \inputscript{string} dapat diakses melalui indeks \textit{array}. Bentuk kedua, \inputscript{string} diimplementasikan sebagai \textit{pointer} ke tipe karakter (\textit{pointer  of char}). Berikut ini contoh kode yang menunjukan penggunaan \inputscript{string} dalam bahasa C\parencite{raharjo2015pemrograman}:
+    \newpage
+    \subsection{\textit{String}}
+    C++ memiliki dukungan terhadap dua jenis \textit{string}, yaitu \textit{string} gaya bahasa C dan gaya bahasa C++\parencite{raharjo2015pemrograman}.
+
+    \textit{String} gaya bahasa C sering disebut dengan \textit{null terminated string} atau \textit{C-style string}. \textit{String} jenis ini dapat diimplementasikan ke d dari alam dua bentuk. Bentuk pertama, \textit{string} diimplementasikan sebagai larik atau kumpulan dari tipe karakter (\textit{array of char}). Dalam cara ini, \textit{string} akan dianggap sebagai kumpulan karakter yang diakhiri oleh karakter \textit{null}(\inputscript{\textbackslash 0}). Setiap karakter di dalam \textit{string} dapat diakses melalui indeks \textit{array}. Bentuk kedua, \textit{string} diimplementasikan sebagai \textit{pointer} ke tipe karakter (\textit{pointer  of char}). Berikut ini contoh kode yang menunjukan penggunaan \textit{string} dalam bahasa C\parencite{raharjo2015pemrograman}:
 \begin{lstlisting}
  char str1[100];    // C-string menggunakan array
  char *str2;        // C-string menggunakan pointer
 \end{lstlisting}
 
-    C++ mengimplementasikan string sebagai kelas. Kelas yang digunakan untuk merepresentasikan \inputscript{string} adalah \inputscript{string}(huruf s ditulis dalam huruf kecil). Kelas tersebut berisi kumpulan data dan fungsi yang berguna untuk mengangani permasalahan-permasalahan program yang berkaitan dengan \inputscript{string}\parencite{raharjo2015pemrograman}.
+    C++ mengimplementasikan string sebagai kelas. Kelas yang digunakan untuk merepresentasikan \textit{string} adalah \inputscript{string}(huruf s ditulis dalam huruf kecil). Kelas tersebut berisi kumpulan data dan fungsi yang berguna untuk mengangani permasalahan-permasalahan program yang berkaitan dengan \textit{string}\parencite{raharjo2015pemrograman}.
+
+    Fungsi string yang telah tersedia pada bahasa C yaitu sebagai berikut \parencite{sasongko2010modul}:
+    \subsubsection{\textit{Strlen}}
+    \begin{indentlevel0}
+        Fungsi untuk mengetahui jumlah teks pada data karakter. Parameternya adalah variabel yang menandung teks, nilai baliknya adalah angka bernilai panjang teksnya.
+    \end{indentlevel0}
+    \subsubsection{\textit{Strcpy}}
+    \begin{indentlevel0}
+        Fungsi ini digunakan untuk menyalin nilai teks pada suatu variabel ke variabel lain.
+    \end{indentlevel0}
+    \subsubsection{\textit{Strcat}}
+    \begin{indentlevel0}
+        Fungsi ini digunakan untuk menggabungkan nilai \textit{text} suatu variabel maupun \textit{string} konstan dengan nilai teks lainnya.
+    \end{indentlevel0}
 \end{document}
