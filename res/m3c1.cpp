@@ -26,13 +26,13 @@ int main() {
     }
   }
   cout << "\nHasil rotasi 90 derajat searah jarum jam:" << endl;
-  for (int i = 0; i < m; ++i) {
-    for (int j = n - 1; j >= 0; --j) cout <<matrix[j * n + i]<< " ";
+  for (int i = 0; i < n; ++i) {
+    for (int j = m - 1; j >= 0; --j) cout <<matrix[j * m + i]<< " ";
     cout << endl; 
   }
   cout << "\nHasil pencerminan terhadap sumbu X:\n";
-  for (int i = m - 1; i >= 0; --i) {
-    for (int j = n - 1; j >= 0; --j) cout <<matrix[j * n + i]<< " ";
+  for (int i = n - 1; i >= 0; --i) {
+    for (int j = m - 1; j >= 0; --j) cout <<matrix[j * m + i]<< " ";
     cout << endl;
   }
 }
