@@ -1,3 +1,12 @@
+      } int base = 1;
+      for (int k = mid - 1; k >= 0; --k) {
+        if (numbers[k] == ' ') break;
+        if (numbers[k] == '-') {
+          matrix[i * m + j] *= -1; break;
+        }
+        matrix[i * m + j] += (int)(numbers[k] - '0') * base;
+        base *= 10;
+      }
       for (int k = mid + 1; k < l; ++k) { 
         if (numbers[k] != ' ') break; mid = k;
       }
