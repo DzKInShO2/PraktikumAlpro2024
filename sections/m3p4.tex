@@ -32,8 +32,23 @@
 \end{indentlevel0}
 \subsection{\textit{Blast the Fireworks!}}
 \subsubsection{Algoritma}
+\paragraph{Meminta masukan kepada pengguna berupa jumlah kembang api dan menunjukannya
+            Dalam urutan A...Z sesuai jumlah masukan.}
+\paragraph{Meminta kekuatan kembang api seseuai jumlah masukan sebelumnya.}
+\paragraph{Meminta masukan berupa nama kembang api yang akan diledakan.}
+\paragraph{Melakukan perulangan hingga ditemukan kembang api yang memiliki nama sesuai.
+            Bila ditemukan maka akan lanjut ke langkah selanjutnya dan bila tidak, akan
+            melompati langkah selanjutnya.}
+\paragraph{Melakukan perulangan maju dan mundur sesuai kekuatan kembang api,
+            bila ditemukan kembang api yang memiliki jarak ledakan lebih besar maka atur itu
+            sebagai jarak ledakan baru. Untuk setiap kembang api yang termasuk dalam jarak
+            ledakan maka nilainya akan di atur ke -1 termasuk kembang api terpilih.}
+\paragraph{Menunjukan nama kembang api dan daya ledakannya bila daya ledakan bukan -1.}
 \newpage
 \subsubsection{\Flowchart}
 \inputfigure[p]{res/m3i8.png}{0.29}{{\Flowchart} Program \textit{Blast the Fireworks}.}{fig:m3:i8}
 \subsubsection{\SourceCode}
+\begin{indentlevel0}
+    \lstinputlisting[language=C++]{res/m3c4.cpp}
+\end{indentlevel0}
 \end{document}
