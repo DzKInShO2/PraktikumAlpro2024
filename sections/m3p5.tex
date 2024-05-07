@@ -2,6 +2,244 @@
 
 \begin{document}
 \subsection{Bermain dengan Matriks}
+\begin{lstlisting}
+ #include <iostream>
+\end{lstlisting}
+\ilz{}{\Script} diatas membolehkan pengaksesan fungsi-fungsi dan objek-objek yang ada didalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi fungsi-fungsi dan objek-objek yang berkaitan dengan operasi-operasi {\ioi} dan {\ioo} {\stream}.
+
+\begin{lstlisting}
+ using namespace std;
+\end{lstlisting}
+\ilz{}{\Script} diatas menggunakan {\statement} \inputscript{using namespace} yang akan membolehkan pemanggilan fungsi atau objek yang berada dalam suatu \inputscript{namespace} tertentu tanpa memanggil nama \inputscript{namespace} tersebut dalam kasus diatas fungsi dan objek yang berada dalam \inputscript{namespace std} dapat dipanggil tanpa diawali \inputscript{std::}.
+
+\begin{lstlisting}
+ cout<<"=========== BERMAIN DENGAN MATRIKS ============\n";int m,n; 
+ cout<<"Masukan jumlah baris matriks: ";cin>>n;
+ cout<<"Masukan jumlah kolom matriks: ";cin>>m; cin.clear();
+ int matrix[m * n];cout<<"Masukan elemen matriks:\n";cin.ignore();
+\end{lstlisting}
+\ilz{}{\Script} diatas akan menunjukan \textit{prompt} kepada pengguna yang memberi tahu pengguna untuk memasukan jumlah baris dan kolom dari matriks yang ingin dibuat. Setelah itu akan diinisialisasikan sebuah \textit{array} sesuai dengan masukan.
+
+\begin{lstlisting}
+ for (int i = 0; i < n; ++i) {
+   string numbers; getline(cin, numbers); numbers.push_back(' ');
+   int l = 0; while (numbers[l++] != '\0') {}
+   for (int j = 0, mid = 0; j < m; ++j) { matrix[i * m + j] = 0;
+     for (int k = mid + 1; k < l; ++k) {
+       if (numbers[k] == ' ') { mid = k; break; }
+     } int base = 1;
+     for (int k = mid - 1; k >= 0; --k) {
+       if (numbers[k] == ' ') break;
+       if (numbers[k] == '-') {
+         matrix[i * m + j] *= -1; break;
+       }
+       matrix[i * m + j] += (int)(numbers[k] - '0') * base;
+       base *= 10;
+     }
+     for (int k = mid + 1; k < l; ++k) { 
+       if (numbers[k] != ' ') break; mid = k;
+     }
+   }
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas akan menerima masukan berupa elemen-elemen untuk matriks yang sudah diinisialisasikan sebelumnya. Penerimaan masukan dilakukan dengan menggunakan \textit{for loop} yang akan dijalankan sesuai jumlah baris dan \textit{for loop} lain akan dilakukan untuk mengisi setiap kolom baris tersebut.
+
+\begin{lstlisting}
+ cout << "\nHasil rotasi 90 derajat searah jarum jam:" << endl;
+ for (int i = 0; i < m; ++i) {
+   for (int j = n - 1; j >= 0; --j) cout <<matrix[j * n + i]<< " ";
+   cout << endl; 
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menunjukan matriks yang sudah dirotasi sebanyak 90 derajat searah jarum jam. Rotasi matriks tersebut dilakukan dengan cara melakukan \textit{for loop} melalui jumlah baris terbesar daripada 0 untuk menghasilkan efek rotasi 90 derajat.
+
+\begin{lstlisting}
+ cout << "\nHasil pencerminan terhadap sumbu X:\n";
+ for (int i = m - 1; i >= 0; --i) {
+   for (int j = n - 1; j >= 0; --j) cout <<matrix[j * n + i]<< " ";
+   cout << endl;
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menunjukan matriks sebelumnya yang sudah dirotasi sebanyak 90 derajat searah jarum jam yang dibalik pada sumbu X. Pembalikan pada sumbu X dilakukan dengan cara melakukan perulangan \textit{for loop} dari kolom ke 0.
+
 \subsection{Enkripsi dan Dekripsi}
+\begin{lstlisting}
+ #include <iostream>
+\end{lstlisting}
+\ilz{}{\Script} diatas membolehkan pengaksesan fungsi-fungsi dan objek-objek yang ada didalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi fungsi-fungsi dan objek-objek yang berkaitan dengan operasi-operasi {\ioi} dan {\ioo} {\stream}.
+
+\begin{lstlisting}
+ using namespace std;
+\end{lstlisting}
+\ilz{}{\Script} diatas menggunakan {\statement} \inputscript{using namespace} yang akan membolehkan pemanggilan fungsi atau objek yang berada dalam suatu \inputscript{namespace} tertentu tanpa memanggil nama \inputscript{namespace} tersebut dalam kasus diatas fungsi dan objek yang berada dalam \inputscript{namespace std} dapat dipanggil tanpa diawali \inputscript{std::}.
+
+\begin{lstlisting}
+ string text; int key;
+ cout << "Masukan Pesan: ";
+ getline(cin, text);
+ cout << "Masukan Key Caesar Cipher: ";
+ cin >> key;
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menerima dua buah masukan berupa teks yang akan dienkripsi dan kunci yang akan digunakan nanti pada metode \textit{Caesar cipher}. Teks didapatkan dengan menggunakan metode \inputscript{getline} sementara kuncinya didapatkan dengan \inputscript{cin}.
+
+\begin{lstlisting}
+ int l = 0; while (text[l++] != '\0') {}
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk mendapatkan panjang dari teks yang didapatkan sebelumnya. Setiap teks di bahasa C++ di akhiri dengan \inputscript{\textbackslash 0} sehingga  mampu didapatkan panjangnya melalui perulangan yang akan berulang hingga ditemukan \inputscript{\textbackslash 0}.
+
+\begin{lstlisting}
+ cout << "\nHasil  Enkripsi dengan Reverse Cipher:\n";
+ for (int i = l - 2; i >= 0; --i) cout << text[i];
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menghasilkan hasil enkripsi \textit{reverse cipher}. Dengan membalikan huruf awal menjadi akhir atau membacanya secara terbalik melalui \textit{for loop} dapat didapatkan hasil enkripsi \textit{reverse cipher}.
+
+\begin{lstlisting}
+ cout << "\n\nHasil Enkripsi dengan Reverse + Caesar Cipher:\n";
+ for (int i = l - 2; i >= 0; --i) {
+   if (text[i] == ' ') {
+     cout << " ";
+     continue;
+   }
+   char c = text[i] + key;
+   if (text[i] >= 'a' && text[i] <= 'z'
+     && c - 'z' > 0) {
+     c = '`' + (c - 'z');
+   } else if (text[i] >= 'A'
+     && text[i] <= 'Z'
+     && c - 'Z' > 0) {
+     c = '@' + (c - 'Z');
+   }
+   cout << c;
+ }
+ cout << endl;
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menghasilkan enkripsi gabungan \textit{reverse cipher} dan \textit{Caesar cipher}. Setelah \textit{reverse cipher} dilakukan, karakter digeser sebanyak nilai kunci serta mengulangi karakter ketika sudah melampaui huruf z, maka akan didapatkan hasilnya.
+
 \subsection{\textit{Blast the Fireworks!}}
+\begin{lstlisting}
+ #include <iostream>
+\end{lstlisting}
+\ilz{}{\Script} diatas membolehkan pengaksesan fungsi-fungsi dan objek-objek yang ada didalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi fungsi-fungsi dan objek-objek yang berkaitan dengan operasi-operasi {\ioi} dan {\ioo} {\stream}.
+
+\begin{lstlisting}
+ using namespace std;
+\end{lstlisting}
+\ilz{}{\Script} diatas menggunakan {\statement} \inputscript{using namespace} yang akan membolehkan pemanggilan fungsi atau objek yang berada dalam suatu \inputscript{namespace} tertentu tanpa memanggil nama \inputscript{namespace} tersebut dalam kasus diatas fungsi dan objek yang berada dalam \inputscript{namespace std} dapat dipanggil tanpa diawali \inputscript{std::}.
+
+\begin{lstlisting}
+ int main() {
+\end{lstlisting}
+\ilz{}{\Script} diatas merupakan \textit{entry point} setiap program yang ditulis di bahasa C++. Fungsi tersebut pasti atau wajib akan dieksekusi pada awal jalannya sebuah program yang ditulis pada bahasa C++.
+
+\begin{lstlisting}
+ int n = 0;
+ while (true) {
+   cout << "Banyak kembang api : ";
+   cin >> n;
+   cin.clear();
+   cin.ignore();
+   if (cin.fail() || n < 1 || n > 26) {
+     cout << "Masukan tidak valid." << endl;
+     continue;
+   } break;
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk mendapatkan jumlah kembang api yang akan diledakan. Jumlah kembang api tersebut tidaklah boleh lebih besar dari 26 ataupun lebih kecil dari 1 dikarenakan batas banyak huruf alphabet itu 26 dan setidaknya harus ada satu kembang api.
+
+\begin{lstlisting}
+ for (int i = 0; i < n; ++i) cout << " ? ";
+ cout << endl;
+ char fireworks[n * 2];
+ for (int i = 0; i < n; ++i)
+   cout << "[" << (fireworks[i * 2] = 'A' + i) << "]";
+ cout << endl << " ";
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menunjukan kembang api sesuai jumlah yang sudah ditentukan sebelumnya. Kembang api tersebut akan diawali dengan tanda tanya dan dilanjutkan pada baris selanjutnya oleh huruf alphabet sesuai jumlah yang sudah ditentukan.
+
+\begin{lstlisting}
+ string powers;
+ getline(cin, powers);
+ powers.push_back(' ');
+ int l = 0;
+ while (powers[l++] != '\0') {}
+ for (int i = 0, mid = 0; i < n; ++i) {
+   for (int j = mid + 1; j < l; ++j) {
+     if (powers[j] == ' ') {
+       mid = j;
+       break;
+     }
+   }
+   int c = 0, base = 1;
+   for (int j = mid - 1; j >= 0; --j) {
+     if (powers[j] == ' ') break;
+     c += (int)(powers[j] - '0') * base;
+     base *= 10;
+   }
+   fireworks[i * 2 + 1] = c > 9 ? 9 : (c < 0 ? 0 : c);
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menerima masukan dari pengguna yang dimana masukan tersebut berupa jarak ledakan setiap kembang api. Masukan jarak-jarak kembang api akan diterima dalam bentuk tipe data \inputscript{string} yang kemudian akan dipecah menjadi kumpulan data bertipe \inputscript{int} dengan melalui metode diatas yaitu mendeteksi setiap kemunculan karakter spasi dan melakukan perulangan kebelakang setiap karakter spasi ditemukan.
+
+\begin{lstlisting}
+   for (int i = mid + 1; i < l; ++i) {
+     if (powers[i] != ' ') break;
+     mid = i;
+   }
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk meloncari spasi berlebihan jika pengguna memasukan karakter spasi berlebihan. Karakter spasi bersebihan mampu mengganggu jalan kerja {\script} sebelumnya sehingga akan diloncati terlebih dahulu melalui {\script} diatas.
+
+\begin{lstlisting}
+ char name;
+ while (true) {
+   cout << "Kembang api yang diledakan (nama kembang api) : ";
+   cin >> name;
+   cin.clear();
+   cin.ignore();
+   if (cin.fail() || name < 'A'
+     || (name > '@' + n && name < 'a')
+     || name > '`' + n){
+     cout << "Masukan tidak valid." << endl;
+     continue;
+   } break;
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menerima masukan berupa nama kembang api yang ingin diledakan. Masukan nama kembang api tersebut harus berada dalam lingkup huruf alphabet yang ditentukan untuk dianggap sebagai masukan yang valid atau sah.
+
+\begin{lstlisting}
+ for (int i = 0; i < n; ++i) {
+   if (fireworks[i * 2] == name||fireworks[i * 2] == (name - ' ')){
+     int range = i + (int)fireworks[i * 2 + 1];
+     for (int j = i + 1; j <= range && j < n; ++j) {
+       if (j + fireworks[j * 2 + 1] > range)
+         range = j + fireworks[j * 2 + 1];
+       fireworks[j * 2 + 1] = -1;
+     }
+     range = i - (int)fireworks[i * 2 + 1];
+     for (int j = i - 1; j >= range && j >= 0; --j) {
+       if (j - fireworks[j * 2 + 1] < range)
+         range = j - fireworks[j * 2 + 1];
+       fireworks[j * 2 + 1] = -1;
+     }
+     fireworks[i * 2 + 1] = -1;
+   }
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk meledakan kembang api sesuai jarak yang sudah ditentukan. Sebuah kembang api yang diledakan akan diatur nilainya ke -1, bila jarak ledakan kembang api tersebut lebih besar atau lebih kecil tergantung gerakan peledakannya akan digunakan sebagai jarak yang baru.
+\newpage
+
+\begin{lstlisting}
+ cout << "Kembang api yang tersisa : \n";
+ for (int i = 0; i < n; ++i) {
+   if (fireworks[i * 2 + 1] < 0) continue;
+   cout << fireworks[i * 2] << ". " << (int)fireworks[i * 2 + 1];
+   cout << endl;
+ }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk menunjukan setiap kembang api yang tersisa beserta jarak ledakannya. Setiap kembang api yang jaraknya -1 atau sudah meledak akan dilompati sehingga tidak akan ditunjukan kepada pengguna.
+
+\begin{lstlisting}
+ return 0; }
+\end{lstlisting}
+\ilz{}{\Script} diatas digunakan untuk mengembalikan \textit{exit code} program tersebut. \textit{Exit code} merupakan kode yang akan dihasilkan sebuah program ketika program tersebut berakhir. \textit{Exit code} akan berbeda-beda tergantung status eksekusi program tersebut, \textit{exit code} ``0'' menandakan bahwa program tersebut berjalan secara lancar.
+
 \end{document}
