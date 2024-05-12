@@ -2,8 +2,26 @@
 
 \begin{document}
     \subsection{\textit{Function}}
-    AA
+    Fungsi merupakan kumpulan {\statement} yang dikelompokkan menjadi satu bagian kode (blok program) untuk menyelesaikan tugas spesifik tertentu. Melalui cara seperti itu, kode (fungsi) hanya didefinisikan sekali, namun dapat digunakan berulang kali tanpa harus menuliskan kembali kode yang sama \parencite{raharjo2015pemrograman}.
+
+    \textit{Function overloading} merupakan sebuah fungsi yang memiliki nama yang sama namun dengan parameter yang berbeda. \textit{Function overloading} dapat didefinisikan sebagai berikut \parencite{Lippman_Lajoie_Moo_2013}:
+\begin{lstlisting}
+ void print(const char *cp);
+ void print(const int *beg, const int *end);
+ void print(const int ia[], size_t size);
+\end{lstlisting}
 
     \subsection{\textit{Recursive Function}}
-    AA
+    Seperti namanya, sebuah fungsi rekursif merupakan fungsi yang memanggil kepada dirinya sendiri. Sebagai contoh sebuah fungsi untuk menghitung nilai faktorial ialah sebagai berikut \parencite{grimes2017beginning}:
+
+\begin{lstlisting}
+ int factorial(int n)
+ {
+    if (n > 1) return n ∗ factorial(n − 1);
+    return 1;
+ }
+\end{lstlisting}
+
+    Hal terpenting ketika membuat fungsi rekursif ialah harus ada setidaknya satu cara untuk meninggalkan fungsi tersebut. Dalam kasus diatas kekika fungsi \inputscript{factorial} dipanggil dengan argumen 1 \parencite{grimes2017beginning}.
+
 \end{document}
