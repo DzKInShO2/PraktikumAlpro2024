@@ -11,21 +11,13 @@ int main() {
   for (int i = l - 2; i >= 0; --i) cout << text[i];
   cout << "\n\nHasil Enkripsi dengan Reverse + Caesar Cipher:\n";
   for (int i = l - 2; i >= 0; --i) {
-    if (text[i] == ' ') {
-      cout << " ";
-      continue;
-    }
+    if (text[i] == ' ') { cout << " "; continue; }
     char c = text[i] + key;
     if (text[i] >= 'a' && text[i] <= 'z'
-      && c - 'z' > 0) {
-      c = '`' + (c - 'z');
+      && c - 'z' > 0) { c = '`' + (c - 'z');
     } else if (text[i] >= 'A'
       && text[i] <= 'Z'
-      && c - 'Z' > 0) {
-      c = '@' + (c - 'Z');
-    }
-    cout << c;
-  }
-  cout << endl;
-  return 0;
+      && c - 'Z' > 0) { c = '@' + (c - 'Z');
+    } cout << c;
+  } cout << endl;
 }
