@@ -3,31 +3,25 @@
 \begin{document}
     \subsection{Rental PS Rijal}
     \subsubsection{Algoritma}
-    \paragraph{Di menu awal, masukan angka yang mewakili pilihan \textit{sign-in}, \textit{log-in}, dan \textit{exit}.}
-    \paragraph{Bila \textit{log-in} dipilih dan mauskan akun benar dan \textit{password} benar maka lanjut ke menu penyewa. Bila dimasukan akun admin maka akan dipindahkan ke menu admin. Kemudian kembali ke menu awal.}
-    \paragraph{Bila \textit{sign-in} dipilih dan memasukan nama akun yang belum ada maka akan dibuat akun baru, bila nama sudah digunakan maka akun tidak akan dibuat. Kemudian kembali ke menu awal.}
-    \paragraph{Bila \textit{exit} dipilih maka program akan berhenti atau keluar.}
-    \paragraph{Di menu penyewa, tampilkan pilihan melakukan rental, memesan makanan, daftar \textit{member}, dan \textit{log-out}.}
-    \paragraph{Bila melakukan rental dipilih, tampilkan pilihan PS 3 seharga Rp. 5000 per jam, PS 4 seharga Rp. 10.000 per jam, dan PS 5 seharga Rp. 15.000 per jam. Setelah itu meminta masukan waktu sewa. Bila waktu sewa lebih dari sama dengan 3 jam maka berikan diskon 10\%. Bila waktu sewa lebih dari sama dengan 6 jam maka berikan diskon 20\%. Bila akun memiliki \textit{membership} berikan diskon tambahan 20\%. Tambahkan ke tagihan akun pengguna, kemudian kembali ke menu penyewa.}
-    \paragraph{Bila memesan makanan dipilih, tampilkan daftar makanan dan minuman. Bila sebuah makanan atau minuman dipilih maka minta msukan jumlah kemudian kalikan jumlah dengan harga setelah itu jumlahkan ke tagihan pengguna. Setelah itu kembali ke menu penyewa.}
-    \paragraph{Bila daftar \textit{member} dipilih, tampilkan menu pendaftaran member. Jadikan akun sebagai \textit{member}, kembali ke manu penyewa.}
-    \paragraph{Bila \textit{log-out} dipilih, kembali ke menu awal.}
-    \paragraph{Di menu admin, tampilkan pilihan jual makanan, data penyewa, dan \textit{log-out}.}
-    \paragraph{Bila jual makanan dipilih, tampilkan pilihan masukan makanan, hapus makanan, dan kembali. Bila masukan makanan dipilih, minta masukan nama makanan dan harga makanan. Bila hapus makanan dipilih, minta masukan tempat urutan makanan yang ingin dihapus. Bila kembali dipilih, kembali ke menu admin.}
-    \paragraph{Bila data penyewa dipilih, tampilkan nama akun pengguna terdaftar dan tagihannya. Setelah itu, kembali ke menu admin.}
-    \paragraph{Bila \textit{log-out} dipilih, kembali ke menu awal.}
+    {\renewcommand{\labelenumi}{\alph{enumi}.}
+        \begin{enumerate}[leftmargin=1.56cm]
+            \item Di menu awal, masukan angka yang mewakili pilihan \textit{sign-in}, \textit{log-in}, dan \textit{exit}.
+            \item {Bila \textit{log-in} dipilih dan mauskan akun benar dan \textit{password} benar maka lanjut ke menu penyewa. Bila dimasukan akun admin maka akan dipindahkan ke menu admin. Bila akun salah, kembali ke menu awal.}
+            \item {Bila \textit{sign-in} dipilih dan memasukan nama akun yang belum ada maka akan dibuat akun baru, bila nama sudah digunakan maka akun tidak akan dibuat. Kemudian kembali ke menu awal.}
+            \item{Bila \textit{exit} dipilih maka program akan berhenti atau keluar.}
+            \item{Di menu penyewa, tampilkan pilihan melakukan rental, memesan makanan, daftar \textit{member}, dan \textit{log-out}.}
+            \item{Bila melakukan rental dipilih, tampilkan pilihan PS 3 seharga Rp. 5000 per jam, PS 4 seharga Rp. 10.000 per jam, dan PS 5 seharga Rp. 15.000 per jam. Setelah itu meminta masukan waktu sewa. Bila waktu sewa lebih dari sama dengan 3 jam maka berikan diskon 10\%. Bila waktu sewa lebih dari sama dengan 6 jam maka berikan diskon 20\%. Bila akun memiliki \textit{membership} berikan diskon tambahan 20\%. Tambahkan ke tagihan akun pengguna, kemudian kembali ke menu penyewa.}
+            \item{Bila memesan makanan dipilih, tampilkan daftar makanan dan minuman. Bila sebuah makanan atau minuman dipilih maka minta msukan jumlah kemudian kalikan jumlah dengan harga setelah itu jumlahkan ke tagihan pengguna. Setelah itu kembali ke menu penyewa.}
+            \item{Bila daftar \textit{member} dipilih, tampilkan menu pendaftaran member. Jadikan akun sebagai \textit{member}, kembali ke manu penyewa.}
+            \item{Bila \textit{log-out} dipilih, kembali ke menu awal.}
+            \item{Di menu admin, tampilkan pilihan jual makanan, data penyewa, dan \textit{log-out}.}
+            \item{Bila jual makanan dipilih, tampilkan pilihan masukan makanan, hapus makanan, dan kembali. Bila masukan makanan dipilih, minta masukan nama makanan dan harga makanan. Bila hapus makanan dipilih, minta masukan tempat urutan makanan yang ingin dihapus. Bila kembali dipilih, kembali ke menu admin.}
+            \item{Bila data penyewa dipilih, tampilkan nama akun pengguna terdaftar dan tagihannya. Setelah itu, kembali ke menu admin.}
+            \item{Bila \textit{log-out} dipilih, kembali ke menu awal.}
+        \end{enumerate}
+    }
     \newpage
     \subsubsection{\Flowchart}
-    \inputfigure[p]{res/m4i12.png}{0.5}{{\Flowchart} Fungsi \inputscript{pause} Program Rental PS Rijal}{fig:m4:i12}
-    {\color{White}a}\vspace{-2.6ex}
-    \inputfigure[p]{res/m4i13.png}{0.5}{{\Flowchart} Fungsi \inputscript{input\_invalid} Program Rental PS Rijal}{fig:m4:i13}
-    {\color{White}a}\vspace{-2.6ex}
-    \inputfigure[p]{res/m4i14.png}{0.5}{{\Flowchart} Fungsi \inputscript{nselector} Program Rental PS Rijal}{fig:m4:i14}
-    {\color{White}a}\vspace{-2.6ex}
-    \newpage
-    {\color{White}a}\vspace{-1.6ex}
-    \inputfigure[p]{res/m4i15.png}{0.35}{{\Flowchart} Fungsi \inputscript{login} Program Rental PS Rijal}{fig:m4:i15}
-    {\color{White}a}\vspace{-2.6ex}
     \subsubsection{\SourceCode}
 \begin{indentlevel0}
     \lstinputlisting[language=C++]{res/m4c1.cpp}
@@ -45,5 +39,8 @@
     \paragraph{Setelah itu akan ditampilkan nilai SPL untuk variabel x, y, dan z. Setelah semua itu program akan selesai.}
     \subsubsection{\Flowchart}
     \subsubsection{\SourceCode}
+\begin{indentlevel0}
+    \lstinputlisting[language=C++]{res/m4c2.cpp}
+\end{indentlevel0}
     \subsubsection{Hasil Program}
 \end{document}
