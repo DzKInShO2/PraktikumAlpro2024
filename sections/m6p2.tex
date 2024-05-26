@@ -1,0 +1,37 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \subsection{\Pointer}
+    {\Pointer} dapat didefinisikan sebagai suatu variabel yang menyimpat alamat memori. Jika kita mempunyai variabel dengan tipe data tertentu, maka untuk mendapatkan alamat dari variabel tersebut adalah dengan menggunakan operator \inputscript{\&} \parencite{raharjo2015pemrograman}.
+
+    Kita dapat mendefinisikan sebuah pointer ke tipe data dengan cara mendeklarasikannya dalam bentuk \inputscript{*d}, dimana \inputscript{d} merupakan nama dari variabel yang didefinisikan. Simbol \inputscript{*} harus diulangi untuk setiap variabel {\pointer} \parencite{Lippman_Lajoie_Moo_2013}:
+
+\begin{lstlisting}
+ int *ip1, *ip2;  // both ip1 and ip2 are pointers to int
+ double dp, *dp2; // dp2 is a pointer to double; dp is a double
+\end{lstlisting}
+
+    Jika kita mempunyai sebuah variabel yang bertipe \inputscript{long} (misalnya \inputscript{X}), maka kita dapat memerintahkan {\pointer} \inputscript{P} untuk menunjuk ke alamat yang ditempati oleh variabel \inputscript{X}. Untuk melakukan hal tersebut kita perlu menuliskan kode seperti berikut \parencite{raharjo2015pemrograman}:
+
+\begin{lstlisting}
+ // Mendeklarasikan variabel X dengan tipe long
+ long X;
+ // Mendeklarasikan pointer P
+ long *P;
+
+ // Memerintahkan P untuk menunjuk alamat
+ // dari variabel X
+ P = &X;
+\end{lstlisting}
+
+    \subsection{Referensi}
+
+    Sebuah \textit{reference} merupakan sebuah alias atau sinonim untuk variabel lain. \textit{Reference} dideklarasikan dengan \textit{syntax} \inputscript{type\& ref\_name = var\_name;} dimana \inputscript{type} merupakan tipe data variabel, \inputscript{ref\_name} merupakan nama dari \textit{reference}, dan \inputscript{var\_name} merupakan nama dari variabel. Sebagai contoh \parencite{hubbard2021programming} :
+
+\begin{lstlisting}
+ int& rn = n; // r is a synonym for n
+\end{lstlisting}
+
+    Variabel \inputscript{rn} dideklarasikan sebagai sebuah \textit{reference} ke variabel \inputscript{n}, yang harus telah terdeklarasi.
+
+\end{document}
