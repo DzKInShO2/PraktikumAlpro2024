@@ -5,7 +5,7 @@ const int PASSANGER_MAX = 10;
 struct Wagon {
   int passanger_count = 0;
   string passangers[PASSANGER_MAX]; };
-string wagon_typessetw(4) << [] = {
+string wagon_types[] = {
   "EKO", "BISNIS", "RAJA" };
 void pause() {
   cout << "Press any key to continue. . .\n";

@@ -1,0 +1,246 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \subsection{Kereta Api Pemrograman}
+
+\begin{lstlisting}
+ #include <iostream>
+ using namespace std;
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk memberikan kemampuan untuk menggunakan fungsi-fungsi dan objek-objek yang tersedia dalah {\header} {\file} \inputscript{iostream}. Baris \inputscript{using namespace std;} menghilangkan kebutuhan untuk menulis \inputscript{std::}.
+
+\begin{lstlisting}
+ const int WAGON_MAX = 26;
+ const int PASSANGER_MAX = 10;
+ struct Wagon {
+   int passanger_count = 0;
+   string passangers[PASSANGER_MAX]; };
+ string wagon_types[] = {
+   "EKO", "BISNIS", "RAJA" };
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan kumpulan data-data dan struktur data yang akan digunakan untuk mengatur alur kerja program Kereta Api Pemrograman. Struktur dara \inputscript{struct Wagon} digunakan untuk merapikan dan penyimpan data penumpang.
+
+\begin{lstlisting}
+ void pause() {
+   cout << "Press any key to continue. . .\n";
+   cin.clear(); cin.ignore(); cin.get(); }
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \inputscript{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
+
+\begin{lstlisting}
+ void input_invalid() {
+   cin.clear(); cin.ignore();
+   cout << "Masukan tidak valid\n"; }
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \inputscript{void}. Fungsi tersebut akan memberitahu pengguna bahwa sebuah masukan tidak valid dan membersihkan masukan tidak valid tersebut dari {\ioi} {\stream}.
+
+\begin{lstlisting}
+ int nselector(int l, int u, string c = ">> ") {
+   int n;
+   while (true) {
+     cout << c;
+     cin >> n;
+     if (cin.fail() || n < l || n > u) {
+       input_invalid();
+       continue; } break;
+   } return n; }
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan sebuah fungsi dengan kembalian berupa \inputscript{int} atau bilangan bulat. Fungsi tersebut akan menyaring masukan dari pengguna sesuai kedua parameter fungsi \inputscript{int l} dan \inputscript{int u}.
+
+\begin{lstlisting}
+ string tselector(string msg) {
+   string t;
+   while (true) {
+     cout << msg;
+     cin >> t; 
+     if (cin.fail() || (t != "EKO" &&
+       t != "BISNIS" && t != "RAJA")) {
+       input_invalid(
+         string{
+           "Harap masukkan kelas tiket EKO, BISNIS, "
+         } + "atau RAJA"
+       ); continue;
+     } break; }
+   return t; }
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan sebuah fungsi yang mengembalikan sebuah objek bertipe data \inputscript{string}. Fungsi tersebut akan mengecek apakah masukan masuk kedalam kategori \inputscript{EKO}, \inputscript{BISNIS}, dan \inputscript{RAJA}. Bila masukan diluar kategori maka masukan akan diminta lagi.
+
+\begin{lstlisting}
+ int wagon_type_to_index(string type) {
+   return 0 + (type == wagon_types[1]) +
+        (2 * (type == wagon_types[2])); }
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan sebuah fungsi yang mengembalikan sebuah nilai bilangan bulat atau \inputscript{int}. Fungsi tersebut akan mengubah kategori dari paragraf sebelumnya menjadi sebuah index sehingga memudahkan pemerosesan data.
+
+\begin{lstlisting}
+ void topbar() {
+   cout << "\33[H\33[2J";
+   cout << " /\\_/\\  PT KAP (KERETA API PROGRAMMER) \n";
+   cout << "( o.o ) PROGRAM SISTEM TIKET DAN GERBONG KERETA \n";
+   cout << " > ^ <  DIBUAT OLEH PJ MODUL 5 ALPRO 2024\n";
+   cout << "================================================\n"; }
+\end{lstlisting}
+    \ilz{}{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \inputscript{void}. Fungsi tersebut digunakan untuk mencetak {\header} atau \textit{bar} pada bagian atas program ketika program dijalankan.
+
+\begin{lstlisting}
+   topbar();
+   int n = nselector(1, WAGON_MAX,
+           "Masukan jumlah gerbong kereta penumpang: ");
+   int wagon_count = n;
+   Wagon wagons[wagon_count] = { 0 }; int state = 0;
+   bool is_severed = false; int severed_index = WAGON_MAX;
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk meminta masukan jumlah gerbong penumpang melalui fungsi \inputscript{nselector}. Setelah itu gerbong akan diinisialisasikan dengan ukuran yang sudah dimansukan seperti yang dapat dilihat dari {\statement} \inputscript{Wagon wagons[wagon\_count]}.
+
+    \newpage
+
+\begin{lstlisting}
+     topbar(); cout << "A";
+     for (int i = 0; i < n; ++i) {
+       if (i == severed\_index + 1)
+         cout << "-- X -";
+       cout << "-" << (char)(66 + i);
+       if (i < severed\_index + 1)
+         cout << wagons[i].passanger\_count;
+     } cout << endl;
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menggambar gerbong penumpang sesuai dengan jumlah yang telah dimasukan sebelumnya. Sebelum gerbong-gerbong penumpang digambar pertama kali akan digambar gerbong mesin yakni gerbong \inputscript{A}. Gerbong penumpang akan diawali oleh gerbong \inputscript{B} kemudian jumlah penumpag gerbong dan diikuti oleh huruf-huruf lainnya.
+
+\begin{lstlisting}
+       case 0: {
+         cout << "Menu:\n1. Tambah Penumpang\n";
+         cout << "2. Hapus Penumpang\n3. Info Gerbong\n";
+         if (!is_severed) cout << "4. Lepas Gerbong\n";
+         state = nselector(1, 3 + (!is_severed), string{
+           "Input (1,2,3"} + (is_severed ? "): ":",4): "));
+         if (state == 4) {
+           while (true) {
+             cout << "Masukan nama gerbong yang ingin dilepas: ";
+             char c; cin >> c;
+             if (c > '`' && c < '{') c -= 32;
+             if (cin.fail() || c < 'B'
+               || c > (char)(66 + wagon_count)) {
+               cin.clear(); cin.ignore();
+               if (c == 'A') {
+                 cout << "Tidak bisa melepas gerbong A yang"
+                    << " berisi mesin!\n";
+                 continue;
+               }
+               cout << "Masukan bukan merupakan gerbong!\n";
+               continue;
+             } wagon_count = (severed_index = c - 67) + 1;
+             break;
+           } state = 0; is_severed = true;
+         }
+       } break;
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menampilkan menu awal program Kereta Api Pemrograman. Dalam menu tersebut diberikan empat buah pilihan dengan pilihan keempat yang akan menghilang bila sebuah gerbong telah dilepas. Pilihan dalam menu awal tersebut ialah sebagai berikut tambah penumpang, hapus penumpang, info gerbong, dan lepas gerbong. Gerbong dapat dilepas dengan memberikan nama gerbong.
+\vspace{-0.45ex}
+\begin{lstlisting}
+       case 1: {
+         string name, type;
+         cout << "Masukan nama penumpang: "; getline(cin >> ws, name);
+         type = tselector("Pilih kelas tiket (EKO, BISNIS, RAJA): ");
+         int wagon_index = wagon_type_to_index(type);
+         while (wagon_index > wagon_count - 1) {
+\end{lstlisting}
+\begin{lstlisting}
+           input_invalid(
+             string{"Gerbong kelas "} + type + " yang tersedia: " +
+             "TIDAK ADA\nHarap pilih kelas lainnya!"
+           );
+           type=tselector("Pilih kelas tiket (EKO, BISNIS, RAJA): ");
+           wagon_index = wagon_type_to_index(type);
+         }
+         cout << "Gerbong kelas " << type << " yang tersedia: ";
+         for (int i = wagon_index; i < wagon_count; i += 3) {
+           cout << (char)(66 + i) << " ";
+         } cout << endl;
+         while (true) {
+           cout << "Pilih lokasi gerbong: ";
+           char c; cin >> c;
+           if (c > '`' && c < '{') c -= 32;
+           if (cin.fail() || c < 'B'
+             || c > (char)(66 + wagon_count)
+             || ((c - 66) % 3) != wagon_index) {
+             cin.clear(); cin.ignore();
+             if (c == 'A') {
+               cout << "Tidak bisa melepas gerbong mesin,"
+                  << " harap pilih gerbong lainnya\n";
+               continue; }
+             cout << "Tidak bisa memilih gerbong " << c << " karena"
+                << " gerbong bukanlah " << type << "\n";
+             continue; }
+           wagons[(c - 66)].passangers[
+             wagons[(c - 66)].passanger_count++] = name;
+           break; }
+         pause(); state = 0;
+       } break;
+\end{lstlisting}
+    \vspace{-0.15ex}
+    \ilz{}{\Script} diatas digunakan untuk memasukan seorang penumpang ke dalam sebuah gerbong. Pertama kali nama penumpang akan ditanyakan setelah itu akan ditanya ke gerbong kelas apa penumpang akan ditempatkan. Setelah itu akan dilakukan perulangan untuk menunjukan gerbong-gerbong sesuai kelas pilihan. Dari gerbong-gerbong tersebut dapat dipilih salah satunya sebagai tempat penumpang.
+
+\vspace{-0.55ex}
+\begin{lstlisting}
+       case 2: {
+         int match_count = 0;
+         int match_id[wagon_count * PASSANGER_MAX * 2];
+         string name; cout
+         <<"Masukan nama penumpang yang ingin dihapus dari daftar: ";
+         getline(cin >> ws, name); string type = tselector(
+           "Masukan kelas tiket yang dimiliki(EKO, BISNIS, RAJA): ");
+         for (int i=wagon_type_to_index(type);i<wagon_count;i+=3) {
+           for (int j = 0; j < wagons[i].passanger_count; ++j) {
+             if (name == wagons[i].passangers[j]) {
+               match_id[match_count++] = i;
+               match_id[match_count++] = j;
+               cout << match_count/2 << ". "
+                  << wagons[i].passangers[j]
+                  << " (" << type << ") "
+                  << "di Gerbong " << (char)(66+i)
+                  << "\n"; } } }
+\end{lstlisting}
+\begin{lstlisting}
+         if (match_count == 0) {
+           cout << "Tidak ditemukan penumpang dengan nama " << name
+              << " di kelas " << type << "\n";
+         } else {
+           int d = nselector(1, match_count/2,
+                     "Ingin menghapus penumpang nomor berapa: ");
+           for (int i = match_id[d];
+              i < wagons[match_id[d - 1]].passanger_count - 1; ++i) {
+             wagons[match_id[d - 1]].passangers[i]
+               = wagons[match_id[d - 1]].passangers[i + 1];
+           }
+           wagons[match_id[(wagons[match_id[d - 1]]
+             .passanger_count == 1 ? d : d - 1)]].passanger_count--;
+           cout << "Penumpang berhasil dihapus!\n"; }
+         pause(); state = 0; } break;
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menghapus seorang penumpang dalam sebuah gerbong. Pertama kali nama penumpang akan ditanyakan, setelah itu kelas gerbong dimana penumpang berada. Akhirnya penumpang-penumpang yang memiliki nama yang sama dengan masukan akan ditampilkan dan bisa dihapus dengan memasukan nomor.
+
+\begin{lstlisting}
+       case 3: {
+         cout << "Jumlah penumpang EKO: ";
+         int m = 0;
+         for (int i = 0; i < wagon_count; i += 3)
+           m += wagons[i].passanger_count;
+         cout << m << " Bisnis: "; m = 0;
+         for (int i = 1; i < wagon_count; i += 3)
+           m += wagons[i].passanger_count;
+         cout << m << " RAJA: ";
+         for (int i = 1; i < wagon_count; i += 3)
+           m += wagons[i].passanger_count;
+         cout << m << "\n";
+         for (int i = 0; i < wagon_count; ++i) {
+           cout << "Gerbong " << (char)(66 + i) << " ("
+              << wagon_types[i % 3] << "):\n";
+           if (wagons[i].passanger_count == 0) {
+             cout << "Kosong\n"; continue; }
+           for (int j = 0; j < wagons[i].passanger_count; ++j)
+             cout << j + 1 << ". " << wagons[i].passangers[j] << "\n";
+         } pause(); state = 0; } break; } } }
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk menampilkan gerbang-gerbang beserta penumpang-penumpang di dalamnya. Di samping nama gerbong akan disediakan kelas gerbong. Pada bagian teratas akan ditampilkan jumlah penumpang kereta yang dipisahkan menurut kelas gerbong.
+
+\end{document}
