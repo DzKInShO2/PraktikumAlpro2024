@@ -1,17 +1,78 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-    \subsection{PT. KAP Kereta Api Pemrograman}
+    \subsection{Kereta Api Pemrograman}
     \subsubsection{Algoritma}
     {\renewcommand{\labelenumi}{\alph{enumi}.}
         \begin{enumerate}[leftmargin=1.56cm]
             \item {Pada awalnya akan diminta masukan jumlah gerbong kereta penumpang. }
             \item {Akan dibuat gerbong kereta dimulai dari kereta A yang merupakan gerbong mesin diikuti oleh gerbong penumpang yang akan dibuat sesuai jumlah yang dimasukan.}
             \item {Akan diberikan empat pilihan yakni tambah penumpang, hapus penumpang, info gerbong, dan lepas gerbong yang akan hilang sesudah melepas gerbong.}
+            \item {Bila tambah penumpang dipilih, akan ditanya masukan nama penumpang. Kemudian akan ditanyakan kelas gerbong dan dari kelas gerbong tersebut akan diberikan gerbong yang bisa digunakan, dari gerbong tersebut dapat dipilih salah satu. Setelah itu akan kembali ke menu awal.}
+            \item {Bila hapus penumpang dipilih, akan diminta masukan nama penumpang. Kemudian akan ditanya dikelas apa dan akan ditampilkan daftar penumpang yang bisa dihapus. Setelah itu akan diminta penumpang mana yang ingin dihapus. Akhirnya akan kembali ke menu awal.}
+            \item {Bila info gerbong dipilih, akan ditampilkan daftar gerbong-gerbong yang tersedia serta daftar penumpang-penumpangnya. Akhirnya kembali ke menu awal.}
+            \item {Bila lepas gerbong dipilih, ditanyakan gerbong mana yang ingin dilepas kemudian gerbong tersebut dan gerbong-gerbong selanjutnya akan dihilangkan. Akhirnya kembali ke menu awal.}
         \end{enumerate}
     }
 
     \subsubsection{\Flowchart}
+    \inputfigure[p]{res/m5i11.png}{0.20}{{\Flowchart} Program Kereta Api Pemrograman}{fig:m5:i11}
+
+    \newpage
     \subsubsection{\SourceCode}
+\begin{indentlevel0}
+    \vspace*{-0.15ex}
+    \lstinputlisting[language=C++]{res/m5c1a.cpp}
+    \lstinputlisting[language=C++]{res/m5c1b.cpp}
+    \lstinputlisting[language=C++]{res/m5c1c.cpp}
+    \lstinputlisting[language=C++]{res/m5c1d.cpp}
+\end{indentlevel0}
+
     \subsubsection{Hasil Program}
+
+    \inputfigure[p]{res/m5i12.png}{0.45}{Pertanyaan Jumlah Gerbong Program Kereta Api Pemrograman}{fig:m5:i12}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i12}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambaran sebuah pertanyaan masukan jumlah gerbong kereta penumpang yang diinginkan.
+    \end{indentlevel0}
+
+    \inputfigure[p]{res/m5i13.png}{0.4}{Halaman Awal Program Kereta Api Pemrograman}{fig:m5:i13}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i13}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambar halaman awal yang menyediakan pilihan tambah penumpang, hapus penumpang, info gerbong, dan lepas gerbong.
+    \end{indentlevel0}
+
+    \inputfigure[p]{res/m5i14.png}{0.4}{Tambah Penumpang Program Kereta Api Pemrograman}{fig:m5:i14}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i14}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambaran proses penambahan seorang penumpang ke dalam sebuah gerbong sesuai kelas yang ditentukan.
+    \end{indentlevel0}
+
+    \newpage
+    {\color{white}a\vspace*{-1.5ex}}
+    \inputfigure[p]{res/m5i15.png}{0.45}{Info Penumpang Program Kereta Api Pemrograman}{fig:m5:i15}
+
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i15}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambar daftar gerbong-gerbong penumpang beserta penumpang di dalamnya.
+    \end{indentlevel0}
+
+    \inputfigure[p]{res/m5i16.png}{0.45}{Hapus Penumpang Program Kereta Api Pemrograman}{fig:m5:i16}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i16}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambaran proses penghapusan seorang penumpang dari sebuah gerbong yang sesuai kelas dimasukan.
+    \end{indentlevel0}
+
+    \newpage
+    {\color{white}a\vspace*{-1.5ex}}
+
+    \inputfigure[p]{res/m5i17.png}{0.45}{Lepas Gerbong Program Kereta Api Pemrograman}{fig:m5:i17}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i17}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambaran proses pelepasan sebuah gerbong dari kereta.
+    \end{indentlevel0}
+
+    \inputfigure[p]{res/m5i18.png}{0.45}{Menu Awal Setelah Lepas Gerbong Program Kereta Api Pemrograman}{fig:m5:i18}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i18}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gembar tersebut merupakan gambar menu awal setelah proses lepas gerbong telah diselesaikan.
+    \end{indentlevel0}
+
+    \inputfigure[p]{res/m5i19.png}{0.45}{Info Gerbong Setelah Lepas Gerbong Program Kereta Api Pemrograman}{fig:m5:i19}
+    \begin{indentlevel0}
+        \ilz{}Berdasarkan \reffigure{fig:m5:i19}, didapatkan sebuah gambar keluaran dari program PT. KAP Kereta Api Pemrograman. Gambar tersebut merupakan gambar menu info gerbang setelah proses lepas gerbong telah diselesaikan.
+    \end{indentlevel0}
 \end{document}

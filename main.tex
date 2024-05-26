@@ -284,6 +284,8 @@
                 center,
                 frame=0.5pt
             ]{#2}
+            \caption{#4}
+            \label{#5}
         \else
             \ifx\a\p
                 \begin{indentlevel0}
@@ -292,12 +294,11 @@
                         center,
                         frame=0.5pt
                     ]{#2}
+                    \caption{#4}
+                    \label{#5}
                 \end{indentlevel0}
             \fi
         \fi
-
-        \caption{#4}
-        \label{#5}
         \vspace*{-2.0ex}
     \end{figure}
 }
