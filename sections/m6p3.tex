@@ -1,0 +1,99 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{\textit{Learn Stack Layout}}
+Saat jam-jam terakhir di perusahaan X, Holil dan Gilang ingin mencoba melakukan eksperimen yaitu melakukan \textit{debugging} pada struktur \textit{address} dari fungsi yang diinput di sebuah bahasa C yang di compile dengan 64-bit. Holil dan Gilang melakukan \textit{debugging} untuk melihat sebuah fungsi yang memiliki atau tidak memiliki \textit{argument}. Ternyata setelah holil dan gilang belajar tentang register, mereka mengetahui bahwa pada 64-bit, \textit{positional argument} diurutkan mulai dengan RDI, RSI, RSI, RDX, RCX, R8, R9. Holil mendapat penjelasan berikut:
+
+Ketika fungsi memiliki paramater, maka fungsi tersebut dipanggil dengan \textit{argument}, dan jumlah argument yang masuk akan diurutkan sesuai dengan ketentuan register pada 64-bit.
+
+\inputfigure[n]{res/m6i1.png}{0.5}{Visualisasi Register Pada Fungsi 2 Argumen}{fig:m6:i1}
+\vspace*{1.6ex}
+\inputfigure[n]{res/m6i2.png}{0.5}{Visualisasi Register Pada Fungsi 3 Argumen}{fig:m6:i2}
+\vspace*{1.6ex}
+\inputfigure[n]{res/m6i3.png}{0.4}{Awal Program \textit{Learn Stack Layout}}{fig:m6:i3}
+
+Holil memiliki 3 \textit{sample} jumlah data \textit{stack} yang digunakan yaitu 3, 6 dan 9. Berikut ketika program \inputscript{Add Data} (untuk jumlah disesuaikan dengan sample) Jika Holil melakukan \textit{command line} \inputscript{info stack} saat data belum ditambahkan maka Holil akan mendapat kondisi berikut:
+
+\inputfigure[n]{res/m6i4.png}{0.65}{Info \textit{Stack} Kosong Program \textit{Learn Stack Layout}}{fig:m6:i4}
+
+Kemudian Holil Mulai menambahkan data dahulu agar bisa melakukan \textit{debugging} pada inputan yang dia berikan.
+
+\inputfigure[n]{res/m6i5.png}{0.35}{Masukan \textit{Stack} Program \textit{Learn Stack Layout}}{fig:m6:i5}
+
+Di awal Holil mengisi full 6 \textit{argument} untuk fungsi yang diinput yaitu \inputscript{menu()}.
+
+\subsubsection{3 \textit{Stack}}
+\inputfigure[p]{res/m6i6.png}{0.38}{\inputscript{Debug Mode} Program \textit{Learn Stack Layout}}{fig:m6:i6}
+\begin{indentlevel0}
+    Saat di \inputscript{Debug Mode} Holil menggunakan \textit{command} \inputscript{info stack} kemudian tampil semua \textit{layout mini stack} dari masukan Holil.
+\end{indentlevel0}
+
+\inputfigure[p]{res/m6i7.png}{0.38}{\inputscript{Info Stack} Program \textit{Learn Stack Layout}}{fig:m6:i7}
+\begin{indentlevel0}
+    Holil merasa ingin lanjut melihat lihat ke \textit{address} berikutnya kemudian Holil menggunakan \textit{command} \inputscript{ni} yang artinya \textit{next instruction}.
+\end{indentlevel0}
+
+\newpage
+{\color{white}a\vspace*{-1.5ex}}
+\inputfigure[p]{res/m6i8.png}{0.38}{\inputscript{Info Stack} Baris Kedua Program \textit{Learn Stack Layout}}{fig:m6:i8}
+\begin{indentlevel0}
+    Kemudian sampailah Holil pada akhir \textit{stack}.
+\end{indentlevel0}
+
+\inputfigure[p]{res/m6i9.png}{0.38}{\inputscript{Info Stack} Baris Ketiga Program \textit{Learn Stack Layout}}{fig:m6:i9}
+\begin{indentlevel0}
+    Saat Holil mencoba melakukan \inputscript{ni} lagi ternyata tidak bisa, karena \textit{stack} yang dibentuk sudah habis dijalankan sehingga muncullah program berikut menandakan bahwa \textit{stack} sudah habis dijalankan dan sudah tidak ada lagi \textit{stack} dan register.
+\end{indentlevel0}
+
+\inputfigure[p]{res/m6i10.png}{0.38}{\inputscript{Info Stack} \textit{Stack} Habis Program \textit{Learn Stack Layout}}{fig:m6:i10}
+
+\subsubsection{6 {\textit{Stack}}}
+
+\inputfigure[p]{res/m6i11.png}{0.36}{\inputscript{Info Stack} 6 \textit{Stack} Awal Program \textit{Learn Stack Layout}}{fig:m6:i11}
+\vspace{1.2ex}
+\inputfigure[p]{res/m6i12.png}{0.36}{\inputscript{Info Stack} 6 \textit{Stack} Pertengahan Program \textit{Learn Stack Layout}}{fig:m6:i12}
+
+\newpage
+{\color{white}a\vspace*{-1.5ex}}
+\inputfigure[p]{res/m6i13.png}{0.36}{\inputscript{Info Stack} 6 \textit{Stack} Akhir Program \textit{Learn Stack Layout}}{fig:m6:i13}
+
+\subsubsection{9 {\textit{Stack}}}
+
+\inputfigure[p]{res/m6i14.png}{0.36}{\inputscript{Info Stack} 9 \textit{Stack} Awal Program \textit{Learn Stack Layout}}{fig:m6:i14}
+\vspace{1.2ex}
+\inputfigure[p]{res/m6i15.png}{0.36}{\inputscript{Info Stack} 9 \textit{Stack} Pertengahan Awal Program \textit{Learn Stack Layout}}{fig:m6:i15}
+\begin{indentlevel0}
+    Fungsi dengan \textit{argument} pun bisa karena fungsi tidak selalu membutuhkan paramater dan \textit{argument} juga sehingga jika fungsi tanpa \textit{argument}, maka registernya akan bernilai 0.
+\end{indentlevel0}
+
+\inputfigure[p]{res/m6i16.png}{0.36}{\inputscript{Info Stack} 9 \textit{Stack} Pertengahan Akhir Program \textit{Learn Stack Layout}}{fig:m6:i16}
+
+\newpage
+{\color{white}a\vspace*{-1.5ex}}
+\inputfigure[p]{res/m6i17.png}{0.36}{\inputscript{Info Stack} 9 \textit{Stack} Akhir Program \textit{Learn Stack Layout}}{fig:m6:i17}
+
+\subsection{\textit{Dungeon Crawler RPG}}
+
+Setelah pulang dari perusahaan X, Holil sampai di rumah dan ingin memainkan game \textit{roguelike online} yang pernah dia mainkan. \textit{Roguelike} adalah \textit{subgenre} permainan video permainan peran yang ditandai dengan \textit{dungeon crawl} melalui level yang dihasilkan secara prosedural, \textit{gameplay} berbasis giliran, grafis berbasis ubin, dan karakter pemain dengan kematian permanen. Karena merasa akan bosan dan hambar jika dimainkan sendirian, Holil pun mengajak temannya, Gilang, seorang pengembang \textit{game}, untuk bermain bersama. Setelah beberapa saat ingin memainkan game tersebut, Holil mendapat berita dari internet bahwa \textit{game online} tersebut sudah menutup server saat dia melamar kerja di perusahaan X. Holil pun sangat kecewa dengan penutupan server \textit{game} tersebut. Gilang, yang kebetulan seorang pengembang \textit{game}, berinisiatif mengajak Holil untuk membuat ulang \textit{game} tersebut agar bisa dimainkan. Dengan menggabungkan kemampuan pemrograman dari Holil dan kemampuan pengembangan game dari Gilang, mereka pun membuat ulang game tersebut menggunakan bahasa C++ yang dijalankan melalui \textit{command prompt}.
+
+Pada bagian awal, \textit{game} akan menampilkan tampilan berikut:
+
+\inputfigure[n]{res/m6i18.png}{0.14}{Tampilan Penjelajahan Program \textit{Dungeon Crawl RPG}}{fig:m6:i18}
+
+Untuk menjalankannya, \textit{player} dapat menggunakan perintah \inputscript{next} atau \inputscript{go} untuk menuju ke room selanjutnya dan perintah \textit{back} untuk kembali menuju ke \textit{room} sebelumnya.
+
+\newpage
+{\color{white}a\vspace*{-1.5ex}}
+\inputfigure[n]{res/m6i19.png}{0.14}{Tampilan Bertarung Program \textit{Dungeon Crawl RPG}}{fig:m6:i19}
+
+Jika terdapat lebih dari satu pilihan \textit{room}, \textit{game} akan memberikan pilihan untuk dipilih oleh \textit{player}. Jika \textit{room} selanjutnya terdapat musuh atau \textit{monster} maka game akan langsung menuju ke mode bertarung.
+
+\inputfigure[n]{res/m6i20.png}{0.14}{Tampilan \textit{Item} Ditemukan Program \textit{Dungeon Crawl RPG}}{fig:m6:i20}
+
+Jika terdapat suatu \textit{item} pada suatu \textit{room}, maka \textit{game} akan meminta \textit{player} memasukan nama \textit{player} yang akan mengambil \textit{item} tersebut, selanjutnya jika suatu \textit{item} diambil dan \textit{monster} dikalahkan maka akan menampilkan pesan tidak ada sesuatu pada \textit{room} tersebut.
+
+\inputfigure[n]{res/m6i21.png}{0.14}{\textit{Boss} Terakhir Program \textit{Dungeon Crawl RPG}}{fig:m6:i21}
+
+Objektif dari \textit{game} ini yaitu mengalahkan \textit{boss} terakhir bernama “Leviathan” pada \textit{room} “Abyssia Ocean”. Jika salah satu dari \textit{player} mati maka \textit{game} akan \textit{restart} dari awal sampai \textit{boss} terakhir dikalahkan. Program selesai Ketika berhasil mengalahkan \textit{boss} terakhir.
+
+\end{document}
