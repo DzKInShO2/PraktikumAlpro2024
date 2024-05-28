@@ -27,7 +27,7 @@
     Program adalah kumpulan instruksi komputer, program ditulis dengan menggunakan bahasa pemrograman. Jadi bisa disebut bahwa program adalah implementasi dari bahasa pemrograman \parencite{utami10}. Dimana bahasa pemrograman merupakan teknik komando atau instruksi standar untuk memerintah komputer \parencite{dewi2010media}.
 
     \subsection{Struktur Bahasa C++}
-    Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari “fungsi”, minimal dalam suatu program harus terdapat satu fungsi \inputscript{main()}. Penulisannya di mulai dengan pendeklarasian fungsi \inputscript{main()}, \inputscript{int main()} kemudian tanda buka kurung kurawal “\{” dan di akhiri dengan tutup kurawal “\}. Kemudian \textit{statement} dari program di tuliskan di dalam kurung kurawal dari fungsi \inputscript{main()} diatas dan pada tiap \textit{statement} harus di akhiri dengan tanda titik koma “;” \parencite{friyadi2005panduan}.
+    Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari fungsi, minimal dalam suatu program harus terdapat satu fungsi \inputscript{main()}. Penulisannya di mulai dengan pendeklarasian fungsi \inputscript{main()}, \inputscript{int main()} kemudian tanda buka kurung kurawal \inputscript{\{} dan di akhiri dengan tutup kurawal \inputscript{\}}. Kemudian \textit{statement} dari program di tuliskan di dalam kurung kurawal dari fungsi \inputscript{main()} diatas dan pada tiap \textit{statement} harus di akhiri dengan tanda titik koma \inputscript{;} \parencite{friyadi2005panduan}.
 
     \subsubsection{{\Header} {\file}}
     \begin{indentlevel0}
@@ -37,9 +37,8 @@
     \paragraph{\inputscript{math.h}	: Menggunakan operasi matematika.}
     \paragraph{\inputscript{stdio.h}	: Menggunakan fungsi standar {\ioi} dan {\ioo}.}
     \paragraph{\inputscript{iostream.h}	: Menggunakan fungsi standar {\ioi} dan {\ioo} {\stream}.}
-    \newpage
 
-    \subsubsection{{\Preprocessor} {\Directive} ({\crnfamily \#include})}
+    \subsubsection{{\Preprocessor} {\Directive} (\inputscript{\#include})}
     \begin{indentlevel0}
         {\Preprocessor} {\directive} adalah suatu perintah yang digunakan untuk mengatur {\compiler} agar membaca header {\file} yang disertakan di belakang kata \inputscript{include} saat pelaksanaan aplikasi. {\Preprocessor} {\directive} merupakan perintah yang didahului dengan tanda \inputscript{\#}. Lalu penulisannya tanpa spasi dan disertakan dengan header {\file} yaitu {\file} yang berisi sebagai {\file} deklarasi \parencite{kadir2005heriyanto}. Contoh penulisannya:
         \begin{lstlisting}
@@ -47,7 +46,7 @@
 \end{lstlisting}
     \end{indentlevel0}
 
-    \subsubsection{Fungsi ``{\crnfamily main}''}
+    \subsubsection{Fungsi \inputscript{main}}
     \begin{indentlevel0}
         Fungsi \inputscript{main} adalah fungsi yang akan dijalankan pertama kali ketika program dieksekusi, sedangkan tubuh fungsi dimulai dari tanda “\{” hingga tanda “\}. Tanda \inputscript{()} digunakan untuk mengapit argumen fungsi, yaitu nilai yang akan dilewatkan ke fungsi. Contoh \inputscript{int main}, kata \inputscript{int} di depan \inputscript{main} menyatakan bahwa program memberikan nilai balik yang bertipe \inputscript{int}. Tipe \inputscript{int} adalah tipe yang menyatakan bilangan bulat \parencite{kadir2005heriyanto}.
     \end{indentlevel0}
@@ -68,7 +67,6 @@
     \end{indentlevel0}
     \paragraph{\inputscript{//komentar}: Hanya digunakan per baris.}
     \paragraph{\inputscript{/*komentar*/}: Digunakan untuk mengapit lebih dari satu baris.}
-    \newpage
 
     \subsection{Tipe Data}
     Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam program. Tipe data terbagi menjadi dua jenis sebagai berikut \parencite{friyadi2005panduan}:
@@ -77,12 +75,12 @@
     \begin{indentlevel0}
         Tipe data ini tergolong tipe data yang sering digunakan. Macam-macam tipe data dasar adalah sebagai berikut:
     \end{indentlevel0}
-
+    \vspace{-1ex}
     \paragraph{Tipe Bilangan Bulat}
     \begin{indentlevel1}
         Tipe bilangan bulat adalah data-data angka yang tidak mengandung angka di belakang koma. Macam-macam tipe bilangan bulat sebagai berikut:
     \end{indentlevel1}
-
+    \newpage
     \inputtable[0.895]{|m{8em}|C|m{20em}|}{
         \centering Tipe Data & Ukuran(dalam bit) & {\hspace{8em}Rentang} \\ \hline
         {\crnfamily int} & 16 atau 32 & \tblspacing{} -32.768 sampai 32.768 atau -2.147.483.648 sampai 2.147.483.648 \\ \hline
@@ -112,7 +110,6 @@
     \begin{indentlevel1}
         Tipe logika adalah tipe data yang hanya mengandung dua nilai yaitu BENAR atau SALAH. Tipe data ini ditulis di C++ sebagai tipe data \inputscript{bool} yang merupakan tipe data berukuran 8 bit.
     \end{indentlevel1}
-    \newpage
 
     \paragraph{Tipe Karakter}
     \begin{indentlevel1}
@@ -151,7 +148,6 @@
     \begin{indentlevel1}
         Tipe data {\sstring} adalah tipe data yang menampung kumpulan karakter, kata, atau kalimat.
     \end{indentlevel1}
-    \newpage
 
     \subsection{Variabel}
     Variabel (pengubah) adalah sebuah objek data yang dapat didefiniskan dan dinamai programmer secara eksplisit. Sebuah variabel menempat satu lokasi memori yang disisihkan untuk satu jenis data tertentu dan diberi nama untuk memudahkan pengacuannya. Ketentuan dalam pemberian nama variabel adalah sebagai berikut \parencite{friyadi2005panduan}:
