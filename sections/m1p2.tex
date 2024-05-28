@@ -2,19 +2,13 @@
 
 \begin{document}
     \subsection{Algoritma, {\Pseudocode} dan {\Flowchart}}
-    \begin{enumerate}
-        \item {
-            Algoritma adalah spesifikasi urutan langkah untuk melakukan pekerjaan tertentu. Dalam bahasa Indonesia, definisi algoritma adalah logika, metode dan tahapan (urutan) sistematis yang digunakan untuk memecahkan suatu permasalahan \parencite{utami10}.
-        }
-        \item {
-            {\Pseudocode} adalah bentuk informal untuk mendeskripsikan algoritma yang mengikuti struktur bahasa pemrograman tertentu dengan tujuan untuk memudahkan dibaca oleh manusia, mudah untuk dipahami dan mudah dalam menuangkan ide atau hasil pemikiran \parencite{harumy2016belajar}.
-        }
-        \item {
-            {\Flowchart} didefinisikan sebagai skema penggambaran dari algoritma atau proses \parencite{harumy2016belajar}. Tabel berikut menampilkan simbol-simbol yang digunakan dalam menyusun {\flowchart} \parencite{samala2021pemrograman}:
-        }
-    \end{enumerate}
+        Algoritma adalah spesifikasi urutan langkah untuk melakukan pekerjaan tertentu. Dalam bahasa Indonesia, definisi algoritma adalah logika, metode dan tahapan (urutan) sistematis yang digunakan untuk memecahkan suatu permasalahan \parencite{utami10}.
 
-    \inputtable[n]{|C|l|}{
+        {\Pseudocode} adalah bentuk informal untuk mendeskripsikan algoritma yang mengikuti struktur bahasa pemrograman tertentu dengan tujuan untuk memudahkan dibaca oleh manusia, mudah untuk dipahami dan mudah dalam menuangkan ide atau hasil pemikiran \parencite{harumy2016belajar}.
+
+        {\Flowchart} didefinisikan sebagai skema penggambaran dari algoritma atau proses \parencite{harumy2016belajar}. Tabel berikut menampilkan simbol-simbol yang digunakan dalam menyusun {\flowchart} \parencite{samala2021pemrograman}:
+
+    \inputtable{|C|l|}{
         Simbol & {\hspace{30ex}Keterangan} \\ \hline
         {\vspace{0.1ex}\includegraphics[scale=0.5]{res/m1i2.png}} & Simbol permulaan awal ({\sstart}) dan akhir program ({\sstop}). \\ \hline
         {\vspace{0.2ex}\includegraphics[scale=0.5]{res/m1i3.png}} & Simbol yang digunakan untuk menghubungkan antar simbol. \\ \hline
@@ -33,21 +27,21 @@
     Program adalah kumpulan instruksi komputer, program ditulis dengan menggunakan bahasa pemrograman. Jadi bisa disebut bahwa program adalah implementasi dari bahasa pemrograman \parencite{utami10}. Dimana bahasa pemrograman merupakan teknik komando atau instruksi standar untuk memerintah komputer \parencite{dewi2010media}.
 
     \subsection{Struktur Bahasa C++}
-    Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari “fungsi”, minimal dalam suatu program harus terdapat satu fungsi “{\crnfamily main()}”. Penulisannya di mulai dengan pendeklarasian fungsi “{\crnfamily main()}”, “{\crnfamily int main()}” kemudian tanda buka kurung kurawal “\{” dan di akhiri dengan tutup kurawal “\}”. Kemudian \textit{statement} dari program di tuliskan di dalam kurung kurawal dari fungsi “{\crnfamily main()}” diatas dan pada tiap \textit{statement} harus di akhiri dengan tanda titik koma “;” \parencite{friyadi2005panduan}.
+    Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari “fungsi”, minimal dalam suatu program harus terdapat satu fungsi \inputscript{main()}. Penulisannya di mulai dengan pendeklarasian fungsi \inputscript{main()}, \inputscript{int main()} kemudian tanda buka kurung kurawal “\{” dan di akhiri dengan tutup kurawal “\}. Kemudian \textit{statement} dari program di tuliskan di dalam kurung kurawal dari fungsi \inputscript{main()} diatas dan pada tiap \textit{statement} harus di akhiri dengan tanda titik koma “;” \parencite{friyadi2005panduan}.
 
     \subsubsection{{\Header} {\file}}
     \begin{indentlevel0}
-        {\Header} {\file} atau berkas {\header} (berekstensi “{\crnfamily .h}”) adalah berkas yang berisi prototipe fungsi, definisi konstanta dan definisi variabel. Prototipe fungsi berupa judul suatu fungsi yang dilengkapi dengan argumen dan tipe argumen serta tipe nilai balik untuk fungsi yang memberikan nilai balik \parencite{kadir2005heriyanto}. {\Header} {\file} merupakan sebuah tempat memasukkan suatu fungsi sebagai perintah. {\Header} {\file} dipanggil menggunakan {\directive} “{\crnfamily \#include}”. Beberapa contoh {\header} {\file} antara lain \parencite{friyadi2005panduan}:
+        {\Header} {\file} atau berkas {\header} (berekstensi \inputscript{.h}) adalah berkas yang berisi prototipe fungsi, definisi konstanta dan definisi variabel. Prototipe fungsi berupa judul suatu fungsi yang dilengkapi dengan argumen dan tipe argumen serta tipe nilai balik untuk fungsi yang memberikan nilai balik \parencite{kadir2005heriyanto}. {\Header} {\file} merupakan sebuah tempat memasukkan suatu fungsi sebagai perintah. {\Header} {\file} dipanggil menggunakan {\directive} \inputscript{\#include}. Beberapa contoh {\header} {\file} antara lain \parencite{friyadi2005panduan}:
     \end{indentlevel0}
     \vspace*{-1ex}
-    \paragraph{“{\crnfamily math.h}”	: Menggunakan operasi matematika.}
-    \paragraph{“{\crnfamily stdio.h}”	: Menggunakan fungsi standar {\ioi} dan {\ioo}.}
-    \paragraph{“{\crnfamily iostream.h}”	: Menggunakan fungsi standar {\ioi} dan {\ioo} {\stream}.}
+    \paragraph{\inputscript{math.h}	: Menggunakan operasi matematika.}
+    \paragraph{\inputscript{stdio.h}	: Menggunakan fungsi standar {\ioi} dan {\ioo}.}
+    \paragraph{\inputscript{iostream.h}	: Menggunakan fungsi standar {\ioi} dan {\ioo} {\stream}.}
     \newpage
 
     \subsubsection{{\Preprocessor} {\Directive} ({\crnfamily \#include})}
     \begin{indentlevel0}
-        {\Preprocessor} {\directive} adalah suatu perintah yang digunakan untuk mengatur {\compiler} agar membaca header {\file} yang disertakan di belakang kata \inputscript{include} saat pelaksanaan aplikasi. {\Preprocessor} {\directive} merupakan perintah yang didahului dengan tanda “{\crnfamily \#}”. Lalu penulisannya tanpa spasi dan disertakan dengan header {\file} yaitu {\file} yang berisi sebagai {\file} deklarasi \parencite{kadir2005heriyanto}. Contoh penulisannya:
+        {\Preprocessor} {\directive} adalah suatu perintah yang digunakan untuk mengatur {\compiler} agar membaca header {\file} yang disertakan di belakang kata \inputscript{include} saat pelaksanaan aplikasi. {\Preprocessor} {\directive} merupakan perintah yang didahului dengan tanda \inputscript{\#}. Lalu penulisannya tanpa spasi dan disertakan dengan header {\file} yaitu {\file} yang berisi sebagai {\file} deklarasi \parencite{kadir2005heriyanto}. Contoh penulisannya:
         \begin{lstlisting}
 #include <header file>
 \end{lstlisting}
@@ -55,7 +49,7 @@
 
     \subsubsection{Fungsi ``{\crnfamily main}''}
     \begin{indentlevel0}
-        Fungsi “{\crnfamily main}” adalah fungsi yang akan dijalankan pertama kali ketika program dieksekusi, sedangkan tubuh fungsi dimulai dari tanda “\{” hingga tanda “\}”. Tanda “{\crnfamily ()}” digunakan untuk mengapit argumen fungsi, yaitu nilai yang akan dilewatkan ke fungsi. Contoh “{\crnfamily int main}”, kata “{\crnfamily int}” di depan “{\crnfamily main}” menyatakan bahwa program memberikan nilai balik yang bertipe “{\crnfamily int}”. Tipe “{\crnfamily int}” adalah tipe yang menyatakan bilangan bulat \parencite{kadir2005heriyanto}.
+        Fungsi \inputscript{main} adalah fungsi yang akan dijalankan pertama kali ketika program dieksekusi, sedangkan tubuh fungsi dimulai dari tanda “\{” hingga tanda “\}. Tanda \inputscript{()} digunakan untuk mengapit argumen fungsi, yaitu nilai yang akan dilewatkan ke fungsi. Contoh \inputscript{int main}, kata \inputscript{int} di depan \inputscript{main} menyatakan bahwa program memberikan nilai balik yang bertipe \inputscript{int}. Tipe \inputscript{int} adalah tipe yang menyatakan bilangan bulat \parencite{kadir2005heriyanto}.
     \end{indentlevel0}
 
     \subsubsection{{\Statement}}
