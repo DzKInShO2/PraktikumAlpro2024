@@ -1,12 +1,16 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+    \vspace{-0.5ex}
     \subsection{{\Struct}}
+    \vspace{-0.5ex}
     {\Struct} merupakan kumpulan berbagai tipe data yang berbeda dikelompokkan dalam satu deklarasi unit. Berbeda dengan {\sarray} yang hanya berupa kumpulan variabel bertipe data sama, {\struct} bisa memiliki variabel-variabel yang bertipe data sama atau berbeda, bahkan bisa menyimpan variabel yang bertipe data {\sarray} atau {\struct}  itu sendiri \parencite{Bachtiar_2005}.
 
     \subsection{Deklarasi {\Struct}}
+    \vspace{-0.5ex}
     Cara mendeklarasikan sebuah \textit{struct} adalah harus menggunakan kata kunci \inputscript{struct} yang diikuti dengan nama struktur. Kemudian diikuti dengan blok yang diapit dengan tanda kurung kurawal \inputscript{\{\}} dimana isinya adalah variabel-variabel (disebut \textit{member} atau \textit{field}) yang akan dideklarasikan di dalam struktur tersebut, serta diakhiri dengan tanta titik koma (\textit{semicolon}) \parencite{utami10}. Bentuk umum deklarasi struct sebagai berikut:
 
+    \vspace{-0.25ex}
 \begin{lstlisting}
  struct nama_struktur {
    tipe_data field1;
@@ -15,12 +19,13 @@
  } var1, var2, ...;
 \end{lstlisting}
 
+    \vspace{-0.25ex}
     \subsection{Akses {\Struct}}
+    \vspace{-0.25ex}
     \textit{Struct} dapat diakses dengan menggunakan operator \textit{unary}/operator titik \inputscript{.} yang dituliskan di antara nama struktur dan nama \textit{field} \parencite{utami10}. Cara pendeklarasian lainnya yaitu:
     
     \begin{enumerate}
         \item Bila {\struct} dideklarasikan sebagai sebuah variabel biasa, maka cara pengaksesan anggota {\struct} menggunakan operator titik/operator \textit{unary} \inputscript{.}.
-        \newpage
         \item Bila {\struct} dideklarasikan sebagai sebuah variabel \textit{pointer}, yaitu cara pengaksesan anggota {\struct} menggunakan operator panah \inputscript{→}.
         \item Bila {\struct} dideklarasikan sebagai sebuah variabel dalam \textit{pointer} sebagai {\sarray}, maka cara pengaksesan anggotanya {\struct} menggunakan operator titik/operator \textit{unary} \inputscript{.}.
     \end{enumerate}
@@ -32,6 +37,7 @@
         {\Struct} dideklarasikan sebagai sebuah variabel biasa, maka cara pengaksesan anggota {\struct} menggunakan operator titik/operator \textit{unary} \inputscript{.}. Contoh \textit{source code}-nya sebagai berikut:
     \end{indentlevel0}
 
+\vspace{-0.5ex}
 \begin{lstlisting}
  #include <iostream>
  #include <string.h>
@@ -60,8 +66,10 @@
 \end{lstlisting}
 
     \subsubsection{{\Struct} dideklarasikan sebagai sebuah variabel \textit{pointer}}
-    {\Struct} dideklarasikan sebagai sebuah variabel \textit{pointer}, yaitu cara pengaksesan anggota {\struct} menggunakan operator panah \inputscript{→}. Contoh \textit{source code}-nya sebaga berikut:
-
+    \begin{indentlevel0}
+        {\Struct} dideklarasikan sebagai sebuah variabel \textit{pointer}, yaitu cara pengaksesan anggota {\struct} menggunakan operator panah \inputscript{→}. Contoh \textit{source code}-nya sebaga berikut:
+    \end{indentlevel0}
+\vspace{-0.5ex}
 \begin{lstlisting}
 #include <iostream>
 #include <stdlib.h>
@@ -73,13 +81,12 @@ struct rencana {
   struct time*awal;
   struct timr*akhir;
 };
-\end{lstlisting}
-\begin{lstlisting}
 struct time jk={1,2};
 struct time ki={3,4};
 struct rencana kerja ={&jk, &ki};
-
 void main(){
+\end{lstlisting}
+\begin{lstlisting}
   kerja.akhir→min > 37;
   cout << kerja.akhir→jam << " " << kerja.awal→min << " " << kerja.akhir
 →jam << " " << kerja.akhir→min << endl;
