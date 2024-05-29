@@ -54,3 +54,7 @@ int main()
       cout << "Masukan Nilai B\n";
       for (int i = 0; i < 3; ++i) {
         cin >> matrix[(i + 1) * 4 - 1];
+      } cout << "Augmented Matriks\n";
+      for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 4; ++j) {
+          cout << matrix[i * 4 + j] << " ";

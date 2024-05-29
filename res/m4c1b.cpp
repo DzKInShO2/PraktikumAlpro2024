@@ -1,3 +1,33 @@
+      input_invalid();
+      continue;
+    } break;
+  } return n; }
+bool login(string name, string password) {
+  for (int i = 0; i < user_count; ++i) {
+    if (name == users[i * 2]
+      && password == users[i * 2 + 1]) {
+      user_logged_id = i;
+      return true;
+    }
+  } return false; }
+bool signin(string name, string password) {
+  for (int i = 0; i < user_count; ++i) {
+    if (name == users[i * 2]) return false;
+  }
+  users[user_count * 2] = name;
+  users[user_count * 2 + 1] = password;
+  user_membership[user_count] = false;
+  user_bills[user_count] = 0;
+  user_count++;
+  return true; }
+void topbar() {
+  cout << "================================\n";
+  cout << "=========Rental PS Rijal========\n";
+  cout << "================================\n\n"; }
+void unlogged_page() {
+  switch ((app_state & 0x6) >> 0x1) {
+    case 0: {
+      topbar();
       cout << "1. Login\n2. Sign-In\n";
       cout << "3. Exit\n";
       app_state = (nselector(1, 3) << 0x1);
@@ -25,33 +55,3 @@
       else cout << "Username sudah ada\n";
       pause(); app_state = 0;
     } break; } }
-void logged_page() {
-  topbar();
-  switch ((app_state & 0x6) >> 0x1) {
-    case 0: {
-      cout << "1. Melakukan Rental PS\n";
-      cout << "2. Memesan Makanan\n";
-      cout << "3. Daftar Member\n";
-      cout << "4. log-out\n";
-      app_state |= (nselector(1, 4) << 0x1);
-    } break;
-    case 1: {
-      cout << "Harga Rental PS\n";
-      cout << "1. PS 3: 1 Jam (Rp. 5.000)\n";
-      cout << "2. PS 4: 1 Jam (Rp. 10.000)\n";
-      cout << "3. PS 5: 1 Jam (Rp. 15.000)\n";
-      cout << "4. Kembali\n";
-      {
-        int n = nselector(1, 4);
-        if (n == 4) break;
-        int m = nselector(1, 9*9*9*9, "Jumlah Jam: ");
-        float discount = (float)(console_prices[n] * m) *
-          ((0.1f * (m >= 3 && m < 6)) + (0.2f * (m >= 6))
-           + (user_membership[user_logged_id] * 0.2f));
-        user_bills[user_logged_id]
-          += (console_prices[n] * m) - discount;
-        pause();
-      }
-      app_state = 1;
-    } break;
-    case 2: {
