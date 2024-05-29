@@ -1,6 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+\vspace{-0.5ex}
     \subsection{Rental PS Rijal}
 \begin{lstlisting}
  #include <iostream>
@@ -24,6 +25,7 @@
 \end{lstlisting}
     \ilz{}{\Script} diatas digunakan untuk menginisialisasikan semua variabel yang dibutuhkan untuk menjalankan program Rental PS Rijal. Semua variabel yang diawali oleh kata \textit{user} merupakan variabel yang digunakan untuk menyimpan data pengguna atau berkaitan dengan data pengguna. Semua variabel yang diawali oleh kata \textit{food} merupakan variabel yang digunakan untuk menyimpan data makanan dan minuman. Variabel \inputscript{app\_state} merupakan variabel yang menyimpan data keadaan aplikasi.
 
+\vspace{-0.15ex}
 \begin{lstlisting}
  void pause() {
    cout << "Press any key to continue. . .\n";
@@ -31,6 +33,7 @@
 \end{lstlisting}
     \ilz{}{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \inputscript{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
 
+\vspace{-0.15ex}
 \begin{lstlisting}
  void input_invalid() {
    cin.clear(); cin.ignore();
@@ -38,12 +41,13 @@
 \end{lstlisting}
     \ilz{}{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \inputscript{void}. Fungsi tersebut akan memberitahu pengguna bahwa sebuah masukan tidak valid dan membersihkan masukan tidak valid tersebut dari {\ioi} {\stream}.
 
-    \newpage
-
+\vspace{-0.15ex}
 \begin{lstlisting}
  int nselector(int l, int u, string c = ">> ") {
    int n;
    while (true) {
+\end{lstlisting}
+\begin{lstlisting}
      cout << c;
      cin >> n;
      if (cin.fail() || n < l || n > u) {
@@ -89,6 +93,8 @@
 \begin{lstlisting}
  void unlogged_page() {
    switch ((app_state & 0x6) >> 0x1) {
+\end{lstlisting}
+\begin{lstlisting}
      case 0: {
        topbar();
        cout << "1. Login\n2. Sign-In\n";
@@ -142,10 +148,10 @@
          int n = nselector(1, 4);
          if (n == 4) break;
          int m = nselector(1, 9*9*9*9, "Jumlah Jam: ");
-\end{lstlisting}
-\begin{lstlisting}
          float discount = (float)(console_prices[n] * m) *
            ((0.1f * (m >= 3 && m < 6)) + (0.2f * (m >= 6))
+\end{lstlisting}
+\begin{lstlisting}
             + (user_membership[user_logged_id] * 0.2f));
          user_bills[user_logged_id]
            += (console_prices[n] * m) - discount;
@@ -197,12 +203,12 @@
 \end{lstlisting}
     \ilz{}{\Script} diatas mengandung sebuah fungsi yang tidak mengembalikan nilai apapun atau fungsi \inputscript{void}.Fungsi diatas digunakan untuk mengurus hal apapun yang berkaitan dengan fungsi yang dibutuhkan untuk pengguna yang sudah \textit{log-in}.
 
-    \newpage
-
 \begin{lstlisting}
  void admin_page() {
    topbar();
    switch ((app_state & 0x6) >> 1) {
+\end{lstlisting}
+\begin{lstlisting}
      case 0: {
        cout << "1. Jual Makanan\n";
        cout << "2. Data Penyewa\n";
@@ -257,11 +263,11 @@
          food_prices[i] = food_prices[i + 1];
        } food_count--;
        pause(); app_state = 3;
-\end{lstlisting}
-\begin{lstlisting}
      } break;
      case 2: {
        cout << "Data Penyewa\n";
+\end{lstlisting}
+\begin{lstlisting}
        for (int i = 1; i < user_count; ++i) {
          cout << i << ". " << "Username: "
             << users[i * 2] << " (Rp."
@@ -308,13 +314,13 @@
 \end{lstlisting}
     \ilz{}{\Script} diatas mengandung sebuah fungsi yang mengembalikan nilai bilangan bulat dengan mengambil masukan berupa \inputscript{int n}. Fungsi tersebut akan mengembalikan sebuah nilai faktorial dari parameter yang dimasukan dengan menggunakan metode rekursif.
 
-    \newpage
-
 \begin{lstlisting}
    cout << "1. Permutasi\n";
    cout << "2. Kombinasi\n";
    cout << "3. SPL\n";
    int choice;
+\end{lstlisting}
+\begin{lstlisting}
    while (true) {
      cout << "Pilih: ";
      cin >> choice;
@@ -357,8 +363,6 @@
 \end{lstlisting}
     \ilz{}{\Script} diatas digunakan untuk menghasilkan nilai kombinasi dari dua masukan. Nilai kombinasi dicari dengan penggunakan fungsi \inputscript{factorial} dan meletakannya sesuai rumus kombinasi.
 
-\newpage
-
 \begin{lstlisting}
     case 3: {
       cout << "Masukan Nilai Matriks 3x3\n";
@@ -366,6 +370,8 @@
       for (int i = 0; i < 3; ++i) {
         for (int j = 0, mid = 0; j < 3; ++j) {
           cin >> matrix[i * 4 + j];
+\end{lstlisting}
+\begin{lstlisting}
         }
       }
       cout << "Masukan Nilai B\n";
