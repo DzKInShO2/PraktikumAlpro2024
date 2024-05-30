@@ -1,3 +1,24 @@
+int user_bills[user_max];
+int user_logged_id = -1;
+int user_count = 1;
+int console_prices[4] = { 0, 5000, 10000, 15000 };
+const int food_max = 20;
+string foods[food_max];
+int food_prices[food_max];
+int food_count = 0;
+int app_state = 0;
+void pause() {
+  cout << "Press any key to continue. . .\n";
+  cin.clear(); cin.ignore(); cin.get(); }
+void input_invalid() {
+  cin.clear(); cin.ignore();
+  cout << "Masukan tidak valid\n"; }
+int nselector(int l, int u, string c = ">> ") {
+  int n;
+  while (true) {
+    cout << c;
+    cin >> n;
+    if (cin.fail() || n < l || n > u) {
       input_invalid();
       continue;
     } break;
@@ -34,24 +55,3 @@ void unlogged_page() {
     } break;
     case 1: {
       cout << "================================\n";
-      cout << "=============Log-In=============\n";
-      cout << "================================\n\n";
-      string name, password;
-      cout << "Masukan Username: "; cin >> name;
-      cout << "Masukan Password: "; cin >> password;
-      if (app_state = login(name, password))
-        cout << "Log-In Berhasil\n";
-      else cout << "Log-In Tidak Berhasil\n";
-      pause();
-    } break;
-    case 2: {
-      cout << "================================\n";
-      cout << "=============Sign-In============\n";
-      cout << "================================\n\n";
-      string name, password;
-      cout << "Masukan Username: "; cin >> name;
-      cout << "Masukan Password: "; cin >> password;
-      if (signin(name, password)) cout << "Sing-In Berhasil\n";
-      else cout << "Username sudah ada\n";
-      pause(); app_state = 0;
-    } break; } }

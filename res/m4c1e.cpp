@@ -1,3 +1,24 @@
+        cout << "1. Masukan Makanan\n";
+        cout << "2. Hapus Makanan\n";
+        cout << "3. Kembali\n";
+        int n = nselector(1, 3);
+        if (n == 1) {
+          cout << "\33[H\33[2J"; topbar();
+          cout << "Masukan Makanan/Minuman: ";
+          cin.clear(); cin.ignore();
+          getline(cin, foods[food_count]);
+          cout << "Masukan Harga: ";
+          cin >> food_prices[food_count];
+          cout << "Makanan/Minuman Berhasil"
+             << " Dimasukan\n";
+          food_count++;
+          pause(); app_state = 3; break;
+        } else if (n == 3) {
+          app_state = 1; break; }
+        app_state |= (0x1 << 4);
+        break; }
+      int n = nselector(1, food_count + 1);
+      if (n == food_count + 1) {
         app_state = 3;
         break; }
       cout << foods[n - 1] << " berhasil dihapus\n";

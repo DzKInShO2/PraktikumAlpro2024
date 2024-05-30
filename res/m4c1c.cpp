@@ -1,3 +1,24 @@
+      cout << "=============Log-In=============\n";
+      cout << "================================\n\n";
+      string name, password;
+      cout << "Masukan Username: "; cin >> name;
+      cout << "Masukan Password: "; cin >> password;
+      if (app_state = login(name, password))
+        cout << "Log-In Berhasil\n";
+      else cout << "Log-In Tidak Berhasil\n";
+      pause();
+    } break;
+    case 2: {
+      cout << "================================\n";
+      cout << "=============Sign-In============\n";
+      cout << "================================\n\n";
+      string name, password;
+      cout << "Masukan Username: "; cin >> name;
+      cout << "Masukan Password: "; cin >> password;
+      if (signin(name, password)) cout << "Sing-In Berhasil\n";
+      else cout << "Username sudah ada\n";
+      pause(); app_state = 0;
+    } break; } }
 void logged_page() {
   topbar();
   switch ((app_state & 0x6) >> 0x1) {
@@ -34,24 +55,3 @@ void logged_page() {
         break; }
       for (int i = 0, j = 0; i < food_count; ++i) {
         cout << i + 1 << ". "
-           << foods[i] << " (Rp. "
-           << food_prices[i] << ")\n";
-      } cout << food_count + 1 << ". Kembali\n";
-      int n = nselector(1, food_count + 1);
-      if (n == food_count + 1) {
-        app_state = 1;
-        break; }
-      cout << "Makanan yang dipilih: " << foods[n - 1] << "\n";
-      cout << "Harga: " << food_prices[n - 1] << "\n";
-      user_bills[user_logged_id] += food_prices[n - 1]
-            * nselector(1, 9*9*9, "Jumlah: ");
-      cout << foods[n - 1] << " berhasil dipesan\n";
-      pause();
-    } break;
-    case 3: {
-      char choice = 'y';
-      while (true) {
-        cout << "Apakah anda ingin mendaftar sebagai"
-           << " member rental PS?(Y/T): ";
-        cin >> choice;
-        if (cin.fail() ||
