@@ -25,13 +25,7 @@
 %%% FONTS %%%
 \usepackage{fontspec}
 
-\setmainfont[
-    Renderer=Basic,
-    Ligatures=TeX,
-    SizeFeatures={
-        Size=12
-    },
-]{Times New Roman}
+\setmainfont{Times New Roman}
 
 \newfontfamily{\crnfamily}{Courier New}
 
@@ -45,7 +39,7 @@
     rmargin=2.5cm,
     lmargin=3.0cm,
     headheight=4ex,
-    headsep=0.5ex,
+    headsep=-0.5ex,
     footskip=4ex
 ]{geometry}
 
@@ -56,6 +50,8 @@
 \usepackage{setspace}
 \setlength{\parindent}{1cm}
 \setstretch{1.5}
+
+\usepackage{changepage}
 %%% %%%
 
 %%% FOOTER AND HEADER %%%
@@ -128,7 +124,7 @@
     \addcontentsline{toc}{chapter}{MODUL {\thechapter} \MakeUppercase{#2}}
     \thispagestyle{normal}
 
-    \def\a{#1}
+    \renewcommand*{\a}{#1}
     \ifx\a\empty
         \renewcommand*{\leftmark}{#2}
     \else
@@ -157,6 +153,33 @@
 %%% %%%
 
 %%% LISTS, TABLES AND FIGURES %%%
+\usepackage{caption}
+
+\DeclareCaptionFont{cp}{\cpsize #1}
+
+\captionsetup[figure]{
+	name = Gambar,
+	justification = centering,
+	labelfont = bf,
+	labelsep = space,
+	font = cp,
+	skip = 3pt,
+	position = bottom
+}
+
+\captionsetup[table]{
+	name = Tabel,
+	justification = centering,
+	labelfont = bf,
+	labelsep = space,
+	font = cp,
+	skip = 2pt,
+	position = top
+}
+
+\usepackage{graphicx}
+\usepackage{float}
+
 \usepackage{enumitem}
 \setlist[enumerate, 1]{
 	leftmargin    = *,
@@ -174,26 +197,30 @@
     nosep
 }
 
+\usepackage{xltabular}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{0.65}
+
 \newcommand*{\inputtable}[5][]{
-    \vspace{-1ex}
+    \renewcommand*{\a}{#1}
+    \renewcommand*{\b}{n}
+    \renewcommand*{\c}{\textwidth}
+
+    \ifx\a\b
+        \renewcommand*{\c}{0.95\textwidth}
+    \else
+        \renewcommand*{\c}{#1\textwidth}
+    \fi
+
 	\cpsize
     \renewcommand*{\thechapter}{\arabic{chapter}}
-	\ifthenelse{\isempty{#1}}{
-		\begin{xltabular}{\textwidth}{#2}
-	}{
-		\ifthenelse{\equal{#1}{n}}{
-			\begin{xltabular}[r]{0.95\textwidth}{#2}
-		}{
-            \begin{xltabular}[r]{#1\textwidth}{#2}
-		}
-	}
+    \begin{xltabular}[r]{\c}{#2}
         \caption{#4}
         \label{#5}
         \\ \hline
         #3
     \end{xltabular}
 	\normalsize
-	\vspace*{-12pt}
 }
 %%% %%%
 
@@ -209,6 +236,7 @@
 
     % Add table of contents
     \tableofcontents
+    \pagestyle{plain}
     \newpage
 
     % Change next page style to normal
@@ -229,4 +257,73 @@
     \section{Analisis Data}
     \newpage
     \section{Kesimpulan}
+    \newpage
+
+    \chapterf[{\Statement} {\Control} dan {\Looping}]{Statement Control dan Looping}
+    \section{Tujuan Praktikum}
+    \section{Dasar Teori}
+    \newpage
+    \section{Permasalahan}
+    \newpage
+    \section{Hasil Percobaan}
+    \newpage
+    \section{Analisis Data}
+    \newpage
+    \section{Kesimpulan}
+    \newpage
+
+    \chapterf[\textit{Array}]{Array}
+    \section{Tujuan Praktikum}
+    \section{Dasar Teori}
+    \newpage
+    \section{Permasalahan}
+    \newpage
+    \section{Hasil Percobaan}
+    \newpage
+    \section{Analisis Data}
+    \newpage
+    \section{Kesimpulan}
+    \newpage
+
+    \chapterf[{\textit{Function}}]{Function}
+    \section{Tujuan Praktikum}
+    \section{Dasar Teori}
+    \newpage
+    \section{Permasalahan}
+    \newpage
+    \section{Hasil Percobaan}
+    \newpage
+    \section{Analisis Data}
+    \newpage
+    \section{Kesimpulan}
+    \newpage
+
+    \chapterf[\textit{Struct}]{Struct}
+    \section{Tujuan Praktikum}
+    \section{Dasar Teori}
+    \newpage
+    \section{Permasalahan}
+    \newpage
+    \section{Hasil Percobaan}
+    \newpage
+    \section{Analisis Data}
+    \newpage
+    \section{Kesimpulan}
+    \newpage
+
+    \chapterf[\textit{Pointer}]{Pointer}
+    \section{Tujuan Praktikum}
+    \section{Dasar Teori}
+    \newpage
+    \section{Permasalahan}
+    \newpage
+    \section{Hasil Percobaan}
+    \newpage
+    \section{Analisis Data}
+    \newpage
+    \section{Kesimpulan}
+
+    \printbibliography[title={DAFTAR PUSTAKA}]
+    \phantomsection
+    \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
 \end{document}
