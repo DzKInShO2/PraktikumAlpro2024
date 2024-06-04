@@ -166,7 +166,9 @@
  cout << "|             KELUAR              |" << endl;
  cout << "-----------------------------------\e[39m" << endl;
 \end{lstlisting}
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas merupakan kumpulan sebuah objek \inputscript{cout} yang akan digunakan untuk menampilkan sebuah menu pada pengguna. Opsi yang dipilih akan diwarnai oleh warna ungu menggunakan kode karakter ANSI. Karakter ANSI \inputscript{\textbackslash e[3xm} digunakan untuk memberi warna pada teks dan \inputscript{\textbackslash e[39m} merupakan karakter untuk memberi warna ungu.
+    \vspace{-0.1ex}
 
 \begin{lstlisting}
  n0 = getch();
@@ -184,6 +186,7 @@
      state = 0x6;
  }
 \end{lstlisting}
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas digunakan untuk menggerakan pilihan pada menu dengan menggunakan fungsi \inputscript{getch()} yang disediakan oleh {\header} {\file} \inputscript{conio.h}. Bagian kode \inputscript{n0 == 13} digunakan untuk mendeteksi apakah pengguna sudah menekan tombol \textit{enter}. Kedua kode \inputscript{n0 == 72} dan \inputscript{n0 == 80} digunakan untuk mendeteksi apakah pengguna sudah menekan tombol panah atas dan panah bawah.
 
 \begin{lstlisting}
@@ -199,11 +202,13 @@
  	} cout << endl;
  }
 \end{lstlisting}
-
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas digunakan untuk menggambar persegi yang disusun oleh alphabet yang akan urutan alphabetnya menggingkat semakin jauh titik tersebut dengan pojok kiri atas persegi. Variabel \inputscript{n0} merupakan masukan panjang dan lebar persegi tersebut.
 
 \begin{lstlisting}
  n1 = !((n0 + 2) % 2 == 0);
+\end{lstlisting}
+\begin{lstlisting}
  for (int i = 0; i < n0; ++i) {
  	for (int j  = 0; j < (n0 - i) - 1; ++j) {
  	  cout << " "; }
@@ -253,6 +258,8 @@
     	bool prime = true;
     	for (unsigned int j = 2; j < i; ++j) {
     	  if (i % j == 0) prime = false;
+\end{lstlisting}
+\begin{lstlisting}
     	}
     	if (prime) {
     	  if (n0 <= 50 && (i % 10) == 3)  {
@@ -263,6 +270,7 @@
     	}
     } cout << endl; break; }
 \end{lstlisting}
+    \vspace{-0.15ex}
     \ilz{}{\Script} diatas digunakan untuk menggambar pola bilangan prima sampai dengan nilai variabel \inputscript{n0}. Bila nilai variabel \inputscript{n0} lebih kecil atau sama dengan 50 maka setiap bilangan yang mengandung angka 3 akan dikalikan dengan nilai variabel \inputscript{n0}. {\Script} diatas hanya akan dijalankan apabila \inputscript{n0} merupakan bilangan genap.
 
 \begin{lstlisting}
@@ -272,10 +280,10 @@
   		cout << n;
   		continue; }
   	n *= 11;
-  	cout << ", " << n;
-  }
+  	cout << ", " << n; }
   cout << endl;
 \end{lstlisting}
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas digunakan untuk menggambar pola bilangan 11 pangkat 0 sampai dengan 11 pangkat nilai variabel \inputscript{n0}. {\Script} diatas hanya akan dijalankan bila {\script} sebelumnya tidak dijalankan berarti nilai variabel \inputscript{n0} merupakan bilangan ganjil.
 
 \begin{lstlisting}
@@ -283,18 +291,22 @@
      return 0;
  } break; }
 \end{lstlisting}
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas merupakan {\statement} \textit{early return}. {\Statement} \textit{early return} berarti bahwa sebuah fungsi atau program akan dihentikan langsung ketika menemui {\statement} ini. {\Statement} ini ditandai dengan adanya {\statement} \inputscript{return} sebelum dicapainya akhir blok kode.
 
 \begin{lstlisting}
  if (getch()) {
  	 state &= 0x0; }
 \end{lstlisting}
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas akan mengembalikan keadaan program ke menu apabila pengguna menekan tombol apapun. Fungsi \inputscript{getch()} digunakan untuk menunggu masukan pengguna, {\statement} \inputscript{if} hanya mendeteksi apakah kondisi bernilai 0 untuk salah atau bukan 0 untuk benar dan setiap kode karakter pada \textit{keyboard} bernilai lebih besar dari 0.
 
     \subsection{Hilal}
+    \vspace{-0.25ex}
 \begin{lstlisting}
   #include <iostream>
 \end{lstlisting}
+    \vspace{-0.25ex}
     \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
 
 \begin{lstlisting}
@@ -310,8 +322,6 @@
      cin.clear();
      cin.ignore();
      cout << "Input tidak valid!" << endl;
-\end{lstlisting}
-\begin{lstlisting}
      continue;
    }
    break;
