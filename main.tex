@@ -237,6 +237,30 @@
     \end{xltabular}
 	\normalsize
 }
+
+\usepackage{listings}
+\usepackage{framed}
+
+\newenvironment{framedlisting}
+    {\par\noindent\begin{framed}\vspace{-\topsep}\vspace{-\parskip}}
+    {\vspace{-\topsep}\vspace{-\parskip}\end{framed}\par\noindent}
+
+\lstset{
+    basicstyle=\setstretch{1.0}\crnfamily\cpsize,
+    breaklines=false,
+    breakatwhitespace=false,         
+    captionpos=b,                    
+    keepspaces=true,                 
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    frame=none,
+    xleftmargin=-1ex,
+    xrightmargin=1ex,
+    aboveskip=1ex,
+    belowskip=1ex,
+}
+
 %%% %%%
 
 \begin{document}
@@ -273,6 +297,7 @@
     \section{Permasalahan}
     \newpage
     \section{Hasil Percobaan}
+    \subfile{src/m1p4.tex}
     \newpage
     \section{Analisis Data}
     \newpage
