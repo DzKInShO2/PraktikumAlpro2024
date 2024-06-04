@@ -1,0 +1,232 @@
+\documentclass[12pt, oneside, a4paper]{report}
+
+\input{keywords.tex}
+
+%%% MISC %%%
+\usepackage{subfiles}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage[titles]{tocloft}
+
+\setlength{\cftbeforechapskip}{0pt}
+\renewcommand*{\cftchapfont}{\normalfont}
+\renewcommand*{\cftchappagefont}{\normalfont}
+\renewcommand*{\contentsname}{
+    DAFTAR ISI
+    \addcontentsline{toc}{chapter}{DAFTAR ISI}
+}
+
+\newcommand*{\chsize}{\fontsize{16pt}{12pt} \selectfont}
+\newcommand*{\hfsize}{\fontsize{11pt}{12pt} \selectfont}
+\newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
+%%% %%%
+
+%%% FONTS %%%
+\usepackage{fontspec}
+
+\setmainfont[
+    Renderer=Basic,
+    Ligatures=TeX,
+    SizeFeatures={
+        Size=12
+    },
+]{Times New Roman}
+
+\newfontfamily{\crnfamily}{Courier New}
+
+\usepackage[final]{microtype}
+%%% %%%
+
+%%% MARGIN AND PARAGRAPH %%%
+\usepackage[
+    tmargin=2.5cm,
+    bmargin=2.5cm,
+    rmargin=2.5cm,
+    lmargin=3.0cm,
+    headheight=4ex,
+    headsep=0.5ex,
+    footskip=4ex
+]{geometry}
+
+\usepackage{indentfirst}
+
+\usepackage[none]{hyphenat}
+
+\usepackage{setspace}
+\setlength{\parindent}{1cm}
+\setstretch{1.5}
+%%% %%%
+
+%%% FOOTER AND HEADER %%%
+\usepackage{fancyhdr}
+
+\fancypagestyle{normal}{
+    \fancyhf{}
+
+    \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
+    \fancyfoot[L]{Modul {\thechapter} – {\leftmark}}
+    \fancyfoot[R]{{\thechapter}-{\thepage}}
+}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+
+    \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
+    \fancyfoot[C]{{\thepage}}
+}
+
+\renewcommand{\headrule}{
+    {\color[RGB]{68, 114, 196} \hrule width \hsize \kern 0.5mm \hrule width \hsize height 3pt}
+}
+\renewcommand{\footrule}{
+    {\color[RGB]{68, 114, 196} \hrule width \hsize height 3pt \hrule width \hsize \kern 0.5mm \hrule width \hsize height 0.2pt}
+}
+%%% %%%
+
+%%% CHAPTERS AND SECTIONS %%%
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\chapter}[display]
+{\center\chsize\bfseries}
+{\chaptertitlename \thechapter}{1ex}{}[\vspace{16pt}]
+
+\titleformat{\section}[hang]
+{\normalsize\bfseries}
+{\thesection}{1.0ex}{\MakeUppercase}
+
+\titleformat{\subsection}[hang]
+{\normalsize\bfseries}
+{\thesubsection}{0.8ex}{}
+
+\titleformat{\subsubsection}[hang]
+{\normalsize}
+{\thesubsubsection}{2.8ex}{}
+
+\titleformat{\paragraph}[hang]
+{\normalsize}
+{\theparagraph}{2.4ex}{}
+
+\titlespacing*{\chapter}{0pt}{-25pt}{0pt}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
+
+% Numberless chapter command
+\newcommand*{\chapterf}[2][]{
+    \newpage
+    \stepcounter{chapter}
+    \chapter*{
+        MODUL {\thechapter}\\
+        \vspace{1.5ex}
+        \MakeUppercase{#2}
+    }
+
+    \addcontentsline{toc}{chapter}{MODUL {\thechapter} \MakeUppercase{#2}}
+    \thispagestyle{normal}
+
+    \def\a{#1}
+    \ifx\a\empty
+        \renewcommand*{\leftmark}{#2}
+    \else
+        \renewcommand*{\leftmark}{#1}
+    \fi
+}
+%%% %%%
+
+%%% REFERENCES AND LINKS %%%
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{cleveref}
+\crefname{figure}{Gambar}{Gambar-Gambar}
+\Crefname{figure}{Gambar}{Gambar-Gambar}
+\crefname{table}{Tabel}{Tabel-Tabel}
+\Crefname{table}{Tabel}{Tabel-Tabel}
+
+\usepackage[
+    backend=biber,
+    style=apa,
+]{biblatex}
+\addbibresource{bibliography.bib}
+\DefineBibliographyStrings{english}{
+    andothers={dkk.,}
+}
+%%% %%%
+
+%%% LISTS, TABLES AND FIGURES %%%
+\usepackage{enumitem}
+\setlist[enumerate, 1]{
+	leftmargin    = *,
+	labelwidth    = 0.75cm,
+	labelsep      = 12pt,
+	listparindent = 0.75cm,
+    nosep
+}
+
+\setlist[enumerate, 2]{
+	leftmargin    = 0.75cm,
+	labelwidth    = 0.75cm,
+	labelsep      = 12pt,
+	listparindent = 0.75cm,
+    nosep
+}
+
+\newcommand*{\inputtable}[5][]{
+    \vspace{-1ex}
+	\cpsize
+    \renewcommand*{\thechapter}{\arabic{chapter}}
+	\ifthenelse{\isempty{#1}}{
+		\begin{xltabular}{\textwidth}{#2}
+	}{
+		\ifthenelse{\equal{#1}{n}}{
+			\begin{xltabular}[r]{0.95\textwidth}{#2}
+		}{
+            \begin{xltabular}[r]{#1\textwidth}{#2}
+		}
+	}
+        \caption{#4}
+        \label{#5}
+        \\ \hline
+        #3
+    \end{xltabular}
+	\normalsize
+	\vspace*{-12pt}
+}
+%%% %%%
+
+\begin{document}
+    % Sloppy lettering
+    \sloppy
+    \tolerance10000
+
+    % Change numbering formats
+    \renewcommand*{\thechapter}{\Roman{chapter}}
+    \renewcommand*{\thepage}{\roman{page}}
+    \renewcommand*{\thesection}{\arabic{chapter}.\arabic{section}}
+
+    % Add table of contents
+    \tableofcontents
+    \newpage
+
+    % Change next page style to normal
+    \pagestyle{normal}
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{\arabic{page}}
+
+    \chapterf{Pemrograman Dasar}
+    \section{Tujuan Praktikum}
+    \subfile{src/m1p1.tex}
+    \section{Dasar Teori}
+    \subfile{src/m1p2.tex}
+    \newpage
+    \section{Permasalahan}
+    \newpage
+    \section{Hasil Percobaan}
+    \newpage
+    \section{Analisis Data}
+    \newpage
+    \section{Kesimpulan}
+\end{document}
