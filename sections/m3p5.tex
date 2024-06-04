@@ -80,7 +80,7 @@
  cout << "Masukan Key Caesar Cipher: ";
  cin >> key;
 \end{lstlisting}
-\ilz{}{\Script} diatas digunakan untuk menerima dua buah masukan berupa teks yang akan dienkripsi dan kunci yang akan digunakan nanti pada metode \textit{Caesar cipher}. Teks didapatkan dengan menggunakan metode \inputscript{getline} sementara kuncinya didapatkan dengan \inputscript{cin}.
+\ilz{}{\Script} diatas digunakan untuk menerima dua buah masukan berupa teks yang akan dienkripsi dan kunci yang akan digunakan nanti pada metode Caesar \textit{cipher}. Teks didapatkan dengan menggunakan metode \inputscript{getline} sementara kuncinya didapatkan dengan \inputscript{cin}.
 
 \begin{lstlisting}
  int l = 0; while (text[l++] != '\0') {}
@@ -113,7 +113,7 @@
  }
  cout << endl;
 \end{lstlisting}
-\ilz{}{\Script} diatas digunakan untuk menghasilkan enkripsi gabungan \textit{reverse cipher} dan \textit{Caesar cipher}. Setelah \textit{reverse cipher} dilakukan, karakter digeser sebanyak nilai kunci serta mengulangi karakter ketika sudah melampaui huruf z, maka akan didapatkan hasilnya.
+\ilz{}{\Script} diatas digunakan untuk menghasilkan enkripsi gabungan \textit{reverse cipher} dan Caesar \textit{cipher}. Setelah \textit{reverse cipher} dilakukan, karakter digeser sebanyak nilai kunci serta mengulangi karakter ketika sudah melampaui huruf z, maka akan didapatkan hasilnya.
 
 \subsection{\textit{Blast the Fireworks!}}
 \begin{lstlisting}
@@ -144,7 +144,7 @@
    } break;
  }
 \end{lstlisting}
-\ilz{}{\Script} diatas digunakan untuk mendapatkan jumlah kembang api yang akan diledakan. Jumlah kembang api tersebut tidaklah boleh lebih besar dari 26 ataupun lebih kecil dari 1 dikarenakan batas banyak huruf alphabet itu 26 dan setidaknya harus ada satu kembang api.
+\ilz{}{\Script} diatas digunakan untuk mendapatkan jumlah kembang api yang akan diledakan. Jumlah kembang api tersebut tidaklah boleh lebih besar dari 26 ataupun lebih kecil dari 1 dikarenakan batas banyak huruf alfabet itu 26 dan setidaknya harus ada satu kembang api.
 
 \begin{lstlisting}
  for (int i = 0; i < n; ++i) cout << " ? ";
@@ -154,7 +154,7 @@
    cout << "[" << (fireworks[i * 2] = 'A' + i) << "]";
  cout << endl << " ";
 \end{lstlisting}
-\ilz{}{\Script} diatas digunakan untuk menunjukan kembang api sesuai jumlah yang sudah ditentukan sebelumnya. Kembang api tersebut akan diawali dengan tanda tanya dan dilanjutkan pada baris selanjutnya oleh huruf alphabet sesuai jumlah yang sudah ditentukan.
+\ilz{}{\Script} diatas digunakan untuk menunjukan kembang api sesuai jumlah yang sudah ditentukan sebelumnya. Kembang api tersebut akan diawali dengan tanda tanya dan dilanjutkan pada baris selanjutnya oleh huruf alfabet sesuai jumlah yang sudah ditentukan.
 
 \begin{lstlisting}
  string powers;
@@ -203,7 +203,7 @@
    } break;
  }
 \end{lstlisting}
-\ilz{}{\Script} diatas digunakan untuk menerima masukan berupa nama kembang api yang ingin diledakan. Masukan nama kembang api tersebut harus berada dalam lingkup huruf alphabet yang ditentukan untuk dianggap sebagai masukan yang valid atau sah.
+\ilz{}{\Script} diatas digunakan untuk menerima masukan berupa nama kembang api yang ingin diledakan. Masukan nama kembang api tersebut harus berada dalam lingkup huruf alfabet yang ditentukan untuk dianggap sebagai masukan yang valid atau sah.
 
 \begin{lstlisting}
  for (int i = 0; i < n; ++i) {

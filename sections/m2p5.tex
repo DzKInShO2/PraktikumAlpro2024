@@ -3,12 +3,12 @@
 \begin{document}
     \subsection{Bagi THR}
 \begin{lstlisting}
-  #include <iostream>
+ #include <iostream>
 \end{lstlisting}
     \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
 
 \begin{lstlisting}
-  using namespace std;
+ using namespace std;
 \end{lstlisting}
     \ilz{}{\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
 
@@ -137,9 +137,25 @@
     \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{conio.h}. {\Header} {\file} \inputscript{conio.h} berisi hal-hal yang dibutuhkan untuk berinteraksi dengan konsol sistem operasi Microsoft Windows dan DOS.
 
 \begin{lstlisting}
+ #include <iostream>
+\end{lstlisting}
+    \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
+
+\begin{lstlisting}
+ using namespace std;
+\end{lstlisting}
+    \ilz{}{\Script} \inputscript{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \inputscript{namespace std}.
+
+\begin{lstlisting}
+ int main() 
+\end{lstlisting}
+\vspace{-0.25ex}
+    \ilz{}{\Script} digunakan sebagai \textit{entry point} program tersebut yang akan dijalankan setiap kali program Bagi THR dijalankan. \textit{Entry point} diperlukan oleh setiap program yang ditulis pada bahasa C++ untuk berjalan.
+
+\begin{lstlisting}
  cout << "\e[H\e[2J\e[0m";
 \end{lstlisting}
-    \vspace{-0.25ex}
+    \vspace{-0.35ex}
     \ilz{}{\Script} diatas merupakan penggunaan objek global \inputscript{cout} untuk menampilkan teks \inputscript{\textbackslash e[H\textbackslash e[2J}. Teks \inputscript{\textbackslash e[H\textbackslash e[2J\textbackslash} tersusun atas dua buah karakter ANSI yakni karakter \inputscript{\textbackslash e[H} yang berguna untuk mengembalikan kursor konsol ke bagian awal dan \inputscript{\textbackslash e[2J} yang digunakan untuk membersihkan seluruh layar.
 
 \begin{lstlisting}
@@ -155,8 +171,6 @@
  cout << "-----------------------------------" << endl;
  cout << "|          POHON CEMARA           |" << endl;
  cout << "-----------------------------------\e[39m" << endl;
-\end{lstlisting}
-\begin{lstlisting}
  if ((state >> 1) == 2) cout << "\e[35m";
  cout << "-----------------------------------" << endl;
  cout << "|          POLA BILANGAN          |" << endl;
@@ -166,9 +180,7 @@
  cout << "|             KELUAR              |" << endl;
  cout << "-----------------------------------\e[39m" << endl;
 \end{lstlisting}
-    \vspace{-0.25ex}
     \ilz{}{\Script} diatas merupakan kumpulan sebuah objek \inputscript{cout} yang akan digunakan untuk menampilkan sebuah menu pada pengguna. Opsi yang dipilih akan diwarnai oleh warna ungu menggunakan kode karakter ANSI. Karakter ANSI \inputscript{\textbackslash e[3xm} digunakan untuk memberi warna pada teks dan \inputscript{\textbackslash e[39m} merupakan karakter untuk memberi warna ungu.
-    \vspace{-0.1ex}
 
 \begin{lstlisting}
  n0 = getch();
@@ -183,11 +195,9 @@
  if ((state >> 1) > 3) {
      state = 0x0;
  } else if ((state >> 1) < 0) {
-     state = 0x6;
- }
+     state = 0x6; }
 \end{lstlisting}
-    \vspace{-0.25ex}
-    \ilz{}{\Script} diatas digunakan untuk menggerakan pilihan pada menu dengan menggunakan fungsi \inputscript{getch()} yang disediakan oleh {\header} {\file} \inputscript{conio.h}. Bagian kode \inputscript{n0 == 13} digunakan untuk mendeteksi apakah pengguna sudah menekan tombol \textit{enter}. Kedua kode \inputscript{n0 == 72} dan \inputscript{n0 == 80} digunakan untuk mendeteksi apakah pengguna sudah menekan tombol panah atas dan panah bawah.
+    \ilz{}{\Script} diatas digunakan untuk menggerakan pilihan pada menu menggunakan fungsi \inputscript{getch()} yang disediakan {\header} {\file} \inputscript{conio.h}. Bagian \inputscript{n0 == 13} digunakan untuk mendeteksi apakah pengguna sudah menekan tombol \textit{enter}. Kode \inputscript{n0 == 72} dan \inputscript{n0 == 80} berfungsi mendeteksi pengguna sudah menekan tombol panah atas dan panah bawah.
 
 \begin{lstlisting}
  for (int i = 0; i < n0; ++i) {
@@ -203,12 +213,10 @@
  }
 \end{lstlisting}
     \vspace{-0.25ex}
-    \ilz{}{\Script} diatas digunakan untuk menggambar persegi yang disusun oleh alphabet yang akan urutan alphabetnya menggingkat semakin jauh titik tersebut dengan pojok kiri atas persegi. Variabel \inputscript{n0} merupakan masukan panjang dan lebar persegi tersebut.
+    \ilz{}{\Script} diatas digunakan untuk menggambar persegi yang disusun oleh alfabet yang akan urutan alphabetnya menggingkat semakin jauh titik tersebut dengan pojok kiri atas persegi. Variabel \inputscript{n0} merupakan masukan panjang dan lebar persegi tersebut.
 
 \begin{lstlisting}
  n1 = !((n0 + 2) % 2 == 0);
-\end{lstlisting}
-\begin{lstlisting}
  for (int i = 0; i < n0; ++i) {
  	for (int j  = 0; j < (n0 - i) - 1; ++j) {
  	  cout << " "; }
@@ -242,6 +250,8 @@
  		cout << endl;
  	}
  }
+\end{lstlisting}
+\begin{lstlisting}
  for (int i = 0; i < 4; ++i) {
  	for (int j = 0; j < (n1 + n0) + (n0 - 2); ++j) {
  		cout << " ";
@@ -258,8 +268,6 @@
     	bool prime = true;
     	for (unsigned int j = 2; j < i; ++j) {
     	  if (i % j == 0) prime = false;
-\end{lstlisting}
-\begin{lstlisting}
     	}
     	if (prime) {
     	  if (n0 <= 50 && (i % 10) == 3)  {
@@ -304,7 +312,7 @@
     \subsection{Hilal}
     \vspace{-0.25ex}
 \begin{lstlisting}
-  #include <iostream>
+ #include <iostream>
 \end{lstlisting}
     \vspace{-0.25ex}
     \ilz{}{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \inputscript{iostream}. {\Header} {\file} \inputscript{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
@@ -322,7 +330,7 @@
     \ilz{}{\Script} diatas digunakan untuk menampilkan {\header} atau judul program kepada pengguna. Judul program tersebut ditampilkan dengan menggunakan objek \inputscript{cout} yang tersedia dalam {\header} {\file} \inputscript{iostream}.
 
 \begin{lstlisting}
-  int r = 0;
+ int r = 0;
 \end{lstlisting}
     \ilz{}{\Script} diatas merupakan {\statement} inisialisasi sebuah variabel. Dimana dalam {\script} diatas diinisialisasikan sebuah variabel \inputscript{n} bertipe \inputscript{int} yang bernilai \inputscript{0}. Kemudian variabel \inputscript{n} tersebut dapat digunakan pada kode-kode setelah baris kode {\script} tersebut.
 

@@ -2,16 +2,72 @@
 
 \begin{document}
     \subsection{{\Statement} {\Control}}
-    \subsubsection{Percabangan \textit{IF}}
-    \paragraph{\textit{IF} Tunggal: mengerjakan perintah pada cabang program hanya jika kondisi terpenuhi.}
-    \paragraph{\textit{IF-ELSE}: mengerjakan perintah pada kondisi \textit{IF} bernilai benar atau \textit{IF} bernilai salah yang ditetapkan sebagai \textit{ELSE}.}
-    \paragraph{\textit{Nested IF}: percabangan pada \textit{IF-ELSE} yang memiliki lebih dari 2 pilihan.}
-    \subsubsection{\textit{Switch Case}: merupakan bentuk ain dari \textit{Nested IF}, hal ini karena \textit{Switch Case} memiliki prinsip kerja yang sama, tetapi dengan format penulisan yang berbeda \parencite{hanief2020konsep}.}
+    \subsubsection{Percabangan \textit{If}}
+    \paragraph{\textit{If} Tunggal: mengerjakan perintah pada cabang program hanya jika kondisi terpenuhi.}
+\begin{indentlevel1}
+\begin{lstlisting}
+ if (kondisi) { statemen }
+\end{lstlisting}
+\end{indentlevel1}
+    \paragraph{\textit{If-else}: mengerjakan perintah pada kondisi \textit{if} bernilai benar atau \textit{if} bernilai salah yang ditetapkan sebagai \textit{else}.}
+\begin{indentlevel1}
+\begin{lstlisting}
+ if (kondisi) { statemen }
+ else (kondisi) { statemen }
+\end{lstlisting}
+\end{indentlevel1}
+    \paragraph{\textit{Nested if}: percabangan pada \textit{if-else} yang memiliki lebih dari 2 pilihan.}
+\begin{indentlevel1}
+\begin{lstlisting}
+ if (kondisi) { statemen }
+ else if (kondisi) { statemen }
+ else (kondisi) { statemen }
+\end{lstlisting}
+\end{indentlevel1}
+    \subsubsection{\textit{Switch case}: merupakan bentuk lain dari \textit{nested if}, hal ini karena \textit{switch case} memiliki prinsip kerja yang sama, tetapi dengan format penulisan yang berbeda \parencite{hanief2020konsep}.}
+\begin{indentlevel0}
+\begin{lstlisting}
+ switch (variabel) {
+    case 0:
+        statemen
+        break;
+    case 1:
+        statemen
+        break;
+    ...
+    case n:
+        statemen
+        break;
+    default:
+        statemen
+        break;
+ }
+\end{lstlisting}
+\end{indentlevel0}
 
     \subsection{{\Looping}}
-    Struktur perulangan dapat dibedakan menjadi tiga jenis yaitu \textit{FOR}, \textit{WHILE} dan \textit{DOWHILE} \parencite{anam2021cara}.
+    Struktur perulangan dapat dibedakan menjadi tiga jenis yaitu \textit{for}, \textit{while} dan \textit{dowhile} \parencite{anam2021cara}.
 
-    \subsubsection{\textit{FOR}: perulangan yang batasan dan syarat pengulangannya sudah ditentukan. Penulisannya yaitu \inputscript{for (inisialisasi; kondisi perulangan; pengubah nilai cacah)} \parencite{suryadi2018belajar}.}
-    \subsubsection{\textit{WHILE}: perulangan yang akan dijalankan selama kondisi terpenuhi dengan pemeriksaan kondisi sebelum dijalankan \parencite{anam2021cara}.}
-    \subsubsection{\textit{DOWHILE}: perulangan yang dijalankan terlebih dahulu 1 kali, kemudian akan ada pemeriksaan kondisi \textit{while}, jika terpenuhi perulangan terjadi \parencite{anam2021cara}.}
+    \subsubsection{\textit{For}: perulangan yang batasan dan syarat pengulangannya sudah ditentukan \parencite{suryadi2018belajar}.}
+\begin{indentlevel0}
+\begin{lstlisting}
+ for (inisialisasi; kondisi perulangan; pengubah nilai cacah)
+\end{lstlisting}
+\end{indentlevel0}
+    \subsubsection{\textit{While}: perulangan yang akan dijalankan selama kondisi terpenuhi dengan pemeriksaan kondisi sebelum dijalankan \parencite{anam2021cara}.}
+\begin{indentlevel0}
+\begin{lstlisting}
+ while (kondisi) {
+    statemen
+ }
+\end{lstlisting}
+\end{indentlevel0}
+    \subsubsection{\textit{Do-while}: perulangan yang dijalankan terlebih dahulu 1 kali, kemudian akan ada pemeriksaan kondisi \textit{while}, jika terpenuhi perulangan terjadi \parencite{anam2021cara}.}
+\begin{indentlevel0}
+\begin{lstlisting}
+    do {
+        statemen
+    } while (kondisi)
+\end{lstlisting}
+\end{indentlevel0}
 \end{document}

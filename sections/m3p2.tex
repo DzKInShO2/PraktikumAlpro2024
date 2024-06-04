@@ -19,15 +19,17 @@
     \end{indentlevel0}
 
     \subsection{\textit{String}}
-    C++ memiliki dukungan terhadap dua jenis \textit{string}, yaitu \textit{string} gaya bahasa C dan gaya bahasa C++\parencite{raharjo2015pemrograman}.
+    C++ memiliki dukungan terhadap dua jenis \textit{string}, yaitu \textit{string} gaya bahasa C dan gaya bahasa C++. \textit{String} gaya bahasa C sering disebut dengan \textit{null terminated string} atau \textit{C-style string}. \textit{String} jenis ini dapat diimplementasikan ke d dari alam dua bentuk. Bentuk pertama, \textit{string} diimplementasikan sebagai larik atau \hspace{0.25ex} kumpulan \hspace{0.25ex} dari tipe \hspace{0.25ex} karakter \hspace{0.25ex} (\textit{array of char}).
+    \newpage
+    {\color{white}a\vspace*{-2.4ex}}
 
-    \textit{String} gaya bahasa C sering disebut dengan \textit{null terminated string} atau \textit{C-style string}. \textit{String} jenis ini dapat diimplementasikan ke d dari alam dua bentuk. Bentuk pertama, \textit{string} diimplementasikan sebagai larik atau kumpulan dari tipe karakter (\textit{array of char}). Dalam cara ini, \textit{string} akan dianggap sebagai kumpulan karakter yang diakhiri oleh karakter \textit{null}(\inputscript{\textbackslash 0}). Setiap karakter di dalam \textit{string} dapat diakses melalui indeks \textit{array}. Bentuk kedua, \textit{string} diimplementasikan sebagai \textit{pointer} ke tipe karakter (\textit{pointer  of char}). Berikut ini contoh kode yang menunjukan penggunaan \textit{string} dalam bahasa C\parencite{raharjo2015pemrograman}:
+    \noindent Dalam cara ini, \textit{string} akan dianggap sebagai kumpulan karakter yang diakhiri oleh karakter \textit{null} (\inputscript{\textbackslash 0}). Setiap karakter di dalam \textit{string} dapat diakses melalui indeks \textit{array}. Bentuk kedua, \textit{string} diimplementasikan sebagai \textit{pointer} ke tipe karakter (\textit{pointer  of char}). Berikut ini contoh kode yang menunjukan penggunaan \textit{string} dalam bahasa C \parencite{raharjo2015pemrograman}:
 \begin{lstlisting}
  char str1[100];    // C-string menggunakan array
  char *str2;        // C-string menggunakan pointer
 \end{lstlisting}
 
-    C++ mengimplementasikan string sebagai kelas. Kelas yang digunakan untuk merepresentasikan \textit{string} adalah \inputscript{string}(huruf s ditulis dalam huruf kecil). Kelas tersebut berisi kumpulan data dan fungsi yang berguna untuk mengangani permasalahan-permasalahan program yang berkaitan dengan \textit{string}\parencite{raharjo2015pemrograman}.
+    C++ mengimplementasikan string sebagai kelas. Kelas yang digunakan untuk merepresentasikan \textit{string} adalah \inputscript{string}(huruf s ditulis dalam huruf kecil). Kelas tersebut berisi kumpulan data dan fungsi yang berguna untuk mengangani permasalahan-permasalahan program yang berkaitan dengan \textit{string} \parencite{raharjo2015pemrograman}.
 
     Fungsi string yang telah tersedia pada bahasa C yaitu sebagai berikut \parencite{sasongko2010modul}:
     \subsubsection{\textit{Strlen}}
