@@ -241,10 +241,6 @@
 \usepackage{listings}
 \usepackage{framed}
 
-\newenvironment{framedlisting}
-    {\par\noindent\begin{framed}\vspace{-\topsep}\vspace{-\parskip}}
-    {\vspace{-\topsep}\vspace{-\parskip}\end{framed}\par\noindent}
-
 \lstset{
     basicstyle=\setstretch{1.0}\crnfamily\cpsize,
     breaklines=false,
@@ -259,6 +255,12 @@
     xrightmargin=1ex,
     aboveskip=1ex,
     belowskip=1ex,
+}
+
+\newcommand*{\inputcode}[1]{
+    \par\noindent\begin{framed}\vspace{-\topsep}\vspace{-\parskip}
+        \lstinputlisting{#1}
+    \vspace{-\topsep}\vspace{-\parskip}\end{framed}\par\noindent
 }
 
 %%% %%%
