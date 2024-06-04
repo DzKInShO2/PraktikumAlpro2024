@@ -9,12 +9,24 @@
 
 \usepackage[titles]{tocloft}
 
+\setcounter{tocdepth}{1}
+
 \setlength{\cftbeforechapskip}{0pt}
 \renewcommand*{\cftchapfont}{\normalfont}
 \renewcommand*{\cftchappagefont}{\normalfont}
 \renewcommand*{\contentsname}{
+    {\color{white}a\vspace*{-0.5ex}}
     DAFTAR ISI
     \addcontentsline{toc}{chapter}{DAFTAR ISI}
+}
+
+\renewcommand{\listfigurename}{
+    DAFTAR GAMBAR
+    \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+}
+\renewcommand{\listtablename}{
+    DAFTAR TABEL
+    \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 }
 
 \newcommand*{\chsize}{\fontsize{16pt}{12pt} \selectfont}
@@ -197,6 +209,9 @@
     nosep
 }
 
+\renewcommand*{\labelenumi}{\arabic{enumi}.}
+\renewcommand*{\labelenumii}{\alph{enumii}.}
+
 \usepackage{xltabular}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \renewcommand{\arraystretch}{0.65}
@@ -231,18 +246,23 @@
 
     % Change numbering formats
     \renewcommand*{\thechapter}{\Roman{chapter}}
-    \renewcommand*{\thepage}{\roman{page}}
     \renewcommand*{\thesection}{\arabic{chapter}.\arabic{section}}
+    \pagenumbering{roman}
 
     % Add table of contents
     \tableofcontents
-    \pagestyle{plain}
+    {\protect\thispagestyle{plain}}
+    \listoffigures
+    {\protect\thispagestyle{plain}}
+    \listoftables
+    {\protect\thispagestyle{plain}}
+
     \newpage
 
     % Change next page style to normal
     \pagestyle{normal}
     \setcounter{page}{1}
-    \renewcommand{\thepage}{\arabic{page}}
+    \pagenumbering{arabic}
 
     \chapterf{Pemrograman Dasar}
     \section{Tujuan Praktikum}
