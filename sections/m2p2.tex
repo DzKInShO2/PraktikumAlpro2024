@@ -2,88 +2,16 @@
 
 \begin{document}
     \subsection{{\Statement} {\Control}}
-    {\Statement} {\control} adalah mekanisme yang digunakan untuk mengontrol alur eksekusi program berdasarkan suatu kondisi. Dengan {\statement} {\control}, komputer tidak lagi mengeksekusi instruksi secara sekuensial (berurutan), tetapi berdasarkan hasil penyeleksian kondisi \parencite{munir2007algoritma}. Dalam bahasa C++ terdapat beberapa jenis {\statement} {\control}, yaitu:
+    \subsubsection{Percabangan \textit{IF}}
+    \paragraph{\textit{IF} Tunggal: mengerjakan perintah pada cabang program hanya jika kondisi terpenuhi.}
+    \paragraph{\textit{IF-ELSE}: mengerjakan perintah pada kondisi \textit{IF} bernilai benar atau \textit{IF} bernilai salah yang ditetapkan sebagai \textit{ELSE}.}
+    \paragraph{\textit{Nested IF}: percabangan pada \textit{IF-ELSE} yang memiliki lebih dari 2 pilihan.}
+    \subsubsection{\textit{Switch Case}: merupakan bentuk ain dari \textit{Nested IF}, hal ini karena \textit{Switch Case} memiliki prinsip kerja yang sama, tetapi dengan format penulisan yang berbeda \parencite{hanief2020konsep}.}
 
-    \subsubsection{\textit{If}}
-    \begin{indentlevel0}
-    \textit{If} digunakan jika perlu menyeleksi satu kasus. Jika kondisi bernilai benar, maka perintah di dalam \inputscript{if} akan dieksekusi. Jika kondisi bernilai salah, maka program tidak akan mengeksekusi perintah di dalam \inputscript{if} dan lanjut mengeksekusi perintah di bawah {\statement} {\control} \inputscript{if} \parencite{firliana2018algoritma}. Bentuk umum dari perintah \inputscript{if}:
-\begin{lstlisting}
- if (kondisi) {
-    Pernyataan;}
-\end{lstlisting}
-    \end{indentlevel0}
+    \subsection{{\Looping}}
+    Struktur perulangan dapat dibedakan menjadi tiga jenis yaitu \textit{FOR}, \textit{WHILE} dan \textit{DOWHILE} \parencite{anam2021cara}.
 
-    \subsubsection{\textit{If-else}}
-    \begin{indentlevel0}
-    \textit{If – else} digunakan jika perlu menyeleksi dua kasus. Jika kondisi bernilai benar, maka perintah di dalam \inputscript{if} akan dieksekusi. Jika kondisi bernilai salah, maka perintah di dalam else akan dieksekusi \parencite{firliana2018algoritma}. Bentuk umum dari perintah \inputscript{if} – \inputscript{else}:
-\begin{lstlisting}
- if (kondisi) {
-    pernyataan 1;}
- else {
-    pernyataan 2;}
-\end{lstlisting}
-    \end{indentlevel0}
-
-    \subsubsection{\textit{If-else if-else}}
-    \begin{indentlevel0}
-    \textit{If – else if – else} digunakan jika perlu menyeleksi tiga kasus atau lebih. Prinsip kerjanya sama seperti \inputscript{if} – \inputscript{else}, tetapi terdapat tambahan else \inputscript{if} yang memiliki fungsi sama seperti \inputscript{if} \parencite{firliana2018algoritma}. \textit{Else if} hanya akan digunakan ketika \inputscript{if} yang berada di atasnya bernilai salah. Urutan penyeleksiannya adalah \inputscript{if}, \inputscript{else if} dan \inputscript{else}. Bentuk umum dari perintah \inputscript{if} – \inputscript{else if} – \inputscript{if}:
-\begin{lstlisting}
- if(kondisi 1){
-   pernyataan 1;}
- else if(kondisi 2){
-   pernyataan 2;}
- else{
-   pernyataan 3;}
-\end{lstlisting}
-    \end{indentlevel0}
-
-    \subsubsection{\textit{Switch case}}
-    \begin{indentlevel0}
-    \textit{Switch case} digunakan jika menyeleksi data bertipe character atau integer \parencite{achmad2018modul}. Prinsip kerjanya mirip dengan \inputscript{if} – \inputscript{else if} – \inputscript{else}, di mana \inputscript{case} yang pertama bertindak sebagai \inputscript{if}, \inputscript{case} yang kedua bertindak sebagai \inputscript{else if} dan \inputscript{default} bertindak sebagai \inputscript{else}. Setiap \inputscript{case} harus diakhiri dengan \inputscript{break;} agar tidak berlanjut ke \inputscript{case} berikutnya saat kondisinya sudah terpenuhi. Bentuk umum dari perintah \textit{switch case}:
-\begin{lstlisting}
- switch(variabel){
-   case nilai 1:
-     pernyataan 1;
-     break;
-   case nilai 2:
-     pernyataan 2;
-     break;
-   default:
-     pernyataan 3;
-     break;}
-\end{lstlisting}
-    \end{indentlevel0}
-
-    \subsection{{\Statement} {\Looping}}
-    {\Statement} {\looping} adalah mekanisme yang memungkinkan perintah dijalankan berulang-ulang selama suatu kondisi masih terpenuhi. {\Statement} {\looping} dibagi menjadi dua jenis, yaitu perulangan yang sudah diketahui jumlah perulangannya (\inputscript{for}) dan perulangan yang belum diketahui jumlah perulangannya (\inputscript{while} dan \inputscript{do while}) \parencite{suprapto2008bahasa}. Dalam bahasa C++ terdapat beberapa jenis {\statement} {\looping}, yaitu:
-    \subsubsection{\textit{For}}
-    \begin{indentlevel0}
-    \textit{For} adalah perulangan yang telah diketahui jumlah perulangannya \parencite{achmad2018modul}. Nilai awal dan nilai batas perulangan harus berasal dari tipe data yang memiliki \textit{predecessor} dan \textit{successor}, yaitu integer dan \textit{character} \parencite{firliana2018algoritma}. Bentuk umum dari perintah for:
-\begin{lstlisting}
- for(nilai awal; syarat perulangan; pengubah nilai pencacah){
-   pernyataan;} 
-\end{lstlisting}
-    \end{indentlevel0}
-
-    \subsubsection{\textit{While}}
-    \begin{indentlevel0}
-    \textit{While} adalah perulangan yang tidak diketahui jumlah perulangannya. Perulangan akan terus terjadi selama kondisi syarat masih bernilai benar \parencite{munir2007algoritma}.
-\begin{lstlisting}
- while(kondisi){
-   pernyataan;
-   pernyataan yang mempengaruhi kondisi while;
- }
-\end{lstlisting}
-    \end{indentlevel0}
-
-    \subsubsection{\textit{Do while}}
-    \begin{indentlevel0}
-    \textit{Do while} memiliki kemiripan dengan while. Jenis perulangan ini juga tidak diketahui jumlah perulangannya. Hal yang membedakan \inputscript{do while} dengan \inputscript{while} adalah terjadi perulangan selama sekali terlebih dahulu sebelum dilakukan pengecekan kondisi pada jenis perulangan \inputscript{do while} \parencite{achmad2018modul}. Bentuk umum dari perintah \inputscript{do while}:
-\begin{lstlisting}
- do{
-   pernyataan;
-   pernyataan yang mempengaruhi kondisi;}
- while(kondisi);
-\end{lstlisting}
-    \end{indentlevel0}
+    \subsubsection{\textit{FOR}: perulangan yang batasan dan syarat pengulangannya sudah ditentukan. Penulisannya yaitu \inputscript{for (inisialisasi; kondisi perulangan; pengubah nilai cacah)} \parencite{suryadi2018belajar}.}
+    \subsubsection{\textit{WHILE}: perulangan yang akan dijalankan selama kondisi terpenuhi dengan pemeriksaan kondisi sebelum dijalankan \parencite{anam2021cara}.}
+    \subsubsection{\textit{DOWHILE}: perulangan yang dijalankan terlebih dahulu 1 kali, kemudian akan ada pemeriksaan kondisi \textit{while}, jika terpenuhi perulangan terjadi \parencite{anam2021cara}.}
 \end{document}
