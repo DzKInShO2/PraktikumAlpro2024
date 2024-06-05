@@ -1,0 +1,100 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \subsection{Bagi THR}
+    \subsubsection{Algoritma}
+    \begin{enumerate}
+        \item[]
+        \begin{enumerate}
+            \item{Menanyakan nama dan nim pengguna serta berapa jam kuliah pengguna.}
+            \item{Menanyakan tipe mahasiswa, kupu-kupu, kura-kura dan kuda-kuda.}
+            \item{Menampilkan respon sesuai pilihan dan menambahkan THR sesuai tipe mahasiswa, kupu-kupu ditambah 500K, kura-kura ditambah 850K dan kuda-kuda ditambah 1 juta.}
+            \item{Menanyakan apakah mahasiswa kuliah malam. Bila iya, tanyakan berapa lama dan tambah THR sesuai berapa lama 1-2 jam ditambah 200K, 2-3 jam ditambah 500K dan lebih dari 3 jam maka THR akan menjadi 2 kali dari THR awal.}
+            \item{Tampilkan total THR mahasiswa dan total jam kuliah dalam format jam, menit dan detik.}
+        \end{enumerate}
+    \end{enumerate}
+
+    \subsubsection{{\Flowchart}}
+    \inputfigure[n]{res/m2i10.png}{0.23}{{\Flowchart} Program Bagi THR}{fig:m2:i10}
+
+    \subsubsection{{\Source} {\sCode}}
+    \inputcode[n]{res/m2c1.cpp}
+
+    \subsubsection{Hasil Program}
+    \inputfigure[n]{res/m2i11.png}{0.25}{Hasil Program Bagi THR}{fig:m2:i11}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i11}, didapatkan sebuah gambar hasil eksekusi program Bagi THR. Program tersebut meminta nama dan nim mahasiswa pada awal penjalanannya, kemudian meminta tipe mahasiswa, durasi masuk kuliah untuk menghitung total THR.
+    \end{indentpar}
+
+    \subsection{Motif Baju}
+    \subsubsection{Algoritma}
+    \begin{enumerate}
+        \item []
+        \begin{enumerate}
+            \item{Menampilkan 4 pilihan pada pengguna, motif bangun datar, motif pohon cemara, motif pola bilangan dan keluar.}
+            \item{Mengganti pilihan terpilih berdasarkan pilihan sekarang ditambah atau dikurangi tergantung tombol panah atas dan bawah.}
+            \item{Bila dipilih motif bangun datar, minta jumlah baris dan gambar pola persegi, minta jumlah baris dan gambar pola segitiga dan minta jumlah baris dan gambar pola persegi. Setelah selesai kembali ke awal.}
+            \item{Bila dipilih motif pohon cemara, minta tinggi dan lebar setelah itu gambar pohon cemara berdasarkan masukan sebelumnya. Setelah selesai kembali ke awal.}
+            \item{Bila dipilih motif pola bilangan, minta nilai n. Bila masukan n ganjil maka tampilkan 11 pangkat 0 sampai n. Bila masukan genap maka tampilkan bilangan prima dan bila n lebih kecil atau sama dengan 50 kalikan setiap bilangan prima yang mengandung angka 3 dengan n. Setelah selesai kembali ke awal.}
+            \item{Bila dipilih keluar maka program akan keluar.}
+        \end{enumerate}
+    \end{enumerate}
+
+    \subsubsection{{\Flowchart}}
+    \inputfigure[n]{res/m2i12.png}{0.16}{{\Flowchart} Program Motif Baju}{fig:m2:i12}
+
+    \subsubsection{{\Source} {\sCode}}
+    \inputcode[n]{res/m2c2.cpp}
+
+    \subsubsection{Hasil Program}
+
+    \inputfigure[n]{res/m2i13.png}{0.26}{Menu Program Motif Baju}{fig:m2:i13}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i13}, didapatkan sebuah menu awal program Motif Baju. Menu tersebut memiliki 4 opsi yakni bangun datar, pohon cemara, pola bilangan dan keluar. Menu tersebut dinavigasikan menggunakan tombol atas dan bawah.
+    \end{indentpar}
+
+    \inputfigure[n]{res/m2i14.png}{0.3}{Hasil Keluaran Motif Bangun Datar Program Motif Baju}{fig:m2:i14}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i14}, didapatkan sebuah hasil keluaran dari pilihan menu bangun datar dari program Motif Baju. Didapatkan 3 keluaran dari opsi tersebut persegi huruf, segitiga dan persegi angka yang berukuran sesuai masukan.
+    \end{indentpar}
+    \newpage
+    \blanktop
+    \inputfigure[n]{res/m2i15.png}{0.225}{Hasil Keluaran Motif Pohon Cemara Program Motif Baju}{fig:m2:i15}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i15}, didapatkan sebuah hasil keluaran dari pilihan menu pohon cemara dari program Motif Baju. Didapatkan sebuah pohon cemara yang tersusun oleh segitiga dan persegi yang disesuaikan sesuai masukan.
+    \end{indentpar}
+
+    \inputfigure[n]{res/m2i16.png}{0.4}{Hasil Keluaran Motif Pola Bilangan Ganjil Program Motif Baju}{fig:m2:i16}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i16}, didapatkan sebuah hasil keluaran dari pilihan menu pola bilangan dengan masukan ganjil dari program Motif Baju. Didapatkan sekelompok angka yang merupakan 11 pangkat 0 sampai n atau masukan.
+    \end{indentpar}
+
+    \inputfigure[n]{res/m2i17.png}{0.5}{Hasil Keluaran Motif Pola Bilangan Genap Program Motif Baju}{fig:m2:i17}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i17}, didapatkan sebuah hasil keluaran dari pilihan menu pola bilangan dengan masukan genap dari program Motif Baju. Didapatkan sekelompok angka yang merupakan bilangan prima, jika masukan lebih kecil atau sama dengan 50 maka setiap bilangan prima yang mengandung angka 3 akan dikalikan masukan.
+    \end{indentpar}
+
+    \subsection{Hilal}
+    \subsubsection{Algoritma}
+    \begin{enumerate}
+        \item[]
+        \begin{enumerate}
+            \item{Menanyakan jari-jari lingkaran pada pengguna.}
+            \item{Menggambar satu lingkaran yang disusun oleh ``*'' berdasarkan jari-jari yang diberikan.}
+            \item{Menggambar lingkaran yang lain dengan jari-jari yang sama yang digunakan untuk menghapus bagian lingkaran pertama.}
+            \item{Menggerakan lingkaran kedua dari kanan ke kiri dan sebaliknya hingga waktu yang tidak ditentukan.}
+        \end{enumerate}
+    \end{enumerate}
+
+    \subsubsection{{\Flowchart}}
+    \inputfigure[n]{res/m2i18.png}{0.22}{{\Flowchart} Program Hilal}{fig:m2:i18}
+
+    \subsubsection{{\Source} {\sCode}}
+    \inputcode[n]{res/m2c3.cpp}
+
+    \subsubsection{Hasil Program}
+    \inputfigure[n]{res/m2i19.png}{0.35}{Hasil Program Hilal}{fig:m2:i19}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m2:i19}, didapatkan sebuah hasil program Hilal. Program tersebut menerima masukan berupa jari-jari yang akan digunakan untuk menggambar lingkaran bulan. Lingkaran bulan tersebut akan ditutupi oleh lingkaran lain yang akan menghasilkan efek perubahan bulan. Lingkaran lain tersebut akan bergerak dari kanan ke kiri setelah itu kiri ke kanan.
+    \end{indentpar}
+\end{document}
