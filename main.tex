@@ -193,7 +193,8 @@
 	labelfont = bf,
 	labelsep = space,
 	font = cp,
-	skip = 3pt,
+	skip = 4pt,
+    belowskip=-3ex,
 	position = bottom
 }
 
@@ -207,8 +208,59 @@
 	position = top
 }
 
-\usepackage{graphicx}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\setlength{\intextsep}{1ex}
+
+\newcommand*{\inputfigure}[5][]{
+    \renewcommand*{\a}{#1}
+    \renewcommand*{\b}{n}
+    \renewcommand*{\c}{r}
+
+    \begin{figure}[H]
+        \ifx\a\b
+            \begin{indentpar}
+                \includegraphics[
+                    scale=#3,
+                    center,
+                    frame=0.5pt
+                ]{#2}
+                \caption{#4}
+            \end{indentpar}
+            \vspace*{-0.5ex}
+        \else
+            \ifx\a\c
+                \begin{indentpar}[n]
+                    \includegraphics[
+                        scale=#3,
+                        frame=0.5pt
+                    ]{#2}
+                    \caption{#4}
+                \end{indentpar}
+            \else
+                \ifx\a\empty
+                    \includegraphics[
+                        scale=#3,
+                        center,
+                        frame=0.5pt
+                    ]{#2}
+                    \caption{#4}
+                \else
+                    \begin{adjustwidth}{#1}{}
+                        \includegraphics[
+                            scale=#3,
+                            center,
+                            frame=0.5pt
+                        ]{#2}
+                        \caption{#4}
+                    \end{adjustwidth}
+                \fi
+            \fi
+        \fi
+        \label{#5}
+    \end{figure}
+}
 
 \usepackage{enumitem}
 \setlist[enumerate, 1]{
