@@ -64,6 +64,24 @@
 \setstretch{1.5}
 
 \usepackage{changepage}
+
+\newlength{\indentshift}
+\newenvironment*{indentpar}[1][]{
+    \renewcommand*{\a}{#1}
+    \renewcommand*{\b}{n}
+
+    \setlength{\indentshift}{0.845cm}
+    \setlength{\parindent}{0.75cm}
+
+    \ifx\a\b
+        \setlength{\indentshift}{1.59cm}
+    \fi
+
+    \adjustwidth{\indentshift}{}
+}{
+    \endadjustwidth
+    \setlength{\parindent}{1.0cm}
+}
 %%% %%%
 
 %%% FOOTER AND HEADER %%%
@@ -99,7 +117,7 @@
 
 \titleformat{\chapter}[display]
 {\center\chsize\bfseries}
-{\chaptertitlename \thechapter}{1ex}{}[\vspace{16pt}]
+{\chaptertitlename \thechapter}{1ex}{}[\vspace{1ex}]
 
 \titleformat{\section}[hang]
 {\normalsize\bfseries}
@@ -121,7 +139,7 @@
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 \titlespacing*{\subsection}{0pt}{0pt}{0pt}
 \titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
-\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
+\titlespacing*{\paragraph}{0.845cm}{0pt}{0pt}
 
 % Numberless chapter command
 \newcommand*{\chapterf}[2][]{
@@ -129,7 +147,7 @@
     \stepcounter{chapter}
     \chapter*{
         MODUL {\thechapter}\\
-        \vspace{1.5ex}
+        \vspace{1ex}
         \MakeUppercase{#2}
     }
 
@@ -214,32 +232,43 @@
 
 \usepackage{xltabular}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
-\renewcommand{\arraystretch}{0.65}
+\renewcommand{\arraystretch}{1.0}
+
+% \setlength{\LTpre}{1.0ex}
+\setlength{\LTpost}{0.0ex}
 
 \newlength{\tableshift}
 \newcommand*{\inputtable}[5][]{
     \renewcommand*{\a}{#1}
     \renewcommand*{\b}{n}
-    \setlength{\tableshift}{0.0cm}
+    \renewcommand*{\c}{r}
+    \setlength{\tableshift}{\textwidth}
 
     \ifx\a\empty
     \else
         \ifx\a\b
-            \setlength{\tableshift}{0.75cm}
+            \setlength{\tableshift}{0.95\textwidth}
         \else
-            \setlength{\tableshift}{#1}
+            \ifx\a\c
+                \setlength{\tableshift}{0.895\textwidth}
+                \vspace{-0.8ex}
+            \else
+                \setlength{\tableshift}{#1\textwidth}
+            \fi
         \fi
     \fi
 
+    \setstretch{1.0}
 	\cpsize
     \renewcommand*{\thechapter}{\arabic{chapter}}
-    \begin{xltabular}{\textwidth}{#2}
+    \begin{xltabular}[r]{\tableshift}{#2}
         \caption{#4}
         \label{#5}
         \\ \hline
         #3
     \end{xltabular}
 	\normalsize
+    \setstretch{1.5}
 }
 
 \usepackage{verbatim}
@@ -248,7 +277,6 @@
 \makeatletter
 \renewcommand*{\verbatim@font}{\setstretch{1.0}\crnfamily\cpsize}
 \makeatother
-
 
 \newlength{\codeshift}
 
@@ -262,19 +290,41 @@
     \ifx\a\empty
     \else
         \ifx\a\b
-            \setlength{\codeshift}{0.75cm}
+            \setlength{\codeshift}{0.835cm}
         \else
             \setlength{\codeshift}{#1}
         \fi
     \fi
 
     \begin{framed}
-        \vspace{-1ex}
+        \vspace{-1.85ex}
         \verbatiminput{#2}
-        \vspace{-1ex}
+        \vspace{-1.85ex}
     \end{framed}
 }
 
+\newenvironment*{code}[1][]{
+    \renewcommand*{\a}{#1}
+    \renewcommand*{\b}{n}
+    \setlength{\codeshift}{0.0cm}
+
+    \ifx\a\empty
+    \else
+        \ifx\a\b
+            \setlength{\codeshift}{0.835cm}
+        \else
+            \setlength{\codeshift}{#1}
+        \fi
+    \fi
+    \begin{framed}
+    \vspace{-2.4ex}
+}{
+    \vspace{-2.4ex}
+    \end{framed}
+    \vspace*{-2.15ex}
+}
+
+\newcommand*{\citecode}[1]{\hspace{-0.5ex}{\cpsize\crnfamily{{\normalsize\textnormal{``}}#1}}''}
 %%% %%%
 
 \begin{document}
@@ -285,6 +335,9 @@
     % Change numbering formats
     \renewcommand*{\thechapter}{\Roman{chapter}}
     \renewcommand*{\thesection}{\arabic{chapter}.\arabic{section}}
+    \renewcommand*{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+    \renewcommand*{\thesubsubsection}{\arabic{subsubsection}.}
+    \renewcommand*{\theparagraph}{\alph{paragraph}.}
     \pagenumbering{roman}
 
     % Add table of contents
