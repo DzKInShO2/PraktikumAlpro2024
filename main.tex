@@ -216,20 +216,24 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \renewcommand{\arraystretch}{0.65}
 
+\newlength{\tableshift}
 \newcommand*{\inputtable}[5][]{
     \renewcommand*{\a}{#1}
     \renewcommand*{\b}{n}
-    \renewcommand*{\c}{\textwidth}
+    \setlength{\tableshift}{0.0cm}
 
-    \ifx\a\b
-        \renewcommand*{\c}{0.95\textwidth}
+    \ifx\a\empty
     \else
-        \renewcommand*{\c}{#1\textwidth}
+        \ifx\a\b
+            \setlength{\tableshift}{0.75cm}
+        \else
+            \setlength{\tableshift}{#1}
+        \fi
     \fi
 
 	\cpsize
     \renewcommand*{\thechapter}{\arabic{chapter}}
-    \begin{xltabular}[r]{\c}{#2}
+    \begin{xltabular}{\textwidth}{#2}
         \caption{#4}
         \label{#5}
         \\ \hline
@@ -245,16 +249,30 @@
 \renewcommand*{\verbatim@font}{\setstretch{1.0}\crnfamily\cpsize}
 \makeatother
 
-\newcommand*{\inputcode}[1]{
-    \vspace{-1.85ex}
+
+\newlength{\codeshift}
+
+\setlength{\fboxsep}{0.6ex}
+\renewcommand*\FrameCommand{\hskip\codeshift\fbox}
+\newcommand*{\inputcode}[2][]{
+    \renewcommand*{\a}{#1}
+    \renewcommand*{\b}{n}
+    \setlength{\codeshift}{0.0cm}
+
+    \ifx\a\empty
+    \else
+        \ifx\a\b
+            \setlength{\codeshift}{0.75cm}
+        \else
+            \setlength{\codeshift}{#1}
+        \fi
+    \fi
+
     \begin{framed}
-        \begin{adjustwidth}{-1ex}{0.0cm}
-            \vspace{-1.5ex}
-            \verbatiminput{#1}
-            \vspace{-1.5ex}
-        \end{adjustwidth}
+        \vspace{-1ex}
+        \verbatiminput{#2}
+        \vspace{-1ex}
     \end{framed}
-    \vspace{-1.85ex}
 }
 
 %%% %%%
