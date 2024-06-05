@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main() {
     float temp;
     cout << "Suhu awal: ";
@@ -33,8 +32,5 @@ int main() {
     cout << "1:" << (temp/temp1) << " untuk suhu terdingin" << endl;
     cout << "1:" << (temp/temp0)
          << " untuk suhu 15 menit setelah pendinginan" << endl;
-
     return 0;
-
-    Halo
 }

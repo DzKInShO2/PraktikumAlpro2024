@@ -59,7 +59,7 @@
 
 \usepackage[none]{hyphenat}
 
-\usepackage{setspace}
+\usepackage[nodisplayskipstretch]{setspace}
 \setlength{\parindent}{1cm}
 \setstretch{1.5}
 
@@ -238,29 +238,23 @@
 	\normalsize
 }
 
-\usepackage{listings}
+\usepackage{verbatim}
 \usepackage{framed}
 
-\lstset{
-    basicstyle=\setstretch{1.0}\crnfamily\cpsize,
-    breaklines=false,
-    breakatwhitespace=false,         
-    captionpos=b,                    
-    keepspaces=true,                 
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    frame=none,
-    xleftmargin=-1ex,
-    xrightmargin=1ex,
-    aboveskip=1ex,
-    belowskip=1ex,
-}
+\makeatletter
+\renewcommand*{\verbatim@font}{\setstretch{1.0}\crnfamily\cpsize}
+\makeatother
 
 \newcommand*{\inputcode}[1]{
-    \par\noindent\begin{framed}\vspace{-\topsep}\vspace{-\parskip}
-        \lstinputlisting{#1}
-    \vspace{-\topsep}\vspace{-\parskip}\end{framed}\par\noindent
+    \vspace{-1.85ex}
+    \begin{framed}
+        \begin{adjustwidth}{-1ex}{0.0cm}
+            \vspace{-1.5ex}
+            \verbatiminput{#1}
+            \vspace{-1.5ex}
+        \end{adjustwidth}
+    \end{framed}
+    \vspace{-1.85ex}
 }
 
 %%% %%%
@@ -297,6 +291,7 @@
     \subfile{src/m1p2.tex}
     \newpage
     \section{Permasalahan}
+    \subfile{src/m1p3.tex}
     \newpage
     \section{Hasil Percobaan}
     \subfile{src/m1p4.tex}
