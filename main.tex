@@ -177,7 +177,7 @@
 	labelsep = space,
 	font = cp,
 	skip = 4pt,
-    belowskip=-3ex,
+    belowskip=-4ex,
 	position = bottom
 }
 
@@ -194,7 +194,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
-\setlength{\intextsep}{0.5ex}
+\setlength{\intextsep}{1.6ex}
 
 \newcommand*{\inputfigure}[5][]{
     \renewcommand*{\a}{#1}
@@ -203,6 +203,7 @@
 
     \begin{figure}[H]
         \ifx\a\b
+            \vspace*{-0.8ex}
             \begin{indentpar}
                 \includegraphics[
                     scale=#3,
@@ -212,7 +213,7 @@
                 \caption{#4}
                 \label{#5}
             \end{indentpar}
-            \vspace*{-0.5ex}
+            \vspace*{-0.65ex}
         \else
             \ifx\a\c
                 \begin{indentpar}[n]
@@ -337,15 +338,20 @@
 \newcommand*{\inputcode}[2][]{
     \renewcommand*{\a}{#1}
     \renewcommand*{\b}{n}
+    \renewcommand*{\c}{r}
     \setlength{\codeshift}{0.0cm}
 
     \ifx\a\empty
     \else
+        \vspace{1.0ex}
         \ifx\a\b
             \setlength{\codeshift}{0.835cm}
-            \vspace{0.05ex}
         \else
-            \setlength{\codeshift}{#1}
+            \ifx\a\c
+                \setlength{\codeshift}{1.59cm}
+            \else
+                \setlength{\codeshift}{#1}
+            \fi
         \fi
     \fi
 
@@ -354,24 +360,27 @@
     \end{tcolorbox}
     \ifx\a\empty
     \else
-        \ifx\a\b
-            \vspace{-1.5ex}
-        \fi
+        \vspace{-1.5ex}
     \fi
 }
 
 \newenvironment*{code}[1][]{
     \renewcommand*{\a}{#1}
     \renewcommand*{\b}{n}
+    \renewcommand*{\c}{r}
     \setlength{\codeshift}{0.0cm}
 
     \ifx\a\empty
     \else
+        \vspace{0.5ex}
         \ifx\a\b
             \setlength{\codeshift}{0.835cm}
-            \vspace{0.05ex}
         \else
-            \setlength{\codeshift}{#1}
+            \ifx\a\c
+                \setlength{\codeshift}{1.59cm}
+            \else
+                \setlength{\codeshift}{#1}
+            \fi
         \fi
     \fi
     \begin{tcolorbox}[left skip=\codeshift]
@@ -379,9 +388,7 @@
     \end{tcolorbox}
     \ifx\a\empty
     \else
-        \ifx\a\b
-            \vspace{-1.5ex}
-        \fi
+        \vspace{-1.5ex}
     \fi
 }
 
@@ -457,9 +464,12 @@
 
     \chapterf[{\Statement} {\Control} dan {\Looping}]{Statement Control dan Looping}
     \section{Tujuan Praktikum}
+    \subfile{src/m2p1.tex}
     \section{Dasar Teori}
+    \subfile{src/m2p2.tex}
     \newpage
     \section{Permasalahan}
+    \subfile{src/m2p3.tex}
     \newpage
     \section{Hasil Percobaan}
     \newpage

@@ -1,0 +1,86 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{{\Statement} {\Control}}
+\subsubsection{Percabangan \textit{If}}
+
+\paragraph{\textit{If} Tunggal: mengerjakan perintah pada cabang program hanya jika kondisi terpenuhi.}
+
+\begin{code}[r]
+\begin{verbatim}
+if (kondisi) { statemen }
+\end{verbatim}
+\end{code}
+
+\paragraph{\textit{If-else}: mengerjakan perintah pada kondisi \textit{if} bernilai benar atau \textit{if} bernilai salah yang ditetapkan sebagai \textit{else}.}
+
+\begin{code}[r]
+\begin{verbatim}
+if (kondisi) { statemen }
+else (kondisi) { statemen }
+\end{verbatim}
+\end{code}
+
+\paragraph{\textit{Nested if}: percabangan pada \textit{if-else} yang memiliki lebih dari 2 pilihan.}
+
+\begin{code}[r]
+\begin{verbatim}
+if (kondisi) { statemen }
+else if (kondisi) { statemen }
+else (kondisi) { statemen }
+\end{verbatim}
+\end{code}
+
+\subsubsection{\textit{Switch case}: merupakan bentuk lain dari \textit{nested if}, hal ini karena \textit{switch case} memiliki prinsip kerja yang sama, tetapi dengan format penulisan yang berbeda \parencite{hanief2020konsep}.}
+
+\begin{code}[n]
+\begin{verbatim}
+switch (variabel) {
+   case 0:
+       statemen
+       break;
+   case 1:
+       statemen
+       break;
+   ...
+   case n:
+       statemen
+       break;
+   default:
+       statemen
+       break;
+}
+\end{verbatim}
+\end{code}
+
+\subsection{{\Looping}}
+Struktur perulangan dapat dibedakan menjadi tiga jenis yaitu \textit{for}, \textit{while} dan \textit{dowhile} \parencite{anam2021cara}.
+
+\subsubsection{\textit{For}: perulangan yang batasan dan syarat pengulangannya sudah ditentukan \parencite{suryadi2018belajar}.}
+
+\begin{code}[n]
+\begin{verbatim}
+ for (inisialisasi; kondisi perulangan; pengubah nilai cacah)
+\end{verbatim}
+\end{code}
+
+\subsubsection{\textit{While}: perulangan yang akan dijalankan selama kondisi terpenuhi dengan pemeriksaan kondisi sebelum dijalankan \parencite{anam2021cara}.}
+
+\begin{code}[n]
+\begin{verbatim}
+while (kondisi) {
+   statemen
+}
+\end{verbatim}
+\end{code}
+
+\subsubsection{\textit{Do-while}: perulangan yang dijalankan terlebih dahulu 1 kali, kemudian akan ada pemeriksaan kondisi \textit{while}, jika terpenuhi perulangan terjadi \parencite{anam2021cara}.}
+
+\begin{code}[n]
+\begin{verbatim}
+do {
+    statemen
+} while (kondisi)
+\end{verbatim}
+\end{code}
+\end{document}
