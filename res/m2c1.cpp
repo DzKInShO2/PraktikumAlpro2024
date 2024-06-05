@@ -63,7 +63,7 @@ int main()
   }
   cout<<"------------------------------------------\n";
   cout<<"THR buat kamu sebesar   : Rp."<< money << "\n";
-  cout<<"Durasi Kuliah Minggu ini: "<<(duration *= 3600)<<" Detik\n";
+  cout<<"Durasi Kuliah Minggu ini: "<<(duration*=3600)<<" Detik\n";
   cout<<"------------------------------------------\n";
   char overtime = 'y';
   while (true) {

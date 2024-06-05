@@ -33,7 +33,7 @@
 \newcommand*{\hfsize}{\fontsize{11pt}{12pt} \selectfont}
 \newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
 
-\newcommand*{\blanktop}{{\color{white}a\vspace*{-3ex}}}
+\newcommand*{\blanktop}{{\newpage\color{white}a\vspace*{-3ex}}}
 %%% %%%
 
 %%% FONTS %%%
@@ -125,7 +125,7 @@
 
 \titleformat{\section}[hang]
 {\normalsize\bfseries}
-{\thesection}{1.0ex}{\MakeUppercase}
+{\thesection}{1.0ex}{\MakeUppercase}[]
 
 \titleformat{\subsection}[hang]
 {\normalsize\bfseries}
@@ -326,7 +326,7 @@
     boxrule=0.5pt,
     sharp corners,
     breakable,
-    before skip=1.25em,
+    before skip=1.0em,
     after skip=0.8em,
 }
 
@@ -478,8 +478,10 @@
     \newpage
     \setlength{\parindent}{0.75cm}
     \section{Analisis Data}
+    \subfile{src/m2p5.tex}
     \newpage
     \section{Kesimpulan}
+    \subfile{src/m2p6.tex}
     \setlength{\parindent}{1.0cm}
     \newpage
 
