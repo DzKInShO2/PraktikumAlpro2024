@@ -52,7 +52,8 @@
     lmargin=3.0cm,
     headheight=4ex,
     headsep=-0.5ex,
-    footskip=4ex
+    footskip=4ex,
+    showframe
 ]{geometry}
 
 \usepackage{indentfirst}
@@ -91,8 +92,8 @@
     \fancyhf{}
 
     \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
-    \fancyfoot[L]{Modul {\thechapter} – {\leftmark}}
-    \fancyfoot[R]{{\thechapter}-{\thepage}}
+    \fancyfoot[L]{Modul {\Roman{chapter}} – {\leftmark}}
+    \fancyfoot[R]{{\thepage}}
 }
 
 \fancypagestyle{plain}{
@@ -107,6 +108,7 @@
 }
 \renewcommand{\footrule}{
     {\color[RGB]{68, 114, 196} \hrule width \hsize height 3pt \hrule width \hsize \kern 0.5mm \hrule width \hsize height 0.2pt}
+    \vspace{-0.75ex}
 }
 %%% %%%
 
@@ -146,12 +148,12 @@
     \newpage
     \stepcounter{chapter}
     \chapter*{
-        MODUL {\thechapter}\\
+        MODUL {\Roman{chapter}}\\
         \vspace{1ex}
         \MakeUppercase{#2}
     }
 
-    \addcontentsline{toc}{chapter}{MODUL {\thechapter} \MakeUppercase{#2}}
+    \addcontentsline{toc}{chapter}{MODUL {\Roman{chapter}} \MakeUppercase{#2}}
     \thispagestyle{normal}
 
     \renewcommand*{\a}{#1}
@@ -167,10 +169,10 @@
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{cleveref}
-\crefname{figure}{Gambar}{Gambar-Gambar}
-\Crefname{figure}{Gambar}{Gambar-Gambar}
-\crefname{table}{Tabel}{Tabel-Tabel}
-\Crefname{table}{Tabel}{Tabel-Tabel}
+\crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
+\Crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
+\crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
+\Crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
 
 \usepackage[
     backend=biber,
@@ -227,6 +229,7 @@
                     frame=0.5pt
                 ]{#2}
                 \caption{#4}
+                \label{#5}
             \end{indentpar}
             \vspace*{-0.5ex}
         \else
@@ -237,6 +240,7 @@
                         frame=0.5pt
                     ]{#2}
                     \caption{#4}
+                    \label{#5}
                 \end{indentpar}
             \else
                 \ifx\a\empty
@@ -246,6 +250,7 @@
                         frame=0.5pt
                     ]{#2}
                     \caption{#4}
+                    \label{#5}
                 \else
                     \begin{adjustwidth}{#1}{}
                         \includegraphics[
@@ -254,11 +259,11 @@
                             frame=0.5pt
                         ]{#2}
                         \caption{#4}
+                        \label{#5}
                     \end{adjustwidth}
                 \fi
             \fi
         \fi
-        \label{#5}
     \end{figure}
 }
 
@@ -272,7 +277,7 @@
 }
 
 \setlist[enumerate, 2]{
-	leftmargin    = 0.75cm,
+	leftmargin    = 0.835cm,
 	labelwidth    = 0.75cm,
 	labelsep      = 12pt,
 	listparindent = 0.75cm,
@@ -348,11 +353,15 @@
         \fi
     \fi
 
-    \begin{framed}
-        \vspace{-1.85ex}
-        \verbatiminput{#2}
-        \vspace{-1.85ex}
-    \end{framed}
+    \vspace*{-1ex}
+    \begin{adjustwidth}{\codeshift}{}
+        \begin{framed}
+            \begin{adjustwidth}{-\codeshift}{}
+                \verbatiminput{#2}
+            \end{adjustwidth}
+        \end{framed}
+    \end{adjustwidth}
+    \vspace*{-1ex}
 }
 
 \newenvironment*{code}[1][]{
@@ -368,12 +377,13 @@
             \setlength{\codeshift}{#1}
         \fi
     \fi
+    \vspace*{-0.5ex}
+    \begin{adjustwidth}{\codeshift}{}
     \begin{framed}
-    \vspace{-2.4ex}
 }{
-    \vspace{-2.4ex}
     \end{framed}
-    \vspace*{-2.15ex}
+    \end{adjustwidth}
+    \vspace*{-1ex}
 }
 
 \newcommand*{\citecode}[1]{\hspace{-0.5ex}{\cpsize\crnfamily{{\normalsize\textnormal{``}}#1}}''}
@@ -385,7 +395,6 @@
     \tolerance10000
 
     % Change numbering formats
-    \renewcommand*{\thechapter}{\Roman{chapter}}
     \renewcommand*{\thesection}{\arabic{chapter}.\arabic{section}}
     \renewcommand*{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
     \renewcommand*{\thesubsubsection}{\arabic{subsubsection}.}
@@ -405,7 +414,7 @@
     % Change next page style to normal
     \pagestyle{normal}
     \setcounter{page}{1}
-    \pagenumbering{arabic}
+    \renewcommand*{\thepage}{\Roman{chapter}-\arabic{page}}
 
     \chapterf{Pemrograman Dasar}
     \section{Tujuan Praktikum}
@@ -420,6 +429,7 @@
     \subfile{src/m1p4.tex}
     \newpage
     \section{Analisis Data}
+    \subfile{src/m1p5.tex}
     \newpage
     \section{Kesimpulan}
     \newpage

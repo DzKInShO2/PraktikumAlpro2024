@@ -1,0 +1,147 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{Menghitung Suhu Ruangan}
+\begin{code}
+\begin{verbatim}
+#include <iostream>
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{\#include <iostream>} adalah \textit{header file} yang digunakan sebagai standar masukan dan keluaran dalam bahasa C++ untuk mendeklarasikan dan mendefinisikan {\statement} \citecode{cin} dan \citecode{cout}.
+
+\begin{code}
+\begin{verbatim}
+using namespace std;    
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \citecode{namespace std}.
+
+\begin{code}
+\begin{verbatim}
+int main()
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{int main()} merupakan \textit{entry point} dari setiap program yang ditulis dalam bahasa C++. \textit{Entry point} merupakan sebuah fungsi yang akan dijalankan setiap awal mula program dalam fungsi \citecode{\_start}.
+
+\begin{code}
+\begin{verbatim}
+float temp;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{float temp} adalah sebuah {\statement} deklarasi sebuah variabel. Sebuah variabel yang dideklarasikan akan bernilai acak dikarenakan tidak diberikan nilai awal. Nilai acak tersebut akan diambil dari nilai yang sudah tersedia di memori.
+
+\begin{code}
+\begin{verbatim}
+cout << "Suhu awal: ";
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{cout << "Suhu awal: "} akan memasukan teks \citecode{Suhu Awal: } ke dalam {\ioo} {\stream} dengan perantara objek \citecode{cout}. Semua teks yang berada di dalam {\ioo} {\stream} akan ditampilkan kepada pengguna dalam bentuk teks.
+
+\begin{code}
+\begin{verbatim}
+cout << "1. " << temp << " C" << endl;
+cout << "2. " << ((temp * 1.8f) + 32) << " F" << endl;
+cout << "3. " << (temp + 273.15f) << " K" << endl << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas akan menampilkan nilai variabel \citecode{temp} dalam tiga unit suhu yakni Celsius, Fahrenheit dan Kelvin. Penampilan tiga unit suhu tersebut dilakukan dalam tiga baris yang berbeda dan setiap baris diawali angka urutan barisnya.
+
+\begin{code}
+\begin{verbatim}
+cin >> temp;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya ke dalam variabel \citecode{temp}. Hal ini juga yang mengakibatkan variabel \citecode{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya.
+
+\begin{code}
+\begin{verbatim}
+cout << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{cout << endl;} akan memasukan \textit{newline escape sequence} dan mem-\textit{flush} terhadap isi \textit{standard output stream}. Dalam bahasa C++ sebuah isi \textit{standard output stream} akan ditampilkan bila ditemukan \textit{newline escape sequence}, hal ini disebut dengan \textit{buffering}.
+
+\begin{code}
+\begin{verbatim}
+float temp0 = (temp - (temp * 0.25f));
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{float temp0 = (temp - (temp * 0.25f));} adalah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \citecode{temp} dikurangi 25\%. Nilai variabel \citecode{temp0} bergantung pada nilai variabel \citecode{temp}.
+
+\begin{code}
+\begin{verbatim}
+cout << "Setelah 15 menit" << endl;
+cout << "Suhu kamar Holil berkurang menjadi "
+ << ((temp0 * 1.8f) + 32) << " F dengan pengurangan sebesar "
+ << ((temp - temp0) + 273.15f)
+ << " K" << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas akan menampilkan teks \citecode{Setelah 15 menit} yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \citecode{temp0} dalam unit suhu Fahrenheit dan perbandingan nilai variabel tersebut dengan nilai variabel \citecode{temp} dalam satuan Kelvin.
+
+\begin{code}
+\begin{verbatim}
+float temp1 = (temp - (temp * 0.65f));
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{float temp1 = (temp - (temp * 0.65f));} merupakan sebuah {\statement} inisialisasi variabel. Dalam kasus ini variabel yang diinisialisasikan akan bernilai sesuai nilai variabel \citecode{temp} dikurangi 65\%. Nilai variabel \citecode{temp1} bergantung pada variabel \citecode{temp}.
+
+\begin{code}
+\begin{verbatim}
+cout << "Setelah 45 menit" << endl;
+cout << "Suhu kamar Holil berkurang menjadi " <<(temp1 + 273.15f)
+ << " K dengan pengurangan sebesar " << (temp - temp1) <<" C"
+ << endl << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas akan menampilkan teks \citecode{Setelah 45 menit} yang kemudian akan diikuti oleh teks yang akan menampilkan nilai variabel \citecode{temp1} dalam unit suhu Kelvin dan perbandingan nilai variabel tersebut dengan nilai variabel \citecode{temp} dalam satuan Celsius.
+
+\begin{code}
+\begin{verbatim}
+float temp2 = (temp1 + (temp1 * 0.35f));
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{float temp2 = (temp1 + (temp1 * 0.35f));} adalah sebuah {\statement} inisialisasi variabel. Dalam hal ini variabel yang diinisialisasikan akan bernilai sesuai dengan nilai variabel \citecode{temp1} ditambahkan dengan 35\%.
+
+\begin{code}
+\begin{verbatim}
+cout << "Setelah 25 menit" << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{cout << "Setelah 25 menit" << endl;} adalah sebuah {\statement} yang akan memasukan teks \citecode{Setelah 25 menit} dan \textit{newline escape sequence} ke dalam {\ioo} {\stream}. Semua isi dari {\ioo} {\stream} kemudian akan ditampilkan kepada pengguna.
+
+\begin{code}
+\begin{verbatim}
+cout << "Suhu kamar Holil naik menjadi " << temp2 << " C" << endl 
+ <<endl;
+cout << "Hasil perbandingan:" << endl;
+cout << "1:" << (temp/temp2) << " untuk suhu saat ini" << endl;
+cout << "1:" << (temp/temp1) << " untuk suhu terdingin" << endl;
+cout << "1:" << (temp/temp0)
+ << " untuk suhu 15 menit setelah pendinginan" << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas akan menampilkan teks-teks secara berurutan. Teks yang pertama kali akan ditampilkan ialah nilai dari variabel \citecode{temp2} setelah itu akan diikuti dengan perbandingan nilai variabel \citecode{temp} dengan nilai variabel \citecode{temp2}, perbandingan nilai variabel \citecode{temp} dengan nilai variabel \citecode{temp1} serta perbandingan nilai variabel \citecode{temp} dengan nilai variabel \citecode{temp0}. Setiap perbandingan nilai dua variabel tersebut akan ditampilkan pada tiga baris yang berbeda dan juga diakhiri dengan deskripsi pada setiap barisnya seperti \citecode{untuk suhu saat ini} pada perbandingan pertama, \citecode{untuk suhu terdingin} pada perbandingan kedua serta \citecode{untuk suhu 15 menit setelah pendinginan} pada baris terakhir.
+
+\begin{code}
+\begin{verbatim}
+return 0;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{{\crnfamily return 0;}} adalah {\statement} keluaran sebuah fungsi yang akan menunjukan kembalian sebuah fungsi. {\Statement} ini juga menandakan akhir sebuah fungsi. Dalam kasus fungsi \citecode{int main} {\statement} \citecode{return 0;} digunakan untuk mengembalikan status eksekusi sebuah program pada akhir program. Bila kembaliannya 0 maka program tersebut berjalan tanpa masalah, namun apabila kembaliannya bukan 0 maka ada kendala atau kesalahan saat menjalankan program tersebut.
+\end{document}
