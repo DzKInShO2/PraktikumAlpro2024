@@ -1,4 +1,4 @@
-\documentclass[12pt, oneside, a4paper]{report}
+\documentclass[12pt, oneside, a4paper, final]{report}
 
 \input{keywords.tex}
 
@@ -51,8 +51,9 @@
     rmargin=2.5cm,
     lmargin=3.0cm,
     headheight=4ex,
-    headsep=-0.5ex,
+    headsep=0.5ex,
     footskip=4ex,
+    a4paper
 ]{geometry}
 
 \usepackage{indentfirst}
@@ -164,25 +165,6 @@
 }
 %%% %%%
 
-%%% REFERENCES AND LINKS %%%
-\usepackage[hidelinks]{hyperref}
-
-\usepackage{cleveref}
-\crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
-\Crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
-\crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
-\Crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
-
-\usepackage[
-    backend=biber,
-    style=apa,
-]{biblatex}
-\addbibresource{bibliography.bib}
-\DefineBibliographyStrings{english}{
-    andothers={dkk.,}
-}
-%%% %%%
-
 %%% LISTS, TABLES AND FIGURES %%%
 \usepackage{caption}
 
@@ -212,7 +194,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
-\setlength{\intextsep}{1ex}
+\setlength{\intextsep}{0.5ex}
 
 \newcommand*{\inputfigure}[5][]{
     \renewcommand*{\a}{#1}
@@ -328,7 +310,22 @@
 }
 
 \usepackage{verbatim}
-\usepackage{framed}
+
+\usepackage[most]{tcolorbox}
+\tcbset{
+    enhanced,
+    notitle,
+    colframe=black,
+    colback=white,
+    shrink tight,
+    left=0.5ex,
+    boxsep=1.8pt,
+    boxrule=0.5pt,
+    sharp corners,
+    breakable,
+    before skip=1.25em,
+    after skip=0.8em,
+}
 
 \makeatletter
 \renewcommand*{\verbatim@font}{\setstretch{1.0}\crnfamily\cpsize}
@@ -337,7 +334,6 @@
 \newlength{\codeshift}
 
 \setlength{\fboxsep}{0.6ex}
-\renewcommand*\FrameCommand{\hskip\codeshift\fbox}
 \newcommand*{\inputcode}[2][]{
     \renewcommand*{\a}{#1}
     \renewcommand*{\b}{n}
@@ -347,20 +343,21 @@
     \else
         \ifx\a\b
             \setlength{\codeshift}{0.835cm}
+            \vspace{0.05ex}
         \else
             \setlength{\codeshift}{#1}
         \fi
     \fi
 
-    \vspace*{-1ex}
-    \begin{adjustwidth}{\codeshift}{}
-        \begin{framed}
-            \begin{adjustwidth}{-\codeshift}{}
-                \verbatiminput{#2}
-            \end{adjustwidth}
-        \end{framed}
-    \end{adjustwidth}
-    \vspace*{-1ex}
+    \begin{tcolorbox}[left skip=\codeshift]
+        \verbatiminput{#2}
+    \end{tcolorbox}
+    \ifx\a\empty
+    \else
+        \ifx\a\b
+            \vspace{-1.5ex}
+        \fi
+    \fi
 }
 
 \newenvironment*{code}[1][]{
@@ -372,26 +369,48 @@
     \else
         \ifx\a\b
             \setlength{\codeshift}{0.835cm}
+            \vspace{0.05ex}
         \else
             \setlength{\codeshift}{#1}
         \fi
     \fi
-    \vspace*{-0.5ex}
-    \begin{adjustwidth}{\codeshift}{}
-    \begin{framed}
+    \begin{tcolorbox}[left skip=\codeshift]
 }{
-    \end{framed}
-    \end{adjustwidth}
-    \vspace*{-1ex}
+    \end{tcolorbox}
+    \ifx\a\empty
+    \else
+        \ifx\a\b
+            \vspace{-1.5ex}
+        \fi
+    \fi
 }
 
 \newcommand*{\citecode}[1]{\hspace{-0.5ex}{\cpsize\crnfamily{{\normalsize\textnormal{``}}#1}}''}
 %%% %%%
 
+%%% REFERENCES AND LINKS %%%
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[
+    backend=biber,
+    style=apa,
+]{biblatex}
+\addbibresource{bibliography.bib}
+\DefineBibliographyStrings{english}{
+    andothers={dkk.,}
+}
+
+\usepackage{cleveref}
+\crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
+\Crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
+\crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
+\Crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
+%%% %%%
+
 \begin{document}
     % Sloppy lettering
     \sloppy
-    \tolerance10000
+    \tolerance100000
 
     % Change numbering formats
     \renewcommand*{\thesection}{\arabic{chapter}.\arabic{section}}

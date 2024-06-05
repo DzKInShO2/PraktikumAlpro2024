@@ -7,11 +7,11 @@ DISPLAY "3. SuhuAwal + 273.15"
 STORE SuhuAwal - (SuhuAwal * 0.25) to Suhu15Menit
 DISPLAY "Setelah 15 menit"
 DISPLAY "Suhu kamar Holil berkurang menjadi Suhu15Menit * 1.8 + 32 F
-        dengan pengurangan sebesar SuhuAwal - Suhu15Menit + 273.15 K"
+  dengan pengurangan sebesar SuhuAwal - Suhu15Menit + 273.15 K"
 STORE SuhuAwal - (SuhuAwal * 0.65) to Suhu45Menit
 DISPLAY "Setelah 45 menit"
 DISPLAY "Suhu kamar Holil berkurang menjadi Suhu45Menit + 273.15 F
-        dengan pengurangan sebesar SuhuAwal - Suhu45Menit C"
+  dengan pengurangan sebesar SuhuAwal - Suhu45Menit C"
 DISPLAY "Holil mematikan pendingin..."
 STORE Suhu45Menit + (Suhu45Menit * 0.35) to Suhu25Menit
 DISPLAY "Setelah 25 menit"
@@ -20,4 +20,4 @@ DISPLAY "Hasil perbandingan: "
 DISPLAY "1:(SuhuAwal/Suhu25Menit) untuk suhu saat ini"
 DISPLAY "1:(SuhuAwal/Suhu45Menit) untuk suhu terdingin"
 DISPLAY "1:(SuhuAwal/Suhu15Menit) untuk suhu 15
-        menit setelah pendinginan"
+  menit setelah pendinginan"
