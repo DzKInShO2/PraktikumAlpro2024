@@ -37,10 +37,12 @@ float temp;
 \begin{code}
 \begin{verbatim}
 cout << "Suhu awal: ";
+cin >> temp;
+cout << endl;
 \end{verbatim}
 \end{code}
 
-{\Script} \citecode{cout << "Suhu awal: "} akan memasukan teks \citecode{Suhu Awal: } ke dalam {\ioo} {\stream} dengan perantara objek \citecode{cout}. Semua teks yang berada di dalam {\ioo} {\stream} akan ditampilkan kepada pengguna dalam bentuk teks.
+{\Script} \citecode{cout << "Suhu awal: "} akan memasukan teks \citecode{Suhu Awal: } ke dalam {\ioo} {\stream} dengan perantara objek \citecode{cout}. Kemudian akan diminta masukan yang akan dimasukan ke variabel \citecode{temp}.
 
 \begin{code}
 \begin{verbatim}
@@ -51,22 +53,6 @@ cout << "3. " << (temp + 273.15f) << " K" << endl << endl;
 \end{code}
 
 {\Script} diatas akan menampilkan nilai variabel \citecode{temp} dalam tiga unit suhu yakni Celsius, Fahrenheit dan Kelvin. Penampilan tiga unit suhu tersebut dilakukan dalam tiga baris yang berbeda dan setiap baris diawali angka urutan barisnya.
-
-\begin{code}
-\begin{verbatim}
-cin >> temp;
-\end{verbatim}
-\end{code}
-
-{\Script} \citecode{cin >> temp} adalah {\statement} {\ioi} yang mengambil masukan dari \textit{standard} {\ioi} {\stream} dan memasukannya ke dalam variabel \citecode{temp}. Hal ini juga yang mengakibatkan variabel \citecode{temp} tidak diinisialisasikan seperti yang telah dijelaskan sebelumnya.
-
-\begin{code}
-\begin{verbatim}
-cout << endl;
-\end{verbatim}
-\end{code}
-
-{\Script} \citecode{cout << endl;} akan memasukan \textit{newline escape sequence} dan mem-\textit{flush} terhadap isi \textit{standard output stream}. Dalam bahasa C++ sebuah isi \textit{standard output stream} akan ditampilkan bila ditemukan \textit{newline escape sequence}, hal ini disebut dengan \textit{buffering}.
 
 \begin{code}
 \begin{verbatim}
