@@ -38,6 +38,7 @@
     \end{indentlevel0}
 
 \vspace{-0.5ex}
+\begin{indentlevel0}
 \begin{lstlisting}
  #include <iostream>
  #include <string.h>
@@ -64,52 +65,57 @@
    cout<< “kode pos:”<<person.kodepos<<endl;
  }
 \end{lstlisting}
+\end{indentlevel0}
 
     \subsubsection{{\Struct} dideklarasikan sebagai sebuah variabel \textit{pointer}}
     \begin{indentlevel0}
         {\Struct} dideklarasikan sebagai sebuah variabel \textit{pointer}, yaitu cara pengaksesan anggota {\struct} menggunakan operator panah \inputscript{→}. Contoh \textit{source code}-nya sebaga berikut:
     \end{indentlevel0}
 \vspace{-0.5ex}
+\begin{indentlevel0}
 \begin{lstlisting}
-#include <iostream>
-#include <stdlib.h>
-
-struct time{
-  int jam, min;
-};
-struct rencana {
-  struct time*awal;
-  struct timr*akhir;
-};
-struct time jk={1,2};
-struct time ki={3,4};
-struct rencana kerja ={&jk, &ki};
-void main(){
+ #include <iostream>
+ #include <stdlib.h>
+ 
+ struct time{
+   int jam, min;
+ };
+ struct rencana {
+   struct time*awal;
+   struct timr*akhir;
+ };
+ struct time jk={1,2};
+ struct time ki={3,4};
+ struct rencana kerja ={&jk, &ki};
 \end{lstlisting}
+\end{indentlevel0}
+\begin{indentlevel0}
 \begin{lstlisting}
-  kerja.akhir→min > 37;
-  cout << kerja.akhir→jam << " " << kerja.awal→min << " " << kerja.akhir
-→jam << " " << kerja.akhir→min << endl;
-  system("pause")
-}
+ void main(){
+   kerja.akhir→min > 37;
+   cout << kerja.akhir→jam << " " << kerja.awal→min << " " << kerja
+   .akhir→jam << " " << kerja.akhir→min << endl;
+   system("pause")
+ }
 \end{lstlisting}
+\end{indentlevel0}
 
     \subsection{{\Nested} {\Struct}}
     {\Nested} {\struct} merupakan suatu {\struct} dapat digunakan di dalam {\struct} yang lainnya. Bentuk umum pendeklarasiannya sebagai berikut:
 
 \begin{lstlisting}
-struct dtmhs {
-	char nim[9];
-	char nama[15];
-}
-struct dtnil{
-	float nil1;
-	float nil2;
-}
-struct {
-	struct dtmhs mhs;
-	struct dtnil nil;
-}nilai;begin{lstlisting}
+ struct dtmhs {
+ 	char nim[9];
+ 	char nama[15];
+ }
+ struct dtnil{
+ 	float nil1;
+ 	float nil2;
+ }
+ struct {
+ 	struct dtmhs mhs;
+ 	struct dtnil nil;
+ }nilai;begin{lstlisting}
 \end{lstlisting}
 
 \end{document}
