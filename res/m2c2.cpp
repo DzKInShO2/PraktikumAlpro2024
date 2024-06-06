@@ -181,8 +181,7 @@ int main() {
   			  	  }
   			  	  cout << "<" << i << "> ";
   			  	}
-  			  }
-  			  cout << endl;
+  			  } cout << endl;
   			  break;
   			}
   			unsigned long long n = 1;
@@ -192,8 +191,7 @@ int main() {
   					continue; }
   				n *= 11;
   				cout << ", " << n;
-  			}
-  			cout << endl;
+  			} cout << endl;
   		} break;
   		case 3: {
   			return 0;

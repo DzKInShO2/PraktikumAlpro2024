@@ -419,7 +419,6 @@ if (getch()) { state &= 0x0; }
 {\Script} diatas akan mengembalikan keadaan program ke menu apabila pengguna menekan tombol apapun. Fungsi \citecode{getch()} digunakan untuk menunggu masukan pengguna, {\statement} \citecode{if} hanya mendeteksi apakah kondisi bernilai 0 untuk salah atau bukan 0 untuk benar dan setiap kode karakter pada \textit{keyboard} bernilai lebih besar dari 0.
 
 \subsection{Hilal}
-\vspace{-2ex}
 \begin{code}
 \begin{verbatim}
 #include <iostream>
@@ -448,49 +447,41 @@ cout << "---------------------" << endl;
 
 \begin{code}
 \begin{verbatim}
-int r = 0;
+int radius;
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan {\statement} inisialisasi sebuah variabel. Dimana dalam {\script} diatas diinisialisasikan sebuah variabel \citecode{n} bertipe \citecode{int} yang bernilai \citecode{0}. Kemudian variabel \citecode{n} tersebut dapat digunakan pada kode-kode setelah baris kode {\script} tersebut.
+{\Script} diatas merupakan {\statement} inisialisasi sebuah variabel. Dimana dalam {\script} diatas diinisialisasikan sebuah variabel \citecode{n} bertipe \citecode{int}. Kemudian variabel \citecode{n} tersebut dapat digunakan pada kode-kode setelah baris kode {\script} tersebut.
+
+\begin{code}
+\begin{verbatim}
+cout << "Masukkan Radius Bulan: ";
+cin >> radius;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas digunakan untuk meminta masukan dari pengguna. Masukan tersebut akan disimpan ke variabel \citecode{radius} yang telah diinisialisasikan sebelumnya.
 
 \begin{code}
 \begin{verbatim}
 while (true) {
-  cout << "Masukan Radius Bulan: ";
-  cin >> r;
-  if (cin.fail() || r < 1) {
-    cin.clear();
-    cin.ignore();
-    cout << "Input tidak valid!" << endl;
-    continue;
+  for (int arah = -(2 * radius); arah < 2 * radius; arah++) {
+    for (int y = -radius; y < radius; y++) {
+      for (int x = -(radius); x < (radius); x++) {
+        int jarak = x * x + y * y;
+        int rsquare = (radius * radius) - radius;
+        int jarak2 = (x + arah) * (x + arah) + y * y;
+        int rsquare2 = (radius - 1) * (radius - 1);
+        int bulan1 = jarak <= rsquare;
+        int bulan2 = jarak2 >= rsquare2;
+        if (bulan1 && bulan2) {
+          cout << setw(2) << "*";
+        } else {
+          cout << setw(2) << " ";}}
+      cout << endl;
+    }
+    cout << "\33[H\33[2J";
   }
-  break;
-}
-\end{verbatim}
-\end{code}
-
-{\Script} diatas digunakan untuk meminta masukan dari pengguna. {\Statement} \citecode{while (true)} digunakan untuk mengulangi permintaan masukan selama masukan tidak bertipe benar atau bernilai kurang dari 1 karena tidak diinginkan lingkaran dengan jari-jari 0.
-
-\begin{code}
-\begin{verbatim}
-while (true) {
-  cout<<"\e[H\e[2J";
-  for (int y = 0; y < (r * 2) + 1; ++y) {
-    for (int x = 0; x < (r * 2) + 1; ++x) {
-      if (((x-r)*(x-r))+(((y-r)*(y-r))*2)<r*r
-        &&(x+2)%2==0){
-        cout<<"\e["<<y<<";"<<x<<"H"<< "*";
-      }
-      if (((x-mask)*(x-mask))+(((y-r)*(y-r))*2)<(r-1)*(r-1)
-        &&(x+2)%2==0) {
-        cout<<"\e["<<y<<";"<<x<<"H"<<" ";
-      }
-    } cout << endl;
-  }
-  mask += operation;
-  if (mask < 0) operation = 1;
-  else if (mask > (r * 3)) operation = -1;
 }
 \end{verbatim}
 \end{code}
