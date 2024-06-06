@@ -196,61 +196,80 @@ void game_draw(const Game& game) {
         } else cout << strpad(8) << "Go next room = "
              << game.rooms[room.next[0]].name << endl;
       } else {
-        center_draw("There are no other room forward...");bar_draw(); }
+        center_draw("There are no other room forward...");
+                bar_draw();}
       cout << strpad(8) << "Go back" << endl; }
   } else {
-    const Monster& monster = game.monsters[game.rooms[game.current_room_id].monster_id];
+    const Monster& monster = game.monsters[
+            game.rooms[game.current_room_id].monster_id];
     cout << monster.sprite << endl;
     bar_draw(); center_draw(monster.name); bar_draw();
-    center_draw(strint(monster.max_health) + " : " + strint(monster.cur_health));
+    center_draw(strint(monster.max_health) +
+                " : " + strint(monster.cur_health));
     center_draw("Atk : " + strint(monster.attack));
     center_draw("Def : " + strint(monster.defense));
     center_draw("Turn : " + strint(monster.turn)); bar_draw();
-    cout << "| |" << game.players[0].name + " : " + strint(game.players[0].health);
-    cout << strpad(45 -(strlen(game.players[0].name + " : " + strint(game.players[0].health))
-              + strlen(strint(game.players[1].health) + " : " + game.players[1].name)));
-    cout << strint(game.players[1].health) + " : " + game.players[1].name << "| |" << endl;
+    cout << "| |" << game.players[0].name
+            + " : " + strint(game.players[0].health);
+    cout << strpad(45 -(strlen(game.players[0].name
+            + " : " + strint(game.players[0].health))
+            + strlen(strint(game.players[1].health)
+            + " : " + game.players[1].name)));
+    cout << strint(game.players[1].health) + " : "
+            + game.players[1].name << "| |" << endl;
     cout << "| |" << "Atk : " + strint(game.players[0].attack);
-    cout << strpad(45 -(strlen("Atk : " + strint(game.players[0].attack))
-              + strlen(strint(game.players[1].attack) + " : Atk")));
-    cout << strint(game.players[1].attack) + " : Atk" << "| |" << endl;
+    cout << strpad(45 -(strlen("Atk : "
+                +strint(game.players[0].attack))
+                + strlen(strint(game.players[1].attack)
+                + " : Atk")));
+    cout << strint(game.players[1].attack)
+            + " : Atk" << "| |" << endl;
     cout << "| |" << "Def : " + strint(game.players[0].defense);
-    cout << strpad(45 -(strlen("Def : " + strint(game.players[0].defense))
-              + strlen(strint(game.players[1].defense) + " : Def")));
-    cout << strint(game.players[1].defense) + " : Def" << "| |" << endl;
+    cout << strpad(45 -(strlen("Def : "
+            + strint(game.players[0].defense))
+            + strlen(strint(game.players[1].defense) + " : Def")));
+    cout << strint(game.players[1].defense)
+            + " : Def" << "| |" << endl;
     cout << "| |" << "Turn : " + strint(game.players[0].turn);
-    cout << strpad(45 -(strlen("Turn : " + strint(game.players[0].turn))
+    cout << strpad(45 -(strlen("Turn : "
+              + strint(game.players[0].turn))
               + strlen(strint(game.players[1].turn) + " : Turn")));
-    cout << strint(game.players[1].turn) + " : Turn" << "| |" << endl;
+    cout << strint(game.players[1].turn) + " : Turn"<<"| |"<<endl;
     cout << "\e7";
     int turn = (game.players[0].turn + game.players[1].turn) % 2;
-    if (turn == 0) cout << "\33[21;" << (7 + strlen(game.players[0].name
-                  + strint(game.players[0].health))) << "H<==";
-    else if(turn == 1) cout << "\33[21;" << (41 - strlen(game.players[0].name
+    if (turn == 0) cout << "\33[21;" << (7
+            + strlen(game.players[0].name
+            + strint(game.players[0].health))) << "H<==";
+    else if(turn == 1) cout << "\33[21;" << (41
+                  - strlen(game.players[0].name
                   + strint(game.players[0].health))) << "H==>";
     cout << "\e8"; bar_draw(); cout << strpad(8) << "1. Attack\n";
-    cout << strpad(8) << "2. Heal\n"; cout << strpad(8) << "3. Item\n"; } }
+    cout << strpad(8) << "2. Heal\n";
+        cout << strpad(8) << "3. Item\n"; } }
 void game_update(Game* game) {
   while (true) {
     cout << ">>>>> ";
     string arg;
     getline(cin >> ws, arg);
     if (game->rooms[game->current_room_id].monster_id > -1) {
-      int turn = (game->players[0].turn + game->players[1].turn) % 2;
-      int monster_id = game->rooms[game->current_room_id].monster_id;
+      int turn=(game->players[0].turn + game->players[1].turn) % 2;
+      int monster_id=game->rooms[game->current_room_id].monster_id;
       bool valid = false;
       if (arg == "1") {
         if (turn == 0 && (game->players[0].turn) % 3 == 0) {
-          game->monsters[monster_id].cur_health -= (game->players[0].attack * 2);
+          game->monsters[monster_id].cur_health
+                        -= (game->players[0].attack * 2);
           cout << "\33[H\33[2J"; bar_draw();
           center_draw(game->players[0].name + " Used Skill");
           center_draw("\'ATK * 2 = 2ATK\'"); bar_draw(); pause();
           cout << "\33[H\33[2J"; bar_draw();
           center_draw(game->players[0].name);
-          center_draw("Deal Double Damage to " + game->monsters[monster_id].name);
+          center_draw("Deal Double Damage to "
+                      + game->monsters[monster_id].name);
           bar_draw(); pause();
-        } else game->monsters[monster_id].cur_health -= (game->players[turn].attack
-                            - game->monsters[monster_id].defense);
+        } else game->monsters[monster_id].cur_health
+                    -= (game->players[turn].attack
+                    - game->monsters[monster_id].defense);
         valid = true;
       } if (arg == "2") {
         game->players[turn].health += 50;
@@ -270,9 +289,10 @@ void game_update(Game* game) {
         saved_health = game->players[1].health;
       if (game->monsters[monster_id].turn % 5 == 0) {
         for (int i = 0; i < 2; ++i)
-          game->players[i].health -= game->monsters[monster_id].attack;
+          game->players[i].health -= game->monsters[
+                        monster_id].attack;
         cout << "\33[H\33[2J"; bar_draw();
-        center_draw(game->monsters[monster_id].name + " Used Skill");
+        center_draw(game->monsters[monster_id].name+" Used Skill");
         center_draw("\'Equals Under the Sky!\'");
         bar_draw(); pause();
         cout << "\33[H\33[2J"; bar_draw();
@@ -280,11 +300,13 @@ void game_update(Game* game) {
         center_draw("Deal Damages To All Players!");
         bar_draw(); pause();
       } else {
-        game->players[turn].health -= (game->monsters[monster_id].attack
+        game->players[turn].health
+                  -=(game->monsters[monster_id].attack
                   - game->players[turn].defense);
         cout << "\33[H\33[2J";
         bar_draw();
-        center_draw(game->monsters[monster_id].name + " Attacked " + game->players[turn].name);
+        center_draw(game->monsters[monster_id].name
+                    + " Attacked " + game->players[turn].name);
         bar_draw(); pause(); }
       if (turn == 1 && game->players[1].turn % 3 == 0) {
         game->players[1].health = saved_health;
@@ -301,8 +323,9 @@ void game_update(Game* game) {
       if (game->monsters[monster_id].cur_health <= 0) {
         cout << "\33[H\33[2J";
         bar_draw(); center_draw("Congratulations!");
-        center_draw(game->monsters[monster_id].name + " Has Been Slayed!");
-        bar_draw(); game->rooms[game->current_room_id].monster_id = -1;
+        center_draw(game->monsters[monster_id].name +
+                    " Has Been Slayed!");
+        bar_draw();game->rooms[game->current_room_id].monster_id=-1;
         game->players[0].turn = game->players[1].turn = 1; pause();
         for (int i = 0; i < 2; ++i)
           game->players[i].health += 200;
@@ -334,18 +357,22 @@ void game_update(Game* game) {
       if (arg == "go" || arg == "next") {
         if (game->rooms[game->current_room_id].next[0] == -1) {
           break; }
-        game->current_room_id = game->rooms[game->current_room_id].next[0];
+        game->current_room_id = game->rooms[
+                    game->current_room_id].next[0];
         break; }
     } else {
       if (arg == "1") {
-        game->current_room_id = game->rooms[game->current_room_id].next[0];
+        game->current_room_id = game->rooms[
+                    game->current_room_id].next[0];
         break; }
       else if (arg == "2") {
-        game->current_room_id = game->rooms[game->current_room_id].next[1];
+        game->current_room_id = game->rooms[
+                    game->current_room_id].next[1];
         break; } }
     if (arg == "back" &&
       game->rooms[game->current_room_id].prev != -1) {
-      game->current_room_id = game->rooms[game->current_room_id].prev;
+      game->current_room_id = game->rooms[
+                game->current_room_id].prev;
       break;
     } break; }
   if (game->state == GAME_STATE_LOSE) {
