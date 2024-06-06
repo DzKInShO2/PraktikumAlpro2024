@@ -1,0 +1,89 @@
+\documentclass{subfiles}
+
+\begin{document}
+
+\subsection{Bermain dengan Matriks}
+\subsubsection{Algoritma}
+\begin{enumerate}
+    \item []
+    \begin{enumerate}
+        \item{Meminta masukan berupa baris dan kolom.}
+        \item{Meminta masukan kepada pengguna sebanyak baris kali kolom.}
+        \item{Menampilkannya dengan rotasi sebanyak 90 derajat.}
+        \item{Menampilkan matriks yang sudah di rotasi dan cerminkan pada sumbu x.}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{\Flowchart}
+\inputfigure[n]{res/m3i5.png}{0.298}{{\Flowchart} Program Bermain dengan Matriks}{fig:m3:i5}
+
+\subsubsection{{\Source} {\sCode}}
+\inputcode[n]{res/m3c1.cpp}
+
+\subsubsection{Hasil Program}
+\inputfigure[n]{res/m3i9.png}{0.35}{Keluaran Program Bermain dengan Matriks}{fig:m3:i9}
+\begin{indentpar}
+    \hspace{\parindent}Berdasarkan \Cref{fig:m3:i9}, didapatkan keluaran program Bermain dengan Matriks. Program tersebut bekerja dengan cara meminta beberapa masukan kepada pengguna yakni masukan jumlah baris matriks, masukan jumlah kolom matriks dan masukan elemen-elemen matriks. Kemudian akan dibentuk sebuah matriks yang akan dirotasikan sebanyak 90 derajat dan dicerminkan pada sumbu X.
+\end{indentpar}
+
+\subsection{Enkripsi dan Dekripsi}
+\subsubsection{Algoritma}
+\begin{enumerate}
+    \item []
+    \begin{enumerate}
+        \item{Meminta masukan teks yang akan dienkripsi.}
+        \item{Menampilkan teks masukan secara terbalik dari akhir hingga awal.}
+        \item{Menampilkan teks masukan secara terbalik dari akhir hingga awal namun sebelum
+                    ditampilkan karakter di tambah 5 keatas jika karakter tersebut melebihi ``z'' maka
+                    akan diarahkan ke ``a'' kemudian ditambah dengan penambah yang tersisa.}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{\Flowchart}
+\inputfigure[n]{res/m3i7.png}{0.3}{{\Flowchart} Program Enkripsi dan Dekripsi}{fig:m3:i7}
+
+\subsubsection{{\Source} {\sCode}}
+\inputcode[n]{res/m3c2.cpp}
+
+\subsubsection{Hasil Program}
+\inputfigure[n]{res/m3i10.png}{0.5}{Keluaran Program Enkripsi dan Dekripsi}{fig:m3:i10}
+\begin{indentpar}
+    \hspace{\parindent}Berdasarkan \Cref{fig:m3:i10}, didapatkan keluaran program Enkripsi dan Dekripsi. Program tersebut meminta dua masukan berupa teks dan kunci yang akan digunakan untuk menghasilkan teks yang terenkripsi. Program tersebut akan menggunakan dua buah metode enkripsi yakni enkripsi \textit{reverse cipher} dan enkripsi Caesar \textit{cipher}.
+
+    Enkripsi \textit{reverse cipher} akan menampilkan teks yang sudah dimasukan dalam urutan terbalik dari huruf yang paling akhir ke huruf yang paling awal. Sementara itu enkripsi Caesar \textit{cipher} akan menggeser setiap huruf sebanyak kunci yang dimasukan.
+
+    Pada akhirnya program tersebut akan menampilkan hasil kedua buah enkripsi \textit{reverse} {\cipher} dan Caesar {\cipher} tersebut sesuai masukan yang telah dimasukan ke pengguna.
+\end{indentpar}
+
+\subsection{\textit{Blast the Fireworks!}}
+\subsubsection{Algoritma}
+\begin{enumerate}
+    \item []
+    \begin{enumerate}
+        \item{Meminta masukan kepada pengguna berupa jumlah kembang api dan menunjukannya
+                    Dalam urutan A...Z sesuai jumlah masukan.}
+        \item{Meminta kekuatan kembang api seseuai jumlah masukan sebelumnya.}
+        \item{Meminta masukan berupa nama kembang api yang akan diledakan.}
+        \item{Melakukan perulangan hingga ditemukan kembang api yang memiliki nama sesuai.
+                    Bila ditemukan maka akan lanjut ke langkah selanjutnya dan bila tidak, akan
+                    melompati langkah selanjutnya.}
+        \item{Melakukan perulangan maju dan mundur sesuai kekuatan kembang api,
+                    bila ditemukan kembang api yang memiliki jarak ledakan lebih besar maka atur itu
+                    sebagai jarak ledakan baru. Untuk setiap kembang api yang termasuk dalam jarak
+                    ledakan maka nilainya akan di atur ke -1 termasuk kembang api terpilih.}
+        \item{Menunjukan nama kembang api dan daya ledakannya bila daya ledakan bukan -1.}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{\Flowchart}
+\inputfigure[n]{res/m3i8.png}{0.23}{{\Flowchart} Program \textit{Blast the Fireworks}}{fig:m3:i8}
+
+\subsubsection{{\Source} {\sCode}}
+\inputcode[n]{res/m3c3.cpp}
+
+\subsubsection{Hasil Program}
+\inputfigure[n]{res/m3i11.png}{0.5}{Keluaran Program \textit{Blast the Fireworks}}{fig:m3:i11}
+\begin{indentpar}
+    \hspace{\parindent}Berdasarkan \Cref{fig:m3:i11}, didapatkan hasil keluaran program \textit{Blast the Fireworks}. Program tersebut akan meminta banyak kembang api yang ingin diledakan dan kemudian akan menanyakan kekuatan setiap kembang api. Selanjutnya, program tersebut akan meminta kembang api yang mana yang ingin diledakan. Pada akhirnya, program tersebut akan mengeluarkan kembang api mana saja yang tersisa.
+\end{indentpar}
+\end{document}

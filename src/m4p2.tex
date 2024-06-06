@@ -1,0 +1,32 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \subsection{{\Function}}
+    Fungsi merupakan kumpulan {\statement} yang dikelompokkan menjadi satu bagian kode (blok program) untuk menyelesaikan tugas spesifik tertentu. Melalui cara seperti itu, kode (fungsi) hanya didefinisikan sekali, namun dapat digunakan berulang kali tanpa harus menuliskan kembali kode yang sama \parencite{raharjo2015pemrograman}.
+
+    {\Function} \textit{overloading} merupakan sebuah fungsi yang memiliki nama yang sama namun dengan parameter yang berbeda. {\Function} \textit{overloading} dapat didefinisikan sebagai berikut \parencite{Lippman_Lajoie_Moo_2013}:
+
+\begin{code}
+\begin{verbatim}
+void print(const char *cp);
+void print(const int *beg, const int *end);
+void print(const int ia[], size_t size);
+\end{verbatim}
+\end{code}
+
+\subsection{\textit{Recursive Function}}
+Seperti namanya, sebuah fungsi \textit{recursive} merupakan fungsi yang memanggil kepada dirinya sendiri. Sebagai contoh sebuah fungsi untuk menghitung nilai faktorial ialah sebagai berikut \parencite{grimes2017beginning}:
+
+\begin{code}
+\begin{verbatim}
+int factorial(int n)
+{
+   if (n > 1) return n ∗ factorial(n − 1);
+   return 1;
+}
+\end{verbatim}
+\end{code}
+
+Hal terpenting ketika membuat fungsi rekursif ialah harus ada setidaknya satu cara untuk meninggalkan fungsi tersebut. Dalam kasus diatas kekika fungsi \citecode{factorial} dipanggil dengan argumen 1 \parencite{grimes2017beginning}.
+
+\end{document}

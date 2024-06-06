@@ -1,25 +1,16 @@
-      } int base = 1;
-      for (int k = mid - 1; k >= 0; --k) {
-        if (numbers[k] == ' ') break;
-        if (numbers[k] == '-') {
-          matrix[i * m + j] *= -1; break;
-        }
-        matrix[i * m + j] += (int)(numbers[k] - '0') * base;
-        base *= 10;
-      }
-      for (int k = mid + 1; k < l; ++k) { 
-        if (numbers[k] != ' ') break; mid = k;
-      }
-    }
-  }
-  cout << "\nHasil rotasi 90 derajat searah jarum jam:" << endl;
-  for (int i = 0; i < m; ++i) {
-    for (int j = n - 1; j >= 0; --j) cout <<matrix[j * n + i]<< " ";
-    cout << endl; 
-  }
-  cout << "\nHasil pencerminan terhadap sumbu X:\n";
-  for (int i = m - 1; i >= 0; --i) {
-    for (int j = n - 1; j >= 0; --j) cout <<matrix[j * n + i]<< " ";
-    cout << endl;
-  }
-}
+#include <iostream> using namespace std;
+int main() { string text; int key;
+  cout << "Masukan Pesan: "; getline(cin, text);
+  cout << "Masukan Key Caesar Cipher: "; cin >> key;
+  int l = 0; while (text[l++] != '\0') {}
+  cout << "\nHasil  Enkripsi dengan Reverse Cipher:\n";
+  for (int i = l - 2; i >= 0; --i) cout << text[i];
+  cout << "\n\nHasil Enkripsi dengan Reverse + Caesar Cipher:\n";
+  for (int i = l - 2; i >= 0; --i) {
+    if (text[i] == ' ') { cout << " "; continue; }
+    char c = text[i] + key;
+    if (text[i] >= 'a' && text[i] <= 'z'
+      && c - 'z' > 0) { c = '`' + (c - 'z');
+    } else if (text[i] >= 'A' && text[i] <= 'Z'
+      && c - 'Z' > 0) { c = '@' + (c - 'Z');
+    } cout << c; } cout << endl; }
