@@ -2,7 +2,289 @@
 
 \begin{document}
 \subsection{\textit{Learn Stack Layout}}
-    
+
+\begin{code}
+\begin{verbatim}
+#include <iostream>
+\end{verbatim}
+\end{code}
+
+{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
+
+\begin{code}
+\begin{verbatim}
+using namespace std;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \citecode{namespace std}.
+
+\begin{code}
+\begin{verbatim}
+const string registers[] = {
+  "RDI", "RSI", "RDX", "RCX", "R8 ", "R9 " };
+const int register_max = sizeof registers / sizeof *registers;
+struct Function {
+  string name;
+  string arguments[register_max];
+  int argument_count;
+};
+const int stack_max = 9;
+struct Stack {
+  void *ptr[stack_max];
+  int type[stack_max] = { -1 };
+  int count = 3;
+  bool filled = false;
+};
+Stack stack;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Function} digunakan untuk menyimpan masukan fungsi dan struktur data \citecode{Stack} digunakan untuk menyimpan stuck secara keseluruhan.
+
+\begin{code}
+\begin{verbatim}
+const int STACK_TYPE_VALUE = 0;
+const int STACK_TYPE_FUNCTION = 1;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas digunakan sebagai pengganti struktur data \citecode{enum} dikarenakan tidak termasuk materi praktikum saat ini. Konstanta diatas hanya berguna untuk mempermudah proses pembacaan kode.
+
+\begin{code}
+\begin{verbatim}
+void topbar() { cout << "\33[H\33[2J";
+  cout << " LEARN STACK LAYOUT\n";
+  cout << "\n\n\n"; }
+\end{verbatim}
+\end{code}
+
+{\Script} diatas digunakan untuk menampilkan judul program. Penampilan judul tersebut dilakukan melalui objek \citecode{cout} yang disediakan oleh {\header} {\file} \citecode{iostream} yang merupakan bagian dari \textit{standard library} bahasa pemrograman C++.
+
+\begin{code}
+\begin{verbatim}
+void pause() {
+  cout << "Press any key to continue. . .\n"; cin.get();
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
+
+\begin{code}
+\begin{verbatim}
+void input_invalid() {
+  cin.clear(); cin.ignore();
+  cout << "Masukan tidak valid\n";
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan memberitahu pengguna bahwa sebuah masukan tidak valid dan membersihkan masukan tidak valid tersebut dari {\ioi} {\stream}.
+
+\begin{code}
+\begin{verbatim}
+int nselector(int l, int u, const string& c = ">> ") {
+  int n;
+  while (true) {
+    cout << c;
+    cin >> n;
+    if (cin.fail() || n < l || n > u) {
+      input_invalid();
+      continue;
+    } break; }
+  return n;
+}
+int nselector(const string& c = "", int i = 0) {
+  int n;
+  while (true) {
+    cout << c << i << " : ";
+    cin >> n;
+    if (cin.fail()) {
+      input_invalid();
+      continue;
+    } break; }
+  return n;
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi dengan kembalian berupa \citecode{int} atau bilangan bulat. Fungsi tersebut akan menyaring masukan dari pengguna sesuai kedua parameter fungsi \citecode{int l} dan \citecode{int u}. Masukan yang dimasukan harus berada dalam lingkup kedua parameter tersebut untuk dianggap sebagai masukan yang valid.
+
+\begin{code}
+\begin{verbatim}
+char cselector(char y='Y', char n='N', string c = ">> ") {
+  char ch;
+  while (true) {
+    cout << c;
+    cin >> ch;
+    if (ch > '`' && ch < '{') ch -= 32;
+    if (cin.fail() || (ch != 'Y' && ch != 'N')) {
+      input_invalid();
+      continue;
+    } break; }
+  return ch;
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi yang mengembalikan tipe data \citecode{char} sesuai masukan parameter \citecode{char y} dan \citecode{char n}. Bila masukan yang diterima tidak sesuai parameter yang diberikan maka akan diulangi sampai pilihan yang benar dimasukan.
+
+\begin{code}
+\begin{verbatim}
+void free_stack(Stack *st) {
+  for (int i = 0; i < stack.count; ++i) {
+      if (st->type[i] == STACK_TYPE_VALUE)
+        delete (int *)st->ptr[i];
+      else if (st->type[i] == STACK_TYPE_FUNCTION)
+        delete (Function *)st->ptr[i]; }
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi tanpa nilai kembalian yang dapat dilihat dari tipe data \citecode{void}. Fungsi tersebut menerima masukan parameter {\pointer} ke tipe data \citecode{Stack}. Fungsi tersebut akan membebaskan semua memori yang digunakan oleh argumen masukan.
+
+\begin{code}
+\begin{verbatim}
+void* push_to_stack(int type) {
+  if (type == STACK_TYPE_FUNCTION)
+    return (void *)new Function();
+  return (void *)new int;
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi yang mengembalikan tipe data \citecode{void*}. Tipe data \citecode{void*} digunakan karena tidak diperbolehkan penggunaan \textit{generic}. Fungsi tersebut dapat mengalokasikan memori dengan tipe data \citecode{Function} atau \citecode{int}.
+
+\begin{code}
+\begin{verbatim}
+void add_data() {
+  if (stack.filled) {
+    free_stack(&stack);
+    stack.filled = false;
+    if (stack.count == 6) stack.count = 9;
+    if (stack.count == 3) stack.count = 6; }
+  cout << "Current Stack Size: " << stack.count << endl;
+  for (int i = 0; i < stack.count; ++i) {
+    char c0 = cselector('Y', 'N', "Will You Add Function? (Y/N) : ");
+    if (c0 == 'Y') {
+      stack.type[i] = STACK_TYPE_FUNCTION;
+      stack.ptr[i] = push_to_stack(STACK_TYPE_FUNCTION);
+      Function *fp = (Function *)stack.ptr[i];
+      char c1 = cselector('Y', 'N', "Have Argument(s)? (Y/N): ");
+      cout << "Function - " << i + 1 << " To Push : ";
+      getline(cin >> ws, fp->name);
+      if (c1 == 'Y') {
+        fp->argument_count = nselector(1, register_max,
+                         "How many arguments ? ");
+        for (int j = 0; j < fp->argument_count; ++j) {
+          cout << "Argument - " << j + 1 << " : ";
+          getline(cin >> ws, fp->arguments[j]);
+        }
+      } else fp->argument_count = 0;
+    } else if (c0 == 'N') {
+      stack.type[i] = STACK_TYPE_VALUE;
+      stack.ptr[i] = push_to_stack(STACK_TYPE_VALUE);
+      *((int *)stack.ptr[i]) = nselector("Nilai - ", i + 1);
+    }
+  } stack.filled = true;
+}
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi tanpa nilai kembalian atau fungsi dengan kembalian bertipe data \citecode{void}. Fungsi tersebut digunakan untuk membantu penambahan data ke \citecode{stack}. Pada saat fungsi dipanggil akan ditanyakan apakah masukan berupa fungsi atau nilai. Bila masukan berupa nilai maka akan diminta nilai bilangan bulat. Apabila masukan berupa fungsi akan ditanyakan apakah fungsi tersebut memiliki argumen dan akan diminta mengisi data-data berkaitan dengan tipe data \citecode{Function}.
+
+\begin{code}
+\begin{verbatim}
+void debug_mode() {
+  while (true) {
+    string arg;
+    cout << "Debug Command => ";
+    getline(cin >> ws, arg);
+    if (arg == "exit") return;
+    if (arg == "info stack") {
+      int i = 0;
+      if (stack.type[i] < 0) {
+        cout << "Anda seharusnya tidak berada disini...\n";
+        continue; }
+      while (true) {
+        topbar();
+        if (i > stack.count - 1) {
+          cout << "REGISTER\n";
+          cout << "No Registers!\n";
+          cout << "STACK\n";
+          cout << "No Stacks!\n";
+          pause(); return; }
+        cout << "REGISTER\n";
+        for (int j = 0; j < register_max; ++j) {
+          cout << registers[j] << " : ";
+          if (stack.type[i] == STACK_TYPE_FUNCTION) {
+            Function *fp = (Function *)stack.ptr[i];
+            if (j < fp->argument_count) {
+              cout << fp->arguments[j] << endl;
+              continue; }
+          } cout << "0\n"; }
+        cout << "STACK\n";
+        for (int j = 0; j < stack.count; ++j) {
+          if (j == i) cout << "=> ";
+          else cout << "   ";
+          cout << stack.ptr[j] << "   ";
+          if (stack.type[j] == STACK_TYPE_FUNCTION) {
+            cout << ((Function *)stack.ptr[j])->name << "\n";
+          } else if (stack.type[j] == STACK_TYPE_VALUE) {
+            cout << *((int *)stack.ptr[j]) << "\n";
+          } }
+        cout << "Debug Command => ";
+        getline(cin >> ws, arg);
+        if (arg == "ni") i++;
+        if (arg == "pi") i--;
+        if (i < 0) i = stack.count - 1;
+      } } } }
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan fungsi tanpa nilai kembalian yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan register yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
+
+\begin{code}
+\begin{verbatim}
+int main() {
+  int state = 0;
+  while (true) {
+    topbar();
+    cout << "1. Add Data\n";
+    cout << "2. Debug Mode\n";
+    cout << "3. Exit\n";
+    state = (nselector(1, 3) - 1);
+    switch (state) {
+      case 0: {
+        add_data();
+      } break;
+      case 1: {
+        debug_mode();
+      } break;
+      case 2: return 0; } } }
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan {\entry} {\point} program \textit{Learn Stack Layout}. {\Script} diatas akan dijalankan setiap kali program tersebut dijalankan. Fungsi di atas digunakan untuk mengatur keseluruhan jalan kerja program seperti menu mana yang akan ditampilkan.
+
 \subsection{\textit{Dungeon Crawler RPG}}
+
+\begin{code}
+\begin{verbatim}
+#include <iostream>
+\end{verbatim}
+\end{code}
+
+{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
+
+\begin{code}
+\begin{verbatim}
+using namespace std;
+\end{verbatim}
+\end{code}
+
+{\Script} \citecode{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \citecode{namespace std}.
+    
 
 \end{document}
