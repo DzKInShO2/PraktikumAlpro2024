@@ -285,6 +285,49 @@ using namespace std;
 \end{code}
 
 {\Script} \citecode{using namespace std;} adalah {\statement} yang digunakan untuk memberikan perintah kepada {\compiler} bahwa file tersebut akan menggunakan seluruh fungsi yang menjadi bagian dari \citecode{namespace std}.
-    
+
+\begin{code}
+\begin{verbatim}
+const int GAME_STATE_PLAYING = 0;
+const int GAME_STATE_LOSE = 1;
+const int GAME_STATE_WIN  = 2;
+\end{verbatim}
+\end{code}
+
+{\Script} diatas digunakan sebagai pengganti struktur data \citecode{enum} dikarenakan tidak termasuk materi praktikum saat ini. Konstanta diatas hanya berguna untuk mempermudah proses pembacaan kode.
+
+\begin{code}
+\begin{verbatim}
+struct Monster { string name, sprite;
+  int cur_health, max_health, attack, defense, turn; };
+struct Item {
+  int health, attack, defense;
+  string name; };
+struct Player { int health, attack, defense;
+  int item_id, turn; string name; };
+struct Room {
+  int monster_id, item_id, prev, next[2]; bool has_branch;
+  string name; };
+struct Game {
+  int state, current_room_id;
+  Player players[2];
+  Monster monsters[2];
+  Item items[2];
+  Room rooms[7]; };
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Monster} digunakan untuk menyimpan keadaan \textit{monster}, struktur data \citecode{Item} digunakan untuk menyimpan data \textit{item}, struktur data \citecode{Player} menyimpan data pemain, struktur data \citecode{Room} digunakan untuk menyimpan data ruangan seperti apakah ruangan mengandung \textit{monster} atau \textit{item} dan struktur data \citecode{Game} digunakan untuk menyimpan keseluran perjalanan program.
+
+\begin{code}
+\begin{verbatim}
+string strpad(int n, char c = ' ') {
+  string pad = "";
+  for (int i = 0; i < n; ++i) pad += c;
+  return pad; }
+\end{verbatim}
+\end{code}
+
+{\Script} diatas merupakan sebuah fungsi yang digunakan untuk memasukan sebuah karakter sesuai parameter \citecode{char c} sebanyak nilai parameter \citecode{int n}. Fungsi
 
 \end{document}
