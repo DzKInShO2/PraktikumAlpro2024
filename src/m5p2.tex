@@ -1,0 +1,119 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{{\Struct}}
+
+{\Struct} merupakan kumpulan berbagai tipe data yang berbeda dikelompokkan dalam satu deklarasi unit. Berbeda dengan {\sarray} yang hanya berupa kumpulan variabel bertipe data sama, {\struct} bisa memiliki variabel-variabel yang bertipe data sama atau berbeda, bahkan bisa menyimpan variabel yang bertipe data {\sarray} atau {\struct}  itu sendiri \parencite{Bachtiar_2005}.
+
+\subsection{Deklarasi {\Struct}}
+
+Cara mendeklarasikan sebuah {\struct} adalah harus menggunakan kata kunci \citecode{struct} yang diikuti dengan nama struktur. Kemudian diikuti dengan blok yang diapit dengan tanda kurung kurawal \citecode{\{\}} dimana isinya adalah variabel-variabel (disebut \textit{member} atau \textit{field}) yang akan dideklarasikan di dalam struktur tersebut, serta diakhiri dengan tanta titik koma (\textit{semicolon}) \parencite{utami10}. Bentuk umum deklarasi struct sebagai berikut:
+
+\begin{code}
+\begin{verbatim}
+struct nama_struktur {
+  tipe_data field1;
+  tipe_data field2;
+  ...
+} var1, var2, ...;
+\end{verbatim}
+\end{code}
+
+\subsection{Akses {\Struct}}
+
+\textit{Struct} dapat diakses dengan menggunakan operator \textit{unary}/operator titik \citecode{.} yang dituliskan di antara nama struktur dan nama \textit{field} \parencite{utami10}. Cara pendeklarasian lainnya yaitu:
+
+\begin{enumerate}
+    \item Bila {\struct} dideklarasikan sebagai sebuah variabel biasa, maka cara pengaksesan anggota {\struct} menggunakan operator titik/operator \textit{unary} \citecode{.}.
+    \item Bila {\struct} dideklarasikan sebagai sebuah variabel {\pointer}, yaitu cara pengaksesan anggota {\struct} menggunakan operator panah \citecode{→}.
+    \item Bila {\struct} dideklarasikan sebagai sebuah variabel dalam {\pointer} sebagai {\sarray}, maka cara pengaksesan anggotanya {\struct} menggunakan operator titik/operator \textit{unary} \citecode{.}.
+\end{enumerate}
+
+Contoh \textit{source code struct} berdasarkan pengaksesan sebagai berikut \parencite{munir2016algoritma}:
+
+\subsubsection{{\Struct} dideklarasikan sebagai sebuah variabel biasa}
+
+\begin{indentpar}
+    {\Struct} dideklarasikan sebagai sebuah variabel biasa, maka cara pengaksesan anggota {\struct} menggunakan operator titik/operator \textit{unary} \citecode{.}. Contoh \textit{source code}-nya sebagai berikut:
+\end{indentpar}
+
+\begin{code}[n]
+\begin{verbatim}
+#include <iostream>
+#include <string.h>
+struct personal {
+  char nama[20];
+  char alamat[20];
+  long int telepon;
+  char kata[40];
+  long int kodepos;
+}
+void main(){
+  //deklarasikan struktur
+  personal person:
+  //mengisi anggota struktur
+  strcpy (person.nama. “Anton”);
+  strcpy (person.alamat. “Jl.Majapahit.No.62”);
+  serson.telepon=636126;
+  strcpy (person.kota, “mataram”);
+  person.kodepos=83123;
+  cout<< “nama:”<<person.nama<<endl;
+  cout<< “alamat:”<<person.alamat<<endl;
+  cout<< “telepon:”<<person.telepon<<endl;
+  cout<< “kota:”<<person.kota<<endl;
+  cout<< “kode pos:”<<person.kodepos<<endl;
+}
+\end{verbatim}
+\end{code}
+
+\subsubsection{{\Struct} dideklarasikan sebagai sebuah variabel {\pointer}}
+
+\begin{indentpar}
+    {\Struct} dideklarasikan sebagai sebuah variabel {\pointer}, yaitu cara pengaksesan anggota {\struct} menggunakan operator panah \citecode{→}. Contoh \textit{source code}-nya sebaga berikut:
+\end{indentpar}
+
+\begin{code}[n]
+\begin{verbatim}
+#include <iostream>
+#include <stdlib.h>
+
+struct time{
+  int jam, min;
+};
+struct rencana {
+  struct time*awal;
+  struct timr*akhir;
+};
+struct time jk={1,2};
+struct time ki={3,4};
+struct rencana kerja ={&jk, &ki};
+void main(){
+  kerja.akhir→min > 37;
+  cout << kerja.akhir→jam << " " << kerja.awal→min << " " << kerja
+  .akhir→jam << " " << kerja.akhir→min << endl;
+  system("pause")
+}
+\end{verbatim}
+\end{code}
+
+\subsection{{\Nested} {\Struct}}
+{\Nested} {\struct} merupakan suatu {\struct} dapat digunakan di dalam {\struct} yang lainnya. Bentuk umum pendeklarasiannya sebagai berikut:
+
+\begin{code}
+\begin{verbatim}
+struct dtmhs {
+	char nim[9];
+	char nama[15];
+}
+struct dtnil{
+	float nil1;
+	float nil2;
+}
+struct {
+	struct dtmhs mhs;
+	struct dtnil nil;
+}nilai;begin{lstlisting}
+\end{verbatim}
+\end{code}
+
+\end{document}

@@ -14,6 +14,13 @@
 \setlength{\cftbeforechapskip}{0pt}
 \renewcommand*{\cftchapfont}{\normalfont}
 \renewcommand*{\cftchappagefont}{\normalfont}
+
+\renewcommand*{\cftfigpresnum}{Gambar }
+\addtolength{\cftfignumwidth}{9ex}
+
+\renewcommand*{\cfttabpresnum}{Tabel }
+\addtolength{\cfttabnumwidth}{4ex}
+
 \renewcommand*{\contentsname}{
     {\color{white}a\vspace*{-0.5ex}}
     DAFTAR ISI
@@ -328,6 +335,8 @@
     breakable,
     before skip=1.0em,
     after skip=0.8em,
+    toprule at break=5pt,
+    bottomrule at break=5pt,
 }
 
 \makeatletter
@@ -519,16 +528,21 @@
     \newpage
     \setlength{\parindent}{0.75cm}
     \section{Analisis Data}
+    \subfile{src/m4p5.tex}
     \newpage
     \section{Kesimpulan}
+    \subfile{src/m4p6.tex}
     \setlength{\parindent}{1.0cm}
     \newpage
 
     \chapterf[\textit{Struct}]{Struct}
     \section{Tujuan Praktikum}
+    \subfile{src/m5p1.tex}
     \section{Dasar Teori}
+    \subfile{src/m5p2.tex}
     \newpage
     \section{Permasalahan}
+    \subfile{src/m5p3.tex}
     \newpage
     \section{Hasil Percobaan}
     \newpage
