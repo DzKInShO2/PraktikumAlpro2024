@@ -85,7 +85,7 @@ void add_data() {
     if (stack.count == 3) stack.count = 6; }
   cout << "Current Stack Size: " << stack.count << endl;
   for (int i = 0; i < stack.count; ++i) {
-    char c0 = cselector('Y', 'N', "Will You Add Function? (Y/N) : ");
+    char c0=cselector('Y', 'N', "Will You Add Function? (Y/N) : ");
     if (c0 == 'Y') {
       stack.type[i] = STACK_TYPE_FUNCTION;
       stack.ptr[i] = push_to_stack(STACK_TYPE_FUNCTION);

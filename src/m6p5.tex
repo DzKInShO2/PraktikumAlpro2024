@@ -9,7 +9,7 @@
 \end{verbatim}
 \end{code}
 
-{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
+{\Script} di atas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
 
 \begin{code}
 \begin{verbatim}
@@ -40,7 +40,7 @@ Stack stack;
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Function} digunakan untuk menyimpan masukan fungsi dan struktur data \citecode{Stack} digunakan untuk menyimpan stuck secara keseluruhan.
+{\Script} di atas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Function} digunakan untuk menyimpan masukan fungsi dan struktur data \citecode{Stack} digunakan untuk menyimpan stuck secara keseluruhan.
 
 \begin{code}
 \begin{verbatim}
@@ -49,7 +49,7 @@ const int STACK_TYPE_FUNCTION = 1;
 \end{verbatim}
 \end{code}
 
-{\Script} diatas digunakan sebagai pengganti struktur data \citecode{enum} dikarenakan tidak termasuk materi praktikum saat ini. Konstanta diatas hanya berguna untuk mempermudah proses pembacaan kode.
+{\Script} di atas digunakan sebagai pengganti struktur data \citecode{enum} dikarenakan tidak termasuk materi praktikum saat ini. Konstanta di atas hanya berguna untuk mempermudah proses pembacaan kode.
 
 \begin{code}
 \begin{verbatim}
@@ -59,7 +59,7 @@ void topbar() { cout << "\33[H\33[2J";
 \end{verbatim}
 \end{code}
 
-{\Script} diatas digunakan untuk menampilkan judul program. Penampilan judul tersebut dilakukan melalui objek \citecode{cout} yang disediakan oleh {\header} {\file} \citecode{iostream} yang merupakan bagian dari \textit{standard library} bahasa pemrograman C++.
+{\Script} di atas digunakan untuk menampilkan judul program. Penampilan judul tersebut dilakukan melalui objek \citecode{cout} yang disediakan oleh {\header} {\file} \citecode{iostream} yang merupakan bagian dari \textit{standard library} bahasa pemrograman C++.
 
 \begin{code}
 \begin{verbatim}
@@ -69,7 +69,7 @@ void pause() {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
+{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
 
 \begin{code}
 \begin{verbatim}
@@ -80,7 +80,7 @@ void input_invalid() {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan memberitahu pengguna bahwa sebuah masukan tidak valid dan membersihkan masukan tidak valid tersebut dari {\ioi} {\stream}.
+{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan memberitahu pengguna bahwa sebuah masukan tidak valid dan membersihkan masukan tidak valid tersebut dari {\ioi} {\stream}.
 
 \begin{code}
 \begin{verbatim}
@@ -109,7 +109,7 @@ int nselector(const string& c = "", int i = 0) {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi dengan kembalian berupa \citecode{int} atau bilangan bulat. Fungsi tersebut akan menyaring masukan dari pengguna sesuai kedua parameter fungsi \citecode{int l} dan \citecode{int u}. Masukan yang dimasukan harus berada dalam lingkup kedua parameter tersebut untuk dianggap sebagai masukan yang valid.
+{\Script} di atas merupakan sebuah fungsi dengan kembalian berupa \citecode{int} atau bilangan bulat. Fungsi tersebut akan menyaring masukan dari pengguna sesuai kedua parameter fungsi \citecode{int l} dan \citecode{int u}. Masukan yang dimasukan harus berada dalam lingkup kedua parameter tersebut untuk dianggap sebagai masukan yang valid.
 
 \begin{code}
 \begin{verbatim}
@@ -128,7 +128,7 @@ char cselector(char y='Y', char n='N', string c = ">> ") {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi yang mengembalikan tipe data \citecode{char} sesuai masukan parameter \citecode{char y} dan \citecode{char n}. Bila masukan yang diterima tidak sesuai parameter yang diberikan maka akan diulangi sampai pilihan yang benar dimasukan.
+{\Script} di atas merupakan sebuah fungsi yang mengembalikan tipe data \citecode{char} sesuai masukan parameter \citecode{char y} dan \citecode{char n}. Bila masukan yang diterima tidak sesuai parameter yang diberikan maka akan diulangi sampai pilihan yang benar dimasukan.
 
 \begin{code}
 \begin{verbatim}
@@ -142,7 +142,7 @@ void free_stack(Stack *st) {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi tanpa nilai kembalian yang dapat dilihat dari tipe data \citecode{void}. Fungsi tersebut menerima masukan parameter {\pointer} ke tipe data \citecode{Stack}. Fungsi tersebut akan membebaskan semua memori yang digunakan oleh argumen masukan.
+{\Script} di atas merupakan sebuah fungsi tanpa nilai kembalian yang dapat dilihat dari tipe data \citecode{void}. Fungsi tersebut menerima masukan parameter {\pointer} ke tipe data \citecode{Stack}. Fungsi tersebut akan membebaskan semua memori yang digunakan oleh argumen masukan.
 
 \begin{code}
 \begin{verbatim}
@@ -154,7 +154,7 @@ void* push_to_stack(int type) {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi yang mengembalikan tipe data \citecode{void*}. Tipe data \citecode{void*} digunakan karena tidak diperbolehkan penggunaan \textit{generic}. Fungsi tersebut dapat mengalokasikan memori dengan tipe data \citecode{Function} atau \citecode{int}.
+{\Script} di atas merupakan sebuah fungsi yang mengembalikan tipe data \citecode{void*}. Tipe data \citecode{void*} digunakan karena tidak diperbolehkan penggunaan \textit{generic}. Fungsi tersebut dapat mengalokasikan memori dengan tipe data \citecode{Function} atau \citecode{int}.
 
 \begin{code}
 \begin{verbatim}
@@ -192,7 +192,7 @@ void add_data() {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi tanpa nilai kembalian atau fungsi dengan kembalian bertipe data \citecode{void}. Fungsi tersebut digunakan untuk membantu penambahan data ke \citecode{stack}. Pada saat fungsi dipanggil akan ditanyakan apakah masukan berupa fungsi atau nilai. Bila masukan berupa nilai maka akan diminta nilai bilangan bulat. Apabila masukan berupa fungsi akan ditanyakan apakah fungsi tersebut memiliki argumen dan akan diminta mengisi data-data berkaitan dengan tipe data \citecode{Function}.
+{\Script} di atas merupakan sebuah fungsi tanpa nilai kembalian atau fungsi dengan kembalian bertipe data \citecode{void}. Fungsi tersebut digunakan untuk membantu penambahan data ke \citecode{stack}. Pada saat fungsi dipanggil akan ditanyakan apakah masukan berupa fungsi atau nilai. Bila masukan berupa nilai maka akan diminta nilai bilangan bulat. Apabila masukan berupa fungsi akan ditanyakan apakah fungsi tersebut memiliki argumen dan akan diminta mengisi data-data berkaitan dengan tipe data \citecode{Function}.
 
 \begin{code}
 \begin{verbatim}
@@ -243,7 +243,7 @@ void debug_mode() {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan fungsi tanpa nilai kembalian yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan register yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
+{\Script} di atas merupakan fungsi tanpa nilai kembalian yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan register yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
 
 \begin{code}
 \begin{verbatim}
@@ -266,7 +266,7 @@ int main() {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan {\entry} {\point} program \textit{Learn Stack Layout}. {\Script} diatas akan dijalankan setiap kali program tersebut dijalankan. Fungsi di atas digunakan untuk mengatur keseluruhan jalan kerja program seperti menu mana yang akan ditampilkan.
+{\Script} di atas merupakan {\entry} {\point} program \textit{Learn Stack Layout}. {\Script} di atas akan dijalankan setiap kali program tersebut dijalankan. Fungsi di atas digunakan untuk mengatur keseluruhan jalan kerja program seperti menu mana yang akan ditampilkan.
 
 \subsection{\textit{Dungeon Crawler RPG}}
 
@@ -276,7 +276,7 @@ int main() {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
+{\Script} di atas digunakan untuk membolehkan penggunaan fungsi-fungsi dan objek-objek yang berada di dalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi hal-hal yang dibutuhkan untuk membantu proses {\ioi} dan {\ioo}.
 
 \begin{code}
 \begin{verbatim}
@@ -294,7 +294,7 @@ const int GAME_STATE_WIN  = 2;
 \end{verbatim}
 \end{code}
 
-{\Script} diatas digunakan sebagai pengganti struktur data \citecode{enum} dikarenakan tidak termasuk materi praktikum saat ini. Konstanta diatas hanya berguna untuk mempermudah proses pembacaan kode.
+{\Script} di atas digunakan sebagai pengganti struktur data \citecode{enum} dikarenakan tidak termasuk materi praktikum saat ini. Konstanta di atas hanya berguna untuk mempermudah proses pembacaan kode.
 
 \begin{code}
 \begin{verbatim}
@@ -317,7 +317,7 @@ struct Game {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Monster} digunakan untuk menyimpan keadaan \textit{monster}, struktur data \citecode{Item} digunakan untuk menyimpan data \textit{item}, struktur data \citecode{Player} menyimpan data pemain, struktur data \citecode{Room} digunakan untuk menyimpan data ruangan seperti apakah ruangan mengandung \textit{monster} atau \textit{item} dan struktur data \citecode{Game} digunakan untuk menyimpan keseluran perjalanan program.
+{\Script} di atas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Monster} digunakan untuk menyimpan keadaan \textit{monster}, struktur data \citecode{Item} digunakan untuk menyimpan data \textit{item}, struktur data \citecode{Player} menyimpan data pemain, struktur data \citecode{Room} digunakan untuk menyimpan data ruangan seperti apakah ruangan mengandung \textit{monster} atau \textit{item} dan struktur data \citecode{Game} digunakan untuk menyimpan keseluran perjalanan program.
 
 \begin{code}
 \begin{verbatim}
@@ -328,6 +328,6 @@ string strpad(int n, char c = ' ') {
 \end{verbatim}
 \end{code}
 
-{\Script} diatas merupakan sebuah fungsi yang digunakan untuk memasukan sebuah karakter sesuai parameter \citecode{char c} sebanyak nilai parameter \citecode{int n}. Fungsi
+{\Script} di atas merupakan sebuah fungsi yang digunakan untuk memasukan sebuah karakter sesuai parameter \citecode{char c} sebanyak nilai parameter \citecode{int n}. Fungsi
 
 \end{document}

@@ -37,8 +37,7 @@ int main() {
       cin >> r;
       cout << "Hasil Kombinasi: " 
          << factorial(n)/(factorial(n - r) * factorial(r))
-         << endl;
-    } break;
+         << endl; } break;
     case 3: {
       cout << "Masukan Nilai Matriks 3x3\n";
       float matrix[12];
