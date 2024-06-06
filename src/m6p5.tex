@@ -328,6 +328,156 @@ string strpad(int n, char c = ' ') {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan sebuah fungsi yang digunakan untuk memasukan sebuah karakter sesuai parameter \citecode{char c} sebanyak nilai parameter \citecode{int n}. Fungsi
+{\Script} di atas merupakan sebuah fungsi yang digunakan untuk memasukan sebuah karakter sesuai parameter \citecode{char c} sebanyak nilai parameter \citecode{int n}. Fungsi tersebut akan mengembalikan tipe data \citecode{string}.
+
+\begin{code}
+\begin{verbatim}
+int strlen(const string& text) {
+  if (text[0] == '\0') return 0;
+  int len = 0;
+  while (text[++len] != '\0') {}
+  return len; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan sebuah fungsi yang digunakan untuk menemukan panjang sebuah tipe data \citecode{string}. Fungsi tersebut akan mengembalikan nilai bilangan bulat atau \citecode{int} yang berupa panjang \citecode{string} masukan.
+
+\begin{code}
+\begin{verbatim}
+void strrev(string& text) {
+  string s;
+  for (int i = strlen(text) - 1; i >= 0; --i)
+    s += text[i];
+  text = s; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas digunakan untuk membalik urutan \citecode{string}. Fungsi tersebut menerima parameter masukan \textit{pass-by} {\reference} yang berarti argumen masukan tersebut akan dimodifikasi oleh fungsi tersebut.
+
+\begin{code}
+\begin{verbatim}
+string strint(int n) {
+  string s = "";
+  while (n > 0) {
+    s += (char)((n % 10) + 48);
+    n /= 10.0f;
+  }
+  strrev(s); return s; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas digunakan untuk mengubah nilai tipe data \citecode{int} menjadi keluaran tipe data \citecode{string}. Fungsi tersebut akan melakukan perulangan pada parameter masukan yang kemudian akan disimpan pada sebuah \citecode{string} yang merupakan kembalian fungsi tersebut.
+
+\begin{code}
+\begin{verbatim}
+string strup(string text) {
+  for (int i = 0; i < strlen(text); ++i)
+    if (text[i] > '`' && text[i] < '{')
+      text[i] -= 32;
+  return text; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas digunakan untuk mengubah huruf kecil pada suatu kata menjadi huruf kapital. Setiap karakter pada parameter \citecode{string text} akan dikurangi dengan 32 dikarenakan perbedaan kode ASCII huruf kapital terletak 32 lebih bawah dari huruf kecil.
+
+\begin{code}
+\begin{verbatim}
+void center_draw(const string& text,
+            int width = 51,
+            const string& border = "| |") {
+  string lpad = strpad(width/2 - strlen(border)
+              - (strlen(text)/2));
+  string rpad = strpad(45 - (strlen(lpad) + strlen(text)));
+  cout << border << lpad << text << rpad << border << endl; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas digunakan untuk menggambar teks tepat di tengah sesuai panjang masukan \citecode{int width}. Fungsi tersebut akan menggunakan fungsi \citecode{strpad} untuk memberikan ruang kosong agar teks bisa digambar di tengah.
+
+\begin{code}
+\begin{verbatim}
+void pause() {
+  cout << "Press any key to continue..." << endl;
+  string arg; getline(cin, arg); }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
+
+\begin{code}
+\begin{verbatim}
+void bar_draw() {
+  cout << "|+|=============================================|+|\n";}
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan sebuah fungsi tanpa nilai balik yang digunakan untuk menggambar sebuah garis. Fungsi tersebut memanfaatkan objek \citecode{cout} untuk menggambar baris tersebut.
+
+\begin{code}
+\begin{verbatim}
+void map_draw(int room_id) {
+  cout << "                          (#)\n"
+          "                           | \n"
+          "                           | \n"
+          "                          (#)\n"
+          "                           | \n"
+          "                           | \n"
+          "                          (#)\n"
+          "                          / \\_\n"
+          "                         /     \\_\n"
+          "                        /       (#)\n"
+          "                (#)---(#)        |\n"
+          "                                /\n"
+          "                               |\n"
+          "                                \\ \n"
+          "                                (@)\n";
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{map\_draw} yang akan digunakan untuk menggambar peta permainan. Penggambaran peta dilakukan dengan cara mengeluarkannya ke objek \citecode{cout}.
+
+\begin{code}
+\begin{verbatim}
+int line = 4, column = 28;
+switch (room_id) {
+  case 1: line = 7;
+  break; case 2:
+  line = 10; break;
+  case 3: line = 14;
+  column = 24; break;
+  case 4: line = 14;
+  column = 18; break; case 5: 
+  line = 13; column = 34; break; case 6:
+  line = 18; column = 34; break; }
+cout << "\e7";
+cout << "\33[" << line <<";" << column << "H!";
+cout << "\e8"; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan bawah dari fungsi \citecode{map\_draw} yang akan digunakan untuk menggambar letak pemain. Letak pemain digambar dengan cara menggerakan kursor konsol ke posisi pemain saat ini menggunakan karakter ANSI.
+
+\begin{code}
+\begin{verbatim}
+void item_info(const Item& item) {
+  if (item.health != 0) 
+    center_draw("Health " +
+      string{(item.health > 0 ? "Increased By " : "Decreased By ")}
+      + strint(item.health));
+  if (item.attack != 0)
+    center_draw("Attack " +
+      string{(item.attack > 0 ? "Increased By " : "Decreased By ")}
+      + strint(item.attack));
+  if (item.defense != 0)
+    center_draw("Defense " +
+      string{(item.defense > 0 ? "Increased By " : "Decreased By ")}
+      + strint(item.defense)); }
+\end{verbatim}
+\end{code}
+
+% Placeholder
+{\Script} di atas merupakan potongan bawah dari fungsi \citecode{map\_draw} yang akan digunakan untuk menggambar letak pemain. Letak pemain digambar dengan cara menggerakan kursor konsol ke posisi pemain saat ini menggunakan karakter ANSI.
+% Placeholder
+
 
 \end{document}
