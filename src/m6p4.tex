@@ -1,0 +1,57 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \subsection{\textit{Learn Stack Layout}}
+    \subsubsection{Algoritma}
+    \begin{enumerate}
+        \item[]
+        \begin{enumerate}
+            \item {Disediakan menu awal dengan pilihan \textit{add data}, \textit{debug mode} dan \textit{exit} yang dapat dipilih menggunakan angka.}
+            \item {Bila \textit{add data} dipilih, meminta memasukan data yang dapat berupa fungsi atau nilai. Bila dimasukan sebuah fungsi maka akan ditanyakan apakah fungsi tersebut memiliki argumen dan berapa banyak argumennya. Masukan data akan diminta beberapa kali sesuai berapa kali pilihan \textit{add data} dipilih, pertama kali dipilih akan diminta 3 masukan, kedua kali diminta 6 masukan dan ketiga kali akan diminta 9 masukan. Setelah selesai maka program akan kembali ke menu awal.}
+            \item {Bila \textit{debug mode} dipilih, meminta \textit{prompt} yang memiliki dua buah perintah yakni \citecode{info stack} dan \textit{exit}. Perintah \textit{exit} akan mengembalikan program ke menu awal. Perintah \citecode{info stack} akan membuka menu \textit{stack layout} dan register yang ditampilkan sesuai data yang ditambahkan. Menu \textit{stack layout} dapat menerima perintah berupa \citecode{ni} yang akan memajukan instruksi yang ditunjuk dalam \textit{stack} hingga penunjuk instruksi melebihi jumlah data yang akan mengembalikan program ke menu awal.}
+        \end{enumerate}
+    \end{enumerate}
+
+    \subsubsection{\Flowchart}
+    \inputfigure[n]{res/m6i22.png}{0.2}{{\Flowchart} Program \textit{Learn Stack Layout}}{fig:m6:i22}
+
+    \subsubsection{{\Source} {\sCode}}
+    \inputcode[n]{res/m6c1.cpp}
+
+    \subsubsection{Hasil Program}
+    \inputfigure[n]{res/m6i23.png}{0.23}{Menu Awal Program \textit{Learn Stack Layout}}{fig:m6:i23}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m6:i23}, didapatkan sebuah gambar keluaran menu awal program \textit{Learn Stack Layout}. Menu tersebut memberikan tiga buah pilihan yang dapat dipilih berdasarkan angkanya yakni \textit{add data}, \textit{debug mode} dan \textit{exit}.
+    \end{indentpar}
+
+    \inputfigure[n]{res/m6i24.png}{0.2}{Pilihan \textit{Add Data} Program \textit{Learn Stack Layout}}{fig:m6:i24}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m6:i24}, didapatkan sebuah gambar keluaran pilihan \textit{add data} program \textit{Learn Stack Layout}. Pilihan tersebut akan menanyakan apakah pengguna ingin menambahkan fungsi, bila pengguna memilih iya akan ditanya apakah fungsi menerima argumen dan jumlah argumennya kemudian pengguna akan melengkapi data fungsi tersebut. Namun apabila pengguna memilih data maka akan diminta nilai.
+    \end{indentpar}
+
+    \inputfigure[n]{res/m6i25.png}{0.23}{Pilihan \textit{Debug Mode} Program \textit{Learn Stack Layout}}{fig:m6:i25}
+    \begin{indentpar}
+        \hspace{\parindent}Berdasarkan \Cref{fig:m6:i25}, didapatkan sebuah gambar keluaran pilihan \textit{debug mode} program \textit{Learn Stack Layout} ketika dimasukan perintah \citecode{info stack}. Ditampilkan daftar \textit{stack} dan register-register yang digunakan \textit{stack} tersebut.
+    \end{indentpar}
+    
+    \subsection{\textit{Dungeon Crawler RPG}}
+    \subsubsection{Algoritma}
+    \begin{enumerate}
+        \item[]
+        \begin{enumerate}
+            \item {Ditampilkan sebuah peta dimana letak pemain ditandai dengan tanda seru (!).}
+            \item {Pemain dapat maju ke ruangan yang dapat diakses oleh ruangan saat ini dan dapat kembali keruangan sebelumnya.}
+            \item {Bila ruangan berisi \textit{monster} maka akan pindah ke menu pertarungan.}
+            \item {Di menu pertarungan akan ditampilkan keadaan kedua karakter pemain dan \textit{monster}. Pemain dapat mengambil satu giliran yang bisa berupa serangan, menyembuhkan dan menggunakan \textit{item} bila ada. Setelah satu giliran karakter pemain tersebut akan diserang \textit{monster}.}
+            \item {Setiap tiga giliran karakter bernama Gilang akan mengabaikan semua serangan yang ditujukan padanya. Setiap tiga giliran karakter bernama Holil akan membuat kekuatan serangannya menjadi 2 kali lebih kuat. Setiap lima giliran semua \textit{monster} akan melakukan serangan pada semua karakter pemain.}
+            \item {Bila salah satu karakter pemain mati atau \textit{health}-nya kurang dari sama dengan 0 maka permainan akan ulang dari titik awal. Bila \textit{health} dari \textit{monster} kurang dari sama dengan 0 maka \textit{monster} kalah, dan bila \textit{monster} itu bernama Leviathan maka permainan selesai dengan keadaan menang.}
+            \item {Bila terdapat \textit{item} pada sebuah ruangan pemain bisa memberikannya ke karakter yang tidak memiliki \textit{item}.}
+        \end{enumerate}
+    \end{enumerate}
+
+    \subsubsection{\Flowchart}
+
+    \subsubsection{{\Source} {\sCode}}
+
+    \subsubsection{Hasil Program}
+\end{document}

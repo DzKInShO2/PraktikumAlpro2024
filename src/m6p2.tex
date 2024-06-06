@@ -1,0 +1,63 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{\Pointer}
+
+{\Pointer} dapat didefinisikan sebagai suatu variabel yang menyimpat alamat memori. Jika kita mempunyai variabel dengan tipe data tertentu, maka untuk mendapatkan alamat dari variabel tersebut adalah dengan menggunakan operator \citecode{\&} \parencite{raharjo2015pemrograman}.
+
+Kita dapat mendefinisikan sebuah pointer ke tipe data dengan cara mendeklarasikannya dalam bentuk \citecode{*d}, dimana \citecode{d} merupakan nama dari variabel yang didefinisikan. Simbol \citecode{*} harus diulangi untuk setiap variabel {\pointer} \parencite{Lippman_Lajoie_Moo_2013}:
+
+\begin{code}
+\begin{verbatim}
+int *ip1, *ip2;  // both ip1 and ip2 are pointers to int
+double dp, *dp2; // dp2 is a pointer to double; dp is a double
+\end{verbatim}
+\end{code}
+
+Jika kita mempunyai sebuah variabel yang bertipe \citecode{long} (misalnya \citecode{X}), maka kita dapat memerintahkan {\pointer} \citecode{P} untuk menunjuk ke alamat yang ditempati oleh variabel \citecode{X}. Untuk melakukan hal tersebut kita perlu menuliskan kode seperti berikut \parencite{raharjo2015pemrograman}:
+
+\begin{code}
+\begin{verbatim}
+// Mendeklarasikan variabel X dengan tipe long
+long X;
+// Mendeklarasikan pointer P
+long *P;
+
+// Memerintahkan P untuk menunjuk alamat
+// dari variabel X
+P = &X;
+\end{verbatim}
+\end{code}
+
+\subsection{{\Dereference} dan {\Reference}}
+\subsubsection{{\Reference} (\citecode{\&})}
+\begin{indentpar}
+    Sebuah \textit{reference} merupakan sebuah alias atau sinonim untuk variabel lain. \textit{Reference} dideklarasikan dengan \textit{syntax} \citecode{type\& ref\_name = var\_name;} dimana \citecode{type} merupakan tipe data variabel, \citecode{ref\_name} merupakan nama dari \textit{reference} dan \citecode{var\_name} merupakan nama dari variabel. Sebagai contoh \parencite{hubbard2021programming} :
+\end{indentpar}
+
+\begin{code}[n]
+\begin{verbatim}
+ int& rn = n; // r is a synonym for n
+\end{verbatim}
+\end{code}
+\vspace{1ex}
+\begin{indentpar}
+    Variabel \citecode{rn} dideklarasikan sebagai sebuah \textit{reference} ke variabel \citecode{n}, yang harus telah terdeklarasi.
+\end{indentpar}
+
+\subsubsection{{\Dereference} (\citecode{*})}
+
+\begin{indentpar}
+    Nilai sebuah alamat yang ditunjuk oleh variabel {\pointer} diakses dengan menggunakan operator ini \parencite{achmad2018modul}. Operator {\indirect} dengan tanda {\asterisk} (\citecode{*}) ini artinya sebuah variabel yang diawali dengan operator ini diakses secara tidak langsung melalui alamatnya yang disimpan di variabel lain \parencite{munir2007algoritma}.
+\end{indentpar}
+
+\begin{code}[n]
+\begin{verbatim}
+Input = 25;
+Fred = Input;
+Ted = &Input;
+Beth = *Ted;
+\end{verbatim}
+\end{code}
+
+\end{document}
