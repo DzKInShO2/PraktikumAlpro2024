@@ -724,4 +724,240 @@ cout << strpad(8) << "2. Heal\n";
 
 {\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar aksi-aksi yang bisa diambil pemain pada saat sebuah \textit{monster} terdapat pada ruangan.
 
+\begin{code}
+\begin{verbatim}
+void game_update(Game* game) {
+  while (true) {
+    cout << ">>>>> ";
+    string arg;
+    getline(cin >> ws, arg);
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi di atas digunakan untuk mengambil masukan dari permainan.
+
+\begin{code}
+\begin{verbatim}
+if (game->rooms[game->current_room_id].monster_id > -1) {
+  int turn=(game->players[0].turn + game->players[1].turn) % 2;
+  int monster_id=game->rooms[game->current_room_id].monster_id;
+  bool valid = false;
+  if (arg == "1") {
+    if (turn == 0 && (game->players[0].turn) % 3 == 0) {
+      game->monsters[monster_id].cur_health
+                    -= (game->players[0].attack * 2);
+      cout << "\33[H\33[2J"; bar_draw();
+      center_draw(game->players[0].name + " Used Skill");
+      center_draw("\'ATK * 2 = 2ATK\'"); bar_draw(); pause();
+      cout << "\33[H\33[2J"; bar_draw();
+      center_draw(game->players[0].name);
+      center_draw("Deal Double Damage to "
+                  + game->monsters[monster_id].name);
+      bar_draw(); pause();
+    } else game->monsters[monster_id].cur_health
+                -= (game->players[turn].attack
+                - game->monsters[monster_id].defense);
+    valid = true;
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menyerang \textit{monster} dan juga mengatur apakah \textit{skill} pemain satu terjadi.
+
+\begin{code}
+\begin{verbatim}
+} if (arg == "2") {
+  game->players[turn].health += 50;
+  valid = true;
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menyembuhkan diri.
+
+\begin{code}
+\begin{verbatim}
+} if (arg == "3") {
+  if (game->players[turn].item_id != -1) {
+    item_use(game->items[game->players[turn].item_id],
+         game->players[turn]);
+    valid = true;
+  } else {
+    cout << "\33[H\33[2J"; bar_draw();
+    center_draw(game->players[turn].name + " Has No Item!");
+    bar_draw(); pause();
+  } }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menggunakan \textit{item}.
+
+\begin{code}
+\begin{verbatim}
+if (!valid) break; int saved_health = 0;
+if (turn == 1 && game->players[1].turn % 3 == 0)
+  saved_health = game->players[1].health;
+if (game->monsters[monster_id].turn % 5 == 0) {
+  for (int i = 0; i < 2; ++i)
+    game->players[i].health -= game->monsters[
+                  monster_id].attack;
+  cout << "\33[H\33[2J"; bar_draw();
+  center_draw(game->monsters[monster_id].name+" Used Skill");
+  center_draw("\'Equals Under the Sky!\'");
+  bar_draw(); pause();
+  cout << "\33[H\33[2J"; bar_draw();
+  center_draw(game->monsters[monster_id].name);
+  center_draw("Deal Damages To All Players!");
+  bar_draw(); pause();
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur \textit{skill} spesial \textit{monster} yang akan terjadi setiap 5 kali giliran \textit{monster}.
+
+\begin{code}
+\begin{verbatim}
+} else {
+  game->players[turn].health
+            -=(game->monsters[monster_id].attack
+            - game->players[turn].defense);
+  cout << "\33[H\33[2J";
+  bar_draw();
+  center_draw(game->monsters[monster_id].name
+              + " Attacked " + game->players[turn].name);
+  bar_draw(); pause(); }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur serangan tanpa \textit{skill} yang dilakukan \textit{monster}.
+
+\begin{code}
+\begin{verbatim}
+if (turn == 1 && game->players[1].turn % 3 == 0) {
+  game->players[1].health = saved_health;
+  cout << "\33[H\33[2J"; bar_draw();
+  center_draw(game->players[1].name + " Used Skill");
+  center_draw("\'Ih Apaan Sih!\'");
+  bar_draw(); pause();
+  cout << "\33[H\33[2J"; bar_draw();
+  center_draw(game->players[1].name);
+  center_draw("Ignore All Damage!");
+  bar_draw(); pause(); }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur \textit{skill} spesial pemain kedua yang akan terjadi setiap 3 kali giliran pemain dua.
+
+\begin{code}
+\begin{verbatim}
+game->players[turn].turn++;
+game->monsters[monster_id].turn++;
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan menambahkan nilai giliran pemain saat ini dan \textit{monster} setelah semua aksi terjadi.
+
+\begin{code}
+\begin{verbatim}
+if (game->monsters[monster_id].cur_health <= 0) {
+  cout << "\33[H\33[2J";
+  bar_draw(); center_draw("Congratulations!");
+  center_draw(game->monsters[monster_id].name +
+              " Has Been Slayed!");
+  bar_draw();game->rooms[game->current_room_id].monster_id=-1;
+  game->players[0].turn = game->players[1].turn = 1; pause();
+  for (int i = 0; i < 2; ++i)
+    game->players[i].health += 200;
+  if (monster_id == 1)
+    game->state = GAME_STATE_WIN; }
+for (int i = 0; i < 2; ++i) 
+  if (game->players[i].health <= 0)
+    game->state = GAME_STATE_LOSE;
+break; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut digunakan untuk mengatur kondisi permainan apakah menang atau kalah tergantung pada kondisi apakah salah satu pemain mati atau \textit{monster} bernama Leviathan kalah.
+
+\begin{code}
+\begin{verbatim}
+if (game->rooms[game->current_room_id].item_id > -1) {
+  bool found = false;
+  for (int i = 0; i < 2; ++i)
+    if (strup(game->players[i].name)
+      == strup(arg)) {
+      if (game->players[i].item_id == -1) {
+        game->players[i].item_id = game->rooms
+          [game->current_room_id].item_id;
+        game->rooms[game->current_room_id].item_id = -1;
+        found = true;
+        break;
+      } else {
+        cout << game->players[i].name
+           << "'s Inventory is full!"
+           << endl;
+      } } if (found) break;
+  cout << "Player not found!" << endl;
+  continue; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut digunakan untuk mengatur interaksi yang dapat dilakukan pemain bila terdapat \textit{item} dalam ruangan.
+
+\begin{code}
+\begin{verbatim}
+if (!game->rooms[game->current_room_id].has_branch) {
+  if (arg == "go" || arg == "next") {
+    if (game->rooms[game->current_room_id].next[0] == -1) {
+      break; }
+    game->current_room_id = game->rooms[
+                game->current_room_id].next[0];
+    break; }
+} else {
+  if (arg == "1") {
+    game->current_room_id = game->rooms[
+                game->current_room_id].next[0];
+    break; }
+  else if (arg == "2") {
+    game->current_room_id = game->rooms[
+                game->current_room_id].next[1];
+    break; } }
+if (arg == "back" &&
+  game->rooms[game->current_room_id].prev != -1) {
+  game->current_room_id = game->rooms[
+            game->current_room_id].prev;
+  break;
+} break; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut digunakan untuk mengatur interaksi yang dapat dilakukan pemain bila terdapat cabang ruangan selanjutnya.
+
+\begin{code}
+\begin{verbatim}
+if (game->state == GAME_STATE_LOSE) {
+  cout << "\33[H\33[2J";
+  bar_draw(); center_draw("One of you is dead");
+  center_draw("LOSE"); bar_draw();
+  pause(); game_destroy(game);
+  game = game_create(); } }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan membebaskan memori permainan dan memulai permainan baru saat keadaan permainan kalah.
+
+\begin{code}
+\begin{verbatim}
+int main() {
+  Game* game = game_create();
+  while (game->state == GAME_STATE_PLAYING ||
+       !(game->state == GAME_STATE_WIN))
+    game_draw(*game); game_update(game);
+  game_destroy(game);
+  cout << "\33[H\33[2J";
+  bar_draw(); center_draw("Congratulations!");
+  center_draw("You've finished the game!");
+  bar_draw(); pause(); return 0; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan fungsi \citecode{main} dari program \textit{Dungeon Crawler RPG}. Fungsi tersebut akan memanggil fungsi-fungsi sebelumnya untuk menjalankan keseluruhan permainan.
+
 \end{document}
