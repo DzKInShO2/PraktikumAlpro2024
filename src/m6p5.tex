@@ -475,9 +475,253 @@ void item_info(const Item& item) {
 \end{verbatim}
 \end{code}
 
-% Placeholder
-{\Script} di atas merupakan potongan bawah dari fungsi \citecode{map\_draw} yang akan digunakan untuk menggambar letak pemain. Letak pemain digambar dengan cara menggerakan kursor konsol ke posisi pemain saat ini menggunakan karakter ANSI.
-% Placeholder
+{\Script} di atas merupakan sebuah fungsi yang akan menunjukan properti dari sebuah objek \citecode{Item}. Properti tersebut seperti apakah objek \citecode{Item} tersebut menambah kehidupan, pertahanan dan kekuatan serangan atau menguranginya.
 
+\begin{code}
+\begin{verbatim}
+void item_use(const Item& item, Player& player) {
+  player.health += item.health;
+  player.attack += item.attack;
+  player.defense += item.defense;
+  player.item_id = -1;
+  cout << "\33[H\33[2J";
+  bar_draw();
+  center_draw(player.name + " Used " + item.name);
+  item_info(item);
+  bar_draw();
+  pause(); }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan sebuah fungsi yang akan mengubah keadaan pemain sesuai parameter \citecode{Item} yang dimasukan. Perubahan yang bisa terjadi seperti menambah kehidupan, menambah pertahanan dan menambah kekuatan serangan.
+
+\begin{code}
+\begin{verbatim}
+Game *game_create() {
+  Game *game = new Game;
+  game->state = GAME_STATE_PLAYING;
+  game->current_room_id = 0;
+  game->players[0] = { 1000, 150, 30, -1, 1, "Holil" };
+  game->players[1] = { 1000, 100, 75, -1, 1, "Gilang" };
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_create}. Fungsi \citecode{game\_create} itu sendiri digunakan untuk menginisialisasikan sebuah permainan seperti contohnya diatas \citecode{game->players[0] = { 1000, 150, 30, -1, 1, "Holil" };} yang mengisi data-data terkait pemain 1.
+
+\begin{code}
+\begin{verbatim}
+game->monsters[0] = {
+  950, 950, 140, 10, 1,
+  "Phoenix",
+  "\t\t  ///,    ////\n"
+  "\t\t  \\ /,    / .>.\n"
+  "\t\t   \\  /,   _/` /.\n"
+  "\t\t    \\_ /_/  /.\n"
+  "\t\t     \\_/  .<\n"
+  "\t\t     /<<<<\\\\\n"
+  "\t\t    /,)^>>.\\\\\n"
+  "\t\t    (/   \\\\ /\\\\\\\n"
+  "\t\t       //  ```` \n"
+  "\t\t      ((``" };
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data terkait sebuah \textit{monster} yang bernama Phoenix. \textit{Monster} tersebut memiliki kehidupan sebanyak 950, kekuatan serangan sebanyak 140 dan perhatanan sebanyak 10.
+
+\begin{code}
+\begin{verbatim}
+game->monsters[1] = {
+  5000, 5000, 350, 50, 1,
+  "Leviathan",
+  "\n"
+  "\t\t     ,--._____,-.\n"
+  "\t\t     ,___\\.--.,.--./\n"
+  "\t\t  ((__@@/ /     \\\n"
+  "\t\t   (.`\\@@/ / (|)' '(|) \\\n"
+  "\t\t  *'@@ /|''\\--,:___:,--/\n"
+  "\t\t/ @,--/|(~~`\\_ V   V _/\n"
+  "\t\t|\"---< | \\  \\\\ _ //\n"
+  "\t\t|>----<\\ @)  ;~~~;\n"
+  "\t\t\\(>-----<\\@\")" };
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data terkait sebuah \textit{monster} yang bernama Leviathan. \textit{Monster} tersebut memiliki kehidupan sebanyak 5000, kekuatan serangan sebanyak 350 dan perhatanan sebanyak 50.
+
+\begin{code}
+\begin{verbatim}
+game->items[0] = { 6999, 0, 0, "Health Potion" };
+game->items[1] = { 0, 6999, 0, "Attack Potion" };
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data-data terkait semua \textit{item} yang tersedia pada permainan seperti \textit{Health Potion} dan \textit{Attack Potion}.
+
+\begin{code}
+\begin{verbatim}
+game->rooms[0] = { -1, -1, false, -1,     
+  { 1, -1 }, "000" };
+game->rooms[1] = { -1, -1, false, 0,    
+  { 2, -1 }, "111" };
+game->rooms[2] = { -1, -1, true, 1,     
+  { 3, 5 }, "222" };
+game->rooms[3] = { 0, 0, false, 2,    
+  { 4, -1 }, "Skyreach Isle" };
+game->rooms[4] = { -1, 1, false, 3,     
+  { -1, -1 }, "333" };
+game->rooms[5] = { -1, -1, false, 2,    
+  { 6, -1 }, "555" };
+game->rooms[6] = { 1, -1, false, 5,     
+  { -1, -1 }, "Abyssia Ocean" };
+return game; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data-data terkait semua ruangan yang tersedia dalam permainan. Ruangan-ruangan tersebut berupa \citecode{000}, \citecode{111}, \citecode{222}, \citecode{Skyreach Isle}, \citecode{333}, \citecode{555} dan \citecode{Abyssia Ocean}.
+
+\begin{code}
+\begin{verbatim}
+void game_destroy(Game *game) {
+  delete game; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan sebuah fungsi yang digunakan untuk membebaskan memori yang dialokasikan untuk permainan atau struktur data \citecode{game\_destroy}. {\Statement} \citecode{delete} ialah {\statement} yang digunakan untuk membebaskan memori yang telah dialokasikan.
+
+\begin{code}
+\begin{verbatim}
+void game_draw(const Game& game) {
+  cout << "\33[H\33[2J";
+  bool no_monster=!(game.rooms[game.current_room_id].monster_id>-1);
+  if (no_monster) { bar_draw();
+    center_draw("Room : " + game.rooms[game.current_room_id].name);
+  } else center_draw("There's monster here...");
+  bar_draw();
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar bagian atas layar permainan yang menunjukan isi dari sebuah ruangan.
+
+\begin{code}
+\begin{verbatim}
+bar_draw();
+if (no_monster) {
+  map_draw(game.current_room_id);
+  if (game.rooms[game.current_room_id].item_id > -1) {
+    const Item& item = game.items[game.rooms
+              [game.current_room_id].item_id];
+    bar_draw(); center_draw("You found an item");
+    center_draw(item.name); item_info(item); bar_draw();
+    cout << strpad(8) << "Who's gonna take it?" << endl;
+    cout << strpad(8) << " * " << game.players[0].name << endl;
+    cout << strpad(8) << " * " << game.players[1].name << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar aksi yang bisa dilakukan pemain saat suatu ruangan berisi \textit{item}.
+
+\begin{code}
+\begin{verbatim}
+} else {
+  const Room& room = game.rooms[game.current_room_id];
+  bar_draw();center_draw("There's nothing here...");bar_draw();
+  if (room.next[0] != -1) {
+    if (room.has_branch) {
+      cout << strpad(8) << "Choose next room...\n"
+      cout << strpad(8) << "1. "
+         << game.rooms[room.next[0]].name << endl;
+      cout << strpad(8) << "2. "
+         << game.rooms[room.next[1]].name << endl;
+    } else cout << strpad(8) << "Go next room = "
+         << game.rooms[room.next[0]].name << endl;
+  } else {
+    center_draw("There are no other room forward...");
+            bar_draw();}
+  cout << strpad(8) << "Go back" << endl; }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar aksi yang bisa dilakukan pemain saat suatu ruangan tak berisi apapun.
+
+\begin{code}
+\begin{verbatim}
+} else {
+  const Monster& monster = game.monsters[
+          game.rooms[game.current_room_id].monster_id];
+  cout << monster.sprite << endl;
+  bar_draw(); center_draw(monster.name); bar_draw();
+  center_draw(strint(monster.max_health) +
+              " : " + strint(monster.cur_health));
+  center_draw("Atk : " + strint(monster.attack));
+  center_draw("Def : " + strint(monster.defense));
+  center_draw("Turn : " + strint(monster.turn)); bar_draw();
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar properti \textit{monster} ketika sebuah ruangan berisi \textit{monster}.
+
+\begin{code}
+\begin{verbatim}
+cout << "| |" << game.players[0].name
+        + " : " + strint(game.players[0].health);
+cout << strpad(45 -(strlen(game.players[0].name
+        + " : " + strint(game.players[0].health))
+        + strlen(strint(game.players[1].health)
+        + " : " + game.players[1].name)));
+cout << strint(game.players[1].health) + " : "
+        + game.players[1].name << "| |" << endl;
+cout << "| |" << "Atk : " + strint(game.players[0].attack);
+cout << strpad(45 -(strlen("Atk : "
+            +strint(game.players[0].attack))
+            + strlen(strint(game.players[1].attack)
+            + " : Atk")));
+cout << strint(game.players[1].attack)
+        + " : Atk" << "| |" << endl;
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar properti nama, kehidupan dan kekuatan serangan kedua pemain.
+
+\begin{code}
+\begin{verbatim}
+cout << "| |" << "Def : " + strint(game.players[0].defense);
+cout << strpad(45 -(strlen("Def : "
+        + strint(game.players[0].defense))
+        + strlen(strint(game.players[1].defense) + " : Def")));
+cout << strint(game.players[1].defense)
+        + " : Def" << "| |" << endl;
+cout << "| |" << "Turn : " + strint(game.players[0].turn);
+cout << strpad(45 -(strlen("Turn : "
+          + strint(game.players[0].turn))
+          + strlen(strint(game.players[1].turn) + " : Turn")));
+cout << strint(game.players[1].turn) + " : Turn"<<"| |"<<endl;
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar properti pertahanan dan giliran kedua pemain.
+
+\begin{code}
+\begin{verbatim}
+int turn = (game.players[0].turn + game.players[1].turn) % 2;
+if (turn == 0) cout << "\33[21;" << (7
+        + strlen(game.players[0].name
+        + strint(game.players[0].health))) << "H<==";
+else if(turn == 1) cout << "\33[21;" << (41
+              - strlen(game.players[0].name
+              + strint(game.players[0].health))) << "H==>";
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar panah yang akan menunjukan pemain mana yang memiliki giliran kali ini.
+
+\begin{code}
+\begin{verbatim}
+cout << "\e8"; bar_draw(); cout << strpad(8) << "1. Attack\n";
+cout << strpad(8) << "2. Heal\n";
+    cout << strpad(8) << "3. Item\n"; } }
+\end{verbatim}
+\end{code}
+
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar aksi-aksi yang bisa diambil pemain pada saat sebuah \textit{monster} terdapat pada ruangan.
 
 \end{document}
