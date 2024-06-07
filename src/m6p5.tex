@@ -891,8 +891,7 @@ if (game->rooms[game->current_room_id].item_id > -1) {
         break;
       } else {
         cout << game->players[i].name
-           << "'s Inventory is full!"
-           << endl;
+           << "'s Inventory is full!\n";
       } } if (found) break;
   cout << "Player not found!" << endl;
   continue; }
@@ -905,26 +904,20 @@ if (game->rooms[game->current_room_id].item_id > -1) {
 \begin{verbatim}
 if (!game->rooms[game->current_room_id].has_branch) {
   if (arg == "go" || arg == "next") {
-    if (game->rooms[game->current_room_id].next[0] == -1) {
-      break; }
+    if (game->rooms[game->current_room_id].next[0] == -1) break;
     game->current_room_id = game->rooms[
-                game->current_room_id].next[0];
-    break; }
+                game->current_room_id].next[0]; break; }
 } else {
   if (arg == "1") {
     game->current_room_id = game->rooms[
-                game->current_room_id].next[0];
-    break; }
+                game->current_room_id].next[0]; break; }
   else if (arg == "2") {
     game->current_room_id = game->rooms[
-                game->current_room_id].next[1];
-    break; } }
+                game->current_room_id].next[1]; break; } }
 if (arg == "back" &&
   game->rooms[game->current_room_id].prev != -1) {
   game->current_room_id = game->rooms[
-            game->current_room_id].prev;
-  break;
-} break; }
+            game->current_room_id].prev; break; } break; }
 \end{verbatim}
 \end{code}
 
@@ -958,6 +951,6 @@ int main() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan fungsi \citecode{main} dari program \textit{Dungeon Crawler RPG}. Fungsi tersebut akan memanggil fungsi-fungsi sebelumnya untuk menjalankan keseluruhan permainan.
+{\Script} di atas merupakan fungsi \citecode{main} dari program \textit{Dungeon Crawler RPG}. Fungsi tersebut akan memanggil fungsi-fungsi sebelumnya untuk menjalankan keseluruhan permainan dan memunculkan layar kemenangan.
 
 \end{document}
