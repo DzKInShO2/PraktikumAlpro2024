@@ -33,7 +33,7 @@ Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari
 
 \subsubsection{{\Header} {\file}}
 
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     {\Header} {\file} atau berkas {\header} (berekstensi \citecode{.h}) adalah berkas yang berisi prototipe fungsi, definisi konstanta dan definisi variabel. Prototipe fungsi berupa judul suatu fungsi yang dilengkapi dengan argumen dan tipe argumen serta tipe nilai balik untuk fungsi yang memberikan nilai balik \parencite{kadir2005heriyanto}. {\Header} {\file} merupakan sebuah tempat memasukkan suatu fungsi sebagai perintah. {\Header} {\file} dipanggil menggunakan {\directive} \citecode{\#include}. Beberapa contoh {\header} {\file} antara lain \parencite{friyadi2005panduan}:
 \end{indentpar}
 \paragraph{\citecode{math.h}	: Menggunakan operasi matematika.}
@@ -42,7 +42,7 @@ Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari
 
 \subsubsection{{\Preprocessor} {\Directive} (\citecode{\#include})}
 
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     {\Preprocessor} {\directive} adalah suatu perintah yang digunakan untuk mengatur {\compiler} agar membaca {\header} {\file} yang disertakan di belakang kata \citecode{include} saat pelaksanaan aplikasi. {\Preprocessor} {\directive} merupakan perintah yang didahului dengan tanda \citecode{\#}. Lalu penulisannya tanpa spasi dan disertakan dengan {\header} {\file} yaitu {\file} yang berisi sebagai {\file} deklarasi \parencite{kadir2005heriyanto}. Contoh penulisannya:
 \end{indentpar}
 
@@ -53,22 +53,22 @@ Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari
 \end{code}
 
 \subsubsection{Fungsi \citecode{main}}
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     Fungsi \citecode{main} adalah fungsi yang akan dijalankan pertama kali ketika program dieksekusi, sedangkan tubuh fungsi dimulai dari tanda “\{” hingga tanda “\}. Tanda \citecode{()} digunakan untuk mengapit argumen fungsi, yaitu nilai yang akan dilewatkan ke fungsi. Contoh \citecode{int main}, kata \citecode{int} di depan \citecode{main} menyatakan bahwa program memberikan nilai balik yang bertipe \citecode{int}. Tipe \citecode{int} adalah tipe yang menyatakan bilangan bulat \parencite{kadir2005heriyanto}.
 \end{indentpar}
 
 \subsubsection{{\Statement}}
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     {\Statement} atau pernyataan adalah suatu perintah yang dapat berdiri sendiri dalam melaksanakan suatu aksi dan dijalankan ketika program dieksekusi. Setiap pernyataan ditulis dengan diakhiri tanda titik-koma atau {\semicolon} \citecode{;} \parencite{friyadi2005panduan}.
 \end{indentpar}
 
 \subsubsection{{\Semicolon}}
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     Tanda {\semicolon} \citecode{;} digunakan untuk mengakhiri sebuah pernyataan. Setiap pernyataan harus diakhiri dengan sebuah tanda {\semicolon}. Apabila {\statement} atau pernyataan tidak diakhiri dengan tanda {\semicolon} maka dianggap {\error} oleh {\compiler}, karena merupakan pernyataan yang tidak lengkap \parencite{kadir2005heriyanto}.
 \end{indentpar}
 
 \subsubsection{Komentar}
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     Komentar adalah bagian dari program yang diabaikan oleh {\compiler}. Tidak melaksanakan aksi apapun. Dalam C++ terdapat dua cara menuliskan komentar, yaitu \parencite{kadir2005heriyanto}:
 \end{indentpar}
 
@@ -79,12 +79,12 @@ Bahasa pemrograman C++ merupakan bahasa pemrograman yang tidak pernah lepas dari
 Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam program. Tipe data terbagi menjadi dua jenis sebagai berikut \parencite{friyadi2005panduan}:
 
 \subsubsection{Tipe Data Dasar}
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     Tipe data ini tergolong tipe data yang sering digunakan. Macam-macam tipe data dasar adalah sebagai berikut:
 \end{indentpar}
 \newpage
 \paragraphf{Tipe Bilangan Bulat}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Tipe bilangan bulat adalah data-data angka yang tidak mengandung angka di belakang koma. Macam-macam tipe bilangan bulat sebagai berikut:
 \end{indentpar}
 
@@ -105,7 +105,7 @@ Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam 
 \vspace{-2em}
 
 \paragraph{Tipe Bilangan Riil}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Tipe bilangan riil adalah data-data angka yang mengandung angka dibelakang koma. Macam-macam tipe bilangan riil sebagai berikut:
 \end{indentpar}
 \begin{indentpar}[n]
@@ -119,7 +119,7 @@ Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam 
 \vspace{-2em}
 
 \paragraph{Tipe Karakter}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Tipe karakter adalah tipe yang digunakan mempresentasikan data bertipe karakter, seperti \citecode{A}, \citecode{a}, \citecode{9}, \citecode{\&} dan sebagainya. Macam-macam tipe karakter sebagai berikut:
 \end{indentpar}
 
@@ -135,27 +135,27 @@ Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam 
 \vspace{-2em}
 
 \subsubsection{Tipe Data Bentukan}
-\begin{indentpar}
+\begin{indentpar}\hpar{}
     Tipe data bentukan adalah tipe data yang dibuat sendiri sesuai kebutuhan dalam program yang akan dibuat. Tipe ini lebih dikenal dengan sebutan dalam bahasa asing, yaitu {\user} {\defined} {\types}. Adapun yang termasuk ke dalam tipe data bentukan, antara lain \parencite{friyadi2005panduan}:
 \end{indentpar}
 \newpage
 \paragraphf{Tipe Data Struktur}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Sesuai dengan namanya, tipe data struktur adalah tipe data bentukan yang menyimpan lebih dari satu variabel bertipe sama ataupun berbeda. Jika kita telah membuat tipe data bentukan baru yang berjenis struktur, tentu kita akan menggunakannya di dalam pendeklarasian sebuah variabel. Pada saat itu, kita harus melakukan pengaksesan terhadap isi dari struktur tersebut dengan operator titik (\citecode{.}).
 \end{indentpar}
 
 \paragraph{Tipe Data Enumerasi}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Tipe enumerasi adalah tipe data yang nilainya terbatas pada nilai-nilai yang telah didefinisikan saja. Tipe enumerasi digunakan untuk membentuk tipe data yang nilainya bersifat pasti.
 \end{indentpar}
 
 \paragraph{Tipe Data {\sArray}}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Tipe data {\sarray} merupakan tipe data yang terdiri dari tipe data yang lain, termasuk ke dalam salah satu tipe data terstruktur (\textit{structured data type}) yang terdiri dari sejumlah komponen-komponen yang mempunyai tipe data yang sama.
 \end{indentpar}
 
 \paragraph{Tipe Data {\sString}}
-\begin{indentpar}[n]
+\begin{indentpar}[n]\hpar{}
     Tipe data {\sstring} adalah tipe data yang menampung kumpulan karakter, kata, atau kalimat.
 \end{indentpar}
 
