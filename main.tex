@@ -490,21 +490,22 @@
     \newpage
 
     % Add table of contents
+    \setcounter{page}{1}
     \protect\pagestyle{plain}
-    \setcounter{page}{0}
-    \tableofcontents
     \addcontentsline{toc}{chapter}{DAFTAR ISI}
+    \tableofcontents
+    \phantomsection
 
     \protect\pagestyle{plain}
+    \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
     \begingroup
     \let\numberline\cftlotnumberline
     \listoffigures
     \endgroup
-    \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
 
+    \addcontentsline{toc}{chapter}{DAFTAR TABEL}
     \protect\pagestyle{plain}
     \listoftables
-    \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 
     \newpage
 
