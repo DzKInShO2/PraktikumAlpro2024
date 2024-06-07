@@ -11,37 +11,40 @@
 
 \setcounter{tocdepth}{1}
 
+\renewcommand*{\cftdot}{\normalfont.}
+
 \setlength{\cftbeforechapskip}{0pt}
 \renewcommand*{\cftchapfont}{\normalfont}
+\renewcommand*{\cftchapdotsep}{\cftdotsep}
 \renewcommand*{\cftchappagefont}{\normalfont}
 \renewcommand*{\cftsecindent}{0pt}
 \addtolength{\cftsecnumwidth}{0.5ex}
 
 \newcommand*{\loflabel}{Gambar}
 \renewcommand*{\cftfigpresnum}{\loflabel\hspace*{0.4em}}
-\renewcommand*{\cftfigaftersnumb}{\hspace*{1.25ex}}
+\renewcommand*{\cftfigaftersnumb}{\hspace*{0.5em}}
 \renewcommand*{\cftfigdotsep}{\cftdotsep}
+\renewcommand*{\cftfigindent}{0pt}
 
 \makeatletter
 \newcommand*{\cftlotnumberline}[1]{\@cftbsnum #1\@cftasnum\@cftasnumb}
 \makeatother
 
 \renewcommand*{\cfttabpresnum}{Tabel }
+\renewcommand*{\cfttabindent}{0pt}
 \addtolength{\cfttabnumwidth}{4ex}
 
-\renewcommand*{\contentsname}{
-    \normalsize
+\renewcommand*{\contentsname}{\normalsize
+    \vspace{0.4em}
     DAFTAR ISI
-    \addcontentsline{toc}{chapter}{DAFTAR ISI}
+    \vspace{-0.6em}
 }
 
 \renewcommand{\listfigurename}{\normalsize
     DAFTAR GAMBAR
-    \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
 }
 \renewcommand{\listtablename}{\normalsize
     DAFTAR TABEL
-    \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 }
 
 \newcommand*{\chsize}{\fontsize{16pt}{12pt} \selectfont}
@@ -444,15 +447,20 @@
     \pagenumbering{roman}
 
     % Add table of contents
+    \protect\pagestyle{plain}
     \tableofcontents
-    {\protect\thispagestyle{plain}}
+    \addcontentsline{toc}{chapter}{DAFTAR ISI}
+
+    \protect\pagestyle{plain}
     \begingroup
     \let\numberline\cftlotnumberline
     \listoffigures
     \endgroup
-    {\protect\thispagestyle{plain}}
+    \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+
+    \protect\pagestyle{plain}
     \listoftables
-    {\protect\thispagestyle{plain}}
+    \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 
     \newpage
 
