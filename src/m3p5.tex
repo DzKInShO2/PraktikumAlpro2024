@@ -25,7 +25,9 @@ using namespace std;
 cout<<"=========== BERMAIN DENGAN MATRIKS ============\n";int m,n; 
 cout<<"Masukan jumlah baris matriks: ";cin>>n;
 cout<<"Masukan jumlah kolom matriks: ";cin>>m; cin.clear();
-int matrix[m * n];cout<<"Masukan elemen matriks:\n";cin.ignore();
+int matrix[m * n];
+cout<<"Masukan elemen matriks:\n";
+cin.ignore();
 \end{verbatim}
 \end{code}
 
@@ -122,7 +124,8 @@ int l = 0; while (text[l++] != '\0') {}
 \begin{code}
 \begin{verbatim}
 cout << "\nHasil  Enkripsi dengan Reverse Cipher:\n";
-for (int i = l - 2; i >= 0; --i) cout << text[i];
+for (int i = l - 2; i >= 0; --i)
+  cout << text[i];
 \end{verbatim}
 \end{code}
 
@@ -137,7 +140,8 @@ for (int i = l - 2; i >= 0; --i) {
     continue;
   }
   char c = text[i] + key;
-  if (text[i] >= 'a' && text[i] <= 'z'
+  if (text[i] >= 'a'
+    && text[i] <= 'z'
     && c - 'z' > 0) {
     c = '`' + (c - 'z');
   } else if (text[i] >= 'A'
@@ -177,7 +181,7 @@ int main() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan \textit{entry point} setiap program yang ditulis di bahasa C++. Fungsi tersebut pasti atau wajib akan dieksekusi pada awal jalannya sebuah program yang ditulis pada bahasa C++.
+{\Script} di atas merupakan \textit{entry point} setiap program yang ditulis di bahasa pemrograman C++. Fungsi tersebut pasti atau wajib akan dieksekusi pada awal jalannya sebuah program yang ditulis pada bahasa pemgoraman C++.
 
 \begin{code}
 \begin{verbatim}

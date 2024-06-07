@@ -15,7 +15,10 @@ using namespace std;
 \begin{code}
 \begin{verbatim}
 const int user_max = 20;
-string users[user_max * 2] = { [0] = "admin", [1] = users[0] };
+string users[user_max * 2] = {
+  [0] = "admin",
+  [1] = users[0]
+};
 bool user_membership[user_max];
 int user_bills[user_max];
 int user_logged_id = -1;
@@ -35,7 +38,8 @@ int app_state = 0;
 \begin{verbatim}
 void pause() {
   cout << "Press any key to continue. . .\n";
-  cin.clear(); cin.ignore(); cin.get(); }
+  cin.clear(); cin.ignore(); cin.get();
+}
 \end{verbatim}
 \end{code}
 
@@ -92,7 +96,8 @@ bool signin(string name, string password) {
   user_membership[user_count] = false;
   user_bills[user_count] = 0;
   user_count++;
-  return true; }
+  return true;
+}
 \end{verbatim}
 \end{code}
 
@@ -107,7 +112,7 @@ void topbar() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut digunakan untuk mencetak {\header} atau \textit{bar} pada bagian atas program ketika program dijalankan.
+{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut digunakan untuk mencetak {\header} atau \textit{bar} pada bagian atas program ketika fungsi tersebut dipanggil dalam program.
 
 \begin{code}
 \begin{verbatim}
@@ -239,7 +244,9 @@ void logged_page() {
           cout << "Anda berhasil mendaftar sebagai member\n";
           user_membership[user_logged_id] = true; }
       } app_state = 1; pause();
-    } break; } }
+    } break;
+  }
+}
 \end{verbatim}
 \end{code}
 
@@ -272,7 +279,8 @@ void admin_page() {
           if (app_state >> 4 == 0) cout << "~ ";
           else cout << i + 1 << ". ";
           cout << foods[i] << " (Rp. "
-             << food_prices[i] << ")\n";
+             << food_prices[i]
+             << ")\n";
         }
         if (app_state >> 4 != 0)
           cout << food_count + 1 << ". Kembali\n";
@@ -326,15 +334,16 @@ void admin_page() {
 
 \begin{code}
 \begin{verbatim}
-    case 2: {
-      cout << "Data Penyewa\n";
-      for (int i = 1; i < user_count; ++i) {
-        cout << i << ". " << "Username: "
-           << users[i * 2] << " (Rp."
-           << user_bills[i] << ")\n";
-      }
-      app_state = 1; pause();
-    } break; } }
+case 2: {
+  cout << "Data Penyewa\n";
+  for (int i = 1; i < user_count; ++i) {
+    cout << i << ". " << "Username: "
+       << users[i * 2] << " (Rp."
+       << user_bills[i]
+       << ")\n";
+  }
+  app_state = 1; pause();
+} break; }}
 \end{verbatim}
 \end{code}
 

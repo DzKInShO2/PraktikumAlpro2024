@@ -29,8 +29,9 @@ string wagon_types[] = {
 \begin{code}
 \begin{verbatim}
 void pause() {
-cout << "Press any key to continue. . .\n";
-cin.clear(); cin.ignore(); cin.get(); }
+  cout << "Press any key to continue. . .\n";
+  cin.clear(); cin.ignore(); cin.get();
+}
 \end{verbatim}
 \end{code}
 
@@ -39,8 +40,8 @@ cin.clear(); cin.ignore(); cin.get(); }
 \begin{code}
 \begin{verbatim}
 void input_invalid() {
-cin.clear(); cin.ignore();
-cout << "Masukan tidak valid\n"; }
+  cin.clear(); cin.ignore();
+  cout << "Masukan tidak valid\n"; }
 \end{verbatim}
 \end{code}
 
@@ -60,7 +61,7 @@ while (true) {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan sebuah fungsi dengan kembalian berupa \citecode{int} atau bilangan bulat. Fungsi tersebut akan menyaring masukan dari pengguna sesuai kedua parameter fungsi \citecode{int l} dan \citecode{int u}.
+{\Script} di atas merupakan sebuah fungsi dengan kembalian berupa \citecode{int} atau bilangan bulat. Fungsi tersebut akan menyaring masukan dari pengguna sesuai masukan kedua parameter fungsi \citecode{int l} dan \citecode{int u}.
 
 \begin{code}
 \begin{verbatim}
