@@ -51,6 +51,7 @@
     \vspace{-0.6em}
 }
 
+\newcommand*{\tlsize}{\fontsize{18pt}{12pt} \selectfont}
 \newcommand*{\chsize}{\fontsize{16pt}{12pt} \selectfont}
 \newcommand*{\hfsize}{\fontsize{11pt}{12pt} \selectfont}
 \newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
@@ -467,6 +468,10 @@
 \Crefname{table}{\bfseries Tabel}{\bfseries Tabel-Tabel}
 %%% %%%
 
+%%% BACKGROUND AND OVERLAYS %%
+\definecolor{bgcol}{RGB}{182, 221, 232}
+%%% %%%
+
 \begin{document}
     % Sloppy lettering
     \sloppy
@@ -479,8 +484,14 @@
     \renewcommand*{\theparagraph}{\alph{paragraph}.}
     \pagenumbering{roman}
 
+    % Title
+    \pagestyle{empty}
+    \subfile{src/title.tex}
+    \newpage
+
     % Add table of contents
     \protect\pagestyle{plain}
+    \setcounter{page}{0}
     \tableofcontents
     \addcontentsline{toc}{chapter}{DAFTAR ISI}
 
