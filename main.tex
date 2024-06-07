@@ -9,6 +9,8 @@
 
 \usepackage[titles]{tocloft}
 
+\usepackage{tikz}
+
 \setcounter{tocdepth}{1}
 
 \renewcommand*{\cftdot}{\normalfont.}
@@ -53,6 +55,7 @@
 
 \newcommand*{\tlsize}{\fontsize{18pt}{12pt} \selectfont}
 \newcommand*{\chsize}{\fontsize{16pt}{12pt} \selectfont}
+\newcommand*{\hdsize}{\fontsize{14pt}{12pt} \selectfont}
 \newcommand*{\hfsize}{\fontsize{11pt}{12pt} \selectfont}
 \newcommand*{\cpsize}{\fontsize{10pt}{12pt} \selectfont}
 
@@ -130,6 +133,12 @@
     \fancyfoot[R]{{\thepage}}
 }
 
+\fancypagestyle{emptywithrule}{
+    \fancyhf{}
+
+    \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
+}
+
 \renewcommand{\headrule}{
     {\color[RGB]{68, 114, 196} \hrule width \hsize \kern 0.5mm \hrule width \hsize height 3pt}
 }
@@ -192,13 +201,28 @@
     \stepcounter{section}
     \noindent\textbf{\thesection\hspace{1ex}#1}
     \vspace{0.0pt}
+    \phantomsection
     \addcontentsline{toc}{section}{\thesection\hspace{2.85ex}#1}
 }
 
 % Numberless chapter command
 \newcommand*{\chapterf}[2][]{
-    \newpage
     \stepcounter{chapter}
+
+    \newpage
+    \pagecolor{bgcol}
+    \thispagestyle{empty}
+    \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[scale=1.2]{res/logo.png}};
+    \begin{center}
+        \tlsize\bfseries
+        \vspace*{18em}
+        MODUL \Roman{chapter}
+
+        \MakeUppercase{#2}
+    \end{center}
+    \newpage
+    \addtocounter{page}{-1}
+    \pagecolor{white}
     \chapter*{
         MODUL {\Roman{chapter}}\\
         \vspace{1ex}
@@ -489,6 +513,13 @@
     \subfile{src/title.tex}
     \newpage
 
+    \pagestyle{empty}
+    \subfile{src/valid.tex}
+    \newpage
+    
+    \subfile{src/cc.tex}
+    \newpage
+
     % Add table of contents
     \setcounter{page}{1}
     \protect\pagestyle{plain}
@@ -717,6 +748,9 @@
         \vspace{1ex}
         DAFTAR PUSTAKA}
     ]
+    \thispagestyle{emptywithrule}
     \phantomsection
     \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+    \pagestyle{empty}
+    \subfile{src/la.tex}
 \end{document}
