@@ -167,6 +167,24 @@
 \titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
 \titlespacing*{\paragraph}{0.845cm}{0pt}{0pt}
 
+\newcommand*{\paragraphf}[1]{
+    \stepcounter{paragraph}
+    \noindent\hspace{0.845cm}\theparagraph\hspace{2.4ex}#1
+    \vspace{-0.5ex}
+}
+
+\newcommand*{\subsubsectionf}[1]{
+    \stepcounter{subsubsection}
+    \noindent\thesubsubsection\hspace{2.8ex}#1
+    \vspace{0.0pt}
+}
+
+\newcommand*{\subsectionf}[1]{
+    \stepcounter{subsection}
+    \noindent\textbf{\thesubsection\hspace{0.8ex}#1}
+    \vspace{0.0pt}
+}
+
 \newcommand*{\sectionf}[1]{
     \stepcounter{section}
     \noindent\textbf{\thesection\hspace{1ex}#1}
@@ -482,127 +500,199 @@
 
     \chapterf{Pemrograman Dasar}
     \section{TUJUAN PRAKTIKUM}
+
     \subfile{src/m1p1.tex}
+
     \section{DASAR TEORI}
+
     \subfile{src/m1p2.tex}
+
     \newpage
     \sectionf{PERMASALAHAN}
+
     \subfile{src/m1p3.tex}
+
     \newpage
     \sectionf{HASIL PERCOBAAN}
+
     \subfile{src/m1p4.tex}
+
     \newpage
     \setlength{\parindent}{0.75cm}
     \sectionf{ANALISIS DATA}
+
     \subfile{src/m1p5.tex}
+
     \newpage
     \sectionf{KESIMPULAN}
+
     \subfile{src/m1p6.tex}
+
     \setlength{\parindent}{1.0cm}
     \newpage
 
     \chapterf[{\Statement} {\Control} dan {\Looping}]{Statement Control dan Looping}
     \section{TUJUAN PRAKTIKUM}
+
     \subfile{src/m2p1.tex}
+
     \section{DASAR TEORI}
+
     \subfile{src/m2p2.tex}
+
     \newpage
     \sectionf{PERMASALAHAN}
+
     \subfile{src/m2p3.tex}
+
     \newpage
     \sectionf{HASIL PERCOBAAN}
+
     \subfile{src/m2p4.tex}
+
     \newpage
     \setlength{\parindent}{0.75cm}
     \sectionf{ANALISIS DATA}
+
     \subfile{src/m2p5.tex}
+
     \newpage
     \sectionf{KESIMPULAN}
+
     \subfile{src/m2p6.tex}
+
     \setlength{\parindent}{1.0cm}
     \newpage
 
     \chapterf[\textit{Array}]{Array}
     \section{TUJUAN PRAKTIKUM}
+
     \subfile{src/m3p1.tex}
+
     \section{DASAR TEORI}
+
     \subfile{src/m3p2.tex}
+
     \newpage
     \sectionf{PERMASALAHAN}
+
     \subfile{src/m3p3.tex}
+
     \newpage
     \sectionf{HASIL PERCOBAAN}
+
     \subfile{src/m3p4.tex}
+
     \newpage
     \setlength{\parindent}{0.75cm}
     \sectionf{ANALISIS DATA}
+
     \subfile{src/m3p5.tex}
+
     \newpage
     \sectionf{KESIMPULAN}
+
     \subfile{src/m3p6.tex}
+
     \setlength{\parindent}{1.0cm}
     \newpage
 
     \chapterf[{\textit{Function}}]{Function}
     \section{TUJUAN PRAKTIKUM}
+
     \subfile{src/m4p1.tex}
+
     \section{DASAR TEORI}
+
     \subfile{src/m4p2.tex}
+
     \newpage
     \sectionf{PERMASALAHAN}
+
     \subfile{src/m4p3.tex}
+
     \newpage
     \sectionf{HASIL PERCOBAAN}
+
     \subfile{src/m4p4.tex}
+
     \newpage
     \setlength{\parindent}{0.75cm}
     \sectionf{ANALISIS DATA}
+
     \subfile{src/m4p5.tex}
+
     \newpage
     \sectionf{KESIMPULAN}
+
     \subfile{src/m4p6.tex}
+
     \setlength{\parindent}{1.0cm}
     \newpage
 
     \chapterf[\textit{Struct}]{Struct}
     \section{TUJUAN PRAKTIKUM}
+
     \subfile{src/m5p1.tex}
+
     \section{DASAR TEORI}
+
     \subfile{src/m5p2.tex}
+
     \newpage
     \sectionf{PERMASALAHAN}
+
     \subfile{src/m5p3.tex}
+
     \newpage
     \sectionf{HASIL PERCOBAAN}
+
     \subfile{src/m5p4.tex}
+
     \newpage
     \setlength{\parindent}{0.75cm}
     \sectionf{ANALISIS DATA}
+
     \subfile{src/m5p5.tex}
+
     \newpage
     \sectionf{KESIMPULAN}
+
     \subfile{src/m5p6.tex}
+
     \setlength{\parindent}{1.0cm}
     \newpage
 
     \chapterf[{\Pointer}]{Pointer}
     \section{TUJUAN PRAKTIKUM}
+
     \subfile{src/m6p1.tex}
+
     \section{DASAR TEORI}
+
     \subfile{src/m6p2.tex}
+
     \newpage
     \sectionf{PERMASALAHAN}
+
     \subfile{src/m6p3.tex}
+
     \newpage
     \sectionf{HASIL PERCOBAAN}
+
     \subfile{src/m6p4.tex}
+
     \newpage
     \setlength{\parindent}{0.75cm}
     \sectionf{ANALISIS DATA}
+
     \subfile{src/m6p5.tex}
+
     \newpage
     \sectionf{KESIMPULAN}
+
     \subfile{src/m6p6.tex}
+
     \setlength{\parindent}{1.0cm}
     \newpage
 

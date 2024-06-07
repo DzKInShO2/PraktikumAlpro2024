@@ -82,8 +82,8 @@ Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam 
 \begin{indentpar}
     Tipe data ini tergolong tipe data yang sering digunakan. Macam-macam tipe data dasar adalah sebagai berikut:
 \end{indentpar}
-
-\paragraph{Tipe Bilangan Bulat}
+\newpage
+\paragraphf{Tipe Bilangan Bulat}
 \begin{indentpar}[n]
     Tipe bilangan bulat adalah data-data angka yang tidak mengandung angka di belakang koma. Macam-macam tipe bilangan bulat sebagai berikut:
 \end{indentpar}
@@ -129,8 +129,8 @@ Tipe data berfungsi untuk mempresentasikan jenis dari nilai yang terdapat dalam 
 \begin{indentpar}
     Tipe data bentukan adalah tipe data yang dibuat sendiri sesuai kebutuhan dalam program yang akan dibuat. Tipe ini lebih dikenal dengan sebutan dalam bahasa asing, yaitu {\user} {\defined} {\types}. Adapun yang termasuk ke dalam tipe data bentukan, antara lain \parencite{friyadi2005panduan}:
 \end{indentpar}
-
-\paragraph{Tipe Data Bentukan}
+\newpage
+\paragraphf{Tipe Data Struktur}
 \begin{indentpar}[n]
     Sesuai dengan namanya, tipe data struktur adalah tipe data bentukan yang menyimpan lebih dari satu variabel bertipe sama ataupun berbeda. Jika kita telah membuat tipe data bentukan baru yang berjenis struktur, tentu kita akan menggunakannya di dalam pendeklarasian sebuah variabel. Pada saat itu, kita harus melakukan pengaksesan terhadap isi dari struktur tersebut dengan operator titik (\citecode{.}).
 \end{indentpar}
@@ -173,6 +173,7 @@ Variabel (pengubah) adalah sebuah objek data yang dapat didefiniskan dan dinamai
     }
 \end{enumerate}
 \newpage
-\subsection{{\Type} {\Casting}}
-    Terkadang dalam program kita, kita perlu mengonversi dari satu tipe data ke tipe data lainnya, seperti dari \citecode{double} ke \citecode{int}. Ini dikenal sebagai {\type} {\casting}. Untuk mengkonversi satu tipe data numerik ke yang lain, kita hanya perlu menambahkan (\textit{new data} {\type}) di depan data yang ingin kita konversi, Saat kita memasukkan 20,9 ke dalam bilangan bulat, nilai yang dihasilkan adalah 20, bukan 21. Bagian desimal terpotong setelah konversi. Kita juga dapat melemparkan \citecode{double} ke dalam \citecode{float} atau {\decimal}. Ingat bahwa kita sebutkan sebelumnya bahwa semua non integer diperlakukan sebagai \citecode{double} secara {\default} di C++ Jika kita ingin menetapkan angka seperti 20,9 ke \citecode{float} atau {\decimal}, kita perlu menambahkan sufiks ``f'' dan ``m'' masing-masing \parencite{raharjo2022bahasac}.
+\subsectionf{{\Type} {\Casting}}
+
+    Terkadang dalam program kita, kita perlu mengonversi dari satu tipe data ke tipe data lainnya, seperti dari \citecode{double} ke \citecode{int}. Ini dikenal sebagai {\type} {\casting}. Untuk mengkonversi satu tipe data numerik ke yang lain, kita hanya perlu menambahkan (\textit{new data} {\type}) di depan data yang ingin kita konversi, Saat kita memasukkan 20,9 ke dalam bilangan bulat, nilai yang dihasilkan adalah 20, bukan 21. Bagian desimal terpotong setelah konversi. Kita juga dapat melemparkan \citecode{double} ke dalam \citecode{float} atau {\decimal}. Ingat bahwa kita sebutkan sebelumnya bahwa semua non {\textit{integer}} diperlakukan sebagai \citecode{double} secara {\default} di C++ Jika kita ingin menetapkan angka seperti 20,9 ke \citecode{float} atau {\decimal}, kita perlu menambahkan sufiks ``f'' dan ``m'' masing-masing \parencite{raharjo2022bahasac}.
 \end{document}
