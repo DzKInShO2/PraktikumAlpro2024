@@ -59,8 +59,7 @@ int main()
         cin.ignore();
         cout << "Input tidak valid!" << endl;
         continue;
-    } break;
-  }
+    } break; }
   cout<<"------------------------------------------\n";
   cout<<"THR buat kamu sebesar   : Rp."<< money << "\n";
   cout<<"Durasi Kuliah Minggu ini: "<<(duration*=3600)<<" Detik\n";
