@@ -17,8 +17,14 @@
 \renewcommand*{\cftsecindent}{0pt}
 \addtolength{\cftsecnumwidth}{0.5ex}
 
-\renewcommand*{\cftfigpresnum}{Gambar }
-\addtolength{\cftfignumwidth}{9ex}
+\newcommand*{\loflabel}{Gambar}
+\renewcommand*{\cftfigpresnum}{\loflabel\hspace*{0.4em}}
+\renewcommand*{\cftfigaftersnumb}{\hspace*{1.25ex}}
+\renewcommand*{\cftfigdotsep}{\cftdotsep}
+
+\makeatletter
+\newcommand*{\cftlotnumberline}[1]{\@cftbsnum #1\@cftasnum\@cftasnumb}
+\makeatother
 
 \renewcommand*{\cfttabpresnum}{Tabel }
 \addtolength{\cfttabnumwidth}{4ex}
@@ -367,8 +373,7 @@
             \fi
         \fi
     \fi
-
-    \begin{tcolorbox}[left skip=\codeshift]
+\begin{tcolorbox}[left skip=\codeshift]
         \verbatiminput{#2}
     \end{tcolorbox}
     \ifx\a\empty
@@ -441,7 +446,10 @@
     % Add table of contents
     \tableofcontents
     {\protect\thispagestyle{plain}}
+    \begingroup
+    \let\numberline\cftlotnumberline
     \listoffigures
+    \endgroup
     {\protect\thispagestyle{plain}}
     \listoftables
     {\protect\thispagestyle{plain}}
