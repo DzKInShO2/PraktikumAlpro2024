@@ -40,7 +40,7 @@ Stack stack;
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Function} digunakan untuk menyimpan masukan fungsi dan struktur data \citecode{Stack} digunakan untuk menyimpan stuck secara keseluruhan.
+{\Script} di atas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Function} digunakan untuk menyimpan masukan fungsi dan struktur data \citecode{Stack} digunakan untuk menyimpan \textit{stack} secara keseluruhan.
 
 \begin{code}
 \begin{verbatim}
@@ -243,12 +243,11 @@ void debug_mode() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan fungsi tanpa nilai kembalian yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan register yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
+{\Script} di atas merupakan fungsi tanpa nilai kembalian yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan \textit{register} yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
 
 \begin{code}
 \begin{verbatim}
-int main() {
-  int state = 0;
+int main() { int state = 0;
   while (true) {
     topbar();
     cout << "1. Add Data\n";
@@ -268,7 +267,7 @@ int main() {
 
 {\Script} di atas merupakan {\entry} {\point} program \textit{Learn Stack Layout}. {\Script} di atas akan dijalankan setiap kali program tersebut dijalankan. Fungsi di atas digunakan untuk mengatur keseluruhan jalan kerja program seperti menu mana yang akan ditampilkan.
 
-\subsection{\textit{Dungeon Crawler RPG}}
+\subsection{\textit{Dungeon Crawler} RPG}
 
 \begin{code}
 \begin{verbatim}
@@ -317,7 +316,7 @@ struct Game {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Monster} digunakan untuk menyimpan keadaan \textit{monster}, struktur data \citecode{Item} digunakan untuk menyimpan data \textit{item}, struktur data \citecode{Player} menyimpan data pemain, struktur data \citecode{Room} digunakan untuk menyimpan data ruangan seperti apakah ruangan mengandung \textit{monster} atau \textit{item} dan struktur data \citecode{Game} digunakan untuk menyimpan keseluran perjalanan program.
+{\Script} di atas merupakan kumpulan-kumpulan data dan struktur-struktur data yang diperlukan untuk jalan kerjanya program. Struktur data \citecode{Monster} digunakan untuk menyimpan keadaan monster, struktur data \citecode{Item} digunakan untuk menyimpan data \textit{item}, struktur data \citecode{Player} menyimpan data pemain, struktur data \citecode{Room} digunakan untuk menyimpan data ruangan seperti apakah ruangan mengandung monster atau \textit{item} dan struktur data \citecode{Game} digunakan untuk menyimpan keseluran perjalanan program.
 
 \begin{code}
 \begin{verbatim}
@@ -526,7 +525,7 @@ game->monsters[0] = {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data terkait sebuah \textit{monster} yang bernama Phoenix. \textit{Monster} tersebut memiliki kehidupan sebanyak 950, kekuatan serangan sebanyak 140 dan sebanyak 10.
+{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data terkait sebuah monster yang bernama Phoenix. Monster tersebut memiliki kehidupan sebanyak \citecode{950}, kekuatan serangan \citecode{140} dan pertahanan \citecode{10}.
 
 \begin{code}
 \begin{verbatim}
@@ -546,7 +545,7 @@ game->monsters[1] = {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data terkait sebuah \textit{monster} yang bernama Leviathan. \textit{Monster} tersebut memiliki kehidupan sebanyak 5000, kekuatan serangan 350 dan perhatanan 50.
+{\Script} di atas merupakan bagian dari fungsi \citecode{game\_create}. Potongan fungsi tersebut digunakan untuk mengisi data terkait sebuah monster yang bernama Leviathan. Monster tersebut memiliki kehidupan sebanyak \citecode{5000}, kekuatan serangan \citecode{350} dan perhatanan \citecode{50}.
 
 \begin{code}
 \begin{verbatim}
@@ -666,7 +665,7 @@ if (no_monster) {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar properti \textit{monster} ketika sebuah ruangan berisi \textit{monster}.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar properti monster ketika sebuah ruangan berisi monster.
 
 \begin{code}
 \begin{verbatim}
@@ -726,7 +725,7 @@ cout << strpad(8) << "2. Heal\n";
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar aksi-aksi yang bisa diambil pemain pada saat sebuah \textit{monster} terdapat pada ruangan.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_draw} yang digunakan untuk menggambar keseluruhan permainan. Potongan fungsi tersebut digunakan untuk menggambar aksi-aksi yang bisa diambil pemain pada saat sebuah monster terdapat pada ruangan.
 
 \begin{code}
 \begin{verbatim}
@@ -765,7 +764,7 @@ if (game->rooms[game->current_room_id].monster_id > -1) {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menyerang \textit{monster} dan juga mengatur apakah \textit{skill} pemain satu terjadi.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menyerang monster dan juga mengatur apakah \textit{skill} pemain satu terjadi.
 
 \begin{code}
 \begin{verbatim}
@@ -814,7 +813,7 @@ if (game->monsters[monster_id].turn % 5 == 0) {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur \textit{skill} spesial \textit{monster} yang akan terjadi setiap 5 kali giliran \textit{monster}.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur \textit{skill} spesial monster yang akan terjadi setiap 5 kali giliran monster.
 
 \begin{code}
 \begin{verbatim}
@@ -830,7 +829,7 @@ if (game->monsters[monster_id].turn % 5 == 0) {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur serangan tanpa \textit{skill} yang dilakukan \textit{monster}.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur serangan tanpa \textit{skill} yang dilakukan monster.
 
 \begin{code}
 \begin{verbatim}
@@ -856,7 +855,7 @@ game->monsters[monster_id].turn++;
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan menambahkan nilai giliran pemain saat ini dan \textit{monster} setelah semua aksi terjadi.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan menambahkan nilai giliran pemain saat ini dan monster setelah semua aksi terjadi.
 
 \begin{code}
 \begin{verbatim}
@@ -878,7 +877,7 @@ break; }
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut digunakan untuk mengatur kondisi permainan apakah menang atau kalah tergantung pada kondisi apakah salah satu pemain mati atau \textit{monster} bernama Leviathan kalah.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut digunakan untuk mengatur kondisi permainan apakah menang atau kalah tergantung pada kondisi apakah salah satu pemain mati atau monster bernama Leviathan kalah.
 
 \begin{code}
 \begin{verbatim}
@@ -955,6 +954,6 @@ int main() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan fungsi \citecode{main} dari program \textit{Dungeon Crawler RPG}. Fungsi tersebut akan memanggil fungsi-fungsi sebelumnya untuk menjalankan keseluruhan permainan dan memunculkan layar kemenangan.
+{\Script} di atas merupakan fungsi \citecode{main} dari program \textit{Dungeon Crawler} RPG. Fungsi tersebut akan memanggil fungsi-fungsi sebelumnya untuk menjalankan keseluruhan permainan dan memunculkan layar kemenangan.
 
 \end{document}

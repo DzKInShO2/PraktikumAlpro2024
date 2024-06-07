@@ -8,7 +8,7 @@
     \begin{enumerate}
         \item {Disediakan menu awal dengan pilihan \textit{add data}, \textit{debug mode} dan \textit{exit} yang dapat dipilih menggunakan angka.}
         \item {Bila \textit{add data} dipilih, meminta memasukan data yang dapat berupa fungsi atau nilai. Bila dimasukan sebuah fungsi maka akan ditanyakan apakah fungsi tersebut memiliki argumen dan berapa banyak argumennya. Masukan data akan diminta beberapa kali sesuai berapa kali pilihan \textit{add data} dipilih, pertama kali dipilih akan diminta 3 masukan, kedua kali diminta 6 masukan dan ketiga kali akan diminta 9 masukan. Setelah selesai maka program akan kembali ke menu awal.}
-        \item {Bila \textit{debug mode} dipilih, meminta \textit{prompt} yang memiliki dua buah perintah yakni \citecode{info stack} dan \textit{exit}. Perintah \textit{exit} akan mengembalikan program ke menu awal. Perintah \citecode{info stack} akan membuka menu \textit{stack layout} dan register yang ditampilkan sesuai data yang ditambahkan. Menu \textit{stack layout} dapat menerima perintah berupa \citecode{ni} yang akan memajukan instruksi yang ditunjuk dalam \textit{stack} hingga penunjuk instruksi melebihi jumlah data yang akan mengembalikan program ke menu awal.}
+        \item {Bila \textit{debug mode} dipilih, meminta \textit{prompt} yang memiliki dua buah perintah yakni \citecode{info stack} dan \textit{exit}. Perintah \textit{exit} akan mengembalikan program ke menu awal. Perintah \citecode{info stack} akan membuka menu \textit{stack layout} dan \textit{register} yang ditampilkan sesuai data yang ditambahkan. Menu \textit{stack layout} dapat menerima perintah berupa \citecode{ni} yang akan memajukan instruksi yang ditunjuk dalam \textit{stack} hingga penunjuk instruksi melebihi jumlah data yang akan mengembalikan program ke menu awal.}
     \end{enumerate}
 \end{enumerate}
 
@@ -21,7 +21,6 @@
 \newpage
 \subsubsectionf{Hasil Program}
 \inputfigure[n]{res/m6i23.png}{0.23}{Menu Awal Program \textit{Learn Stack Layout}}{fig:m6:i23}
-\vspace{0.5ex}
 \begin{indentpar}
     \hspace{\parindent}Berdasarkan \Cref{fig:m6:i23}, didapatkan sebuah gambar keluaran menu awal program \textit{Learn Stack Layout}. Menu tersebut memberikan tiga buah pilihan yang dapat dipilih berdasarkan angkanya yakni \textit{add data}, \textit{debug mode} dan \textit{exit}.
 \end{indentpar}
@@ -33,26 +32,26 @@
 
 \inputfigure[n]{res/m6i25.png}{0.23}{Pilihan \textit{Debug Mode} Program \textit{Learn Stack Layout}}{fig:m6:i25}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i25}, didapatkan sebuah gambar keluaran pilihan \textit{debug mode} program \textit{Learn Stack Layout} ketika dimasukan perintah \citecode{info stack}. Ditampilkan daftar \textit{stack} dan register-register yang digunakan \textit{stack} tersebut.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i25}, didapatkan sebuah gambar keluaran pilihan \textit{debug mode} program \textit{Learn Stack Layout} ketika dimasukan perintah \citecode{info stack}. Ditampilkan daftar \textit{stack} dan \textit{register}-\textit{register} yang digunakan \textit{stack} tersebut.
 \end{indentpar}
 \newpage
-\subsectionf{\textit{Dungeon Crawler RPG}}
+\subsectionf{\textit{Dungeon Crawler} RPG}
 \subsubsection{Algoritma}
 \begin{enumerate}
     \item[]
     \begin{enumerate}
         \item {Ditampilkan sebuah peta dimana letak pemain ditandai dengan tanda seru (!).}
         \item {Pemain dapat maju ke ruangan yang dapat diakses oleh ruangan saat ini dan dapat kembali keruangan sebelumnya.}
-        \item {Bila ruangan berisi \textit{monster} maka akan pindah ke menu pertarungan.}
-        \item {Di menu pertarungan akan ditampilkan keadaan kedua karakter pemain dan \textit{monster}. Pemain dapat mengambil satu giliran yang bisa berupa serangan, menyembuhkan dan menggunakan \textit{item} bila ada. Setelah satu giliran karakter pemain tersebut akan diserang \textit{monster}.}
-        \item {Setiap tiga giliran karakter bernama Gilang akan mengabaikan semua serangan yang ditujukan padanya. Setiap tiga giliran karakter bernama Holil akan membuat kekuatan serangannya menjadi 2 kali lebih kuat. Setiap lima giliran semua \textit{monster} akan melakukan serangan pada semua karakter pemain.}
-        \item {Bila salah satu karakter pemain mati atau \textit{health}-nya kurang dari sama dengan 0 maka permainan akan ulang dari titik awal. Bila \textit{health} dari \textit{monster} kurang dari sama dengan 0 maka \textit{monster} kalah, dan bila \textit{monster} itu bernama Leviathan maka permainan selesai dengan keadaan menang.}
+        \item {Bila ruangan berisi monster maka akan pindah ke menu pertarungan.}
+        \item {Di menu pertarungan akan ditampilkan keadaan kedua karakter pemain dan monster. Pemain dapat mengambil satu giliran yang bisa berupa serangan, menyembuhkan dan menggunakan \textit{item} bila ada. Setelah satu giliran karakter pemain tersebut akan diserang monster.}
+        \item {Setiap tiga giliran karakter bernama Gilang akan mengabaikan semua serangan yang ditujukan padanya. Setiap tiga giliran karakter bernama Holil akan membuat kekuatan serangannya menjadi 2 kali lebih kuat. Setiap lima giliran semua monster akan melakukan serangan pada semua karakter pemain.}
+        \item {Bila salah satu karakter pemain mati atau \textit{health}-nya kurang dari sama dengan 0 maka permainan akan ulang dari titik awal. Bila \textit{health} dari monster kurang dari sama dengan 0 maka monster kalah, dan bila monster itu bernama Leviathan maka permainan selesai dengan keadaan menang.}
         \item {Bila terdapat \textit{item} pada sebuah ruangan pemain bisa memberikannya ke karakter yang tidak memiliki \textit{item}.}
     \end{enumerate}
 \end{enumerate}
 
 \subsubsection{\Flowchart}
-\inputfigure[n]{res/m6i26.png}{0.38}{{\Flowchart} Program \textit{Dungeon Crawler RPG}}{fig:m6:i26}
+\inputfigure[n]{res/m6i26.png}{0.38}{{\Flowchart} Program \textit{Dungeon Crawler} RPG}{fig:m6:i26}
 \newpage
 \subsubsectionf{{\Source} {\sCode}}
 \vspace{-1ex}
@@ -62,34 +61,34 @@
 \subsubsectionf{Hasil Program}
 \vspace{0.5ex}
 
-\inputfigure[n]{res/m6i27.png}{0.2}{Tampilan Ruang Kosong Program \textit{Dungeon Crawler RPG}}{fig:m6:i27}
+\inputfigure[n]{res/m6i27.png}{0.2}{Tampilan Ruang Kosong Program \textit{Dungeon Crawler} RPG}{fig:m6:i27}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan ruang tak berisi dari program \textit{Dungeon Crawler RPG}. Seperti namanya tampilan ini akan ditampilkan ketika ruang tidak memiliki isi apapun.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan ruang tak berisi dari program \textit{Dungeon Crawler} RPG. Seperti namanya tampilan ini akan ditampilkan ketika ruang tidak memiliki isi apapun.
 \end{indentpar}
 
-\inputfigure[n]{res/m6i28.png}{0.2}{Tampilan Ruang Dua Destinasi Program \textit{Dungeon Crawler RPG}}{fig:m6:i28}
+\inputfigure[n]{res/m6i28.png}{0.2}{Tampilan Ruang Dua Destinasi Program \textit{Dungeon Crawler} RPG}{fig:m6:i28}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan ruang dengan dua destinasi dari program \textit{Dungeon Crawler RPG}. Seperti namanya tampilan ini akan ditampilkan ketika sebuah ruang memiliki dua ruang yang terhubung sebagai lanjutan dari ruang itu.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i28}, didapatkan sebuah tampilan ruang dengan dua destinasi dari program \textit{Dungeon Crawler} RPG. Seperti namanya tampilan ini akan ditampilkan ketika sebuah ruang memiliki dua ruang yang terhubung sebagai lanjutan dari ruang itu.
 \end{indentpar}
 
-\inputfigure[n]{res/m6i29.png}{0.2}{Tampilan Ruang \textit{Monster} Program \textit{Dungeon Crawler RPG}}{fig:m6:i29}
+\inputfigure[n]{res/m6i29.png}{0.2}{Tampilan Ruang Monster Program \textit{Dungeon Crawler} RPG}{fig:m6:i29}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan ruang ditempati sebuah \textit{monster} dari program \textit{Dungeon Crawler RPG}. Seperti namanya tampilan ini akan ditampilkan ketika sebuah ruang berisi \textit{monster} di dalamnya.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i29}, didapatkan sebuah tampilan ruang ditempati sebuah monster dari program \textit{Dungeon Crawler} RPG. Seperti namanya tampilan ini akan ditampilkan ketika sebuah ruang berisi monster di dalamnya.
 \end{indentpar}
 \blanktop
-\inputfigure[n]{res/m6i30.png}{0.2}{Tampilan Ruang Berisi \textit{Item} Program \textit{Dungeon Crawler RPG}}{fig:m6:i30}
+\inputfigure[n]{res/m6i30.png}{0.2}{Tampilan Ruang Berisi \textit{Item} Program \textit{Dungeon Crawler} RPG}{fig:m6:i30}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan ruang berisi \textit{item} dari program \textit{Dungeon Crawler RPG}. Seperti namanya tampilan ini akan ditampilkan ketika sebuah ruang berisi \textit{item} di dalamnya. \textit{Item} tersebut dapat diberikan kepada pemain.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i30}, didapatkan sebuah tampilan ruang berisi \textit{item} dari program \textit{Dungeon Crawler} RPG. Seperti namanya tampilan ini akan ditampilkan ketika sebuah ruang berisi \textit{item} di dalamnya. \textit{Item} tersebut dapat diberikan kepada pemain.
 \end{indentpar}
 
-\inputfigure[n]{res/m6i31.png}{0.4}{Tampilan Kondisi Menang Program \textit{Dungeon Crawler RPG}}{fig:m6:i31}
+\inputfigure[n]{res/m6i31.png}{0.4}{Tampilan Kondisi Menang Program \textit{Dungeon Crawler} RPG}{fig:m6:i31}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan setelah menang dari program \textit{Dungeon Crawler RPG}. Seperti namanya tampilan ini akan ditampilkan ketika kondisi menang sudah digapai.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i31}, didapatkan sebuah tampilan setelah menang dari program \textit{Dungeon Crawler} RPG. Seperti namanya tampilan ini akan ditampilkan ketika kondisi menang sudah digapai.
 \end{indentpar}
 
-\inputfigure[n]{res/m6i32.png}{0.4}{Tampilan Kondisi Kalah Program \textit{Dungeon Crawler RPG}}{fig:m6:i32}
+\inputfigure[n]{res/m6i32.png}{0.4}{Tampilan Kondisi Kalah Program \textit{Dungeon Crawler} RPG}{fig:m6:i32}
 \begin{indentpar}
-    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i27}, didapatkan sebuah tampilan setelah kalah dari program \textit{Dungeon Crawler RPG}. Seperti namanya tampilan ini akan ditampilkan ketika kondisi kalah sudah digapai yakni salah satu pemain mati.
+    \hspace{\parindent}Berdasarkan \Cref{fig:m6:i32}, didapatkan sebuah tampilan setelah kalah dari program \textit{Dungeon Crawler} RPG. Seperti namanya tampilan ini akan ditampilkan ketika kondisi kalah sudah digapai yakni salah satu pemain mati.
 \end{indentpar}
 
 \end{document}

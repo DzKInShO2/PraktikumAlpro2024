@@ -2,33 +2,33 @@
 
 \begin{document}
 \subsection{\textit{Learn Stack Layout}}
-Saat jam-jam terakhir di perusahaan X, Holil dan Gilang ingin mencoba melakukan eksperimen yaitu melakukan \textit{debugging} pada struktur \textit{address} dari fungsi yang diinput di sebuah bahasa C yang di {\compile} dengan 64-bit. Holil dan Gilang melakukan \textit{debugging} untuk melihat sebuah fungsi yang memiliki atau tidak memiliki \textit{argument}. Ternyata setelah holil dan gilang belajar tentang register, mereka mengetahui bahwa pada 64-bit, \textit{positional argument} diurutkan mulai dengan RDI, RSI, RSI, RDX, RCX, R8, R9. Holil mendapat penjelasan berikut:
+Saat jam-jam terakhir di perusahaan X, Holil dan Gilang ingin mencoba melakukan eksperimen yaitu melakukan \textit{debugging} pada struktur \textit{address} dari fungsi yang diinput di sebuah bahasa C yang di {\compile} dengan 64-bit. Holil dan Gilang melakukan \textit{debugging} untuk melihat sebuah fungsi yang memiliki atau tidak memiliki \textit{argument}. Ternyata setelah holil dan gilang belajar tentang \textit{register}, mereka mengetahui bahwa pada 64-bit, \textit{positional argument} diurutkan mulai dengan RDI, RSI, RSI, RDX, RCX, R8, R9. Holil mendapat penjelasan berikut:
 
-Ketika fungsi memiliki paramater, maka fungsi tersebut dipanggil dengan \textit{argument} dan jumlah argument yang masuk akan diurutkan sesuai dengan ketentuan register pada 64-bit.
+Ketika fungsi memiliki paramater, maka fungsi tersebut dipanggil dengan \textit{argument} dan jumlah argument yang masuk akan diurutkan sesuai dengan ketentuan \textit{register} pada 64-bit.
 
 \inputfigure{res/m6i1.png}{0.5}{Visualisasi Register Pada Fungsi 2 Argumen}{fig:m6:i1}
 \vspace*{1.6ex}
 \inputfigure{res/m6i2.png}{0.5}{Visualisasi Register Pada Fungsi 3 Argumen}{fig:m6:i2}
 \vspace{1ex}
-\subsection{\textit{Dungeon Crawler RPG}}
+\subsection{\textit{Dungeon Crawler} RPG}
 
 Setelah pulang dari perusahaan X, Holil sampai di rumah dan ingin memainkan game \textit{roguelike online} yang pernah dia mainkan. \textit{Roguelike} adalah \textit{subgenre} permainan video permainan peran yang ditandai dengan \textit{dungeon crawl} melalui level yang dihasilkan secara prosedural, \textit{gameplay} berbasis giliran, grafis berbasis ubin dan karakter pemain dengan kematian permanen. Karena merasa akan bosan dan hambar jika dimainkan sendirian, Holil pun mengajak temannya, Gilang, seorang pengembang \textit{game}, untuk bermain bersama. Setelah beberapa saat ingin memainkan game tersebut, Holil mendapat berita dari internet bahwa \textit{game online} tersebut sudah menutup server saat dia melamar kerja di perusahaan X. Holil pun sangat kecewa dengan penutupan server \textit{game} tersebut. Gilang, yang kebetulan seorang pengembang \textit{game}, berinisiatif mengajak Holil untuk membuat ulang \textit{game} tersebut agar bisa dimainkan. Dengan menggabungkan kemampuan pemrograman dari Holil dan kemampuan pengembangan game dari Gilang, mereka pun membuat ulang game tersebut menggunakan bahasa C++ yang dijalankan melalui \textit{command prompt}.
 
 Pada bagian awal, \textit{game} akan menampilkan tampilan berikut:
 
-\inputfigure{res/m6i18.png}{0.11}{Tampilan Penjelajahan Program \textit{Dungeon Crawl RPG}}{fig:m6:i18}
+\inputfigure{res/m6i18.png}{0.11}{Tampilan Penjelajahan Program \textit{Dungeon Crawl} RPG}{fig:m6:i18}
 
 Untuk menjalankannya, \textit{player} dapat menggunakan perintah \citecode{next} atau \citecode{go} untuk menuju ke room selanjutnya dan perintah \textit{back} untuk kembali menuju ke \textit{room} sebelumnya.
 
-\inputfigure{res/m6i19.png}{0.13}{Tampilan Bertarung Program \textit{Dungeon Crawl RPG}}{fig:m6:i19}
+\inputfigure{res/m6i19.png}{0.13}{Tampilan Bertarung Program \textit{Dungeon Crawl} RPG}{fig:m6:i19}
 
-Jika terdapat lebih dari satu pilihan \textit{room}, \textit{game} akan memberikan pilihan untuk dipilih oleh \textit{player}. Jika \textit{room} selanjutnya terdapat musuh atau \textit{monster} maka game akan langsung menuju ke mode bertarung.
+Jika terdapat lebih dari satu pilihan \textit{room}, \textit{game} akan memberikan pilihan untuk dipilih oleh \textit{player}. Jika \textit{room} selanjutnya terdapat musuh atau monster maka game akan langsung menuju ke mode bertarung.
 
-\inputfigure{res/m6i20.png}{0.2}{Tampilan \textit{Item} Ditemukan Program \textit{Dungeon Crawl RPG}}{fig:m6:i20}
+\inputfigure{res/m6i20.png}{0.2}{Tampilan \textit{Item} Ditemukan Program \textit{Dungeon Crawl} RPG}{fig:m6:i20}
 
-Jika terdapat suatu \textit{item} pada suatu \textit{room}, maka \textit{game} akan meminta \textit{player} memasukan nama \textit{player} yang akan mengambil \textit{item} tersebut, selanjutnya jika suatu \textit{item} diambil dan \textit{monster} dikalahkan maka akan menampilkan pesan tidak ada sesuatu pada \textit{room} tersebut.
+Jika terdapat suatu \textit{item} pada suatu \textit{room}, maka \textit{game} akan meminta \textit{player} memasukan nama \textit{player} yang akan mengambil \textit{item} tersebut, selanjutnya jika suatu \textit{item} diambil dan monster dikalahkan maka akan menampilkan pesan tidak ada sesuatu pada \textit{room} tersebut.
 
-\inputfigure{res/m6i21.png}{0.21}{\textit{Boss} Terakhir Program \textit{Dungeon Crawl RPG}}{fig:m6:i21}
+\inputfigure{res/m6i21.png}{0.21}{\textit{Boss} Terakhir Program \textit{Dungeon Crawl} RPG}{fig:m6:i21}
 
 Objektif dari \textit{game} ini yaitu mengalahkan \textit{boss} terakhir bernama “Leviathan” pada \textit{room} “Abyssia Ocean”. Jika salah satu dari \textit{player} mati maka \textit{game} akan \textit{restart} dari awal sampai \textit{boss} terakhir dikalahkan. Program selesai Ketika berhasil mengalahkan \textit{boss} terakhir.
 

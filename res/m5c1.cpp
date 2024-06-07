@@ -91,7 +91,7 @@ int main() {
       } break;
       case 1: {
         string name, type;
-        cout << "Masukan nama penumpang: "; getline(cin >> ws, name);
+        cout<< "Masukan nama penumpang: ";getline(cin >> ws, name);
         type = tselector("Pilih kelas tiket (EKO, BISNIS, RAJA): ");
         int wagon_index = wagon_type_to_index(type);
         while (wagon_index > wagon_count - 1) {
