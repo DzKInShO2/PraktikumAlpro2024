@@ -123,14 +123,14 @@
 
     \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
     \fancyfoot[L]{Modul {\Roman{chapter}} – {\leftmark}}
-    \fancyfoot[R]{{\thepage}}
+    \fancyfoot[R]{\Roman{chapter}-{\thepage}}
 }
 
 \fancypagestyle{plain}{
     \fancyhf{}
 
     \fancyhead[R]{Praktikum Algoritma dan Pemrograman 2024}
-    \fancyfoot[R]{{\thepage}}
+    \fancyfoot[R]{\thepage}
 }
 
 \fancypagestyle{emptywithrule}{
@@ -542,8 +542,8 @@
 
     % Change next page style to normal
     \pagestyle{normal}
+    \pagenumbering{arabic}
     \setcounter{page}{1}
-    \renewcommand*{\thepage}{\Roman{chapter}-\arabic{page}}
 
     \chapterf{Pemrograman Dasar}
     \section{TUJUAN PRAKTIKUM}
@@ -711,6 +711,7 @@
     \newpage
 
     \chapterf[{\Pointer}]{Pointer}
+    \vspace{0.5ex}
     \section{TUJUAN PRAKTIKUM}
 
     \subfile{src/m6p1.tex}
