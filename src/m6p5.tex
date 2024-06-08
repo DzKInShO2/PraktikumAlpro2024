@@ -53,9 +53,30 @@ const int STACK_TYPE_FUNCTION = 1;
 
 \begin{code}
 \begin{verbatim}
-void topbar() { cout << "\33[H\33[2J";
-  cout << " LEARN STACK LAYOUT\n";
-  cout << "\n\n\n"; }
+void topbar() {
+  cout << "\33[H\33[2J";
+  cout << " ##       ########    ###    ########  ##    ##    ######"
+  "########    ###     ######  ##    ##   ##          ###    ##    #"
+  "#######  ##    ## ########" << endl;
+  cout << " ##       ##         #####   ##     ## ###   ##   ##    #" 
+  "###      ## ##   ##    ## ##   ##    ##         ## ##    ##  ## "
+  " ##    ## ##    ##    ##" << endl;
+  cout << " ##       ##        ##   ##  ##     ## ####  ##   ##     "
+  "     ##     ##   ##  ##       ##  ##     ##        ##   ##    ###"
+  "#   ##    ## ##    ##    ##" << endl;
+  cout << " ##       ######   ##     ## ########  ## ## ##    ######"
+  "     ##    ##     ## ##       #####      ##       ##     ##    ##"
+  "    ##    ## ##    ##    ##" << endl;
+  cout << " ##       ##       ######### ##   ##   ##  ####         #"
+  "    ##    ######### ##       ##  ##     ##       #########    ## "
+  "# ##    ## ##    ##    ##" << endl;
+  cout << " ##       ##       ##     ## ##    ##  ##   ###   ##    #"
+  "#    ##    ##     ## ##    ## ##   ##    ##       ##     ##    ##"
+  "    ##    ## ##    ##    ##" << endl;
+  cout << " ######## ######## ##     ## ##     ## ##    ##    ######"
+  "     ##    ##     ##  ######  ##    ##   ######## ##     ##    ##"
+  "     ######   ######     ##\n\n\n\n";
+}
 \end{verbatim}
 \end{code}
 
@@ -92,7 +113,8 @@ int nselector(int l, int u, const string& c = ">> ") {
     if (cin.fail() || n < l || n > u) {
       input_invalid();
       continue;
-    } break; }
+    } break;
+  }
   return n;
 }
 int nselector(const string& c = "", int i = 0) {
@@ -103,7 +125,8 @@ int nselector(const string& c = "", int i = 0) {
     if (cin.fail()) {
       input_invalid();
       continue;
-    } break; }
+    } break;
+  }
   return n;
 }
 \end{verbatim}
@@ -122,7 +145,8 @@ char cselector(char y='Y', char n='N', string c = ">> ") {
     if (cin.fail() || (ch != 'Y' && ch != 'N')) {
       input_invalid();
       continue;
-    } break; }
+    } break;
+  }
   return ch;
 }
 \end{verbatim}
@@ -244,7 +268,8 @@ void debug_mode() {
         getline(cin >> ws, arg);
         if (arg == "ni") i++;
         if (arg == "pi") i--;
-        if (i < 0) i = stack.count - 1; }}}}
+        if (i < 0) i = stack.count - 1; }
+}}}
 \end{verbatim}
 \end{code}
 
@@ -270,8 +295,9 @@ int main() { int state = 0;
 
 {\Script} di atas merupakan {\entry} {\point} program \textit{Learn Stack Layout}. {\Script} di atas akan dijalankan setiap kali program tersebut dijalankan. Fungsi di atas digunakan untuk mengatur keseluruhan jalan kerja program seperti menu mana yang akan ditampilkan.
 
-\subsection{\textit{Dungeon Crawler} RPG}
-
+\newpage
+\subsectionf{\textit{Dungeon Crawler} RPG}
+\vspace{-1ex}
 \begin{code}
 \begin{verbatim}
 #include <iostream>
@@ -303,8 +329,7 @@ const int GAME_STATE_WIN  = 2;
 struct Monster { string name, sprite;
   int cur_health, max_health, attack, defense, turn; };
 struct Item {
-  int health, attack, defense;
-  string name; };
+  int health, attack, defense; string name; };
 struct Player { int health, attack, defense;
   int item_id, turn; string name; };
 struct Room {
@@ -312,10 +337,8 @@ struct Room {
   string name; };
 struct Game {
   int state, current_room_id;
-  Player players[2];
-  Monster monsters[2];
-  Item items[2];
-  Room rooms[7]; };
+  Player players[2]; Monster monsters[2];
+  Item items[2]; Room rooms[7]; };
 \end{verbatim}
 \end{code}
 
@@ -409,7 +432,8 @@ void pause() {
 \begin{code}
 \begin{verbatim}
 void bar_draw() {
-  cout << "|+|=============================================|+|\n";}
+  cout << "|+|=============================================|+|\n";
+}
 \end{verbatim}
 \end{code}
 
@@ -440,20 +464,19 @@ void map_draw(int room_id) {
 
 \begin{code}
 \begin{verbatim}
-int line = 4, column = 28;
-switch (room_id) {
-  case 1: line = 7;
-  break; case 2:
-  line = 10; break;
-  case 3: line = 14;
-  column = 24; break;
-  case 4: line = 14;
-  column = 18; break; case 5: 
-  line = 13; column = 34; break; case 6:
-  line = 18; column = 34; break; }
-cout << "\e7";
-cout << "\33[" << line <<";" << column << "H!";
-cout << "\e8"; }
+  int line = 4, column = 28;
+  switch (room_id) {
+    case 1: line = 7; break;
+    case 2: line = 10; break;
+    case 3: line = 14; column = 24; break;
+    case 4: line = 14; column = 18; break;
+    case 5: line = 13; column = 34; break;
+    case 6: line = 18; column = 34; break;
+  }
+  cout << "\e7";
+  cout << "\33[" << line <<";" << column << "H!";
+  cout << "\e8";
+}
 \end{verbatim}
 \end{code}
 
@@ -473,7 +496,8 @@ void item_info(const Item& item) {
   if (item.defense != 0)
     center_draw("Defense " +
       string{(item.defense > 0 ? "Increased By " : "Decreased By ")}
-      + strint(item.defense)); }
+      + strint(item.defense));
+}
 \end{verbatim}
 \end{code}
 
@@ -620,8 +644,10 @@ if (no_monster) {
   if (game.rooms[game.current_room_id].item_id > -1) {
     const Item& item = game.items[game.rooms
               [game.current_room_id].item_id];
-    bar_draw(); center_draw("You found an item");
-    center_draw(item.name); item_info(item); bar_draw();
+    bar_draw();
+    center_draw("You found an item");
+    center_draw(item.name); item_info(item);
+    bar_draw();
     cout << strpad(8) << "Who's gonna take it?" << endl;
     cout << strpad(8) << " * " << game.players[0].name << endl;
     cout << strpad(8) << " * " << game.players[1].name << endl;
@@ -646,8 +672,10 @@ if (no_monster) {
          << game.rooms[room.next[0]].name << endl;
   } else {
     center_draw("There are no other room forward...");
-            bar_draw();}
-  cout << strpad(8) << "Go back" << endl; }
+    bar_draw();
+  }
+  cout << strpad(8) << "Go back" << endl;
+}
 \end{verbatim}
 \end{code}
 
@@ -664,7 +692,8 @@ if (no_monster) {
               " : " + strint(monster.cur_health));
   center_draw("Atk : " + strint(monster.attack));
   center_draw("Def : " + strint(monster.defense));
-  center_draw("Turn : " + strint(monster.turn)); bar_draw();
+  center_draw("Turn : " + strint(monster.turn));
+  bar_draw();
 \end{verbatim}
 \end{code}
 
@@ -679,11 +708,13 @@ cout << strpad(45 -(strlen(game.players[0].name
         + strlen(strint(game.players[1].health)
         + " : " + game.players[1].name)));
 cout << strint(game.players[1].health) + " : "
-        + game.players[1].name << "| |" << endl;
+        + game.players[1].name
+     << "| |" << endl;
 cout << "| |" << "Atk : " + strint(game.players[0].attack);
 cout << strpad(45 -(strlen("Atk : " + strint(game.players[0].attack))
             + strlen(strint(game.players[1].attack) + " : Atk")));
-cout << strint(game.players[1].attack) + " : Atk" << "| |" << endl;
+cout << strint(game.players[1].attack) + " : Atk"
+     << "| |" << endl;
 \end{verbatim}
 \end{code}
 
@@ -874,9 +905,8 @@ if (game->monsters[monster_id].cur_health <= 0) {
   if (monster_id == 1)
     game->state = GAME_STATE_WIN; }
 for (int i = 0; i < 2; ++i) 
-  if (game->players[i].health <= 0)
-    game->state = GAME_STATE_LOSE;
-break; }
+  if (game->players[i].health <= 0) {
+    game->state = GAME_STATE_LOSE; break; }
 \end{verbatim}
 \end{code}
 
