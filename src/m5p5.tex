@@ -6,11 +6,18 @@
 \begin{code}
 \begin{verbatim}
 #include <iostream>
+\end{verbatim}
+\end{code}
+
+{\Script} di atas membolehkan pengaksesan fungsi-fungsi dan objek-objek yang ada didalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi fungsi-fungsi dan objek-objek yang berkaitan dengan operasi-operasi {\ioi} dan {\ioo} {\stream}.
+
+\begin{code}
+\begin{verbatim}
 using namespace std;
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk memberikan kemampuan untuk menggunakan fungsi-fungsi dan objek-objek yang tersedia dalah {\header} {\file} \citecode{iostream}. Baris \citecode{using namespace std;} menghilangkan kebutuhan untuk menulis \citecode{std::}.
+{\Script} di atas menggunakan {\statement} \citecode{using namespace} yang akan membolehkan pemanggilan fungsi atau objek yang berada dalam suatu \citecode{namespace} tertentu tanpa memanggil nama \citecode{namespace} tersebut dalam kasus di atas fungsi dan objek yang berada dalam \citecode{namespace std} dapat dipanggil tanpa diawali \citecode{std::}.
 
 \begin{code}
 \begin{verbatim}
@@ -35,7 +42,7 @@ void pause() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
+{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard} pengguna.
 
 \begin{code}
 \begin{verbatim}
@@ -77,8 +84,7 @@ while (true) {
        "Harap masukkan kelas tiket EKO, BISNIS, "
      } + "atau RAJA"
    ); continue;
- } break; }
-return t; }
+ } break; } return t; }
 \end{verbatim}
 \end{code}
 
@@ -87,8 +93,7 @@ return t; }
 \begin{code}
 \begin{verbatim}
 int wagon_type_to_index(string type) {
-return 0 + (type == wagon_types[1]) +
-    (2 * (type == wagon_types[2])); }
+  return 0 + (type == wagon_types[1])+(2 * (type == wagon_types[2]));}
 \end{verbatim}
 \end{code}
 
@@ -96,8 +101,7 @@ return 0 + (type == wagon_types[1]) +
 
 \begin{code}
 \begin{verbatim}
-void topbar() {
-cout << "\33[H\33[2J";
+void topbar() { cout << "\33[H\33[2J";
 cout << " /\\_/\\  PT KAP (KERETA API PROGRAMMER) \n";
 cout << "( o.o ) PROGRAM SISTEM TIKET DAN GERBONG KERETA \n";
 cout << " > ^ <  DIBUAT OLEH PJ MODUL 5 ALPRO 2024\n";
@@ -109,8 +113,7 @@ cout << "================================================\n"; }
 
 \begin{code}
 \begin{verbatim}
-topbar();
-int n = nselector(1, WAGON_MAX,
+topbar(); int n = nselector(1, WAGON_MAX,
        "Masukan jumlah gerbong kereta penumpang: ");
 int wagon_count = n;
 Wagon wagons[wagon_count] = { 0 }; int state = 0;

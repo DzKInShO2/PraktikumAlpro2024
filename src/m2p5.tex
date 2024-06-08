@@ -240,13 +240,13 @@ if (n0 == 13) {
 
 \begin{code}
 \begin{verbatim}
-if (n0 == 72) {
+if (n0 == 72)
   state = (((state >> 1) - 1) << 1);
-} else if (n0 == 80) {
+else if (n0 == 80)
   state = (((state >> 1) + 1) << 1);
-}
-if ((state >> 1) > 3) { state = 0x0; }
-else if ((state >> 1) < 0) { state = 0x6; }
+if ((state >> 1) > 3)
+  state = 0x0;
+else if ((state >> 1) < 0) state = 0x6;
 \end{verbatim}
 \end{code}
 
@@ -330,7 +330,7 @@ case 1: {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk menampilkan judul pilihan yakni pilihan POHON CEMARA. Dengan menggunakan objek \citecode{cout} dari {\header} {\file} \citecode{iostream} judul pilihan dapat ditampilkan.
+{\Script} di atas digunakan untuk menampilkan judul pilihan yakni pilihan POHON CEMARA. Dengan menggunakan objek \citecode{cout} dari {\header} {\file} \citecode{iostream} yang merupakan bagian dari C++ \textit{standard library} judul pilihan dapat ditampilkan.
 
 \begin{code}
 \begin{verbatim}
@@ -444,7 +444,7 @@ cout << "---------------------" << endl;
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk menampilkan {\header} atau judul program kepada pengguna. Judul program tersebut ditampilkan dengan menggunakan objek \citecode{cout} yang tersedia dalam {\header} {\file} \citecode{iostream}.
+{\Script} di atas digunakan untuk menampilkan {\header} atau judul program kepada pengguna. Judul program tersebut ditampilkan dengan menggunakan objek \citecode{cout} yang tersedia dalam {\header} {\file} \citecode{iostream} yang merupakan bagian dari C++ \textit{standard library}.
 
 \begin{code}
 \begin{verbatim}
@@ -461,7 +461,7 @@ cin >> radius;
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk meminta masukan dari pengguna. Masukan tersebut akan disimpan ke variabel \citecode{radius} yang telah diinisialisasikan sebelumnya.
+{\Script} di atas digunakan untuk meminta masukan dari pengguna. Masukan tersebut akan disimpan ke variabel \citecode{radius} yang telah diinisialisasikan sebelumnya. Variabel \citecode{radius} tersebut digunakan untuk menyimpan jari-jari bulan yang ingin digambar.
 
 \begin{code}
 \begin{verbatim}

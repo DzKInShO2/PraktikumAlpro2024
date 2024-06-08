@@ -201,6 +201,13 @@ void debug_mode() {
     string arg;
     cout << "Debug Command => ";
     getline(cin >> ws, arg);
+\end{verbatim}
+\end{code}
+
+{\Script} di atas digunakan untuk mendapatkan masukan dari pengguna ketika berada pada menu \textit{debug mode}. Fungsi \citecode{debug\_mode} digunakan untuk mengatur semua hal yang berkaitan dengan \textit{debug mode} seperti menunjukan \textit{register} dan \textit{stack}.
+
+\begin{code}
+\begin{verbatim}
     if (arg == "exit") return;
     if (arg == "info stack") {
       int i = 0;
@@ -243,7 +250,7 @@ void debug_mode() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan fungsi tanpa nilai kembalian yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan \textit{register} yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
+{\Script} di atas merupakan fungsi yang digunakan untuk menulusuri data-data yang tersimpan dalam \citecode{stack}. Penampilannya akan dipisah menjadi dua bagian yakni \textit{stack} dan \textit{register} yang akan berubah sesuai nilai yang terkandung pada variabel \citecode{stack}.
 
 \begin{code}
 \begin{verbatim}

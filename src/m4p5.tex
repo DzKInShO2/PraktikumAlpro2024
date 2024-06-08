@@ -2,15 +2,21 @@
 
 \begin{document}
 \subsection{Rental PS Rijal}
-
 \begin{code}
 \begin{verbatim}
 #include <iostream>
+\end{verbatim}
+\end{code}
+
+{\Script} di atas membolehkan pengaksesan fungsi-fungsi dan objek-objek yang ada didalam {\header} {\file} \citecode{iostream}. {\Header} {\file} \citecode{iostream} berisi fungsi-fungsi dan objek-objek yang berkaitan dengan operasi-operasi {\ioi} dan {\ioo} {\stream}.
+
+\begin{code}
+\begin{verbatim}
 using namespace std;
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk memberikan kemampuan untuk menggunakan fungsi-fungsi dan objek-objek yang tersedia dalah {\header} {\file} \citecode{iostream}. {\Script} pada baris kedua \citecode{using namespace std;} memberikan kemampuan untuk menggunakan fungsi-fungsi dan objek-objek dari \textit{standard library} tanpa menulis \citecode{std::}.
+{\Script} di atas menggunakan {\statement} \citecode{using namespace} yang akan membolehkan pemanggilan fungsi atau objek yang berada dalam suatu \citecode{namespace} tertentu tanpa memanggil nama \citecode{namespace} tersebut dalam kasus di atas fungsi dan objek yang berada dalam \citecode{namespace std} dapat dipanggil tanpa diawali \citecode{std::}.
 
 \begin{code}
 \begin{verbatim}
@@ -23,7 +29,10 @@ bool user_membership[user_max];
 int user_bills[user_max];
 int user_logged_id = -1;
 int user_count = 1;
-int console_prices[4] = { 0, 5000, 10000, 15000 };
+int console_prices[4] = {
+  0, 5000,
+  10000, 15000
+};
 const int food_max = 20;
 string foods[food_max];
 int food_prices[food_max];
@@ -43,7 +52,7 @@ void pause() {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard}.
+{\Script} di atas merupakan sebuah fungsi tanpa kembalian yang ditandakan oleh kata kunci \citecode{void}. Fungsi tersebut akan menghentikan pengguna sejenak sampai dideteksi sebuah masukan apapun dari \textit{keyboard} pengguna.
 
 \begin{code}
 \begin{verbatim}
@@ -65,7 +74,9 @@ int nselector(int l, int u, string c = ">> ") {
     if (cin.fail() || n < l || n > u) {
       input_invalid();
       continue; } break;
-  } return n; }
+  }
+  return n;
+}
 \end{verbatim}
 \end{code}
 
@@ -120,8 +131,7 @@ void unlogged_page() {
   switch ((app_state & 0x6) >> 0x1) {
     case 0: {
       topbar();
-      cout << "1. Login\n2. Sign-In\n";
-      cout << "3. Exit\n";
+      cout << "1. Login\n2. Sign-In\n3. Exit\n";
       app_state = (nselector(1, 3) << 0x1);
     } break;
     case 1: {
@@ -131,8 +141,7 @@ void unlogged_page() {
       string name, password;
       cout << "Masukan Username: "; cin >> name;
       cout << "Masukan Password: "; cin >> password;
-      if (app_state = login(name, password))
-        cout << "Log-In Berhasil\n";
+      if (app_state = login(name, password)) cout << "Log-In Berhasil\n";
       else cout << "Log-In Tidak Berhasil\n";
       pause();
     } break;
@@ -158,10 +167,8 @@ void logged_page() {
   topbar();
   switch ((app_state & 0x6) >> 0x1) {
     case 0: {
-      cout << "1. Melakukan Rental PS\n";
-      cout << "2. Memesan Makanan\n";
-      cout << "3. Daftar Member\n";
-      cout << "4. log-out\n";
+      cout << "1. Melakukan Rental PS\n2. Memesan Makanan\n";
+      cout << "3. Daftar Member\n4. log-out\n";
       app_state |= (nselector(1, 4) << 0x1);
     } break;
 \end{verbatim}
@@ -235,8 +242,7 @@ void logged_page() {
           ((choice != 'Y' && choice != 'y') &&
            (choice != 'T' && choice != 't'))) {
           input_invalid();
-          continue;
-        } break; }
+          continue; } break; }
       if (choice == 'Y' || choice == 'y') {
         if (user_membership[user_logged_id])
           cout << "Anda sudah terdaftar sebagai member\n";
@@ -244,9 +250,7 @@ void logged_page() {
           cout << "Anda berhasil mendaftar sebagai member\n";
           user_membership[user_logged_id] = true; }
       } app_state = 1; pause();
-    } break;
-  }
-}
+    } break; } }
 \end{verbatim}
 \end{code}
 
@@ -284,12 +288,11 @@ void admin_page() {
         }
         if (app_state >> 4 != 0)
           cout << food_count + 1 << ". Kembali\n";
-        else cout << "\n";
-      }
+        else cout << "\n"; }
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk menampilkan daftar makanan yang tersimpan pada variabel {\sarray} \citecode{foods}. Jumlah makanan yang akan ditampilkan sesuai dengan nilai variabel \citecode{food\_count} yang bertipe data \citecode{int}.
+{\Script} di atas digunakan untuk menampilkan daftar makanan yang tersimpan pada variabel {\sarray} \citecode{foods}. Jumlah makanan yang akan ditampilkan sesuai dengan nilai variabel \citecode{food\_count} yang bertipe data \citecode{int} yang bisa menyimpan bilangan bulat.
 
 \begin{code}
 \begin{verbatim}
@@ -347,7 +350,7 @@ case 2: {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk menampilkan data penyewa berupa daftar nama-nama pengguna yang tersedia pada variabel {\sarray} \citecode{users} dan tagihan pengguna yang tersedia pada variabel {\sarray} \citecode{user\_bills}.
+{\Script} di atas digunakan untuk menampilkan data penyewa berupa daftar nama-nama pengguna yang tersedia pada variabel {\sarray} \citecode{users} dan tagihan pengguna yang tersedia pada variabel {\sarray} \citecode{user\_bills} yang digunakan untuk menyimpan tagihan semua pengguna.
 
 \begin{code}
 \begin{verbatim}
@@ -498,7 +501,7 @@ case 3: {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas digunakan untuk membuat matriks segitiga atas dengan cara membagi bagian segitiga bawah dari \citecode{matrix} menjadi 0. Nilai yang digunakan untuk membaginya disimpan pada variabel \citecode{x}.
+{\Script} di atas digunakan untuk membuat matriks segitiga atas dengan cara membagi bagian segitiga bawah dari \citecode{matrix} menjadi 0. Nilai yang digunakan untuk membaginya disimpan pada \citecode{x} yang akan dihitung setiap kali sebuah elemen matriks diubah jadi 0.
 
 \begin{code}
 \begin{verbatim}

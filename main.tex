@@ -279,7 +279,7 @@
 
     \begin{figure}[H]
         \ifx\a\b
-            \vspace*{-0.8ex}
+            \vspace*{-1ex}
             \begin{indentpar}
                 \includegraphics[
                     scale=#3,
@@ -388,25 +388,22 @@
 
 \usepackage{verbatim}
 
-\usepackage[most]{tcolorbox}
-\tcbset{
-    enhanced,
-    notitle,
-    colframe=black,
-    colback=white,
-    shrink tight,
-    left=0.5ex,
-    boxsep=1.8pt,
-    boxrule=0.5pt,
-    sharp corners,
-    breakable,
-    before skip=1.0em,
-    after skip=0.8em,
-    toprule at break=5pt,
-    bottomrule at break=5pt,
-    capture=hbox
-    % overlay middle={\par\noindent\rule{\linewidth}{0.5pt}\par},
-}
+\usepackage[
+    backgroundcolor=white,
+    linecolor=black,
+    linewidth=0.5pt,
+    innerleftmargin=3pt,
+    innerrightmargin=1pt,
+    innertopmargin=1pt,
+    innerbottommargin=1pt,
+    leftmargin=0.5pt,
+    rightmargin=0.5pt,
+    skipabove=2ex,
+    skipbelow=-0.4ex,
+    afterlastframe={\vspace{2ex}},
+    beforesingleframe={\vspace{0.5ex}},
+    everyline=true,
+]{mdframed}
 
 \makeatletter
 \renewcommand*{\verbatim@font}{\setstretch{1.0}\crnfamily\cpsize}
@@ -434,12 +431,12 @@
             \fi
         \fi
     \fi
-\begin{tcolorbox}[left skip=\codeshift]
+    \begin{mdframed}[leftmargin=\codeshift]
         \verbatiminput{#2}
-    \end{tcolorbox}
+    \end{mdframed}
     \ifx\a\empty
     \else
-        \vspace{-1.5ex}
+        \vspace{-1ex}
     \fi
 }
 
@@ -461,13 +458,13 @@
             \fi
         \fi
     \fi
-    \begin{tcolorbox}[left skip=\codeshift]
+    \begin{mdframed}[leftmargin=\codeshift]
 }{
-    \end{tcolorbox}
-    \ifx\a\empty
-    \else
-        \vspace{-1.5ex}
-    \fi
+    \end{mdframed}
+    % \ifx\a\empty
+    % \else
+    %     \vspace{-1.5ex}
+    % \fi
 }
 
 \newcommand*{\citecode}[1]{\hspace{-0.5ex}{\cpsize\crnfamily{{\normalsize\textnormal{``}}#1}}''}
