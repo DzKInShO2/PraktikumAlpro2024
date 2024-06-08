@@ -239,14 +239,12 @@ void debug_mode() {
           if (stack.type[j] == STACK_TYPE_FUNCTION) {
             cout << ((Function *)stack.ptr[j])->name << "\n";
           } else if (stack.type[j] == STACK_TYPE_VALUE) {
-            cout << *((int *)stack.ptr[j]) << "\n";
-          } }
+            cout << *((int *)stack.ptr[j]) << "\n"; } }
         cout << "Debug Command => ";
         getline(cin >> ws, arg);
         if (arg == "ni") i++;
         if (arg == "pi") i--;
-        if (i < 0) i = stack.count - 1;
-      } } } }
+        if (i < 0) i = stack.count - 1; }}}}
 \end{verbatim}
 \end{code}
 
@@ -262,13 +260,11 @@ int main() { int state = 0;
     cout << "3. Exit\n";
     state = (nselector(1, 3) - 1);
     switch (state) {
-      case 0: {
-        add_data();
-      } break;
-      case 1: {
-        debug_mode();
-      } break;
-      case 2: return 0; }} }
+      case 0: add_data();
+        break;
+      case 1: debug_mode();
+        break;
+      case 2: return 0; }}}
 \end{verbatim}
 \end{code}
 
@@ -763,7 +759,7 @@ if (game->rooms[game->current_room_id].monster_id > -1) {
       center_draw(game->players[0].name);
       center_draw("Deal Double Damage to "
                   + game->monsters[monster_id].name);
-      bar_draw(); pause();
+      bar_draw();pause();
     } else game->monsters[monster_id].cur_health
                 -= (game->players[turn].attack
                 - game->monsters[monster_id].defense);
@@ -781,7 +777,7 @@ if (game->rooms[game->current_room_id].monster_id > -1) {
 \end{verbatim}
 \end{code}
 
-{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menyembuhkan diri.
+{\Script} di atas merupakan potongan dari fungsi \citecode{game\_update} yang digunakan untuk mengatur interaksi pemain dengan permainan. Potongan fungsi tersebut akan mengatur apa yang akan terjadi bila pemain memilih untuk menyembuhkan diri yakni menambahkan \citecode{50} kesehatan pada pemain.
 
 \begin{code}
 \begin{verbatim}
