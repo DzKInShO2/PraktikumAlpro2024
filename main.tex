@@ -482,6 +482,8 @@
     andothers={dkk.,}
 }
 \setlength{\bibhang}{1cm}
+\DeclareFieldFormat[article, book, misc]{title}{\mkbibitalic{#1}}
+\DeclareFieldFormat[article, misc]{journal}{\mkbibemph{#1}}
 
 \usepackage{cleveref}
 \crefname{figure}{\bfseries Gambar}{\bfseries Gambar-Gambar}
