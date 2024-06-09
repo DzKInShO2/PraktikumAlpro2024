@@ -13,7 +13,19 @@
 
 \setcounter{tocdepth}{1}
 
+\makeatletter
+\sbox0{\normalsize\normalfont 22}%
+\edef\@pnumwidth{\the\wd0}
+\sbox0{\normalsize\normalfont 222}%
+\edef\@pnumplus{\the\wd0}
+
+\AddToHook{shipout/after}{\ifnum\value{page}=99\relax
+  \addtocontents{toc}{\string\let\string\@pnumwidth\string\@pnumplus}%
+\fi}
+\makeatother
+
 \renewcommand*{\cftdot}{\normalfont.}
+\renewcommand*{\cftdotsep}{2}
 
 \setlength{\cftbeforechapskip}{0pt}
 \renewcommand*{\cftchapfont}{\normalfont}
